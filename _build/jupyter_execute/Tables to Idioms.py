@@ -67,7 +67,7 @@ twoDays = twoDays.strftime('%Y-%m-%d')
 data[data.date==yesterdaysDate].head()
 
 
-# ![scatterplot.PNG](attachment:scatterplot.PNG)
+# ![Scatterplot Description](scatterplot.PNG)
 
 # <cite>Scatter Plot — Matplotlib 3.3.4 Documentation. https://matplotlib.org/stable/gallery/shapes_and_collections/scatter.html. Accessed 14 Mar. 2021.</cite>
 
@@ -90,7 +90,7 @@ plt.show( fig )
 plt.close( fig )
 
 
-# ![barchart.PNG](attachment:barchart.PNG)
+# ![Bar Chart Idiom](barchart.PNG)
 
 # <cite>Grouped Bar Chart with Labels — Matplotlib 3.3.4 Documentation. https://matplotlib.org/stable/gallery/lines_bars_and_markers/barchart.html. Accessed 14 Mar. 2021.
 # </cite>
