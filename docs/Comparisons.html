@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparison Operators &#8212; JupyterLab + Python</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Functions, Loops and Sorting" href="Loops.html" />
+    <link rel="prev" title="What is a variable?" href="Learning%20about%20Variables.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">JupyterLab + Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   JupyterLab + Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  JupyterLab
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction%20to%20JupyterLab.html">
+   Introduction to JupyterLab
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Learning%20about%20Variables.html">
+   What is a variable?
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Comparison Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Loops.html">
+   Introduction to Functions, Loops and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shopping%20List.html">
+   Let’s create a shopping list!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Guessing%20Game.html">
+   A Python guessing game for jupyter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Using%20Pandas%20to%20Work%20with%20Data.html">
+   Using Pandas to Work with Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matplotlib
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Getting%20Started%20with%20Matplotlib.html">
+   Getting Started with Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tables%20to%20Idioms.html">
+   Tables to Idioms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Comparisons.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/Comparisons.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/Comparisons.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/Comparisons.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-these-things-the-same">
+   Are these things the same?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-these-things-different">
+   Are these things different?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-these-things-compare">
+   How do these things compare?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warnings-for-variable-types">
+   Warnings for variable types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-comparisons">
+   Multiple Comparisons
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and">
+     AND
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#or">
+     OR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#not">
+     Not
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-yourself">
+   Check yourself
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="comparison-operators">
+<h1>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">¶</a></h1>
+<p>We need to be able to compare different variables.  We will be working on:</p>
+<ul class="simple">
+<li><p>Are these things the same?</p></li>
+<li><p>Are these things not the same?</p></li>
+<li><p>How do these things compare?</p></li>
+</ul>
+<p>We can compare any data type, and our output will be a boolean (True or False).  The other things we will cover are:</p>
+<ul class="simple">
+<li><p>Comparing different data types</p></li>
+<li><p>Making multiple comparisons at once</p></li>
+</ul>
+<p>Comparison operators are important on their own (how do these things compare?) and are also useful for sorting and switching (see the next notebook.)</p>
+<div class="section" id="are-these-things-the-same">
+<h2>Are these things the same?<a class="headerlink" href="#are-these-things-the-same" title="Permalink to this headline">¶</a></h2>
+<p>We have already initiated variables by setting something equal to something else - let’s do that here by setting aVar equal to 10 and then setting bVar equal to aVar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aVar</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">bVar</span> <span class="o">=</span> <span class="n">aVar</span>
+<span class="n">cVar</span> <span class="o">=</span> <span class="mi">11</span> 
+
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span><span class="p">,</span> <span class="s2">&quot;; cVar = &quot;</span><span class="p">,</span> <span class="n">cVar</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10 ; cVar =  11
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first comparison operator is ‘==’ which tests to see if two variables are equal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span><span class="p">,</span> <span class="s2">&quot;; cVar = &quot;</span><span class="p">,</span> <span class="n">cVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to cVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to cVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10 ; cVar =  11
+
+#-# Is aVar equal to bVar?
+True
+
+#-# Is aVar equal to cVar?
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tells us that aVar is equal to bVar, because it returns ‘True’ and aVar is not equal to cVar, as that returns ‘False.’</p>
+<p>We can also do comparisons with other variable types.  Here’s an example with strings instead of integers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aStr</span> <span class="o">=</span> <span class="s1">&#39;apple&#39;</span>
+<span class="n">bStr</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">cStr</span> <span class="o">=</span> <span class="s1">&#39;apple&#39;</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aStr=&quot;</span><span class="p">,</span> <span class="n">aStr</span><span class="p">,</span><span class="s2">&quot;; bStr =&quot;</span><span class="p">,</span> <span class="n">bStr</span><span class="p">,</span><span class="s2">&quot;; cStr = &quot;</span><span class="p">,</span> <span class="n">cStr</span> <span class="p">)</span>
+
+<span class="c1"># Is aStr equal to bStr?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aStr equal to bStr?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aStr</span> <span class="o">==</span> <span class="n">bStr</span> <span class="p">)</span>
+
+<span class="c1"># Is aStr equal to cStr?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aStr equal to cStr?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aStr</span> <span class="o">==</span> <span class="n">cStr</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aStr= apple ; bStr = banana ; cStr =  apple
+
+#-# Is aStr equal to bStr?
+False
+
+#-# Is aStr equal to cStr?
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="are-these-things-different">
+<h2>Are these things different?<a class="headerlink" href="#are-these-things-different" title="Permalink to this headline">¶</a></h2>
+<p>We can also test to see if two values are not equal using the ‘!=’ operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span><span class="p">,</span> <span class="s2">&quot;; cVar = &quot;</span><span class="p">,</span> <span class="n">cVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar not equal to bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar not equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">!=</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar not equal to cVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar not equal to cVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">!=</span> <span class="n">cVar</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10 ; cVar =  11
+
+#-# Is aVar not equal to bVar?
+False
+
+#-# Is aVar not equal to cVar?
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives us the opposite of what we had before.  It is false that aVar and bVar are not equal, meaning that they are equal.  It is true that aVar and cVar are not equal.</p>
+</div>
+<div class="section" id="how-do-these-things-compare">
+<h2>How do these things compare?<a class="headerlink" href="#how-do-these-things-compare" title="Permalink to this headline">¶</a></h2>
+<p>We can also compare the magnitude of values using ‘&lt;’, ‘&lt;=’, ‘&gt;’and ‘&gt;=’, which will return ‘True’ if the condition is being met.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar less than bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar less than bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">&lt;</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar less than or equal to bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar less than or equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">&lt;=</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar greater than or equal to bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar greater than or equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">&gt;=</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar greater than bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar greater than bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">&gt;</span> <span class="n">bVar</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10
+
+#-# Is aVar less than bVar?
+False
+
+#-# Is aVar less than or equal to bVar?
+True
+
+#-# Is aVar greater than or equal to bVar?
+True
+
+#-# Is aVar greater than bVar?
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="warnings-for-variable-types">
+<h2>Warnings for variable types<a class="headerlink" href="#warnings-for-variable-types" title="Permalink to this headline">¶</a></h2>
+<p>We do have to watch out for our types. A string of a value is not the same as a value</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aStr</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
+<span class="n">aFlt</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; aStr =&quot;</span><span class="p">,</span> <span class="n">aStr</span><span class="p">,</span> <span class="s2">&quot;; aFlt =&quot;</span><span class="p">,</span> <span class="n">aFlt</span>  <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to aStr?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to aStr?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">aStr</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar type is &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span> <span class="n">aVar</span> <span class="p">),</span> <span class="s2">&quot;; and aStr type is &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span> <span class="n">aStr</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to aFlt?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to aFlt?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">aFlt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; aStr = 10 ; aFlt = 10.0
+
+#-# Is aVar equal to aStr?
+False
+aVar type is  &lt;class &#39;int&#39;&gt; ; and aStr type is  &lt;class &#39;str&#39;&gt;
+
+#-# Is aVar equal to aFlt?
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can compare integers and floats (!) but not other disparate data types.</p>
+<p>If you let python take care of your data-types, be warned that they could be different from what you think they are!</p>
+</div>
+<div class="section" id="multiple-comparisons">
+<h2>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Permalink to this headline">¶</a></h2>
+<p>We can make multiple comparisons at once by stringing the statements</p>
+<ul class="simple">
+<li><p>and</p></li>
+<li><p>not</p></li>
+<li><p>or</p></li>
+</ul>
+<p>together.</p>
+<p>The individual testable (true/false) components need to be broken apart. For example,</p>
+<ul class="simple">
+<li><p>If the V CATA bus is coming around the corner, then I need to run towards the bus stop</p></li>
+</ul>
+<p>requires several things for it to be true, and to require running.  We can break these things out with:</p>
+<ul class="simple">
+<li><p>If there is a vehicle coming around the corner AND that vehicle is a CATA bus AND that CATA bus is a V, then I need to run towards the bus stop</p></li>
+</ul>
+<p>We will only run towards the bus stop if all of the statements are true</p>
+<div class="section" id="and">
+<h3>AND<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
+<p>The and operator will return True if all of the conditions are met</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span><span class="p">,</span> <span class="s2">&quot;; cVar = &quot;</span><span class="p">,</span> <span class="n">cVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">)</span>
+      
+<span class="c1"># Is aVar equal to bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to bVar?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to cVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to cVar?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10 AND aVar equal to bVar?</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND aVar equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10 AND aVar equal to cVar?</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND aVar equal to cVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10 ; cVar =  11
+
+#-# Is aVar equal to 10?
+True
+
+#-# Is aVar equal to bVar?
+True
+
+#-# Is aVar equal to cVar?
+False
+
+#-# Is aVar equal to 10 AND aVar equal to bVar?
+True
+
+#-# Is aVar equal to 10 AND aVar equal to cVar?
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also string as many comparisons together as we want</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="or">
+<h3>OR<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+<p>If we want ‘True’ for either of the conditions to be met, we can use the ‘or’ operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span><span class="p">,</span> <span class="s2">&quot;; cVar = &quot;</span><span class="p">,</span> <span class="n">cVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">)</span>
+      
+<span class="c1"># Is aVar equal to bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to bVar?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to cVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to cVar?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 11?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">11</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10 OR aVar equal to bVar?</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 OR aVar equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10 OR aVar equal to cVar?</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 or aVar equal to cVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 11 OR aVar equal to cVar?</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 11 or aVar equal to cVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">11</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10 ; cVar =  11
+
+#-# Is aVar equal to 10?
+True
+
+#-# Is aVar equal to bVar?
+True
+
+#-# Is aVar equal to cVar?
+False
+
+#-# Is aVar equal to 11?
+False
+
+#-# Is aVar equal to 10 OR aVar equal to bVar?
+True
+
+#-# Is aVar equal to 10 or aVar equal to cVar?
+True
+
+#-# Is aVar equal to 11 or aVar equal to cVar?
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="not">
+<h3>Not<a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h3>
+<p>We can add a not to change the meaning of the and/or operators</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">)</span>
+      
+<span class="c1"># Is aVar equal to bVar?</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to bVar?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span> <span class="p">)</span>
+
+
+<span class="c1"># Is aVar equal to 10 AND aVar equal to bVar?</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND aVar equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Is aVar equal to 10 AND NOT aVar equal to bVar?</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND NOT aVar equal to bVar?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10
+
+#-# Is aVar equal to 10?
+True
+
+#-# Is aVar equal to bVar?
+True
+
+#-# Is aVar equal to 10 AND aVar equal to bVar?
+True
+
+#-# Is aVar equal to 10 AND NOT aVar equal to bVar?
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-yourself">
+<h2>Check yourself<a class="headerlink" href="#check-yourself" title="Permalink to this headline">¶</a></h2>
+<p>Try to fill in code to fulfill the request!  Here are some variables used in the excercise</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dogA_color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span>
+<span class="n">dogA_mass</span><span class="o">=</span><span class="mi">42</span>
+<span class="n">dogA_gender</span><span class="o">=</span><span class="s1">&#39;male&#39;</span>
+<span class="n">dogA_age</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">dogA_name</span><span class="o">=</span><span class="s1">&#39;chip&#39;</span>
+
+<span class="n">dogB_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span>
+<span class="n">dogB_mass</span><span class="o">=</span><span class="mi">19</span>
+<span class="n">dogB_gender</span><span class="o">=</span><span class="s1">&#39;female&#39;</span>
+<span class="n">dogB_age</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">dogB_name</span><span class="o">=</span><span class="s1">&#39;lady&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is dogA the same color as dogB? (False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example:</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">dogA_color</span> <span class="o">==</span> <span class="n">dogB_color</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does dogA have the same name as dogB? (False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it out here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is dogA older than dogB? (True)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it out here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is dogA the same gender as dogB? (False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it out here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is dogA heavier than dogB and have a different name than dogB? (True)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it out here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does dogA have a different age than dogB and not a different gender than dogB? (False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it out here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "dudaspm/JupyterLab-Python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Learning%20about%20Variables.html" title="previous page">What is a variable?</a>
+    <a class='right-next' id="next-link" href="Loops.html" title="next page">Introduction to Functions, Loops and Sorting</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Patrick M. Dudas<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

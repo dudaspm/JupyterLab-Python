@@ -1,7 +1,23 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
+
 - file: intro
-- file: content
-  sections:
-    - file: Introduction to JupyterLab
+
+- part: JupyterLab
+  chapters:
+  - file: Introduction to JupyterLab
+- part: Python
+  chapters:
+  - file: Learning about Variables
+  - file: Comparisons
+  - file: Loops
+  - file: Shopping List
+  - file: Guessing Game
+- part: Pandas
+  chapters:
+  - file: Using Pandas to Work with Data
+- part: Matplotlib
+  chapters:
+  - file: Getting Started with Matplotlib
+  - file: Tables to Idioms

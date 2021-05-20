@@ -1,0 +1,1282 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Functions, Loops and Sorting &#8212; JupyterLab + Python</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Let’s create a shopping list!" href="Shopping%20List.html" />
+    <link rel="prev" title="Comparison Operators" href="Comparisons.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">JupyterLab + Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   JupyterLab + Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  JupyterLab
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction%20to%20JupyterLab.html">
+   Introduction to JupyterLab
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Learning%20about%20Variables.html">
+   What is a variable?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Comparisons.html">
+   Comparison Operators
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to Functions, Loops and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shopping%20List.html">
+   Let’s create a shopping list!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Guessing%20Game.html">
+   A Python guessing game for jupyter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Using%20Pandas%20to%20Work%20with%20Data.html">
+   Using Pandas to Work with Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matplotlib
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Getting%20Started%20with%20Matplotlib.html">
+   Getting Started with Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tables%20to%20Idioms.html">
+   Tables to Idioms
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/Loops.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/Loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/Loops.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-inputs-and-outputs">
+     Multiple inputs and outputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-calling-other-functions">
+     Functions calling other functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-gotcha-for-functions-where-variables-can-be-used">
+     The gotcha for functions: Where variables can be used
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loops">
+   For Loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loops">
+   While loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conceptual-example">
+     Conceptual Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditioning-data">
+   Conditioning Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-else-statements">
+     If-Else Statements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#switch-cases">
+     Switch Cases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-yourself">
+   Check yourself
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-functions-loops-and-sorting">
+<h1>Introduction to Functions, Loops and Sorting<a class="headerlink" href="#introduction-to-functions-loops-and-sorting" title="Permalink to this headline">¶</a></h1>
+<p>One of the features of programming is that we have many options to do the same tasking multiple times.  The three methods we will be looking at are:</p>
+<ul class="simple">
+<li><p>Functions</p></li>
+<li><p>For loops</p></li>
+<li><p>While Loops</p></li>
+</ul>
+<p>We will also look at two different methods for sorting or conditioning data:</p>
+<ul class="simple">
+<li><p>if-else statements</p></li>
+<li><p>switch statements</p></li>
+</ul>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions allow us to do repeated tasks easily by writing the code only once.  Functions will have a name, inputs and outputs and can be called anywhere the task is repeated.</p>
+<p>There are functions that are built in to python, for example we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aVal</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span> <span class="n">aVal</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Functions have four typical parts:</p>
+<ul class="simple">
+<li><p>Name - what you call your function</p></li>
+<li><p>Input arguments - what you provide</p></li>
+<li><p>Outputs - what the function gives back</p></li>
+<li><p>Math/Magic - what the function does</p></li>
+</ul>
+<p>In python, we use def to define a function with the function name and inputs followed by a colon.  The python function is then separated from the rest of the code by a tab. Some languages use braces rather than indentation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">functionName</span><span class="p">(</span> <span class="n">inputs</span> <span class="p">):</span>
+    <span class="c1"># Operate on the inputs</span>
+    <span class="n">ouputs</span> <span class="o">=</span> <span class="n">inputs</span> <span class="o">+</span> <span class="mi">5</span>
+    <span class="c1"># Return what we want to back</span>
+    <span class="k">return</span> <span class="n">outputs</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Let’s look at an example function, which changes degrees Farenheit to Celsius.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeFromFToC</span><span class="p">(</span> <span class="n">farVal</span> <span class="p">):</span>
+    <span class="c1"># Change the temperature from Farenheit to Celsius</span>
+    <span class="n">cVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">farVal</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span>
+    <span class="k">return</span> <span class="n">cVal</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, our function name is changeFromFToC, the input is farVal, the temperature in Farenheit, the output is cVal, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change 14 deg F to Celsius</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# 14 Deg Farenheit in Celsius&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">changeFromFToC</span><span class="p">(</span> <span class="mi">14</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Change from 68 deg F to Celsius</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# 68 Deg Farenheit in Celsius&quot;</span> <span class="p">)</span>
+<span class="n">niceTempC</span> <span class="o">=</span> <span class="n">changeFromFToC</span><span class="p">(</span> <span class="mi">68</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">niceTempC</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# 14 Deg Farenheit in Celsius
+-10.0
+
+#-# 68 Deg Farenheit in Celsius
+20.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-inputs-and-outputs">
+<h3>Multiple inputs and outputs<a class="headerlink" href="#multiple-inputs-and-outputs" title="Permalink to this headline">¶</a></h3>
+<p>Functions can also have multiple inputs and outputs.  The example below changes Farenheit to Celsius and Kelvin.  We can take the outputs individually, or as a list.  You have to either have the same number of outputs as is provided, or just one for a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeFromFToCAndK</span><span class="p">(</span> <span class="n">farVal</span> <span class="p">):</span>
+    <span class="c1"># Change the temperature from Farenheit to Celsius and Kelvin</span>
+    <span class="n">cVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">farVal</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span>
+    <span class="n">kVal</span><span class="o">=</span> <span class="n">cVal</span> <span class="o">+</span> <span class="mf">273.15</span>
+    <span class="k">return</span> <span class="n">cVal</span><span class="p">,</span> <span class="n">kVal</span>    
+    
+<span class="c1"># Change 14 deg F to Celsius and Kelvin</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# 14 Deg Farenheit in Celsius and Kelvin&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">changeFromFToCAndK</span><span class="p">(</span> <span class="mi">14</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Change 212 deg F to Celsius and Kelvin</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# 212 Deg Farenheit in Celsius and Kelvin&quot;</span> <span class="p">)</span>
+<span class="n">boilingC</span><span class="p">,</span> <span class="n">boilingK</span> <span class="o">=</span> <span class="n">changeFromFToCAndK</span><span class="p">(</span> <span class="mi">212</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="n">boilingC</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">boilingK</span> <span class="p">)</span>
+
+<span class="c1"># Change 32 deg F to Celsius and Kelvin</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# 32 Deg Farenheit in Celsius and Kelvin&quot;</span> <span class="p">)</span>
+<span class="n">freezing</span> <span class="o">=</span> <span class="n">changeFromFToCAndK</span><span class="p">(</span> <span class="mi">32</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="n">freezing</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">freezing</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# 14 Deg Farenheit in Celsius and Kelvin
+(-10.0, 263.15)
+
+#-# 212 Deg Farenheit in Celsius and Kelvin
+100.0
+373.15
+
+#-# 32 Deg Farenheit in Celsius and Kelvin
+0.0
+273.15
+</pre></div>
+</div>
+</div>
+</div>
+<p>The example function below to calculate the wind chill uses two inputs and only calculates the returned value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">windChillFar</span><span class="p">(</span> <span class="n">tempF</span><span class="p">,</span> <span class="n">windMPH</span> <span class="p">):</span>
+    <span class="c1"># Calculate the wind chill index using</span>
+    <span class="c1"># tempF: Temperature in Farenheit</span>
+    <span class="c1"># windMPH: Wind in miles per hour</span>
+    <span class="c1"># to return the wind chill index</span>
+    <span class="k">return</span> <span class="mf">35.74</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.6215</span> <span class="o">*</span> <span class="n">tempF</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">35.75</span> <span class="o">*</span> <span class="n">windMPH</span><span class="o">**</span><span class="mf">.16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.4275</span> <span class="o">*</span> <span class="n">tempF</span> <span class="o">*</span> <span class="n">windMPH</span><span class="o">**</span><span class="mf">.16</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Wind chill at 32 with 8 mph wind&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">windChillFar</span><span class="p">(</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">8</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Wind chill at 32 with 8 mph wind
+24.846007283646554
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions-calling-other-functions">
+<h3>Functions calling other functions<a class="headerlink" href="#functions-calling-other-functions" title="Permalink to this headline">¶</a></h3>
+<p>Functions can call other functions.  Here we add three using a function to add two and then adding one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addTwo</span><span class="p">(</span> <span class="n">inValAddTwo</span> <span class="p">):</span>
+    <span class="c1"># Add two to the input</span>
+    <span class="k">return</span> <span class="n">inValAddTwo</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">addThree</span><span class="p">(</span> <span class="n">inValAddThree</span> <span class="p">):</span>
+    <span class="c1"># Add three two the input</span>
+    <span class="k">return</span> <span class="n">addTwo</span><span class="p">(</span> <span class="n">inValAddThree</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># Add three to four</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Add three to four using addThree, which calls addTwo&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">addThree</span><span class="p">(</span> <span class="mi">4</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Add three to four using addThree, which calls addTwo
+7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Functions can also call themselves - these are called recursive functions.  See how we calculate the factorial by subtracting one and calling the function again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorialRecursive</span><span class="p">(</span> <span class="n">facIn</span> <span class="p">):</span>
+    <span class="c1"># Calculate the factorial</span>
+    <span class="k">if</span> <span class="n">facIn</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">facIn</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">facIn</span> <span class="o">*</span> <span class="n">factorialRecursive</span><span class="p">(</span> <span class="n">facIn</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Use a recursive function to calculate the factorial of 5</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Use a recursive function to calculate the factorial of 5&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">factorialRecursive</span><span class="p">(</span> <span class="mi">5</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Use a recursive function to calculate the factorial of 5
+120
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-gotcha-for-functions-where-variables-can-be-used">
+<h3>The gotcha for functions: Where variables can be used<a class="headerlink" href="#the-gotcha-for-functions-where-variables-can-be-used" title="Permalink to this headline">¶</a></h3>
+<p>The biggest gotcha on functions is with variable scope:</p>
+<ul class="simple">
+<li><p>Variables defined in a function are not accessible from the outside</p></li>
+<li><p>Functions have access to more than just the variables passed in</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to add four</span>
+<span class="k">def</span> <span class="nf">addFour</span><span class="p">(</span> <span class="n">inValAddFour</span> <span class="p">):</span>
+    <span class="n">middleVal</span> <span class="o">=</span> <span class="n">addTwo</span><span class="p">(</span> <span class="n">inValAddFour</span> <span class="p">)</span>
+    <span class="n">finalAns</span> <span class="o">=</span> <span class="n">addTwo</span><span class="p">(</span> <span class="n">middleVal</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Print from In Function&quot;</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;startingVal = &quot;</span><span class="p">,</span> <span class="n">startingVal</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;middleVal = &quot;</span><span class="p">,</span> <span class="n">middleVal</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;finalAns = &quot;</span><span class="p">,</span> <span class="n">finalAns</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">finalAns</span>
+    
+<span class="c1">#-#-#-#-#-#-#</span>
+<span class="c1"># Not in the function - this is what runs</span>
+<span class="n">startingVal</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Call the function using startingVal as the input parameter</span>
+<span class="n">fourAdded</span> <span class="o">=</span> <span class="n">addFour</span><span class="p">(</span> <span class="n">startingVal</span> <span class="p">)</span>
+
+<span class="c1"># Print out some things</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Print after the function&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;startingVal = &quot;</span><span class="p">,</span> <span class="n">startingVal</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;fourAdded = &quot;</span> <span class="p">,</span> <span class="n">fourAdded</span> <span class="p">)</span>
+
+<span class="c1"># This won&#39;t work because middleVal was only defined within the function</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;middleVal = &quot;</span><span class="p">,</span> <span class="n">middleVal</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Print from In Function
+startingVal =  10
+middleVal =  12
+finalAns =  14
+
+#-# Print after the function
+startingVal =  10
+fourAdded =  14
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">b6beff6955a7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> 
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1"># This won&#39;t work because middleVal was only defined within the function</span>
+<span class="ne">---&gt; </span><span class="mi">24</span> <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;middleVal = &quot;</span><span class="p">,</span> <span class="n">middleVal</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;middleVal&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="for-loops">
+<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+<p>Loops allow us to do the same thing to each item in a list or array. One of the most basic types of loops is a for loop - this allows us to iterate over any sequence.</p>
+<p>We set up a for loop using 2 things:</p>
+<ul class="simple">
+<li><p>loop variable - the value of the sequence currently being used</p></li>
+<li><p>sequence - the data we iterate over</p></li>
+</ul>
+<p>The sequence can be any list.  We set up for loop using the for and in keywords, a colon, and all of the code within the for loop indented</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exampleList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;niner&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="s1">&#39;V@@@&#39;</span><span class="p">,</span> <span class="mi">1001</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span>
+
+<span class="c1"># Print the whole list</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Print the whole list&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">exampleList</span> <span class="p">)</span>
+
+<span class="c1"># Use a for loop to print the individual values in the list</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Use a for loop to print the individual values in the list&quot;</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">loopVar</span> <span class="ow">in</span> <span class="n">exampleList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">loopVar</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Print the whole list
+[&#39;a&#39;, &#39;niner&#39;, 6, 6.1, &#39;V@@@&#39;, 500.5, 42]
+
+#-# Use a for loop to print the individual values in the list
+a
+niner
+6
+6.1
+V@@@
+500.5
+42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, it’s helpful to iterate using indices.  For example, linear algebra heavy calculations will almost always use indices to make working with vectors and matrices easier.</p>
+<p>We can use the len() and range() functions to show the length and create indices.  We can then iterate using the indices, rather than the values.  Here we loop through the same someNumbers list using spot, the index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someNumbers</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span> 
+
+<span class="c1"># Print out our variables:</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;exampleList = &quot;</span><span class="p">,</span> <span class="n">exampleList</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;someNumbers = &quot;</span><span class="p">,</span> <span class="n">someNumbers</span> <span class="p">)</span>
+
+<span class="c1"># Loop through using the index</span>
+<span class="k">for</span> <span class="n">spot</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">someNumbers</span> <span class="p">)</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Spot = &quot;</span><span class="p">,</span> <span class="n">spot</span><span class="p">,</span> <span class="s2">&quot;; exampleList[spot] = &quot;</span><span class="p">,</span> <span class="n">exampleList</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="s2">&quot;; someNumbers[spot] = &quot;</span><span class="p">,</span> <span class="n">someNumbers</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>exampleList =  [&#39;a&#39;, &#39;niner&#39;, 6, 6.1, &#39;V@@@&#39;, 500.5, 42]
+someNumbers =  [-3, -2, -1, 0, 1, 2, 3]
+Spot =  0 ; exampleList[spot] =  a ; someNumbers[spot] =  -3
+Spot =  1 ; exampleList[spot] =  niner ; someNumbers[spot] =  -2
+Spot =  2 ; exampleList[spot] =  6 ; someNumbers[spot] =  -1
+Spot =  3 ; exampleList[spot] =  6.1 ; someNumbers[spot] =  0
+Spot =  4 ; exampleList[spot] =  V@@@ ; someNumbers[spot] =  1
+Spot =  5 ; exampleList[spot] =  500.5 ; someNumbers[spot] =  2
+Spot =  6 ; exampleList[spot] =  42 ; someNumbers[spot] =  3
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may have noticed that the second line is indented.  This is how we indicate what is in the loop.  Our loop can have many lines (all indented).  The first line that isn’t indented indicates we are out of the loop.  This is the python syntax for in and out of the loop; other coding languages use other things such as braces {}.  Note that blank lines don’t matter, just indentation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">someNumbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;val = &quot;</span><span class="p">,</span> <span class="n">val</span> <span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Inside the loop&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Outside the loop #-#&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>val =  -3
+Inside the loop
+val =  -2
+Inside the loop
+val =  -1
+Inside the loop
+val =  0
+Inside the loop
+val =  1
+Inside the loop
+val =  2
+Inside the loop
+val =  3
+Inside the loop
+#-# Outside the loop #-#
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="while-loops">
+<h2>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<p>For loops are used when you have something you are iterating over - you know the length.  You can use a while loop if you don’t know the number of times something will run. The while loop code requires a conditinal statement; the loop will continue to run as long as this is true and will not run again as soon as it is false.</p>
+<div class="section" id="conceptual-example">
+<h3>Conceptual Example<a class="headerlink" href="#conceptual-example" title="Permalink to this headline">¶</a></h3>
+<p>You can think about taking a test in two different ways:</p>
+<p>For loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>for problem in test:
+    &quot;solve problem&quot;
+    ```
+
+While loop:
+```python 
+while percentDone &lt; (100):
+    &quot;increase percentDone&quot;
+</pre></div>
+</div>
+<p>The condition being set by the while statement will cause this to run as long as the statement is true</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="s1">&#39;up&#39;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# answer = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Is answer equal to up? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span> <span class="p">)</span>
+
+<span class="k">while</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">In the while loop now&quot;</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;LOOP 1st: Is answer equal to up? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span> <span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="s1">&#39;down&#39;</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;LOOP 2nd: Is answer equal to up? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# answer = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Is answer equal to up? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# answer =  up
+Is answer equal to up? =  True
+
+In the while loop now
+LOOP 1st: Is answer equal to up? =  True
+LOOP 2nd: Is answer equal to up? =  False
+
+#-# answer =  down
+Is answer equal to up? =  False
+</pre></div>
+</div>
+</div>
+</div>
+<p>One thing to note is that the while loop won’t ever be entered if the condition is false when the statement</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="s1">&#39;up&#39;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# answer = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Is answer equal to down? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span> <span class="p">)</span>
+
+<span class="k">while</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">In the while loop now&quot;</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;LOOP 1st: Is answer equal to up? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span> <span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="s1">&#39;down&#39;</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;LOOP 2nd: Is answer equal to up? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# answer = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Is answer equal to down? = &quot;</span><span class="p">,</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# answer =  up
+Is answer equal to down? =  False
+
+#-# answer =  up
+Is answer equal to down? =  False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s set up a while loop to find the first number from our someNumbers that meets some criterion - for example the first number that is greater than 1.5.</p>
+<p>We need to initialize our criterion variable to 0 and set up an iterator to count up for us.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pushToLarge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Initialization&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;counter = &quot;</span><span class="p">,</span> <span class="n">counter</span><span class="p">,</span> <span class="s2">&quot;pushToLarge = &quot;</span><span class="p">,</span> <span class="n">pushToLarge</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">pushToLarge</span> <span class="o">&lt;</span> <span class="mf">1.5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Loop&quot;</span> <span class="p">)</span>
+    <span class="n">pushToLarge</span> <span class="o">=</span> <span class="n">someNumbers</span><span class="p">[</span><span class="n">counter</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;counter = &quot;</span><span class="p">,</span> <span class="n">counter</span><span class="p">,</span> <span class="s2">&quot;pushToLarge = &quot;</span><span class="p">,</span> <span class="n">pushToLarge</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Final&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">pushToLarge</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Initialization
+counter =  0 pushToLarge =  0
+
+#-# Loop
+counter =  0 pushToLarge =  -3
+
+#-# Loop
+counter =  1 pushToLarge =  -2
+
+#-# Loop
+counter =  2 pushToLarge =  -1
+
+#-# Loop
+counter =  3 pushToLarge =  0
+
+#-# Loop
+counter =  4 pushToLarge =  1
+
+#-# Loop
+counter =  5 pushToLarge =  2
+
+#-# Final
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>While loops will keep iterating as long as the statement stays true.  Infinite loops are caused by a condition that always stays true.  Use the stop button (black square) to stop this errorneous code, which will never stop after uncommenting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment all the lines below and run if you want an infinite loop to run</span>
+<span class="c1">#counter = 1</span>
+<span class="c1">#while counter &gt; 0:</span>
+<span class="c1">#    counter = counter + 1</span>
+<span class="c1">#    print( counter )</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conditioning-data">
+<h2>Conditioning Data<a class="headerlink" href="#conditioning-data" title="Permalink to this headline">¶</a></h2>
+<p>We can condition our data using if-else statements and switch cases.  If-else statements allow us to do different things if a certain criterion is met or not. We can count the odds and evens in our someNumbers list.</p>
+<div class="section" id="if-else-statements">
+<h3>If-Else Statements<a class="headerlink" href="#if-else-statements" title="Permalink to this headline">¶</a></h3>
+<p>The if statement starts with if and then lists a condition that may or may not be met. If the condition is true, we do what is listed.  If it is not, we move on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="k">if</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is greater than 30&quot;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is greater than 50&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This number is greater than 30
+</pre></div>
+</div>
+</div>
+</div>
+<p>In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an else statement</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="k">if</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is greater than 30&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is not greater than 30&quot;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is greater than 50&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is not greater than 50&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This number is greater than 30
+This number is not greater than 50
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s a more complicated example.  We count the number of odd and even values in someNumbers by using an if-else statement to separate the odds (which have a remainder or modulo of 1 when divided by 2) from the evens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someNumbers</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;someNumbers = &quot;</span><span class="p">,</span> <span class="n">someNumbers</span> <span class="p">)</span>
+
+<span class="c1"># Initialize the number of odd and even numbers</span>
+<span class="n">odds</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">evens</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Loop through someNumbers and increment odds and evens</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">someNumbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">val</span><span class="p">,</span> <span class="p">(</span><span class="n">val</span><span class="o">%</span><span class="k">2</span>) == 1 )
+    <span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="o">%</span><span class="k">2</span>) == 1:
+        <span class="c1"># Increment the odds by one if val/2 has a remainder of 1</span>
+        <span class="n">odds</span> <span class="o">=</span> <span class="n">odds</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">val</span><span class="p">,</span> <span class="s2">&quot; is odd!&quot;</span> <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Increment the evens by one if val/2 doesn&#39;t have a remainder of 1</span>
+        <span class="n">evens</span> <span class="o">=</span> <span class="n">evens</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="c1"># Print out some info at the end        </span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# For loop is done&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;odds = &quot;</span><span class="p">,</span> <span class="n">odds</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;evens = &quot;</span><span class="p">,</span> <span class="n">evens</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>someNumbers =  [-3, -2, -1, 0, 1, 2, 3]
+-3 True
+-3  is odd!
+-2 False
+-1 True
+-1  is odd!
+0 False
+1 True
+1  is odd!
+2 False
+3 True
+3  is odd!
+
+#-# For loop is done
+odds =  4
+evens =  3
+</pre></div>
+</div>
+</div>
+</div>
+<p>If-else statements can also be stacked together, to allow for additional sorting using multiple conditions.  The way this is done in python is by using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span>
+</pre></div>
+</div>
+<p>to provide another condition. Let’s count the odds again, and count the evens but split between those that are greater than or equal to 0 and those that aren’t, and change all of the negative evens to 0.  Note that we use the index of the value so that we can set the value to 0 for the negative evens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someNumbers</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;someNumbers = &quot;</span><span class="p">,</span> <span class="n">someNumbers</span> <span class="p">)</span>
+<span class="c1"># Initialize the number of odd and even numbers</span>
+<span class="n">odds</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">posEvens</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">negEvens</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Loop through someNumbers and increment odds and evens</span>
+<span class="k">for</span> <span class="n">spot</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">someNumbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">someNumbers</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span><span class="o">%</span><span class="k">2</span>) == (1):
+        <span class="c1"># Increment the odds by one if val/2 has a remainder of 1</span>
+        <span class="n">odds</span> <span class="o">=</span> <span class="n">odds</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">someNumbers</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+        <span class="c1"># Increment the evens by one if val/2 doesn&#39;t have a remainder of 1 and is greater than or equal to 0</span>
+        <span class="n">posEvens</span> <span class="o">=</span> <span class="n">posEvens</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Increment the evens by one if val/2 doesn&#39;t have a remainder of 1 and is greater than or equal to 0</span>
+        <span class="n">negEvens</span> <span class="o">=</span> <span class="n">negEvens</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">someNumbers</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+<span class="c1"># Print out some info at the end        </span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# For loop is done&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;odds = &quot;</span><span class="p">,</span> <span class="n">odds</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;posEvens = &quot;</span><span class="p">,</span> <span class="n">posEvens</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;negEvens = &quot;</span><span class="p">,</span> <span class="n">negEvens</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;someNumbers = &quot;</span><span class="p">,</span> <span class="n">someNumbers</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>someNumbers =  [-3, -2, -1, 0, 1, 2, 3]
+
+#-# For loop is done
+odds =  4
+posEvens =  2
+negEvens =  1
+someNumbers =  [-3, 0, -1, 0, 1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note: we don’t need a final else if we don’t care about values that don’t meet our earlier criteria.  Here, we skip the final else, doing nothing if the even number is less than or equal to 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;someNumbers = &quot;</span><span class="p">,</span> <span class="n">someNumbers</span> <span class="p">)</span>
+<span class="c1"># Initialize the number of odd and positive even numbers</span>
+<span class="n">odds</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">posEvens</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Loop through someNumbers and increment odds and positive evens</span>
+<span class="k">for</span> <span class="n">spot</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">someNumbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">someNumbers</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span><span class="o">%</span><span class="k">2</span>) == (1):
+        <span class="c1"># Increment the odds by one if val/2 has a remainder of 1</span>
+        <span class="n">odds</span> <span class="o">=</span> <span class="n">odds</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">someNumbers</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+        <span class="c1"># Increment the evens by one if val/2 doesn&#39;t have a remainder of 1 and is greater than 0</span>
+        <span class="n">posEvens</span> <span class="o">=</span> <span class="n">posEvens</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="c1"># Print out some info at the end        </span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# For loop is done&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;odds = &quot;</span><span class="p">,</span> <span class="n">odds</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;posEvens = &quot;</span><span class="p">,</span> <span class="n">posEvens</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>someNumbers =  [-3, 0, -1, 0, 1, 2, 3]
+
+#-# For loop is done
+odds =  4
+posEvens =  1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="switch-cases">
+<h3>Switch Cases<a class="headerlink" href="#switch-cases" title="Permalink to this headline">¶</a></h3>
+<p>Switch Cases are specialized if-else statements - the criteria must be met exactly. Let’s work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaulation.  We will use numbers as the keys and use the abbreviations as the values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthSwap</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s1">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">:</span><span class="s1">&#39;May&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">:</span><span class="s1">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">:</span><span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="s1">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">:</span><span class="s1">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">:</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">:</span><span class="s1">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">:</span><span class="s1">&#39;Dec&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then can use a get statement with the key to find the result:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The value listed in default is returned if the given key isn’t present.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;monthSwap = &quot;</span><span class="p">,</span> <span class="n">monthSwap</span><span class="p">)</span>
+
+<span class="c1"># Print out the 5th month</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Key = 5&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;oooooops!&quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Print out the 19th month</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Key = 19&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="s2">&quot;oooooops!&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>monthSwap =  {1: &#39;Jan&#39;, 2: &#39;Feb&#39;, 3: &#39;Mar&#39;, 4: &#39;Apr&#39;, 5: &#39;May&#39;, 6: &#39;Jun&#39;, 7: &#39;Jul&#39;, 8: &#39;Aug&#39;, 9: &#39;Sep&#39;, 10: &#39;Oct&#39;, 11: &#39;Nov&#39;, 12: &#39;Dec&#39;}
+
+#-# Key = 5
+May
+
+#-# Key = 19
+oooooops!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s use our dictionairy to print out some birthdays, given the day, month and year in numerical format.  Note that we use the get function of the dictionary, which has error checking, and then gather the same info without get and the error checking.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthdayMonths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
+<span class="n">birthdayDays</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
+<span class="n">birthdayYears</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1955</span><span class="p">,</span><span class="mi">1983</span><span class="p">,</span><span class="mi">1999</span><span class="p">,</span><span class="mi">2010</span><span class="p">,</span><span class="mi">2015</span><span class="p">]</span>
+
+<span class="c1"># Cycle through all of the birthdays and print out </span>
+<span class="k">for</span> <span class="n">spot</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">birthdayDays</span><span class="p">)):</span>
+    <span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Spot = &quot;</span><span class="p">,</span> <span class="n">spot</span> <span class="p">)</span>
+    <span class="c1"># Print using get, which has built in error checking</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span><span class="s2">&quot;oooooops!&quot;</span><span class="p">),</span> <span class="n">birthdayDays</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="n">birthdayYears</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
+    <span class="c1"># Print without get, which gives an error if passed a key that doesn&#39;t exist</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="p">[</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">]],</span> <span class="n">birthdayDays</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="n">birthdayYears</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Spot =  0
+Apr 6 1955
+Apr 6 1955
+
+#-# Spot =  1
+Feb 12 1983
+Feb 12 1983
+
+#-# Spot =  2
+Nov 24 1999
+Nov 24 1999
+
+#-# Spot =  3
+Sep 23 2010
+Sep 23 2010
+
+#-# Spot =  4
+oooooops! 15 2015
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-29-b2157a63f782&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span><span class="s2">&quot;oooooops!&quot;</span><span class="p">),</span> <span class="n">birthdayDays</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="n">birthdayYears</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="c1"># Print without get, which gives an error if passed a key that doesn&#39;t exist</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="p">[</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">]],</span> <span class="n">birthdayDays</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="n">birthdayYears</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="ne">KeyError</span>: 15
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can build the same sort of code with if, elif, and else statements, but it takes a lot more coding.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">spot</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">birthdayDays</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Jan&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Feb&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Mar&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Apr&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;May&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Jun&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span><span class="s1">&#39;July&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Aug&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Sep&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Oct&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Nov&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;Dec&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mon</span> <span class="o">=</span> <span class="s1">&#39;oooooops!&#39;</span>
+        
+    <span class="c1"># Print statements</span>
+    <span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Spot = &quot;</span><span class="p">,</span> <span class="n">spot</span> <span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span> <span class="n">mon</span><span class="p">,</span> <span class="n">birthdayDays</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="n">birthdayYears</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Spot =  0
+Apr 6 1955
+
+#-# Spot =  1
+Feb 12 1983
+
+#-# Spot =  2
+Nov 24 1999
+
+#-# Spot =  3
+Sep 23 2010
+
+#-# Spot =  4
+oooooops! 15 2015
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll note that the first term, April, needs to check itself 4 times before returning an answer, versus the one operation using the key with the dictionary</p>
+</div>
+</div>
+<div class="section" id="check-yourself">
+<h2>Check yourself<a class="headerlink" href="#check-yourself" title="Permalink to this headline">¶</a></h2>
+<p>Try to fill in code to fulfill the request!  Here is a variable used in the excercises</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aListOfNumbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write a function that returns the length of aListOfNumbers as well as the maximum value. Hint: max() is a built in function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a for loop to add up all of the numbers in aListOfNumbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a while loop to find the first number in aListOfNumbers that is both greater than 5 and a multiple of 4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Count the number of values in aListOfNumbers that are:</p>
+<ul class="simple">
+<li><p>even</p></li>
+<li><p>odd and divisible by three</p></li>
+<li><p>odd and not divisible by three</p></li>
+</ul>
+<p>using if, elif and else.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a dictionary with keys 1-8 corresponding to the words one, two, three, etc. Loop through aListofNumbers to print out the word corresponding to the digit and provide a default value of ‘Not Found’ if the key is not contained within the dictionary.  You should get: six three four five seven eight Not Found</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "dudaspm/JupyterLab-Python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Comparisons.html" title="previous page">Comparison Operators</a>
+    <a class='right-next' id="next-link" href="Shopping%20List.html" title="next page">Let’s create a shopping list!</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Patrick M. Dudas<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
