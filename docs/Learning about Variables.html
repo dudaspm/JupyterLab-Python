@@ -49,6 +49,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Comparison Operators" href="Comparisons.html" />
@@ -268,63 +270,75 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integers">
-   Integers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#floats">
-   Floats
+  <a class="reference internal nav-link" href="#type-of-variables">
+   Type of Variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mixing-integers-and-floats">
-     Mixing integers and floats
+    <a class="reference internal nav-link" href="#camel-case">
+     Camel Case
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#type-cast">
-     type-cast
+    <a class="reference internal nav-link" href="#integers-or-int">
+     Integers or int
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floats">
+     Floats
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mixing-integers-and-floats">
+       Mixing integers and floats
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#type-cast">
+       type-cast
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings">
+     Strings
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-indexing-string-slicing">
+       String Indexing/String Slicing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-functions">
+       String functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#concatenating-strings">
+       Concatenating Strings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#booleans">
+     Booleans
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists">
+     Lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionary">
+     Dictionary
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings">
-   Strings
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string-indexing-string-slicing">
-     String Indexing/String Slicing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string-functions">
-     String functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#concatenating-strings">
-     Concatenating Strings
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#booleans">
-   Booleans
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lists">
-   Lists
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dictionary">
-   Dictionary
-  </a>
  </li>
 </ul>
 
@@ -339,20 +353,125 @@
                 
   <div class="section" id="what-is-a-variable">
 <h1>What is a variable?<a class="headerlink" href="#what-is-a-variable" title="Permalink to this headline">¶</a></h1>
-<p>Variables are used to store values</p>
-<p>In Python, we do not need to declare what type of variable is being used. Python does this for us!</p>
-<div class="section" id="integers">
-<h2>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h2>
+<p>When we are developing our idea, we sometime need to use values multiple times or change the value based on our code. This is where variables become very helpful. Let’s look at an example.</p>
+<p>In this example, we are adding a few numbers togethers. In this instance, if all we care about is getting the result (similar to a calculator). Then variables are not needed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someInteger</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">16</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+</div>
+</div>
+<p>But let’s look an example where we need to get the circumference of a circle using multiple radii. The equation for the circumference of a circle is: <span class="math notranslate nohighlight">\(C = 2 \pi r\)</span></p>
+<p>Let’s say the radius is 5</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159265359</span> <span class="o">*</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.4159265359
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, how about radius 10 and 11 and 4 and …
+Well in this, we might not want to rewrite 3.14159265359 over and over. So, in this case, we want to create a variable for this and we will call it pi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265359</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, every time we reference the variable called <strong>pi</strong> it will refer to the number <strong>3.14159265359</strong></p>
+<p>Let’s try those radii again (10, 11, 4)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.8318530718
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span> <span class="n">someInteger</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mi">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>69.11503837898
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.13274122872
+</pre></div>
+</div>
+</div>
+</div>
+<p>By the way, if you happen to get an error:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">NameError</span><span class="o">:</span> <span class="nx">name</span> <span class="s1">&#39;pi&#39;</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
+</pre></div>
+</div>
+<p>Make sure you go to the cell that has</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265359</span>
+</pre></div>
+</div>
+<p>and run this cell <em>first</em> then try the other calculations.</p>
+<div class="section" id="type-of-variables">
+<h2>Type of Variables<a class="headerlink" href="#type-of-variables" title="Permalink to this headline">¶</a></h2>
+<p>There are multiple types of variables. The most common (and the ones we will talk about) are:</p>
+<ul class="simple">
+<li><p>Integers (whole numbers)</p></li>
+<li><p>Float (Floating points or numbers with a decimal)</p></li>
+<li><p>Text</p></li>
+<li><p>Lists</p></li>
+<li><p>Dictionaries</p></li>
+</ul>
+<p>The nice thing about Python is that we do <strong>not</strong> need to specify (or declare) which type we are using. Python will figure this out for us!</p>
+<p>BUT FIRST, a quick detour…</p>
+<p>We need to talk about Camel Casing.</p>
+<div class="section" id="camel-case">
+<h3>Camel Case<a class="headerlink" href="#camel-case" title="Permalink to this headline">¶</a></h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CamelCase_new.svg" alt="camel case" width="100" style="float:right"/>
+Variable names must be one continous string of letters/numbers. So, let's say we wanted to create a variable called "number of kittens." Instead calling this variable <em>number of kittens</em>, I would call it <em>numberOfKittens</em>. Why the capitalization? because it makes it easier to separate out the words in the name. As in, <em>numberofkittens</em> vs. <em>numberOfKittens</em>. We have a fun name for this: camel case. <p><cite>File:CamelCase new.svg. (2020, April 15). Wikimedia Commons, the free media repository. Retrieved 15:25, June 3, 2020 from <a class="reference external" href="https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&amp;oldid=411544943">https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&amp;oldid=411544943</a>.</cite></p>
+</div>
+<div class="section" id="integers-or-int">
+<h3>Integers or int<a class="headerlink" href="#integers-or-int" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned, integers are whole numbers. Let’s create an example. How about we use our numberOfKittens. We will then set this value to 0. As in, we have 0 kittens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numberOfKittens</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One thing we might want to do is to have Python tell us what <strong>type</strong> this variable is. Well Python has a function for this called</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span> <span class="n">numberOfKittens</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -362,108 +481,160 @@
 </div>
 </div>
 </div>
+<p>So this checks out, we made an int and it is showing us we have an int.</p>
+<p>Now, once we have a variable, it is not static. We can change the value as much as we need to. Running the next cell will continually add 10 to our original variable.</p>
+<p>Try running this a few times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someInteger</span> <span class="o">=</span> <span class="n">someInteger</span> <span class="o">+</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">someInteger</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numberOfKittens</span> <span class="o">=</span> <span class="n">numberOfKittens</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="n">numberOfKittens</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span> <span class="n">someInteger</span> <span class="p">),</span> <span class="n">someInteger</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt; 10
+<p><strong>or</strong><br />in more human-readable terms. <br />numberOfKittens (new value 10)  = numberOfKittens (originally 0) + 10<br />numberOfKittens is now 10<br /><strong>or</strong></p>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="floats">
-<h2>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h2>
+<h3>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h3>
 <p>Floats are similar to integers, but with more precision.
-Float comes from Floating point.</p>
+Float comes from Floating point or a number with a decimal point.</p>
+<p>This example starts at 0, but note that this is .0
+Adding the decimal tells Python that we should have a float value instead of an interger.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someFloat</span> <span class="o">=</span> <span class="mf">.0</span>
-<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span> <span class="n">someFloat</span> <span class="p">),</span> <span class="n">someFloat</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aFloatVariable</span> <span class="o">=</span> <span class="mf">.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s again, check the variable type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span> <span class="n">aFloatVariable</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt; 0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someFloat</span> <span class="o">=</span> <span class="n">someFloat</span> <span class="o">+</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span> <span class="n">someFloat</span> <span class="p">),</span> <span class="n">someFloat</span> <span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt; 10.0
-</pre></div>
-</div>
-</div>
-</div>
+<p>Looks good.</p>
+<p>And again, we will add 10 to this. There is something specific interesting here, see if you spot it.</p>
+<p>aFloatVariable = aFloatVariable + 10
+aFloatVariable</p>
+<p>If you guessed “mixing a float and interger,” you got it. Let’s see an example.</p>
 <div class="section" id="mixing-integers-and-floats">
-<h3>Mixing integers and floats<a class="headerlink" href="#mixing-integers-and-floats" title="Permalink to this headline">¶</a></h3>
+<h4>Mixing integers and floats<a class="headerlink" href="#mixing-integers-and-floats" title="Permalink to this headline">¶</a></h4>
+<p>In Python (3, more specifically), the variable will always take the form of the most precision. So, by default, a float.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">someInteger</span> <span class="o">+</span> <span class="n">someFloat</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">someInteger</span> <span class="o">+</span> <span class="mf">1.1</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">someInteger</span><span class="p">,</span> <span class="p">(</span><span class="n">someInteger</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
-<span class="c1"># Why does this happen?  Integer math can create floats!</span>
-<span class="c1"># This isn&#39;t the case in python 2.x: Integer / Integer = Integer</span>
-<span class="c1"># You can introduce a float to make the answer a float in python 2.x</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">someInteger</span><span class="p">,</span> <span class="p">(</span><span class="n">someInteger</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letsSeeWhatHappens</span> <span class="o">=</span> <span class="n">numberOfKittens</span> <span class="o">+</span> <span class="n">aFloatVariable</span>
+<span class="n">letsSeeWhatHappens</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
-11.1
-10 3.3333333333333335
-10 3.3333333333333335
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can force variables to be a certain type. We call this ‘type-cast’ and can be used to:</p>
+<ul class="simple">
+<li><p>make an integer into a float</p></li>
+<li><p>a float to an integer</p></li>
+<li><p>an integer to a string (we have not discussed this yet)</p></li>
+<li><p>a float to a string (we have not discussed this yet)</p></li>
+<li><p>etc…</p></li>
+</ul>
 </div>
 <div class="section" id="type-cast">
-<h3>type-cast<a class="headerlink" href="#type-cast" title="Permalink to this headline">¶</a></h3>
+<h4>type-cast<a class="headerlink" href="#type-cast" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>type-cast is temporary. If you do not use a type-cast, the variable will revert back to its original variable type.</p>
+</div>
+<p>Let’s switch our numberOfKittens to a float using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and turn our aFloatVariable to an integer using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">someInteger</span><span class="p">,</span> <span class="n">someFloat</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="nb">float</span><span class="p">(</span> <span class="n">someInteger</span> <span class="p">),</span> <span class="nb">int</span><span class="p">(</span> <span class="n">someFloat</span> <span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">someInteger</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span> <span class="n">someInteger</span> <span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">numberOfKittens</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 10.0
-10.0 10
-10 3.3333333333333335
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">aFloatVariable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Common Question</p>
+<p>What happens when you convert a float like .5 to an integer? Does it round up or down?</p>
+</div>
+<p>Well let’s see what happens.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;for value&quot;</span><span class="p">,</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;we will get&quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for value 0.0 we will get 0
+for value 0.1 we will get 0
+for value 0.2 we will get 0
+for value 0.3 we will get 0
+for value 0.4 we will get 0
+for value 0.5 we will get 0
+for value 0.6 we will get 0
+for value 0.7 we will get 0
+for value 0.8 we will get 0
+for value 0.9 we will get 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, in conclusion. It will always round down.</p>
 </div>
 </div>
 <div class="section" id="strings">
-<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
 <p>Strings are sequence of letters, numbers, and special characters</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -498,7 +669,7 @@ Float comes from Floating point.</p>
 </div>
 </div>
 <div class="section" id="string-indexing-string-slicing">
-<h3>String Indexing/String Slicing<a class="headerlink" href="#string-indexing-string-slicing" title="Permalink to this headline">¶</a></h3>
+<h4>String Indexing/String Slicing<a class="headerlink" href="#string-indexing-string-slicing" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
@@ -549,7 +720,7 @@ Float comes from Floating point.</p>
 </div>
 </div>
 <div class="section" id="string-functions">
-<h3>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h3>
+<h4>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">################</span>
@@ -591,7 +762,7 @@ Hello
 </div>
 </div>
 <div class="section" id="concatenating-strings">
-<h3>Concatenating Strings<a class="headerlink" href="#concatenating-strings" title="Permalink to this headline">¶</a></h3>
+<h4>Concatenating Strings<a class="headerlink" href="#concatenating-strings" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">courseName</span> <span class="o">=</span> <span class="s2">&quot;bio&quot;</span>
@@ -647,7 +818,7 @@ I am currently sitting in bio101
 </div>
 </div>
 <div class="section" id="booleans">
-<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h2>
+<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h3>
 <p>Booleans are used to do comparisions (true/false), (1/0), (yes/no)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,7 +867,7 @@ if (1):
 print “yes for 1!”</p>
 </div>
 <div class="section" id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
 <p>Lists (or also known as Arrays) are exactly that. A list of data. Exmaple:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -746,7 +917,7 @@ banana
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="mi">0</span><span class="n">a77fb05d512</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">0</span><span class="n">a77fb05d512</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
@@ -759,7 +930,7 @@ banana
 <p>To do this more efficiently, we will be using loops (for and while, we will talk about later).</p>
 </div>
 <div class="section" id="dictionary">
-<h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
+<h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h3>
 <p>Dictionaries are used to index based on a specific key. As in:</p>
 <p>dictionary[“street adddress” (key)] = “123 Apple St.” (value)</p>
 <div class="cell docutils container">
@@ -775,6 +946,7 @@ banana
 </div>
 <p>Note the order.</p>
 <p>Again, to do this more efficiently, we will be using loops (for and while, we will talk about later).</p>
+</div>
 </div>
 </div>
 

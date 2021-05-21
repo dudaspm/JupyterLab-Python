@@ -3,97 +3,249 @@
 
 # # What is a variable?
 
-# Variables are used to store values
+# When we are developing our idea, we sometime need to use values multiple times or change the value based on our code. This is where variables become very helpful. Let's look at an example.
 # 
-# In Python, we do not need to declare what type of variable is being used. Python does this for us!
-
-# ### Integers
+# In this example, we are adding a few numbers togethers. In this instance, if all we care about is getting the result (similar to a calculator). Then variables are not needed. 
 
 # In[1]:
 
 
-someInteger = 0
+5 + 3 + 16
 
+
+# But let's look an example where we need to get the circumference of a circle using multiple radii. The equation for the circumference of a circle is: $C = 2 \pi r$
+
+# Let's say the radius is 5
 
 # In[2]:
 
 
-type( someInteger )
+2 * 3.14159265359 * 5
 
+
+# OK, how about radius 10 and 11 and 4 and ... 
+# Well in this, we might not want to rewrite 3.14159265359 over and over. So, in this case, we want to create a variable for this and we will call it pi. 
 
 # In[3]:
 
 
-someInteger = someInteger + 10
-print( someInteger )
+pi = 3.14159265359
 
+
+# Now, every time we reference the variable called **pi** it will refer to the number **3.14159265359**
+# 
+# Let's try those radii again (10, 11, 4)
 
 # In[4]:
 
 
-print( type( someInteger ), someInteger )
+2 * pi * 10
 
-
-# ### Floats
-
-# Floats are similar to integers, but with more precision.
-# Float comes from Floating point. 
 
 # In[5]:
 
 
-someFloat = .0
-print( type( someFloat ), someFloat )
+2 * pi * 11
 
 
 # In[6]:
 
 
-someFloat = someFloat + 10
-print( type( someFloat ), someFloat ) 
+2 * pi * 4
 
 
-# #### Mixing integers and floats
+# By the way, if you happen to get an error:
+# ```javascript
+# NameError: name 'pi' is not defined
+# ```
+# Make sure you go to the cell that has
+# ```python
+# pi = 3.14159265359
+# ```
+# and run this cell *first* then try the other calculations. 
+
+# ## Type of Variables
+
+# There are multiple types of variables. The most common (and the ones we will talk about) are:
+# 
+# * Integers (whole numbers)
+# * Float (Floating points or numbers with a decimal)
+# * Text
+# * Lists
+# * Dictionaries
+# 
+# The nice thing about Python is that we do **not** need to specify (or declare) which type we are using. Python will figure this out for us! 
+# 
+# BUT FIRST, a quick detour...
+# 
+# We need to talk about Camel Casing.
+
+# ### Camel Case
+
+# <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CamelCase_new.svg" alt="camel case" width="100" style="float:right"/>
+# Variable names must be one continous string of letters/numbers. So, let's say we wanted to create a variable called "number of kittens." Instead calling this variable <em>number of kittens</em>, I would call it <em>numberOfKittens</em>. Why the capitalization? because it makes it easier to separate out the words in the name. As in, <em>numberofkittens</em> vs. <em>numberOfKittens</em>. We have a fun name for this: camel case. 
+
+# <cite>File:CamelCase new.svg. (2020, April 15). Wikimedia Commons, the free media repository. Retrieved 15:25, June 3, 2020 from https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&oldid=411544943.</cite>
+
+# ### Integers or int
+
+# As mentioned, integers are whole numbers. Let's create an example. How about we use our numberOfKittens. We will then set this value to 0. As in, we have 0 kittens.
 
 # In[7]:
 
 
-print( someInteger + someFloat )
-print( someInteger + 1.1 )
-print( someInteger, (someInteger/3) )
-# Why does this happen?  Integer math can create floats!
-# This isn't the case in python 2.x: Integer / Integer = Integer
-# You can introduce a float to make the answer a float in python 2.x
-print( someInteger, (someInteger/3.) )
+numberOfKittens = 0
 
 
-# #### type-cast
+# One thing we might want to do is to have Python tell us what **type** this variable is. Well Python has a function for this called
+# 
+# ```python
+# type()
+# ```
 
 # In[8]:
 
 
-print( someInteger, someFloat )
-print( float( someInteger ), int( someFloat ) )
-print( someInteger, (float( someInteger )/3) )
+type( numberOfKittens )
 
 
-# ### Strings
-
-# Strings are sequence of letters, numbers, and special characters 
+# So this checks out, we made an int and it is showing us we have an int.
+# 
+# Now, once we have a variable, it is not static. We can change the value as much as we need to. Running the next cell will continually add 10 to our original variable. 
+# 
+# Try running this a few times.
 
 # In[9]:
 
 
-helloStatement = "hello everyone!"
+numberOfKittens = numberOfKittens + 10
+numberOfKittens
 
 
 # In[10]:
 
 
-print( type( helloStatement ), helloStatement )
+from IPython.display import Markdown as md
+md(f"**or**<br />in more human-readable terms. <br />numberOfKittens (new value {numberOfKittens})  = numberOfKittens (originally {numberOfKittens-10}) + 10<br />numberOfKittens is now {numberOfKittens}<br />**or**")
 
 
 # In[11]:
+
+
+for i in range(numberOfKittens): print("🐈", end =" ")
+
+
+# ### Floats
+
+# Floats are similar to integers, but with more precision.
+# Float comes from Floating point or a number with a decimal point. 
+# 
+# This example starts at 0, but note that this is .0 
+# Adding the decimal tells Python that we should have a float value instead of an interger. 
+
+# In[12]:
+
+
+aFloatVariable = .0
+
+
+# Let's again, check the variable type. 
+
+# In[13]:
+
+
+type( aFloatVariable )
+
+
+# Looks good. 
+# 
+# And again, we will add 10 to this. There is something specific interesting here, see if you spot it.
+
+# aFloatVariable = aFloatVariable + 10
+# aFloatVariable
+
+# If you guessed "mixing a float and interger," you got it. Let's see an example. 
+
+# #### Mixing integers and floats
+
+# In Python (3, more specifically), the variable will always take the form of the most precision. So, by default, a float.
+
+# In[14]:
+
+
+letsSeeWhatHappens = numberOfKittens + aFloatVariable
+letsSeeWhatHappens
+
+
+# We can force variables to be a certain type. We call this 'type-cast' and can be used to:
+# 
+# * make an integer into a float
+# * a float to an integer
+# * an integer to a string (we have not discussed this yet)
+# * a float to a string (we have not discussed this yet)
+# * etc...
+
+# #### type-cast
+
+# ```{note}
+# type-cast is temporary. If you do not use a type-cast, the variable will revert back to its original variable type. 
+# ```
+
+# Let's switch our numberOfKittens to a float using 
+# ```python
+# float()
+# ```
+# 
+# and turn our aFloatVariable to an integer using
+# 
+# ```python
+# int()
+# ```
+
+# In[15]:
+
+
+float(numberOfKittens)
+
+
+# In[16]:
+
+
+int(aFloatVariable)
+
+
+# ```{admonition} Common Question
+# :class: tip
+# What happens when you convert a float like .5 to an integer? Does it round up or down?
+# ```
+
+# Well let's see what happens.
+
+# In[17]:
+
+
+for i in range(10): print("for value",i/10,"we will get",int(i/10))
+
+
+# So, in conclusion. It will always round down.
+
+# ### Strings
+
+# Strings are sequence of letters, numbers, and special characters 
+
+# In[18]:
+
+
+helloStatement = "hello everyone!"
+
+
+# In[19]:
+
+
+print( type( helloStatement ), helloStatement )
+
+
+# In[20]:
 
 
 singleCharacter = "a"
@@ -102,25 +254,25 @@ print( singleCharacter, type( singleCharacter ) )
 
 # #### String Indexing/String Slicing
 
-# In[12]:
+# In[21]:
 
 
 print( helloStatement[1] )
 
 
-# In[13]:
+# In[22]:
 
 
 print( helloStatement[0:5] )
 
 
-# In[14]:
+# In[23]:
 
 
 print( helloStatement[:5] )
 
 
-# In[15]:
+# In[24]:
 
 
 print( helloStatement[5:] )
@@ -128,7 +280,7 @@ print( helloStatement[5:] )
 
 # #### String functions
 
-# In[16]:
+# In[25]:
 
 
 ################
@@ -143,7 +295,7 @@ print( helloStatement.split(" ") )
 
 # What will this do?
 
-# In[17]:
+# In[26]:
 
 
 print( helloStatement.capitalize().lower() )
@@ -153,7 +305,7 @@ print( helloStatement[:5].capitalize() )
 
 # #### Concatenating Strings
 
-# In[18]:
+# In[27]:
 
 
 courseName = "bio"
@@ -164,7 +316,7 @@ print( "%s%s" % (courseName,courseNumber) )
 
 # Why I like to use %s
 
-# In[19]:
+# In[28]:
 
 
 variable1 = "variable1"
@@ -176,7 +328,7 @@ print( variable1 + "," + variable2 + "," + variable3 + "," + variable4 + "," + v
 print( "%s,%s,%s,%s,%s" % (variable1,variable2,variable3,variable4,variable5) )
 
 
-# In[20]:
+# In[29]:
 
 
 # let's concatenate the strings
@@ -189,21 +341,21 @@ print( "I am currently sitting in %s" % (courseNameNumber) )
 
 # Booleans are used to do comparisions (true/false), (1/0), (yes/no)
 
-# In[21]:
+# In[30]:
 
 
 someCondition = True
 type( someCondition )
 
 
-# In[22]:
+# In[31]:
 
 
 # Will come back to this in a second (==)
 (someCondition == False)
 
 
-# In[23]:
+# In[32]:
 
 
 if (False): 
@@ -221,14 +373,14 @@ if (True):
 
 # Lists (or also known as Arrays) are exactly that. A list of data. Exmaple:
 
-# In[24]:
+# In[33]:
 
 
 groceryList = ["apple", "banana", "eggs"]
 print( groceryList )
 
 
-# In[25]:
+# In[34]:
 
 
 # or another way
@@ -241,7 +393,7 @@ print( groceryList )
 
 # We can access each entry by using an index number (**remember starts at 0**)
 
-# In[26]:
+# In[35]:
 
 
 print( groceryList[2] )

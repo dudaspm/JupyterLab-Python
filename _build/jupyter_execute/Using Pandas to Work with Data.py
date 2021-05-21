@@ -5,7 +5,16 @@
 
 # Why are we using Pandas? 
 # 
-# Pandas actually has a few functions that are similar to D3 functions. So, we can learn two things at the same time. 
+# * Pandas us to quickly get our comma seperated value (csv) file. 
+# 
+# * Fill in missing values or NAs 
+# 
+# * Allow us the ability to preview the date (.head())
+# 
+# * Filter our data
+# 
+# 
+# 
 
 # In[1]:
 
