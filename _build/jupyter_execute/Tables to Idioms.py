@@ -6,12 +6,12 @@
 # ### Acknowledgement 
 # 
 # Slides created by and for:
-# <cite>Munzner, T. (2014). Visualization analysis and design. CRC press.</cite>
+# <cite>Munzner, T. (2014). Visualization analysis and design. CRC press.</cite> {cite}`munzner2014visualization`
 # 
 # Used by permission of the author. 
 # 
 # Image from:
-# <cite>Wickham, H. (2010). A layered grammar of graphics. Journal of Computational and Graphical Statistics, 19(1), 3-28.</cite>
+# <cite>Wickham, H. (2010). A layered grammar of graphics. Journal of Computational and Graphical Statistics, 19(1), 3-28.</cite> {cite}`wickham2010layered`
 
 # ### First the Data
 
