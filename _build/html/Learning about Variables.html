@@ -504,10 +504,7 @@ Variable names must be one continous string of letters/numbers. So, let's say we
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 
-</pre></div>
-</div>
-</div>
+<div class="output text_html">🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈</div></div>
 </div>
 </div>
 <div class="section" id="floats">
@@ -611,23 +608,15 @@ aFloatVariable</p>
 <p>Well let’s see what happens.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;for value&quot;</span><span class="p">,</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;we will get&quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">printList</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="n">printList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;for value </span><span class="si">%s</span><span class="s2"> we will get </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">)))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">md</span><span class="p">(</span><span class="s1">&#39;&lt;br /&gt;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">printList</span><span class="p">])))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for value 0.0 we will get 0
-for value 0.1 we will get 0
-for value 0.2 we will get 0
-for value 0.3 we will get 0
-for value 0.4 we will get 0
-for value 0.5 we will get 0
-for value 0.6 we will get 0
-for value 0.7 we will get 0
-for value 0.8 we will get 0
-for value 0.9 we will get 0
-</pre></div>
-</div>
+<p>for value 0.0 we will get 0<br />for value 0.1 we will get 0<br />for value 0.2 we will get 0<br />for value 0.3 we will get 0<br />for value 0.4 we will get 0<br />for value 0.5 we will get 0<br />for value 0.6 we will get 0<br />for value 0.7 we will get 0<br />for value 0.8 we will get 0<br />for value 0.9 we will get 0</p>
 </div>
 </div>
 <p>So, in conclusion. It will always round down.</p>

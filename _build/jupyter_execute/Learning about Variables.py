@@ -132,7 +132,12 @@ md(f"**or**<br />in more human-readable terms. <br />numberOfKittens (new value 
 # In[11]:
 
 
-for i in range(numberOfKittens): print("🐈", end =" ")
+from IPython.display import HTML as html
+listOfCats = []
+for i in range(numberOfKittens): 
+    listOfCats.append("🐈")
+   
+display(html(' '.join([str(elem) for elem in listOfCats])))
 
 
 # ### Floats
@@ -224,7 +229,10 @@ int(aFloatVariable)
 # In[17]:
 
 
-for i in range(10): print("for value",i/10,"we will get",int(i/10))
+printList = []
+for i in range(10): printList.append("for value %s we will get %s" % ((i/10),int(i/10)))
+
+display(md('<br />'.join([str(elem) for elem in printList])))
 
 
 # So, in conclusion. It will always round down.
