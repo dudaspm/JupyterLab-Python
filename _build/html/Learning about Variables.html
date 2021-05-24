@@ -285,8 +285,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#floats">
-     Floats
+    <a class="reference internal nav-link" href="#floating-points-or-floats">
+     Floating points or floats
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -302,8 +302,8 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strings">
-     Strings
+    <a class="reference internal nav-link" href="#string-or-str">
+     String or str
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -507,8 +507,8 @@ Variable names must be one continous string of letters/numbers. So, let's say we
 <div class="output text_html">🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈</div></div>
 </div>
 </div>
-<div class="section" id="floats">
-<h3>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="floating-points-or-floats">
+<h3>Floating points or floats<a class="headerlink" href="#floating-points-or-floats" title="Permalink to this headline">¶</a></h3>
 <p>Floats are similar to integers, but with more precision.
 Float comes from Floating point or a number with a decimal point.</p>
 <p>This example starts at 0, but note that this is .0
@@ -622,54 +622,88 @@ aFloatVariable</p>
 <p>So, in conclusion. It will always round down.</p>
 </div>
 </div>
-<div class="section" id="strings">
-<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
-<p>Strings are sequence of letters, numbers, and special characters</p>
+<div class="section" id="string-or-str">
+<h3>String or str<a class="headerlink" href="#string-or-str" title="Permalink to this headline">¶</a></h3>
+<p>So, up to this point, we started our conversation working with numbers. Well, what about the other things that are not numbers… like text? Well for text, we use something called a String or str.</p>
+<p>Strings allow us to capture a single character up to thousands of charcters (actually, much more than this). Let’s go through a tradition example of “Hello, World!” but with my slight spin to it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">helloStatement</span> <span class="o">=</span> <span class="s2">&quot;hello everyone!&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">helloStatement</span> <span class="o">=</span> <span class="s2">&quot;Hello, everyone!&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>As you can see, can capture text and other alphanumeric and special characters. There are several unique functions for strings but first, let’s double check and see what type we from our helloStatement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span> <span class="n">helloStatement</span> <span class="p">),</span> <span class="n">helloStatement</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span> <span class="n">helloStatement</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt; hello everyone!
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
 </pre></div>
 </div>
 </div>
+</div>
+<p>Not too suprising, we see this is type str or string.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For those coming from another programming language. Sometimes other programming languages will have a specific designation for a single character string or as it is called, a character. Python has a one-size fits-all label for text and that is string. Here, let me prove it.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">singleCharacter</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">singleCharacter</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span> <span class="n">singleCharacter</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span> <span class="n">singleCharacter</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a &lt;class &#39;str&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="string-indexing-string-slicing">
 <h4>String Indexing/String Slicing<a class="headerlink" href="#string-indexing-string-slicing" title="Permalink to this headline">¶</a></h4>
+<p>One of the first way to interact with our string is to take a lookg at individual characters by using their <strong>index</strong>.</p>
+<p>The <strong>index</strong> is position (or multiple positions) for each character in the string. So, if we look at our string, we have Hello, everyone! If we wanted to see the first letter <em>H</em>, we can reference this using the index or the position where the letter is in the string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">helloStatement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;e&#39;
 </pre></div>
 </div>
 </div>
+</div>
+<p>ohh.. wait a minute. We were expecting the letter <em>H</em> but we got <em>e</em>. What happened?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For indexes, we always start at the number 0. So, 0 is the first thing, 1 is the second thing, and so on.</p>
+</div>
+<p>Let’s try this again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">helloStatement</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;H&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>There we go!</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><label for="vol">Index value: </label><span id="output">0</span><br>
+<input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById('output').innerHTML=this.value"> 
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -678,7 +712,7 @@ aFloatVariable</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
 </pre></div>
 </div>
 </div>
@@ -690,7 +724,7 @@ aFloatVariable</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
 </pre></div>
 </div>
 </div>
@@ -702,7 +736,7 @@ aFloatVariable</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> everyone!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>, everyone!
 </pre></div>
 </div>
 </div>
@@ -724,11 +758,11 @@ aFloatVariable</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 -1
-Hello everyone!
-hello everyone!
-[&#39;hello&#39;, &#39;everyone!&#39;]
+Hello, everyone!
+hello, everyone!
+[&#39;Hello,&#39;, &#39;everyone!&#39;]
 </pre></div>
 </div>
 </div>
@@ -743,7 +777,7 @@ hello everyone!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello everyone!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, everyone!
 Hello
 </pre></div>
 </div>
@@ -906,7 +940,7 @@ banana
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">0</span><span class="n">a77fb05d512</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">0</span><span class="n">a77fb05d512</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span>

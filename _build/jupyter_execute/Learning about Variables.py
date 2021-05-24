@@ -140,7 +140,7 @@ for i in range(numberOfKittens):
 display(html(' '.join([str(elem) for elem in listOfCats])))
 
 
-# ### Floats
+# ### Floating points or floats
 
 # Floats are similar to integers, but with more precision.
 # Float comes from Floating point or a number with a decimal point. 
@@ -237,50 +237,86 @@ display(md('<br />'.join([str(elem) for elem in printList])))
 
 # So, in conclusion. It will always round down.
 
-# ### Strings
+# ### String or str
 
-# Strings are sequence of letters, numbers, and special characters 
+# So, up to this point, we started our conversation working with numbers. Well, what about the other things that are not numbers... like text? Well for text, we use something called a String or str. 
+# 
+# Strings allow us to capture a single character up to thousands of charcters (actually, much more than this). Let's go through a tradition example of "Hello, World!" but with my slight spin to it. 
 
 # In[18]:
 
 
-helloStatement = "hello everyone!"
+helloStatement = "Hello, everyone!"
 
+
+# As you can see, can capture text and other alphanumeric and special characters. There are several unique functions for strings but first, let's double check and see what type we from our helloStatement.
 
 # In[19]:
 
 
-print( type( helloStatement ), helloStatement )
+type( helloStatement )
 
+
+# Not too suprising, we see this is type str or string. 
+
+# ```{note}
+# For those coming from another programming language. Sometimes other programming languages will have a specific designation for a single character string or as it is called, a character. Python has a one-size fits-all label for text and that is string. Here, let me prove it. 
+# ```
 
 # In[20]:
 
 
 singleCharacter = "a"
-print( singleCharacter, type( singleCharacter ) )
+type( singleCharacter )
 
 
 # #### String Indexing/String Slicing
 
+# One of the first way to interact with our string is to take a lookg at individual characters by using their **index**.
+# 
+# The **index** is position (or multiple positions) for each character in the string. So, if we look at our string, we have Hello, everyone! If we wanted to see the first letter *H*, we can reference this using the index or the position where the letter is in the string. 
+
 # In[21]:
 
 
-print( helloStatement[1] )
+helloStatement[1] 
 
+
+# ohh.. wait a minute. We were expecting the letter *H* but we got *e*. What happened?
+
+# ```{note}
+# For indexes, we always start at the number 0. So, 0 is the first thing, 1 is the second thing, and so on.
+# ```
+
+# Let's try this again. 
 
 # In[22]:
+
+
+helloStatement[0]
+
+
+# There we go! 
+
+# In[23]:
+
+
+get_ipython().run_cell_magic('html', '', '<label for="vol">Index value: </label><span id="output">0</span><br>\n<input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById(\'output\').innerHTML=this.value"> ')
+
+
+# In[24]:
 
 
 print( helloStatement[0:5] )
 
 
-# In[23]:
+# In[25]:
 
 
 print( helloStatement[:5] )
 
 
-# In[24]:
+# In[26]:
 
 
 print( helloStatement[5:] )
@@ -288,7 +324,7 @@ print( helloStatement[5:] )
 
 # #### String functions
 
-# In[25]:
+# In[27]:
 
 
 ################
@@ -303,7 +339,7 @@ print( helloStatement.split(" ") )
 
 # What will this do?
 
-# In[26]:
+# In[28]:
 
 
 print( helloStatement.capitalize().lower() )
@@ -313,7 +349,7 @@ print( helloStatement[:5].capitalize() )
 
 # #### Concatenating Strings
 
-# In[27]:
+# In[29]:
 
 
 courseName = "bio"
@@ -324,7 +360,7 @@ print( "%s%s" % (courseName,courseNumber) )
 
 # Why I like to use %s
 
-# In[28]:
+# In[30]:
 
 
 variable1 = "variable1"
@@ -336,7 +372,7 @@ print( variable1 + "," + variable2 + "," + variable3 + "," + variable4 + "," + v
 print( "%s,%s,%s,%s,%s" % (variable1,variable2,variable3,variable4,variable5) )
 
 
-# In[29]:
+# In[31]:
 
 
 # let's concatenate the strings
@@ -349,21 +385,21 @@ print( "I am currently sitting in %s" % (courseNameNumber) )
 
 # Booleans are used to do comparisions (true/false), (1/0), (yes/no)
 
-# In[30]:
+# In[32]:
 
 
 someCondition = True
 type( someCondition )
 
 
-# In[31]:
+# In[33]:
 
 
 # Will come back to this in a second (==)
 (someCondition == False)
 
 
-# In[32]:
+# In[34]:
 
 
 if (False): 
@@ -381,14 +417,14 @@ if (True):
 
 # Lists (or also known as Arrays) are exactly that. A list of data. Exmaple:
 
-# In[33]:
+# In[35]:
 
 
 groceryList = ["apple", "banana", "eggs"]
 print( groceryList )
 
 
-# In[34]:
+# In[36]:
 
 
 # or another way
@@ -401,7 +437,7 @@ print( groceryList )
 
 # We can access each entry by using an index number (**remember starts at 0**)
 
-# In[35]:
+# In[37]:
 
 
 print( groceryList[2] )
