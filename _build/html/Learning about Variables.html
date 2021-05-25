@@ -699,10 +699,12 @@ aFloatVariable</p>
 </div>
 </div>
 <p>There we go!</p>
+<p>Visually, this is how the string looks to Python.</p>
+<p><img alt="Hello, everyone! text" src="_images/helloEveryone.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><label for="vol">Index value: </label><span id="output">0</span><br>
-<input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById('output').innerHTML=this.value"> 
+<div class="output text_html"><label for="vol">Index value:&nbsp;</label><span id="letterindex">0</span><br><input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById('letterImages').src='https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l'+(this.value)+'.PNG'; document.getElementById('letterindex').innerHTML=this.value;"><br><img id="letterImages" alt="Individual letters in Hello, everyone!" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l0.PNG" style="width:50px">
+
 </div></div>
 </div>
 <div class="cell docutils container">

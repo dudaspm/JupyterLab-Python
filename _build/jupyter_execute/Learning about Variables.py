@@ -298,10 +298,14 @@ helloStatement[0]
 
 # There we go! 
 
+# Visually, this is how the string looks to Python. 
+# 
+# ![Hello, everyone! text](helloEveryone.png)
+
 # In[23]:
 
 
-get_ipython().run_cell_magic('html', '', '<label for="vol">Index value: </label><span id="output">0</span><br>\n<input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById(\'output\').innerHTML=this.value"> ')
+get_ipython().run_cell_magic('html', '--isolated', '<label for="vol">Index value:&nbsp;</label><span id="letterindex">0</span><br><input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById(\'letterImages\').src=\'https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l\'+(this.value)+\'.PNG\'; document.getElementById(\'letterindex\').innerHTML=this.value;"><br><img id="letterImages" alt="Individual letters in Hello, everyone!" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l0.PNG" style="width:50px">\n')
 
 
 # In[24]:
