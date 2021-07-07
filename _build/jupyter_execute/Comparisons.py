@@ -16,16 +16,25 @@
 
 # ## Are these things the same?
 
-# We have already initiated variables by setting something equal to something else - let's do that here by setting aVar equal to 10 and then setting bVar equal to aVar.
+# ### Numeric Comparisons
+# We have already initiated variables by setting something equal to something else - let's do that here by setting kitten 🐈 equal to 10 and then setting dog 🐕 equal to kitten 🐈. Finally, 🐝 bee will be equal to 11. 
+# 
+# So...
+# 
+# 🐈 = 10
+# 
+# 🐕 = 🐈
+# 
+# 🐝 = 11
 
 # In[1]:
 
 
-aVar = 10
-bVar = aVar
-cVar = 11 
+kitten = 10
+dog = kitten
+bee = 11 
 
-print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
+print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 
 # The first comparison operator is '==' which tests to see if two variables are equal. 
@@ -33,89 +42,99 @@ print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
 # In[2]:
 
 
-print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
+print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
-# Is aVar equal to bVar?
-print( "\n#-# Is aVar equal to bVar?")
-print( aVar == bVar )
+print( "Is kitten equal to dog?")
+print( kitten == dog )
 
-# Is aVar equal to cVar?
-print( "\n#-# Is aVar equal to cVar?")
-print( aVar == cVar )
+print( "Is kitten equal to bee?")
+print( kitten == bee )
 
 
-# This tells us that aVar is equal to bVar, because it returns 'True' and aVar is not equal to cVar, as that returns 'False.'
+# This tells us that kitten is equal to dog, because it returns *True* and kitten is not equal to bee, as that returns *False*.
 
-# We can also do comparisons with other variable types.  Here's an example with strings instead of integers
+# ### Character Comparisons
+# We can also do comparisons with other variable types.  Here's an example with strings instead of integers.
+# 
+# Let's think about some foods, how about:
+# 
+# - food1 = 🍎
+# - food2 = 🍪
+# - food3 = 🍎
 
 # In[3]:
 
 
-aStr = 'apple'
-bStr = 'banana'
-cStr = 'apple' 
-print( "aStr=", aStr,"; bStr =", bStr,"; cStr = ", cStr )
+food1 = 'apple'
+food2 = 'cookie'
+food3 = 'apple' 
+print( "food1=", food1,"; food2 =", food2,"; food3 = ", food3 )
 
-# Is aStr equal to bStr?
-print( "\n#-# Is aStr equal to bStr?")
-print( aStr == bStr )
+print( "Is food1 equal to food2?")
+print( food1 == food2 )
 
-# Is aStr equal to cStr?
-print( "\n#-# Is aStr equal to cStr?")
-print( aStr == cStr )
+print( "Is food1 equal to food3?")
+print( food1 == food3 )
 
 
 # ## Are these things different?
 
+# ### Logical... NOT!
 # We can also test to see if two values are not equal using the '!=' operator.
 
 # In[4]:
 
 
-print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
+print( "food1=", food1,"; food2 =", food2,"; food3 = ", food3 )
 
-# Is aVar not equal to bVar?
-print( "\n#-# Is aVar not equal to bVar?")
-print( aVar != bVar )
+print( "Is food1 not equal to food2?")
+print( food1 != food2 )
 
-# Is aVar not equal to cVar?
-print( "\n#-# Is aVar not equal to cVar?")
-print( aVar != cVar )
+print( "Is food1 not equal to food3?")
+print( food1 != food3 )
 
 
-# This gives us the opposite of what we had before.  It is false that aVar and bVar are not equal, meaning that they are equal.  It is true that aVar and cVar are not equal.
+# This gives us the opposite of what we had before.  
+# 
+# So, what did we learn?
+# 
+# 🍎 == 🍎 = *True*
+# 
+# 🍎 != 🍪 = *True*
 
 # ## How do these things compare?
 
+# ### Math Comparisons 101
 # We can also compare the magnitude of values using '<', '<=', '>'and '>=', which will return 'True' if the condition is being met.
 
 # In[5]:
 
 
-print( "aVar=", aVar, "; bVar =", bVar )
+print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
-# Is aVar less than bVar?
-print( "\n#-# Is aVar less than bVar?")
-print( aVar < bVar )
-
-# Is aVar less than or equal to bVar?
-print( "\n#-# Is aVar less than or equal to bVar?")
-print( aVar <= bVar )
-
-# Is aVar greater than or equal to bVar?
-print( "\n#-# Is aVar greater than or equal to bVar?")
-print( aVar >= bVar )
-
-# Is aVar greater than bVar?
-print( "\n#-# Is aVar greater than bVar?")
-print( aVar > bVar )
-
-
-# ## Warnings for variable types
-
-# We do have to watch out for our types. A string of a value is not the same as a value
 
 # In[6]:
+
+
+print( "Is kitten less than dog?")
+print( kitten < dog )
+
+print( "Is kitten less than or equal to dog?")
+print( kitten <= dog )
+
+print( "Is kitten greater than or equal to dog?")
+print( kitten >= dog )
+
+print( "Is kitten greater than dog?")
+print( kitten > dog )
+
+
+# ```{warning}
+# We do have to watch out for our types. Characters and numerics are **NOT** the same.
+# ```
+# 
+
+# In[7]:
 
 
 aStr = '10'
@@ -135,6 +154,40 @@ print( aVar == aFlt)
 # We can compare integers and floats (!) but not other disparate data types.
 # 
 # If you let python take care of your data-types, be warned that they could be different from what you think they are!
+
+# ## Toy (Car) Problem
+# 
+# To start thinking of these concepts from a logical perspective, let's create a toy (car) problem. Here are a bunch of either toy cars with various colors and costs.  Here is how they labeled.
+# 
+# auto:
+# - car
+# - truck
+# 
+# color:
+# - red
+# - blue
+# - yellow
+# - white
+# - black
+# 
+# cost:
+# - 1 <= cost <= 5
+
+# In[7]:
+
+
+from IPython.display import  HTML
+
+def load_d3_in_cell_output():
+  display(HTML("<script src='https://d3js.org/d3.v6.min.js'></script>"))
+get_ipython().events.register('pre_run_cell', load_d3_in_cell_output)
+
+
+# In[159]:
+
+
+get_ipython().run_cell_magic('html', '', '<div id="pick1"></div>\n<label for="query">Python:</label>\n<input type="text" id="query" name="query" autocomplete="off" value=\'auto == "car"\'\'>\n<input type="button" value="search" onclick="queryData(document.getElementById(\'query\').value)">\n<script>\n    var svg, data; \n    function createAutos() {\n        var width = 600\n        var height = 400\n        var col = 6\n        var row = 4\n        svg = d3.select("div#pick1").append("svg")\n            .attr("width", width)\n            .attr("height", height)\n        var autos = ["car","truck"]\n        var colors = ["red", "blue", "yellow", "white", "black"]\n        var shapes = []\n        shapes.push([[0,.4],[0,.6],[.25,.8],[.75,.8],[1,.6],[1,.4]])\n        shapes.push([[0,.4],[0,.7],[.6,.7],[.6,.9],[.8,.9],[1,.7],[1,.4]])\n        data = d3.range(col*row).map((d,i)=> {  \n            a = Math.floor(Math.random() * autos.length)\n            return ({"auto":autos[a],\n            "shape":shapes[a],\n            "color":colors[Math.floor(Math.random() * colors.length)],\n            "cost":+Math.ceil(Math.random() * 5),\n            "id":"auto_"+i})\n            })\n        \n        var xScale = d3.scaleLinear().range([5,(width/col)-5]).domain([0,1])\n        var yScale = d3.scaleLinear().range([(height/row)-10, 10]).domain([0,1])\n        var line = d3.line()\n            .x((d,i)=> xScale(d[0])) \n            .y((d,i)=> yScale(d[1])) \n            .curve(d3.curveLinearClosed)\n        var g = svg.selectAll("g").data(data)\n            .join("g")\n            .attr("transform", (d,i) => { \n                return "translate(" + ((width/col)*Math.floor(i/row)) +","+ ((height/row)*(i%row)) +")"\n            })\n\n        g.selectAll("path")\n            .data(d=>[d])\n            .join("path")\n            .attr("id",d=>d.id)\n            .attr("d", d => line(d.shape))\n            .style("stroke", "black")\n            .style("stroke-width", 3) \n            .style("fill", d => d.color)\n\n        g.selectAll("circle#tire1").data(d=>[d]).join("circle")\n            .attr("id","tire1")\n            .attr("cx", xScale(.2))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))  \n        \n        g.selectAll("circle#tire2").data(d=>[d]).join("circle")\n            .attr("id","tire2")\n            .attr("cx", xScale(.8))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))    \n        \n        g.selectAll("text#cost").data(d=>[d]).join("text")\n            .attr("id","cost")\n            .attr("x", (width/col)/2)\n            .attr("y", 10)\n            .style("text-anchor","middle")\n            .text(d=> "$"+d.cost+"-"+d.color)\n        \n    }\n    function queryData(x) {\n        x = x.replaceAll("\\"","")\n        x = x.replaceAll(" ","")\n        if (x.includes("==")) selected = data.filter(d=>d[x.split("==")[0]] == x.split("==")[1]).map(d=>d.id)\n        else if (x.includes(">=")) selected = data.filter(d=>d[x.split(">=")[0]] >= x.split(">=")[1]).map(d=>d.id)\n        else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)\n        else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)\n        else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)\n        else selected = []\n        svg.selectAll("path")\n            .transition()\n            .delay((d,i) => i*50)\n            .style("opacity",d=> (selected.indexOf(d.id)+1) ? 1 : .2)\n    }\n    createAutos()\n</script>\n')
+
 
 # ## Multiple Comparisons
 
@@ -157,7 +210,7 @@ print( aVar == aFlt)
 
 # The and operator will return True if all of the conditions are met
 
-# In[7]:
+# In[16]:
 
 
 print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
@@ -185,7 +238,7 @@ print( (aVar == 10) and (aVar == cVar) )
 
 # We can also string as many comparisons together as we want
 
-# In[8]:
+# In[17]:
 
 
 print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (1 < 8) )
@@ -195,7 +248,7 @@ print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (
 
 # If we want 'True' for either of the conditions to be met, we can use the 'or' operator.
 
-# In[9]:
+# In[18]:
 
 
 print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
@@ -233,7 +286,7 @@ print( (aVar == 11) or (aVar == cVar) )
 
 # We can add a not to change the meaning of the and/or operators
 
-# In[10]:
+# In[19]:
 
 
 print( "aVar=", aVar, "; bVar =", bVar )
@@ -260,7 +313,7 @@ print( (aVar == 10) and not (aVar == bVar) )
 
 # Try to fill in code to fulfill the request!  Here are some variables used in the excercise
 
-# In[11]:
+# In[20]:
 
 
 dogA_color='brown'
@@ -278,7 +331,7 @@ dogB_name='lady'
 
 # Is dogA the same color as dogB? (False)
 
-# In[12]:
+# In[51]:
 
 
 # Example:
@@ -287,7 +340,7 @@ print( dogA_color == dogB_color )
 
 # Does dogA have the same name as dogB? (False)
 
-# In[13]:
+# In[52]:
 
 
 # Try it out here:
@@ -295,7 +348,7 @@ print( dogA_color == dogB_color )
 
 # Is dogA older than dogB? (True)
 
-# In[14]:
+# In[53]:
 
 
 # Try it out here:
@@ -303,7 +356,7 @@ print( dogA_color == dogB_color )
 
 # Is dogA the same gender as dogB? (False)
 
-# In[15]:
+# In[54]:
 
 
 # Try it out here:
@@ -311,7 +364,7 @@ print( dogA_color == dogB_color )
 
 # Is dogA heavier than dogB and have a different name than dogB? (True)
 
-# In[16]:
+# In[55]:
 
 
 # Try it out here:
@@ -319,7 +372,7 @@ print( dogA_color == dogB_color )
 
 # Does dogA have a different age than dogB and not a different gender than dogB? (False)
 
-# In[17]:
+# In[58]:
 
 
 # Try it out here:
