@@ -89,6 +89,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Getting Starting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebook%20Introduction.html">
+   Notebook Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Jupyter Lab
  </span>
 </p>
@@ -278,8 +290,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logical-not">
-     Logical… NOT!
+    <a class="reference internal nav-link" href="#this-is-logical-not">
+     This is Logical… NOT!
     </a>
    </li>
   </ul>
@@ -441,12 +453,12 @@ True
 </div>
 <div class="section" id="are-these-things-different">
 <h2>Are these things different?<a class="headerlink" href="#are-these-things-different" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="logical-not">
-<h3>Logical… NOT!<a class="headerlink" href="#logical-not" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="this-is-logical-not">
+<h3>This is Logical… NOT!<a class="headerlink" href="#this-is-logical-not" title="Permalink to this headline">¶</a></h3>
 <p>We can also test to see if two values are not equal using the ‘!=’ operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;food1=&quot;</span><span class="p">,</span> <span class="n">food1</span><span class="p">,</span><span class="s2">&quot;; food2 =&quot;</span><span class="p">,</span> <span class="n">food2</span><span class="p">,</span><span class="s2">&quot;; food3 = &quot;</span><span class="p">,</span> <span class="n">food3</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;food1 =&quot;</span><span class="p">,</span> <span class="n">food1</span><span class="p">,</span><span class="s2">&quot;; food2 =&quot;</span><span class="p">,</span> <span class="n">food2</span><span class="p">,</span><span class="s2">&quot;; food3 =&quot;</span><span class="p">,</span> <span class="n">food3</span> <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Is food1 not equal to food2?&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">food1</span> <span class="o">!=</span> <span class="n">food2</span> <span class="p">)</span>
@@ -457,7 +469,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>food1= apple ; food2 = cookie ; food3 =  apple
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>food1 = apple ; food2 = cookie ; food3 = apple
 Is food1 not equal to food2?
 True
 Is food1 not equal to food3?
@@ -518,38 +530,25 @@ False
 </div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>We do have to watch out for our types. Characters and numerics are <strong>NOT</strong> the same.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We do have to watch out for our types. Characters and numerics are <strong>not</strong> the same.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aStr</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
-<span class="n">aFlt</span> <span class="o">=</span> <span class="mf">10.0</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; aStr =&quot;</span><span class="p">,</span> <span class="n">aStr</span><span class="p">,</span> <span class="s2">&quot;; aFlt =&quot;</span><span class="p">,</span> <span class="n">aFlt</span>  <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TheCharacters</span> <span class="o">=</span> <span class="s2">&quot;10&quot;</span>
+<span class="n">TheNumbers</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="c1"># Is aVar equal to aStr?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to aStr?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">aStr</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar type is &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span> <span class="n">aVar</span> <span class="p">),</span> <span class="s2">&quot;; and aStr type is &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span> <span class="n">aStr</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to aFlt?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to aFlt?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">aFlt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Is TheNumbers equal to TheCharacters?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">TheNumbers</span> <span class="o">==</span> <span class="n">TheCharacters</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;TheNumbers type is &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span> <span class="n">TheNumbers</span> <span class="p">),</span> <span class="s2">&quot;; and TheCharacters type is &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span> <span class="n">TheCharacters</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">d9e906cfebe7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">aStr</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">aFlt</span> <span class="o">=</span> <span class="mf">10.0</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; aStr =&quot;</span><span class="p">,</span> <span class="n">aStr</span><span class="p">,</span> <span class="s2">&quot;; aFlt =&quot;</span><span class="p">,</span> <span class="n">aFlt</span>  <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Is aVar equal to aStr?</span>
-
-<span class="ne">NameError</span>: name &#39;aVar&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Is TheNumbers equal to TheCharacters?
+False
+TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -659,6 +658,8 @@ False
         else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)
         else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)
         else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)
+        else if (x.includes("!=")) selected = data.filter(d=>d[x.split("!=")[0]] != x.split("!=")[1]).map(d=>d.id)
+        else if (x.includes("=")) selected = data.map(d=>d.id)
         else selected = []
         svg.selectAll("path")
             .transition()
@@ -669,6 +670,11 @@ False
 </script>
 
 </div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>varible = varible is <strong>not</strong> the same thing as variable == variable</p>
+<p>varible = varible will <strong>always</strong> return true</p>
 </div>
 </div>
 <div class="section" id="multiple-comparisons">
@@ -682,58 +688,53 @@ False
 <p>together.</p>
 <p>The individual testable (true/false) components need to be broken apart. For example,</p>
 <ul class="simple">
-<li><p>If the V CATA bus is coming around the corner, then I need to run towards the bus stop</p></li>
+<li><p>If the <em>V</em> CATA bus is coming around the corner, then I need to run towards the bus stop.</p></li>
 </ul>
 <p>requires several things for it to be true, and to require running.  We can break these things out with:</p>
 <ul class="simple">
-<li><p>If there is a vehicle coming around the corner AND that vehicle is a CATA bus AND that CATA bus is a V, then I need to run towards the bus stop</p></li>
+<li><p>If there is a vehicle coming around the corner <strong>AND</strong> that vehicle is a CATA bus <strong>AND</strong> that CATA bus is a V</p>
+<ul>
+<li><p>then I need to run towards the bus stop</p></li>
+</ul>
+</li>
 </ul>
 <p>We will only run towards the bus stop if all of the statements are true</p>
 <div class="section" id="and">
 <h3>AND<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
-<p>The and operator will return True if all of the conditions are met</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the <strong>and</strong> operator will return True if all of the conditions are met</p>
+</div>
+<p>Let’s create another scenario for this around clothes. For this let’s assume:</p>
+<p>face = 😎</p>
+<p>shirt = 👕</p>
+<p>pants = 👖</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span><span class="p">,</span> <span class="s2">&quot;; cVar = &quot;</span><span class="p">,</span> <span class="n">cVar</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">face</span> <span class="o">=</span> <span class="s2">&quot;sunglasses&quot;</span>
+<span class="n">shirt</span> <span class="o">=</span> <span class="s2">&quot;tshirt&quot;</span>
+<span class="n">pants</span> <span class="o">=</span> <span class="s2">&quot;jeans&quot;</span>
 
-<span class="c1"># Is aVar equal to 10?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">)</span>
-      
-<span class="c1"># Is aVar equal to bVar?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to bVar?&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;Am I wearing sunglasses and jeans?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">face</span> <span class="o">==</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">face</span> <span class="o">==</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="c1"># Is aVar equal to cVar?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to cVar?&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to 10 AND aVar equal to bVar?</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND aVar equal to bVar?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to 10 AND aVar equal to cVar?</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND aVar equal to cVar?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;Am I wearing sweater and jeans?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">shirt</span> <span class="o">==</span> <span class="s2">&quot;sweater&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">shirt</span> <span class="o">==</span> <span class="s2">&quot;sweater&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10 ; cVar =  11
-
-#-# Is aVar equal to 10?
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Am I wearing sunglasses and jeans?
 True
-
-#-# Is aVar equal to bVar?
 True
-
-#-# Is aVar equal to cVar?
+True
+Am I wearing sweater and jeans?
 False
-
-#-# Is aVar equal to 10 AND aVar equal to bVar?
 True
-
-#-# Is aVar equal to 10 AND aVar equal to cVar?
 False
 </pre></div>
 </div>
@@ -747,7 +748,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -755,64 +756,36 @@ False
 </div>
 <div class="section" id="or">
 <h3>OR<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
-<p>If we want ‘True’ for either of the conditions to be met, we can use the ‘or’ operator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the <strong>or</strong> operator will return True if at least <em>1</em> of the conditions is met</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span><span class="p">,</span> <span class="s2">&quot;; cVar = &quot;</span><span class="p">,</span> <span class="n">cVar</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;face =&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="s2">&quot;; shirt =&quot;</span><span class="p">,</span> <span class="n">shirt</span><span class="p">,</span> <span class="s2">&quot;; pants = &quot;</span><span class="p">,</span> <span class="n">pants</span> <span class="p">)</span>
 
-<span class="c1"># Is aVar equal to 10?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">)</span>
-      
-<span class="c1"># Is aVar equal to bVar?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to bVar?&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;Am I wearing sunglasses or jeans?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">face</span> <span class="o">==</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">face</span> <span class="o">==</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="c1"># Is aVar equal to cVar?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to cVar?&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to 10?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 11?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">11</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to 10 OR aVar equal to bVar?</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 OR aVar equal to bVar?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to 10 OR aVar equal to cVar?</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 or aVar equal to cVar?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to 11 OR aVar equal to cVar?</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 11 or aVar equal to cVar?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">11</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">cVar</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;Am I wearing sweater or jeans?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">shirt</span> <span class="o">==</span> <span class="s2">&quot;sweater&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">shirt</span> <span class="o">==</span> <span class="s2">&quot;sweater&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10 ; cVar =  11
-
-#-# Is aVar equal to 10?
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
+Am I wearing sunglasses or jeans?
 True
-
-#-# Is aVar equal to bVar?
 True
-
-#-# Is aVar equal to cVar?
+True
+Am I wearing sweater or jeans?
 False
-
-#-# Is aVar equal to 11?
-False
-
-#-# Is aVar equal to 10 OR aVar equal to bVar?
 True
-
-#-# Is aVar equal to 10 or aVar equal to cVar?
 True
-
-#-# Is aVar equal to 11 or aVar equal to cVar?
-False
 </pre></div>
 </div>
 </div>
@@ -820,47 +793,131 @@ False
 </div>
 <div class="section" id="not">
 <h3>Not<a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h3>
-<p>We can add a not to change the meaning of the and/or operators</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the <strong>not</strong> will reverse or switch the  meaning of the and/or operators</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;aVar=&quot;</span><span class="p">,</span> <span class="n">aVar</span><span class="p">,</span> <span class="s2">&quot;; bVar =&quot;</span><span class="p">,</span> <span class="n">bVar</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;face =&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="s2">&quot;; shirt =&quot;</span><span class="p">,</span> <span class="n">shirt</span><span class="p">,</span> <span class="s2">&quot;; pants = &quot;</span><span class="p">,</span> <span class="n">pants</span> <span class="p">)</span>
 
-<span class="c1"># Is aVar equal to 10?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">)</span>
-      
-<span class="c1"># Is aVar equal to bVar?</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to bVar?&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;Am I wearing sunglasses and not jeans?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">face</span> <span class="o">==</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">face</span> <span class="o">==</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> <span class="p">)</span>
 
-
-<span class="c1"># Is aVar equal to 10 AND aVar equal to bVar?</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND aVar equal to bVar?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Is aVar equal to 10 AND NOT aVar equal to bVar?</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Is aVar equal to 10 AND NOT aVar equal to bVar?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">aVar</span> <span class="o">==</span> <span class="n">bVar</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;Am I wearing jeans and not a sweater?&quot;</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">shirt</span> <span class="o">==</span> <span class="s2">&quot;sweater&quot;</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="ow">not</span> <span class="p">(</span><span class="n">shirt</span> <span class="o">==</span> <span class="s2">&quot;sweater&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pants</span> <span class="o">==</span> <span class="s2">&quot;jeans&quot;</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aVar= 10 ; bVar = 10
-
-#-# Is aVar equal to 10?
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
+Am I wearing sunglasses and not jeans?
 True
-
-#-# Is aVar equal to bVar?
-True
-
-#-# Is aVar equal to 10 AND aVar equal to bVar?
-True
-
-#-# Is aVar equal to 10 AND NOT aVar equal to bVar?
 False
+False
+Am I wearing jeans and not a sweater?
+True
+True
+True
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output text_html"><div id="pick2"></div>
+<label for="query">Python:</label>
+<input type="text" id="query" name="query" autocomplete="off" value='auto == "car"''>
+<input type="button" value="search" onclick="queryData(document.getElementById('query').value)">
+<script>
+    var svg, data; 
+    function createAutos() {
+        var width = 600
+        var height = 400
+        var col = 6
+        var row = 4
+        svg = d3.select("div#pick2").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+        var autos = ["car","truck"]
+        var colors = ["red", "blue", "yellow", "white", "black"]
+        var shapes = []
+        shapes.push([[0,.4],[0,.6],[.25,.8],[.75,.8],[1,.6],[1,.4]])
+        shapes.push([[0,.4],[0,.7],[.6,.7],[.6,.9],[.8,.9],[1,.7],[1,.4]])
+        data = d3.range(col*row).map((d,i)=> {  
+            a = Math.floor(Math.random() * autos.length)
+            return ({"auto":autos[a],
+            "shape":shapes[a],
+            "color":colors[Math.floor(Math.random() * colors.length)],
+            "cost":+Math.ceil(Math.random() * 5),
+            "id":"auto_"+i})
+            })
+
+        var xScale = d3.scaleLinear().range([5,(width/col)-5]).domain([0,1])
+        var yScale = d3.scaleLinear().range([(height/row)-10, 10]).domain([0,1])
+        var line = d3.line()
+            .x((d,i)=> xScale(d[0])) 
+            .y((d,i)=> yScale(d[1])) 
+            .curve(d3.curveLinearClosed)
+        var g = svg.selectAll("g").data(data)
+            .join("g")
+            .attr("transform", (d,i) => { 
+                return "translate(" + ((width/col)*Math.floor(i/row)) +","+ ((height/row)*(i%row)) +")"
+            })
+
+        g.selectAll("path")
+            .data(d=>[d])
+            .join("path")
+            .attr("id",d=>d.id)
+            .attr("d", d => line(d.shape))
+            .style("stroke", "black")
+            .style("stroke-width", 3) 
+            .style("fill", d => d.color)
+
+        g.selectAll("circle#tire1").data(d=>[d]).join("circle")
+            .attr("id","tire1")
+            .attr("cx", xScale(.2))
+            .attr("cy", yScale(.4))
+            .attr("r",width/(col*10))  
+
+        g.selectAll("circle#tire2").data(d=>[d]).join("circle")
+            .attr("id","tire2")
+            .attr("cx", xScale(.8))
+            .attr("cy", yScale(.4))
+            .attr("r",width/(col*10))    
+
+        g.selectAll("text#cost").data(d=>[d]).join("text")
+            .attr("id","cost")
+            .attr("x", (width/col)/2)
+            .attr("y", 10)
+            .style("text-anchor","middle")
+            .text(d=> "$"+d.cost+"-"+d.color)
+
+    }
+    function queryData(x) {
+        x = x.replaceAll("\"","")
+        x = x.replaceAll(" ","")
+        if (x.includes("==")) selected = data.filter(d=>d[x.split("==")[0]] == x.split("==")[1]).map(d=>d.id)
+        else if (x.includes(">=")) selected = data.filter(d=>d[x.split(">=")[0]] >= x.split(">=")[1]).map(d=>d.id)
+        else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)
+        else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)
+        else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)
+        else if (x.includes("!=")) selected = data.filter(d=>d[x.split("!=")[0]] != x.split("!=")[1]).map(d=>d.id)
+        else if (x.includes("=")) selected = data.map(d=>d.id)
+        else selected = []
+        svg.selectAll("path")
+            .transition()
+            .delay((d,i) => i*50)
+            .style("opacity",d=> (selected.indexOf(d.id)+1) ? 1 : .2)
+    }
+    createAutos()
+</script>
+
+</div></div>
 </div>
 </div>
 </div>
@@ -869,20 +926,22 @@ False
 <p>Try to fill in code to fulfill the request!  Here are some variables used in the excercise</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dogA_color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span>
-<span class="n">dogA_mass</span><span class="o">=</span><span class="mi">42</span>
-<span class="n">dogA_gender</span><span class="o">=</span><span class="s1">&#39;male&#39;</span>
-<span class="n">dogA_age</span><span class="o">=</span><span class="mi">5</span>
-<span class="n">dogA_name</span><span class="o">=</span><span class="s1">&#39;chip&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dogA_color</span> <span class="o">=</span> <span class="s1">&#39;brown&#39;</span>
+<span class="n">dogA_mass</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">dogA_sex</span> <span class="o">=</span> <span class="s1">&#39;male&#39;</span>
+<span class="n">dogA_age</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">dogA_name</span> <span class="o">=</span> <span class="s1">&#39;chip&#39;</span>
 
-<span class="n">dogB_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span>
-<span class="n">dogB_mass</span><span class="o">=</span><span class="mi">19</span>
-<span class="n">dogB_gender</span><span class="o">=</span><span class="s1">&#39;female&#39;</span>
-<span class="n">dogB_age</span><span class="o">=</span><span class="mi">2</span>
-<span class="n">dogB_name</span><span class="o">=</span><span class="s1">&#39;lady&#39;</span>
+<span class="n">dogB_color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span>
+<span class="n">dogB_mass</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="n">dogB_sex</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>
+<span class="n">dogB_age</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">dogB_name</span> <span class="o">=</span> <span class="s1">&#39;lady&#39;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Is dogA the same color as dogB? (False)</p>
 <div class="cell docutils container">
@@ -893,7 +952,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -905,6 +964,8 @@ False
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Is dogA older than dogB? (True)</p>
 <div class="cell docutils container">
@@ -913,14 +974,18 @@ False
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
-<p>Is dogA the same gender as dogB? (False)</p>
+<p>Is dogA the same sex as dogB? (False)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it out here:</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Is dogA heavier than dogB and have a different name than dogB? (True)</p>
 <div class="cell docutils container">
@@ -929,14 +994,18 @@ False
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
-<p>Does dogA have a different age than dogB and not a different gender than dogB? (False)</p>
+<p>Does dogA have a different age than dogB and not a different sex than dogB? (False)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it out here:</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 </div>
 </div>

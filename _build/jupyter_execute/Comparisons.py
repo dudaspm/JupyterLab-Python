@@ -79,13 +79,13 @@ print( food1 == food3 )
 
 # ## Are these things different?
 
-# ### Logical... NOT!
+# ### This is Logical... NOT!
 # We can also test to see if two values are not equal using the '!=' operator.
 
 # In[4]:
 
 
-print( "food1=", food1,"; food2 =", food2,"; food3 = ", food3 )
+print( "food1 =", food1,"; food2 =", food2,"; food3 =", food3 )
 
 print( "Is food1 not equal to food2?")
 print( food1 != food2 )
@@ -129,26 +129,20 @@ print( "Is kitten greater than dog?")
 print( kitten > dog )
 
 
-# ```{warning}
-# We do have to watch out for our types. Characters and numerics are **NOT** the same.
+# ```{note}
+# We do have to watch out for our types. Characters and numerics are **not** the same.
 # ```
 # 
 
 # In[7]:
 
 
-aStr = '10'
-aFlt = 10.0
-print( "aVar=", aVar, "; aStr =", aStr, "; aFlt =", aFlt  )
+TheCharacters = "10"
+TheNumbers = 10
 
-# Is aVar equal to aStr?
-print( "\n#-# Is aVar equal to aStr?")
-print( aVar == aStr )
-print( "aVar type is ", type( aVar ), "; and aStr type is ", type( aStr ) )
-
-# Is aVar equal to aFlt?
-print( "\n#-# Is aVar equal to aFlt?")
-print( aVar == aFlt)
+print( "Is TheNumbers equal to TheCharacters?")
+print( TheNumbers == TheCharacters )
+print( "TheNumbers type is ", type( TheNumbers ), "; and TheCharacters type is ", type( TheCharacters ) )
 
 
 # We can compare integers and floats (!) but not other disparate data types.
@@ -173,7 +167,7 @@ print( aVar == aFlt)
 # cost:
 # - 1 <= cost <= 5
 
-# In[7]:
+# In[8]:
 
 
 from IPython.display import  HTML
@@ -183,11 +177,17 @@ def load_d3_in_cell_output():
 get_ipython().events.register('pre_run_cell', load_d3_in_cell_output)
 
 
-# In[159]:
+# In[9]:
 
 
-get_ipython().run_cell_magic('html', '', '<div id="pick1"></div>\n<label for="query">Python:</label>\n<input type="text" id="query" name="query" autocomplete="off" value=\'auto == "car"\'\'>\n<input type="button" value="search" onclick="queryData(document.getElementById(\'query\').value)">\n<script>\n    var svg, data; \n    function createAutos() {\n        var width = 600\n        var height = 400\n        var col = 6\n        var row = 4\n        svg = d3.select("div#pick1").append("svg")\n            .attr("width", width)\n            .attr("height", height)\n        var autos = ["car","truck"]\n        var colors = ["red", "blue", "yellow", "white", "black"]\n        var shapes = []\n        shapes.push([[0,.4],[0,.6],[.25,.8],[.75,.8],[1,.6],[1,.4]])\n        shapes.push([[0,.4],[0,.7],[.6,.7],[.6,.9],[.8,.9],[1,.7],[1,.4]])\n        data = d3.range(col*row).map((d,i)=> {  \n            a = Math.floor(Math.random() * autos.length)\n            return ({"auto":autos[a],\n            "shape":shapes[a],\n            "color":colors[Math.floor(Math.random() * colors.length)],\n            "cost":+Math.ceil(Math.random() * 5),\n            "id":"auto_"+i})\n            })\n        \n        var xScale = d3.scaleLinear().range([5,(width/col)-5]).domain([0,1])\n        var yScale = d3.scaleLinear().range([(height/row)-10, 10]).domain([0,1])\n        var line = d3.line()\n            .x((d,i)=> xScale(d[0])) \n            .y((d,i)=> yScale(d[1])) \n            .curve(d3.curveLinearClosed)\n        var g = svg.selectAll("g").data(data)\n            .join("g")\n            .attr("transform", (d,i) => { \n                return "translate(" + ((width/col)*Math.floor(i/row)) +","+ ((height/row)*(i%row)) +")"\n            })\n\n        g.selectAll("path")\n            .data(d=>[d])\n            .join("path")\n            .attr("id",d=>d.id)\n            .attr("d", d => line(d.shape))\n            .style("stroke", "black")\n            .style("stroke-width", 3) \n            .style("fill", d => d.color)\n\n        g.selectAll("circle#tire1").data(d=>[d]).join("circle")\n            .attr("id","tire1")\n            .attr("cx", xScale(.2))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))  \n        \n        g.selectAll("circle#tire2").data(d=>[d]).join("circle")\n            .attr("id","tire2")\n            .attr("cx", xScale(.8))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))    \n        \n        g.selectAll("text#cost").data(d=>[d]).join("text")\n            .attr("id","cost")\n            .attr("x", (width/col)/2)\n            .attr("y", 10)\n            .style("text-anchor","middle")\n            .text(d=> "$"+d.cost+"-"+d.color)\n        \n    }\n    function queryData(x) {\n        x = x.replaceAll("\\"","")\n        x = x.replaceAll(" ","")\n        if (x.includes("==")) selected = data.filter(d=>d[x.split("==")[0]] == x.split("==")[1]).map(d=>d.id)\n        else if (x.includes(">=")) selected = data.filter(d=>d[x.split(">=")[0]] >= x.split(">=")[1]).map(d=>d.id)\n        else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)\n        else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)\n        else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)\n        else selected = []\n        svg.selectAll("path")\n            .transition()\n            .delay((d,i) => i*50)\n            .style("opacity",d=> (selected.indexOf(d.id)+1) ? 1 : .2)\n    }\n    createAutos()\n</script>\n')
+get_ipython().run_cell_magic('html', '', '<div id="pick1"></div>\n<label for="query">Python:</label>\n<input type="text" id="query" name="query" autocomplete="off" value=\'auto == "car"\'\'>\n<input type="button" value="search" onclick="queryData(document.getElementById(\'query\').value)">\n<script>\n    var svg, data; \n    function createAutos() {\n        var width = 600\n        var height = 400\n        var col = 6\n        var row = 4\n        svg = d3.select("div#pick1").append("svg")\n            .attr("width", width)\n            .attr("height", height)\n        var autos = ["car","truck"]\n        var colors = ["red", "blue", "yellow", "white", "black"]\n        var shapes = []\n        shapes.push([[0,.4],[0,.6],[.25,.8],[.75,.8],[1,.6],[1,.4]])\n        shapes.push([[0,.4],[0,.7],[.6,.7],[.6,.9],[.8,.9],[1,.7],[1,.4]])\n        data = d3.range(col*row).map((d,i)=> {  \n            a = Math.floor(Math.random() * autos.length)\n            return ({"auto":autos[a],\n            "shape":shapes[a],\n            "color":colors[Math.floor(Math.random() * colors.length)],\n            "cost":+Math.ceil(Math.random() * 5),\n            "id":"auto_"+i})\n            })\n        \n        var xScale = d3.scaleLinear().range([5,(width/col)-5]).domain([0,1])\n        var yScale = d3.scaleLinear().range([(height/row)-10, 10]).domain([0,1])\n        var line = d3.line()\n            .x((d,i)=> xScale(d[0])) \n            .y((d,i)=> yScale(d[1])) \n            .curve(d3.curveLinearClosed)\n        var g = svg.selectAll("g").data(data)\n            .join("g")\n            .attr("transform", (d,i) => { \n                return "translate(" + ((width/col)*Math.floor(i/row)) +","+ ((height/row)*(i%row)) +")"\n            })\n\n        g.selectAll("path")\n            .data(d=>[d])\n            .join("path")\n            .attr("id",d=>d.id)\n            .attr("d", d => line(d.shape))\n            .style("stroke", "black")\n            .style("stroke-width", 3) \n            .style("fill", d => d.color)\n\n        g.selectAll("circle#tire1").data(d=>[d]).join("circle")\n            .attr("id","tire1")\n            .attr("cx", xScale(.2))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))  \n        \n        g.selectAll("circle#tire2").data(d=>[d]).join("circle")\n            .attr("id","tire2")\n            .attr("cx", xScale(.8))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))    \n        \n        g.selectAll("text#cost").data(d=>[d]).join("text")\n            .attr("id","cost")\n            .attr("x", (width/col)/2)\n            .attr("y", 10)\n            .style("text-anchor","middle")\n            .text(d=> "$"+d.cost+"-"+d.color)\n        \n    }\n    function queryData(x) {\n        x = x.replaceAll("\\"","")\n        x = x.replaceAll(" ","")\n        if (x.includes("==")) selected = data.filter(d=>d[x.split("==")[0]] == x.split("==")[1]).map(d=>d.id)\n        else if (x.includes(">=")) selected = data.filter(d=>d[x.split(">=")[0]] >= x.split(">=")[1]).map(d=>d.id)\n        else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)\n        else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)\n        else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)\n        else if (x.includes("!=")) selected = data.filter(d=>d[x.split("!=")[0]] != x.split("!=")[1]).map(d=>d.id)\n        else if (x.includes("=")) selected = data.map(d=>d.id)\n        else selected = []\n        svg.selectAll("path")\n            .transition()\n            .delay((d,i) => i*50)\n            .style("opacity",d=> (selected.indexOf(d.id)+1) ? 1 : .2)\n    }\n    createAutos()\n</script>\n')
 
+
+# ```{note}
+# varible = varible is **not** the same thing as variable == variable
+# 
+# varible = varible will **always** return true
+# ```
 
 # ## Multiple Comparisons
 
@@ -199,46 +199,54 @@ get_ipython().run_cell_magic('html', '', '<div id="pick1"></div>\n<label for="qu
 # together. 
 # 
 # The individual testable (true/false) components need to be broken apart. For example,
-# * If the V CATA bus is coming around the corner, then I need to run towards the bus stop
+# * If the *V* CATA bus is coming around the corner, then I need to run towards the bus stop.
 # 
 # requires several things for it to be true, and to require running.  We can break these things out with:
-# * If there is a vehicle coming around the corner AND that vehicle is a CATA bus AND that CATA bus is a V, then I need to run towards the bus stop
+# * If there is a vehicle coming around the corner **AND** that vehicle is a CATA bus **AND** that CATA bus is a V 
+#     * then I need to run towards the bus stop
 # 
 # We will only run towards the bus stop if all of the statements are true
 
 # ### AND
 
-# The and operator will return True if all of the conditions are met
+# ```{note}
+# the **and** operator will return True if all of the conditions are met
+# ```
 
-# In[16]:
+# Let's create another scenario for this around clothes. For this let's assume:
+# 
+# face = 😎 
+# 
+# shirt = 👕
+# 
+# pants = 👖 
+# 
+# 
+# 
+# 
+# 
+
+# In[10]:
 
 
-print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
+face = "sunglasses"
+shirt = "tshirt"
+pants = "jeans"
 
-# Is aVar equal to 10?
-print( "\n#-# Is aVar equal to 10?")
-print( aVar == 10 )
-      
-# Is aVar equal to bVar?
-print( "\n#-# Is aVar equal to bVar?" )
-print( aVar == bVar )
+print ( "Am I wearing sunglasses and jeans?" )
+print (face == "sunglasses")
+print (pants == "jeans") 
+print( (face == "sunglasses") and (pants == "jeans") )
 
-# Is aVar equal to cVar?
-print( "\n#-# Is aVar equal to cVar?" )
-print( aVar == cVar )
-
-# Is aVar equal to 10 AND aVar equal to bVar?
-print ( "\n#-# Is aVar equal to 10 AND aVar equal to bVar?")
-print( (aVar == 10) and (aVar == bVar) )
-
-# Is aVar equal to 10 AND aVar equal to cVar?
-print ( "\n#-# Is aVar equal to 10 AND aVar equal to cVar?")
-print( (aVar == 10) and (aVar == cVar) )
+print ( "Am I wearing sweater and jeans?" )
+print (shirt == "sweater")
+print (pants == "jeans") 
+print( (shirt == "sweater") and (pants == "jeans") )
 
 
 # We can also string as many comparisons together as we want
 
-# In[17]:
+# In[11]:
 
 
 print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (1 < 8) )
@@ -246,92 +254,77 @@ print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (
 
 # ### OR
 
-# If we want 'True' for either of the conditions to be met, we can use the 'or' operator.
+# ```{note}
+# the **or** operator will return True if at least *1* of the conditions is met
+# ```
 
-# In[18]:
+# In[12]:
 
 
-print( "aVar=", aVar, "; bVar =", bVar, "; cVar = ", cVar )
+print( "face =", face, "; shirt =", shirt, "; pants = ", pants )
 
-# Is aVar equal to 10?
-print( "\n#-# Is aVar equal to 10?")
-print( aVar == 10 )
-      
-# Is aVar equal to bVar?
-print( "\n#-# Is aVar equal to bVar?" )
-print( aVar == bVar )
+print ( "Am I wearing sunglasses or jeans?" )
+print (face == "sunglasses")
+print (pants == "jeans") 
+print( (face == "sunglasses") or (pants == "jeans") )
 
-# Is aVar equal to cVar?
-print( "\n#-# Is aVar equal to cVar?" )
-print( aVar == cVar )
-
-# Is aVar equal to 10?
-print( "\n#-# Is aVar equal to 11?")
-print( aVar == 11 )
-
-# Is aVar equal to 10 OR aVar equal to bVar?
-print ( "\n#-# Is aVar equal to 10 OR aVar equal to bVar?")
-print( (aVar == 10) or (aVar == bVar) )
-
-# Is aVar equal to 10 OR aVar equal to cVar?
-print ( "\n#-# Is aVar equal to 10 or aVar equal to cVar?")
-print( (aVar == 10) or (aVar == cVar) )
-
-# Is aVar equal to 11 OR aVar equal to cVar?
-print ( "\n#-# Is aVar equal to 11 or aVar equal to cVar?")
-print( (aVar == 11) or (aVar == cVar) )
+print ( "Am I wearing sweater or jeans?" )
+print (shirt == "sweater")
+print (pants == "jeans") 
+print( (shirt == "sweater") or (pants == "jeans") )
 
 
 # ### Not
 
-# We can add a not to change the meaning of the and/or operators
+# ```{note}
+# the **not** will reverse or switch the  meaning of the and/or operators
+# ```
 
-# In[19]:
-
-
-print( "aVar=", aVar, "; bVar =", bVar )
-
-# Is aVar equal to 10?
-print( "\n#-# Is aVar equal to 10?")
-print( aVar == 10 )
-      
-# Is aVar equal to bVar?
-print( "\n#-# Is aVar equal to bVar?" )
-print( aVar == bVar )
+# In[13]:
 
 
-# Is aVar equal to 10 AND aVar equal to bVar?
-print ( "\n#-# Is aVar equal to 10 AND aVar equal to bVar?")
-print( (aVar == 10) and (aVar == bVar) )
+print( "face =", face, "; shirt =", shirt, "; pants = ", pants )
 
-# Is aVar equal to 10 AND NOT aVar equal to bVar?
-print ( "\n#-# Is aVar equal to 10 AND NOT aVar equal to bVar?")
-print( (aVar == 10) and not (aVar == bVar) )
+print ( "Am I wearing sunglasses and not jeans?" )
+print (face == "sunglasses")
+print (not (pants == "jeans"))
+print( (face == "sunglasses") and not (pants == "jeans") )
+
+print ( "Am I wearing jeans and not a sweater?" )
+print (not (shirt == "sweater"))
+print (pants == "jeans") 
+print( not (shirt == "sweater") and (pants == "jeans") )
+
+
+# In[14]:
+
+
+get_ipython().run_cell_magic('html', '', '<div id="pick2"></div>\n<label for="query">Python:</label>\n<input type="text" id="query" name="query" autocomplete="off" value=\'auto == "car"\'\'>\n<input type="button" value="search" onclick="queryData(document.getElementById(\'query\').value)">\n<script>\n    var svg, data; \n    function createAutos() {\n        var width = 600\n        var height = 400\n        var col = 6\n        var row = 4\n        svg = d3.select("div#pick2").append("svg")\n            .attr("width", width)\n            .attr("height", height)\n        var autos = ["car","truck"]\n        var colors = ["red", "blue", "yellow", "white", "black"]\n        var shapes = []\n        shapes.push([[0,.4],[0,.6],[.25,.8],[.75,.8],[1,.6],[1,.4]])\n        shapes.push([[0,.4],[0,.7],[.6,.7],[.6,.9],[.8,.9],[1,.7],[1,.4]])\n        data = d3.range(col*row).map((d,i)=> {  \n            a = Math.floor(Math.random() * autos.length)\n            return ({"auto":autos[a],\n            "shape":shapes[a],\n            "color":colors[Math.floor(Math.random() * colors.length)],\n            "cost":+Math.ceil(Math.random() * 5),\n            "id":"auto_"+i})\n            })\n        \n        var xScale = d3.scaleLinear().range([5,(width/col)-5]).domain([0,1])\n        var yScale = d3.scaleLinear().range([(height/row)-10, 10]).domain([0,1])\n        var line = d3.line()\n            .x((d,i)=> xScale(d[0])) \n            .y((d,i)=> yScale(d[1])) \n            .curve(d3.curveLinearClosed)\n        var g = svg.selectAll("g").data(data)\n            .join("g")\n            .attr("transform", (d,i) => { \n                return "translate(" + ((width/col)*Math.floor(i/row)) +","+ ((height/row)*(i%row)) +")"\n            })\n\n        g.selectAll("path")\n            .data(d=>[d])\n            .join("path")\n            .attr("id",d=>d.id)\n            .attr("d", d => line(d.shape))\n            .style("stroke", "black")\n            .style("stroke-width", 3) \n            .style("fill", d => d.color)\n\n        g.selectAll("circle#tire1").data(d=>[d]).join("circle")\n            .attr("id","tire1")\n            .attr("cx", xScale(.2))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))  \n        \n        g.selectAll("circle#tire2").data(d=>[d]).join("circle")\n            .attr("id","tire2")\n            .attr("cx", xScale(.8))\n            .attr("cy", yScale(.4))\n            .attr("r",width/(col*10))    \n        \n        g.selectAll("text#cost").data(d=>[d]).join("text")\n            .attr("id","cost")\n            .attr("x", (width/col)/2)\n            .attr("y", 10)\n            .style("text-anchor","middle")\n            .text(d=> "$"+d.cost+"-"+d.color)\n        \n    }\n    function queryData(x) {\n        x = x.replaceAll("\\"","")\n        x = x.replaceAll(" ","")\n        if (x.includes("==")) selected = data.filter(d=>d[x.split("==")[0]] == x.split("==")[1]).map(d=>d.id)\n        else if (x.includes(">=")) selected = data.filter(d=>d[x.split(">=")[0]] >= x.split(">=")[1]).map(d=>d.id)\n        else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)\n        else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)\n        else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)\n        else if (x.includes("!=")) selected = data.filter(d=>d[x.split("!=")[0]] != x.split("!=")[1]).map(d=>d.id)\n        else if (x.includes("=")) selected = data.map(d=>d.id)\n        else selected = []\n        svg.selectAll("path")\n            .transition()\n            .delay((d,i) => i*50)\n            .style("opacity",d=> (selected.indexOf(d.id)+1) ? 1 : .2)\n    }\n    createAutos()\n</script>\n')
 
 
 # ## Check yourself
 
 # Try to fill in code to fulfill the request!  Here are some variables used in the excercise
 
-# In[20]:
+# In[15]:
 
 
-dogA_color='brown'
-dogA_mass=42
-dogA_gender='male'
-dogA_age=5
-dogA_name='chip'
+dogA_color = 'brown'
+dogA_mass = 42
+dogA_sex = 'male'
+dogA_age = 5
+dogA_name = 'chip'
 
-dogB_color='white'
-dogB_mass=19
-dogB_gender='female'
-dogB_age=2
-dogB_name='lady'
+dogB_color = 'white'
+dogB_mass = 19
+dogB_sex = 'female'
+dogB_age = 2
+dogB_name = 'lady'
 
 
 # Is dogA the same color as dogB? (False)
 
-# In[51]:
+# In[16]:
 
 
 # Example:
@@ -340,7 +333,7 @@ print( dogA_color == dogB_color )
 
 # Does dogA have the same name as dogB? (False)
 
-# In[52]:
+# In[17]:
 
 
 # Try it out here:
@@ -348,15 +341,15 @@ print( dogA_color == dogB_color )
 
 # Is dogA older than dogB? (True)
 
-# In[53]:
+# In[18]:
 
 
 # Try it out here:
 
 
-# Is dogA the same gender as dogB? (False)
+# Is dogA the same sex as dogB? (False)
 
-# In[54]:
+# In[19]:
 
 
 # Try it out here:
@@ -364,22 +357,16 @@ print( dogA_color == dogB_color )
 
 # Is dogA heavier than dogB and have a different name than dogB? (True)
 
-# In[55]:
+# In[20]:
 
 
 # Try it out here:
 
 
-# Does dogA have a different age than dogB and not a different gender than dogB? (False)
+# Does dogA have a different age than dogB and not a different sex than dogB? (False)
 
-# In[58]:
+# In[21]:
 
 
 # Try it out here:
-
-
-# In[ ]:
-
-
-
 

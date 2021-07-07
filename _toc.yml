@@ -5,10 +5,12 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Getting Starting
+    chapters:
+    - file: Notebook Introduction
   - caption: Jupyter Lab
     chapters:
     - file: Introduction to JupyterLab
-
   - caption: Python
     chapters:
       - file: Learning about Variables
