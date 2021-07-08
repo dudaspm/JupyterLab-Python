@@ -12,7 +12,7 @@
 
 # ## Thank you!
 # 
-# Also, a huge *thank you* to Adam Lavely for developing some of the intial notebooks! 
+# Also, a huge *thank you* to Adam Lavely (https://github.com/adamlavely) for developing some of the intial notebooks! 
 
 # In[ ]:
 

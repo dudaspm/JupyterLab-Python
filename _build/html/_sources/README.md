@@ -1,5 +1,7 @@
 # JupyterLab + Python
 
+Link to notebook: https://dudaspm.github.io/JupyterLab-Python/intro.html
+
 This is the source files for creating Python and Matplotlib code in Jupyter Lab and Google Colab. This book is an introduction to both platforms and will cover:
 
 * How to get started using JupyterLab (Completed)

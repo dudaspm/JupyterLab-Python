@@ -300,7 +300,7 @@ helloStatement[0]
 
 # Visually, this is how the string looks to Python. 
 # 
-# ![Hello, everyone! text](helloEveryone.png)
+# ![Hello, everyone! text](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/helloEveryone.png)
 
 # In[23]:
 
@@ -308,11 +308,26 @@ helloStatement[0]
 get_ipython().run_cell_magic('html', '--isolated', '<label for="vol">Index value:&nbsp;</label><span id="letterindex">0</span><br><input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById(\'letterImages\').src=\'https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l\'+(this.value)+\'.PNG\'; document.getElementById(\'letterindex\').innerHTML=this.value;"><br><img id="letterImages" alt="Individual letters in Hello, everyone!" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l0.PNG" style="width:50px">\n')
 
 
+# ##### Indexing Multiple Letters
+
 # In[24]:
 
 
 print( helloStatement[0:5] )
 
+
+# Wait a second! 
+# 
+# ![Hello, everyone! text](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/helloEveryone.png)
+
+# The way you should think of this is: 
+# 
+# ```python
+# helloStatement[0 : 5 - 1]
+# helloStatement[(starting number) to (ending number - 1)]
+# ```
+# 
+# There is also a shortcut way of writing this, without the 0. 
 
 # In[25]:
 
@@ -328,32 +343,57 @@ print( helloStatement[5:] )
 
 # #### String functions
 
+# ##### Find
+
 # In[27]:
 
 
-################
-## Find
-################
 print( helloStatement.find("one") )
 print( helloStatement.find("me") )
-print( helloStatement.capitalize() )
-print( helloStatement.lower() )
-print( helloStatement.split(" ") )
+print( helloStatement.find("hello") )
+print( helloStatement.find("Hello") )
 
 
-# What will this do?
+# ```{note}
+# When using .find(), if the function can NOT find the letters sequence given. It will return -1. 
+# ```
+
+# ##### Formatting
 
 # In[28]:
 
 
-print( helloStatement.capitalize().lower() )
-# We can chain these!
-print( helloStatement[:5].capitalize() )
+print( helloStatement.capitalize() )
+print( helloStatement.lower() )
+
+
+# ##### Split
+
+# In[29]:
+
+
+print( helloStatement.split(" ") )
+
+
+# ```{note}
+# Split will eventually become your best friend. This is a **great** function to use when using data that is uniquelly spaced. 
+# As in comma seperate values or CSV. 
+# ```
+
+# ##### Chaining Functions
+
+# In[30]:
+
+
+print( helloStatement )
+print( helloStatement[0:5].capitalize() )
+print( helloStatement.find("hello") )
+print( helloStatement[:5].lower().find("hello") )
 
 
 # #### Concatenating Strings
 
-# In[29]:
+# In[31]:
 
 
 courseName = "bio"
@@ -364,7 +404,7 @@ print( "%s%s" % (courseName,courseNumber) )
 
 # Why I like to use %s
 
-# In[30]:
+# In[32]:
 
 
 variable1 = "variable1"
@@ -376,7 +416,7 @@ print( variable1 + "," + variable2 + "," + variable3 + "," + variable4 + "," + v
 print( "%s,%s,%s,%s,%s" % (variable1,variable2,variable3,variable4,variable5) )
 
 
-# In[31]:
+# In[33]:
 
 
 # let's concatenate the strings
@@ -389,21 +429,21 @@ print( "I am currently sitting in %s" % (courseNameNumber) )
 
 # Booleans are used to do comparisions (true/false), (1/0), (yes/no)
 
-# In[32]:
+# In[34]:
 
 
 someCondition = True
 type( someCondition )
 
 
-# In[33]:
+# In[35]:
 
 
 # Will come back to this in a second (==)
 (someCondition == False)
 
 
-# In[34]:
+# In[36]:
 
 
 if (False): 
@@ -421,14 +461,14 @@ if (True):
 
 # Lists (or also known as Arrays) are exactly that. A list of data. Exmaple:
 
-# In[35]:
+# In[37]:
 
 
 groceryList = ["apple", "banana", "eggs"]
 print( groceryList )
 
 
-# In[36]:
+# In[38]:
 
 
 # or another way
@@ -441,7 +481,7 @@ print( groceryList )
 
 # We can access each entry by using an index number (**remember starts at 0**)
 
-# In[37]:
+# In[39]:
 
 
 print( groceryList[2] )
