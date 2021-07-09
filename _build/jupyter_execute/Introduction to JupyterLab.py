@@ -34,10 +34,10 @@
 
 # ##### Image
 # ```markdown
-# ![Wheat Field with Cypresses](vangogh.jpg)
+# ![Wheat Field with Cypresses](images/vangogh.jpg)
 # ```
 # 
-# ![Wheat Field with Cypresses](vangogh.jpg)
+# ![Wheat Field with Cypresses](images/vangogh.jpg)
 # 
 # 
 # 

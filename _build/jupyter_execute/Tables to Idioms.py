@@ -72,7 +72,7 @@ twoDays = twoDays.strftime('%Y-%m-%d')
 data[data.date==yesterdaysDate].head()
 
 
-# ![Scatterplot Description](scatterplot.PNG)
+# ![Scatterplot Description](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/scatterplot.PNG)
 
 # <cite>Scatter Plot — Matplotlib 3.3.4 Documentation. https://matplotlib.org/stable/gallery/shapes_and_collections/scatter.html. Accessed 14 Mar. 2021.</cite>
 
@@ -198,7 +198,7 @@ plt.show( fig )
 plt.close( fig )
 
 
-# In[13]:
+# In[9]:
 
 
 import numpy as np

@@ -549,7 +549,7 @@ plt.show( fig )
 plt.close( fig )
 
 
-# As a part of a your Chapter Assessment this week. You will plot all days in 2020 based on their Max Temperatures (TMAX). Here are a few details and the final graph is provided. 
+# 
 # 
 # first = January, February, and March
 # second = April, May and June

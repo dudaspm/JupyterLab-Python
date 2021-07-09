@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # What is a variable?
+# # Learning about Variables
 
 # When we are developing our idea, we sometime need to use values multiple times or change the value based on our code. This is where variables become very helpful. Let's look at an example.
 # 
@@ -300,12 +300,12 @@ helloStatement[0]
 
 # Visually, this is how the string looks to Python. 
 # 
-# ![Hello, everyone! text](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/helloEveryone.png)
+# ![Hello, everyone! text](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/helloEveryone.png)
 
 # In[23]:
 
 
-get_ipython().run_cell_magic('html', '--isolated', '<label for="vol">Index value:&nbsp;</label><span id="letterindex">0</span><br><input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById(\'letterImages\').src=\'https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l\'+(this.value)+\'.PNG\'; document.getElementById(\'letterindex\').innerHTML=this.value;"><br><img id="letterImages" alt="Individual letters in Hello, everyone!" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l0.PNG" style="width:50px">\n')
+get_ipython().run_cell_magic('html', '--isolated', '<label for="vol">Index value:&nbsp;</label><span id="letterindex">0</span><br><input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById(\'letterImages\').src=\'https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/l\'+(this.value)+\'.PNG\'; document.getElementById(\'letterindex\').innerHTML=this.value;"><br><img id="letterImages" alt="Individual letters in Hello, everyone!" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/l0.PNG" style="width:50px">\n')
 
 
 # ##### Indexing Multiple Letters
@@ -318,7 +318,7 @@ print( helloStatement[0:5] )
 
 # Wait a second! 
 # 
-# ![Hello, everyone! text](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/helloEveryone.png)
+# ![Hello, everyone! text](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/helloEveryone.png)
 
 # The way you should think of this is: 
 # 
@@ -463,7 +463,7 @@ print ( "%s, %s" % ("hello", "everyone") )
 # In[34]:
 
 
-get_ipython().run_cell_magic('html', '', '<figure>\n<video width="720" height="360" controls muted >\n  <source src="https://github.com/dudaspm/JupyterLab-Python/blob/main/percent_cat.mp4?raw=true" type=video/mp4>\n</video>\n  <figcaption>(No Audio) Video of how % concatenate works with substituting strings. </figcaption>\n</figure>')
+get_ipython().run_cell_magic('html', '', '<figure>\n<video width="720" height="360" controls muted >\n  <source src="https://github.com/dudaspm/JupyterLab-Python/blob/main/images/percent_cat.mp4?raw=true" type=video/mp4>\n</video>\n  <figcaption>(No Audio) Video of how % concatenate works with substituting strings. </figcaption>\n</figure>')
 
 
 # Ok, but what about numbers?
