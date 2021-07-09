@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Comparison Operators" href="Comparisons.html" />
-    <link rel="prev" title="Introduction to JupyterLab" href="Introduction%20to%20JupyterLab.html" />
+    <link rel="prev" title="Introduction to Python" href="Introduction%20to%20Python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,6 +91,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Getting Starting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebook%20Introduction.html">
+   Notebook Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Jupyter Lab
  </span>
 </p>
@@ -107,6 +119,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction%20to%20Python.html">
+   Introduction to Python
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    What is a variable?
@@ -298,16 +315,62 @@
       <a class="reference internal nav-link" href="#string-indexing-string-slicing">
        String Indexing/String Slicing
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#indexing-multiple-letters">
+         Indexing Multiple Letters
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#string-functions">
        String functions
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#find">
+         Find
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#formatting">
+         Formatting
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#split">
+         Split
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#chaining-functions">
+         Chaining Functions
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#concatenating-strings">
        Concatenating Strings
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#method">
+         + Method
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         % Method
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#join-method">
+         join() Method
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -315,6 +378,13 @@
     <a class="reference internal nav-link" href="#booleans">
      Booleans
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#boolean-logic">
+       Boolean Logic
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lists">
@@ -688,13 +758,15 @@ aFloatVariable</p>
 </div>
 <p>There we go!</p>
 <p>Visually, this is how the string looks to Python.</p>
-<p><img alt="Hello, everyone! text" src="_images/helloEveryone.png" /></p>
+<p><img alt="Hello, everyone! text" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/helloEveryone.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><label for="vol">Index value:&nbsp;</label><span id="letterindex">0</span><br><input type="range" id="vol" name="vol" min="0" max="16" value="0" oninput="document.getElementById('letterImages').src='https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l'+(this.value)+'.PNG'; document.getElementById('letterindex').innerHTML=this.value;"><br><img id="letterImages" alt="Individual letters in Hello, everyone!" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/l0.PNG" style="width:50px">
 
 </div></div>
 </div>
+<div class="section" id="indexing-multiple-letters">
+<h5>Indexing Multiple Letters<a class="headerlink" href="#indexing-multiple-letters" title="Permalink to this headline">¶</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="p">)</span>
@@ -707,6 +779,14 @@ aFloatVariable</p>
 </div>
 </div>
 </div>
+<p>Wait a second!</p>
+<p><img alt="Hello, everyone! text" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/helloEveryone.png" /></p>
+<p>The way you should think of this is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">helloStatement</span><span class="p">[</span><span class="mi">0</span> <span class="p">:</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">helloStatement</span><span class="p">[(</span><span class="n">starting</span> <span class="n">number</span><span class="p">)</span> <span class="n">to</span> <span class="p">(</span><span class="n">ending</span> <span class="n">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>There is also a shortcut way of writing this, without the 0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="p">)</span>
@@ -732,101 +812,267 @@ aFloatVariable</p>
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="string-functions">
 <h4>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="find">
+<h5>Find<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">################</span>
-<span class="c1">## Find</span>
-<span class="c1">################</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;me&quot;</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 -1
-Hello, everyone!
-hello, everyone!
-[&#39;Hello,&#39;, &#39;everyone!&#39;]
+-1
+0
 </pre></div>
 </div>
 </div>
 </div>
-<p>What will this do?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using .find(), if the function can NOT find the letters sequence given. It will return -1.</p>
+</div>
+</div>
+<div class="section" id="formatting">
+<h5>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="p">)</span>
-<span class="c1"># We can chain these!</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, everyone!
-Hello
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, everyone!
+hello, everyone!
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split">
+<h5>Split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hello,&#39;, &#39;everyone!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Split will eventually become your best friend. This is a <strong>great</strong> function to use when using data that is uniquelly spaced.
+As in comma seperate values or CSV.</p>
+</div>
+</div>
+<div class="section" id="chaining-functions">
+<h5>Chaining Functions<a class="headerlink" href="#chaining-functions" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, everyone!
+Hello
+-1
+0
+</pre></div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="concatenating-strings">
 <h4>Concatenating Strings<a class="headerlink" href="#concatenating-strings" title="Permalink to this headline">¶</a></h4>
+<p>When you want to put two strings together, we say you <em>concatentate</em> the strings. There are multiple ways of doing this but presented are what I believe to be the three most common ways.</p>
+<div class="section" id="method">
+<h5>+ Method<a class="headerlink" href="#method" title="Permalink to this headline">¶</a></h5>
+<p>This is the most straightforward method of the three but there can be some issues. You simply add a plus sign <em>+</em> between your strings. Let’s take a look at this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">courseName</span> <span class="o">=</span> <span class="s2">&quot;bio&quot;</span>
-<span class="n">courseNumber</span> <span class="o">=</span> <span class="s2">&quot;101&quot;</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">courseName</span><span class="o">+</span><span class="n">courseNumber</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="si">%s%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">courseName</span><span class="p">,</span><span class="n">courseNumber</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;hello, &quot;</span> <span class="o">+</span> <span class="s2">&quot;everyone!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bio101
-bio101
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, everyone!
 </pre></div>
 </div>
 </div>
 </div>
-<p>Why I like to use %s</p>
+<p>This works fine, but when you add a number to this idea. We run into issues.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;hello, &quot;</span> <span class="o">+</span> <span class="s2">&quot;every&quot;</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="mi">1</span><span class="n">f53f06cad5c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;hello, &quot;</span> <span class="o">+</span> <span class="s2">&quot;every&quot;</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
+</pre></div>
+</div>
+<p>In this case we need to <em>type-cast</em> the integer as a string using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable1</span> <span class="o">=</span> <span class="s2">&quot;variable1&quot;</span>
-<span class="n">variable2</span> <span class="o">=</span> <span class="s2">&quot;variable2&quot;</span>
-<span class="n">variable3</span> <span class="o">=</span> <span class="s2">&quot;variable3&quot;</span>
-<span class="n">variable4</span> <span class="o">=</span> <span class="s2">&quot;variable4&quot;</span>
-<span class="n">variable5</span> <span class="o">=</span> <span class="s2">&quot;variable5&quot;</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">variable1</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">variable2</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">variable3</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">variable4</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">variable5</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">variable1</span><span class="p">,</span><span class="n">variable2</span><span class="p">,</span><span class="n">variable3</span><span class="p">,</span><span class="n">variable4</span><span class="p">,</span><span class="n">variable5</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;hello, &quot;</span> <span class="o">+</span> <span class="s2">&quot;every&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>variable1,variable2,variable3,variable4,variable5
-variable1,variable2,variable3,variable4,variable5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, every1!
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="id1">
+<h5>% Method<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<p>This is my favorite method out of the three. Let’s see how this works with the same example.</p>
+<p>In this case, we use a %s (s = string) for each string we want to embed in our overall string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s concatenate the strings</span>
-<span class="n">courseNameNumber</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">courseName</span><span class="p">,</span><span class="n">courseNumber</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">courseNameNumber</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;I am currently sitting in </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">courseNameNumber</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;everyone&quot;</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bio101
-I am currently sitting in bio101
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, everyone
 </pre></div>
 </div>
 </div>
+</div>
+<p>There are three parts to this.</p>
+<p><em>The format</em></p>
+<ul>
+<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>“%s, %s”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+*The break*
+* ```python
+%
+</pre></div>
+</div>
+<p><em>The fill</em></p>
+<ul>
+<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>(“hello”, “everyone”)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">We</span> <span class="n">have</span> <span class="n">two</span> <span class="o">%</span><span class="n">s</span><span class="p">,</span> <span class="n">meaning</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">feed</span> <span class="n">it</span> <span class="k">with</span> <span class="n">two</span> <span class="n">strings</span><span class="o">.</span> 
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><figure>
+<video width="720" height="360" controls muted >
+  <source src="https://github.com/dudaspm/JupyterLab-Python/blob/main/percent_cat.mp4?raw=true" type=video/mp4>
+</video>
+  <figcaption>(No Audio) Video of how % concatenate works with substituting strings. </figcaption>
+</figure>
+</div></div>
+</div>
+<p>Ok, but what about numbers?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s%s%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;every&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;!&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, every1!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Still works! This is why I like this method. You pick the formating and just feed in the strings.</p>
+</div>
+<div class="section" id="join-method">
+<h5>join() Method<a class="headerlink" href="#join-method" title="Permalink to this headline">¶</a></h5>
+<p>The .join() method uses a function called</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This is a create function to be aware of, as it will allow you the ability to join strings with a specific, static format. What do I mean static formating? Well, unlike the % method that can be formatted exactly how I want it. The .join() method requires a specific pattern. Example time!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;hello, &quot;</span><span class="p">,</span> <span class="s2">&quot;everyone!&quot;</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello,  everyone!
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are two parts to this.</p>
+<p><em>The splitter</em></p>
+<ul>
+<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>” “</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+*The fill*
+* ```python
+.join([&quot;hello, &quot;, &quot;everyone!&quot;])
+</pre></div>
+</div>
+<p>Notice that the join has the brackets around it. Technically, you are feeding this an array or list (we have not talked about this yet). This again, like <em>.split()</em>, this will be a great asset to you in the future.</p>
+<p>Let’s show this with our number again.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;hello, &quot;</span><span class="p">,</span> <span class="s2">&quot;every&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">])</span> <span class="p">)</span>
+
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">54</span><span class="o">-</span><span class="n">e926f0c4c025</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;hello, &quot;</span><span class="p">,</span> <span class="s2">&quot;every&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">])</span> <span class="p">)</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">sequence</span> <span class="n">item</span> <span class="mi">2</span><span class="p">:</span> <span class="n">expected</span> <span class="nb">str</span> <span class="n">instance</span><span class="p">,</span> <span class="nb">int</span> <span class="n">found</span>
+</pre></div>
+</div>
+<p>Same issue as before, we need to type-cast.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;hello, &quot;</span><span class="p">,</span> <span class="s2">&quot;every&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;!&quot;</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello,  every 1 !
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the spaces? Again, we are saying with <em>the splitter</em> what each string is going be seperated by, so in this case, everything is going to split by spaces.</p>
 </div>
 </div>
 </div>
@@ -846,10 +1092,12 @@ I am currently sitting in bio101
 </div>
 </div>
 </div>
+<div class="section" id="boolean-logic">
+<h4>Boolean Logic<a class="headerlink" href="#boolean-logic" title="Permalink to this headline">¶</a></h4>
+<p>We will talk about boolean logic more in the next section <span class="xref myst">Comparisons</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Will come back to this in a second (==)</span>
-<span class="p">(</span><span class="n">someCondition</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">someCondition</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -874,14 +1122,43 @@ I am currently sitting in bio101
 </div>
 </div>
 </div>
-<p>if (0):
-print “yes for 0!”
-if (1):
-print “yes for 1!”</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A more “traditional” way to do booleans is to use 0 and 1. In Python, any number other than 0 is True. Including negative numbers and decimals.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mi">0</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;yes for 0!&quot;</span> <span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;yes for 1!&quot;</span> <span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;yes for 2!&quot;</span> <span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;yes for -3!&quot;</span> <span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="mf">.4</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;yes for .4!&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yes for 1!
+yes for 2!
+yes for -3!
+yes for .4!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="lists">
 <h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
-<p>Lists (or also known as Arrays) are exactly that. A list of data. Exmaple:</p>
+<p>Lists (or also known as Arrays) are exactly that. A list of data.</p>
+<p>There are two options for creating a <em>List</em>.</p>
+<ol class="simple">
+<li><p>Define the list initially</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">groceryList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;eggs&quot;</span><span class="p">]</span>
@@ -895,10 +1172,15 @@ print “yes for 1!”</p>
 </div>
 </div>
 </div>
+<ol class="simple">
+<li><p>Create a list and add to it using</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">append</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># or another way</span>
-<span class="n">groceryList</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">groceryList</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">groceryList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">)</span>
 <span class="n">groceryList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
 <span class="n">groceryList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;eggs&quot;</span><span class="p">)</span>
@@ -912,13 +1194,15 @@ print “yes for 1!”</p>
 </div>
 </div>
 </div>
-<p>We can access each entry by using an index number (<strong>remember starts at 0</strong>)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For indexes, we always start at the number 0. So, 0 is the first thing, 1 is the second thing, and so on.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -928,19 +1212,24 @@ apple
 banana
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">0</span><span class="n">a77fb05d512</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
+</div>
+</div>
+<p>So what happens if we use an <em>index</em> outside of our list?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
 
-<span class="ne">IndexError</span>: list index out of range
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">44</span><span class="o">-</span><span class="mi">0</span><span class="n">a77fb05d512</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">groceryList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Typically, going through an array, one index at a time, is not how we want to use lists.
+We will talk about going through lists using a <em>loop</em> in an upcoming notebook.</p>
 </div>
-</div>
-<p>To do this more efficiently, we will be using loops (for and while, we will talk about later).</p>
 </div>
 <div class="section" id="dictionary">
 <h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h3>
@@ -953,6 +1242,11 @@ banana
 <span class="n">personalInformation</span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Patrick&quot;</span>
 <span class="n">personalInformation</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Dudas&quot;</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">personalInformation</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;streetAddress&#39;: &#39;123 Apple St.&#39;, &#39;firstName&#39;: &#39;Patrick&#39;, &#39;lastName&#39;: &#39;Dudas&#39;}
 </pre></div>
 </div>
 </div>
@@ -988,7 +1282,7 @@ banana
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Introduction%20to%20JupyterLab.html" title="previous page">Introduction to JupyterLab</a>
+    <a class='left-prev' id="prev-link" href="Introduction%20to%20Python.html" title="previous page">Introduction to Python</a>
     <a class='right-next' id="next-link" href="Comparisons.html" title="next page">Comparison Operators</a>
 
         </div>

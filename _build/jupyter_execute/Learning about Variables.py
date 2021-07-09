@@ -392,58 +392,163 @@ print( helloStatement[:5].lower().find("hello") )
 
 
 # #### Concatenating Strings
+# 
+# When you want to put two strings together, we say you *concatentate* the strings. There are multiple ways of doing this but presented are what I believe to be the three most common ways. 
+
+# ##### + Method
+
+# This is the most straightforward method of the three but there can be some issues. You simply add a plus sign *+* between your strings. Let's take a look at this. 
 
 # In[31]:
 
 
-courseName = "bio"
-courseNumber = "101"
-print( courseName+courseNumber )
-print( "%s%s" % (courseName,courseNumber) )
+print ( "hello, " + "everyone!")
 
 
-# Why I like to use %s
+# This works fine, but when you add a number to this idea. We run into issues. 
+
+# ```python
+# print ( "hello, " + "every" + 1 + "!")
+# 
+# ---------------------------------------------------------------------------
+# TypeError                                 Traceback (most recent call last)
+# <ipython-input-41-1f53f06cad5c> in <module>
+# ----> 1 print ( "hello, " + "every" + 1 + "!")
+# 
+# TypeError: can only concatenate str (not "int") to str
+# ```
+
+# In this case we need to *type-cast* the integer as a string using
+# ```python
+# str()
+# ```
 
 # In[32]:
 
 
-variable1 = "variable1"
-variable2 = "variable2"
-variable3 = "variable3"
-variable4 = "variable4"
-variable5 = "variable5"
-print( variable1 + "," + variable2 + "," + variable3 + "," + variable4 + "," + variable5 )
-print( "%s,%s,%s,%s,%s" % (variable1,variable2,variable3,variable4,variable5) )
+print ( "hello, " + "every" + str(1) + "!")
 
+
+# ##### % Method
+
+# This is my favorite method out of the three. Let's see how this works with the same example. 
+# 
+# In this case, we use a %s (s = string) for each string we want to embed in our overall string. 
 
 # In[33]:
 
 
-# let's concatenate the strings
-courseNameNumber = "%s%s" % (courseName,courseNumber)
-print( courseNameNumber )
-print( "I am currently sitting in %s" % (courseNameNumber) )
+print ( "%s, %s" % ("hello", "everyone") )
 
+
+# There are three parts to this. 
+# 
+# *The format*
+# * ```python
+# "%s, %s"
+# ```
+# 
+# *The break*
+# * ```python
+# %
+# ```
+# 
+# *The fill*
+# * ```python
+# ("hello", "everyone")
+# ```
+# 
+# We have two %s, meaning we need to feed it with two strings. 
+
+# In[34]:
+
+
+get_ipython().run_cell_magic('html', '', '<figure>\n<video width="720" height="360" controls muted >\n  <source src="https://github.com/dudaspm/JupyterLab-Python/blob/main/percent_cat.mp4?raw=true" type=video/mp4>\n</video>\n  <figcaption>(No Audio) Video of how % concatenate works with substituting strings. </figcaption>\n</figure>')
+
+
+# Ok, but what about numbers?
+
+# In[35]:
+
+
+print ( "%s, %s%s%s" % ("hello","every",1,"!") )
+
+
+# Still works! This is why I like this method. You pick the formating and just feed in the strings. 
+
+# ##### join() Method
+
+# The .join() method uses a function called
+# ```python
+# .join()
+# ```
+# This is a create function to be aware of, as it will allow you the ability to join strings with a specific, static format. What do I mean static formating? Well, unlike the % method that can be formatted exactly how I want it. The .join() method requires a specific pattern. Example time!
+
+# In[36]:
+
+
+print ( " ".join(["hello, ", "everyone!"]) )
+
+
+# There are two parts to this. 
+# 
+# *The splitter*
+# * ```python
+# " "
+# ```
+# 
+# *The fill*
+# * ```python
+# .join(["hello, ", "everyone!"])
+# ```
+# 
+# Notice that the join has the brackets around it. Technically, you are feeding this an array or list (we have not talked about this yet). This again, like *.split()*, this will be a great asset to you in the future. 
+# 
+# Let's show this with our number again. 
+
+# ```python
+# print ( " ".join(["hello, ", "every", 1, "!"]) )
+# 
+# ---------------------------------------------------------------------------
+# TypeError                                 Traceback (most recent call last)
+# <ipython-input-54-e926f0c4c025> in <module>
+# ----> 1 print ( " ".join(["hello, ", "every", 1, "!"]) )
+# 
+# TypeError: sequence item 2: expected str instance, int found
+# ```
+
+# Same issue as before, we need to type-cast. 
+
+# In[37]:
+
+
+print ( " ".join(["hello, ", "every", str(1), "!"]) )
+
+
+# Notice the spaces? Again, we are saying with *the splitter* what each string is going be seperated by, so in this case, everything is going to split by spaces. 
 
 # ### Booleans
 
 # Booleans are used to do comparisions (true/false), (1/0), (yes/no)
 
-# In[34]:
+# In[38]:
 
 
 someCondition = True
 type( someCondition )
 
 
-# In[35]:
+# #### Boolean Logic
+
+# We will talk about boolean logic more in the next section [Comparisons](Comparisons.html)
+
+# In[39]:
 
 
-# Will come back to this in a second (==)
 (someCondition == False)
 
 
-# In[36]:
+# In[40]:
 
 
 if (False): 
@@ -452,26 +557,49 @@ if (True):
     print( "yes for True!" )
 
 
-# if (0): 
-#     print "yes for 0!"
-# if (1): 
-#     print "yes for 1!"
+# ```{note}
+# A more "traditional" way to do booleans is to use 0 and 1. In Python, any number other than 0 is True. Including negative numbers and decimals. 
+# ```
+
+# In[41]:
+
+
+if (0): 
+    print( "yes for 0!" )
+if (1): 
+    print( "yes for 1!" )
+if (2): 
+    print( "yes for 2!" )
+if (-3): 
+    print( "yes for -3!" )
+if (.4): 
+    print( "yes for .4!" )
+
 
 # ### Lists
 
-# Lists (or also known as Arrays) are exactly that. A list of data. Exmaple:
+# Lists (or also known as Arrays) are exactly that. A list of data. 
+# 
+# There are two options for creating a *List*. 
+# 
+# 1. Define the list initially
 
-# In[37]:
+# In[42]:
 
 
 groceryList = ["apple", "banana", "eggs"]
 print( groceryList )
 
 
-# In[38]:
+# 2. Create a list and add to it using
+# 
+# ```python 
+# .append()
+# ```
+
+# In[43]:
 
 
-# or another way
 groceryList = []
 groceryList.append("apple")
 groceryList.append("banana")
@@ -479,18 +607,35 @@ groceryList.append("eggs")
 print( groceryList )
 
 
-# We can access each entry by using an index number (**remember starts at 0**)
+# ```{note}
+# For indexes, we always start at the number 0. So, 0 is the first thing, 1 is the second thing, and so on.
+# ```
 
-# In[39]:
+# In[44]:
 
 
 print( groceryList[2] )
 print( groceryList[0] )
 print( groceryList[1] )
-print( groceryList[3] )
 
 
-# To do this more efficiently, we will be using loops (for and while, we will talk about later).
+# So what happens if we use an *index* outside of our list?
+
+# ```python 
+# print( groceryList[3] )
+# 
+# ---------------------------------------------------------------------------
+# IndexError                                Traceback (most recent call last)
+# <ipython-input-44-0a77fb05d512> in <module>
+#     print( groceryList[3] )
+# 
+# IndexError: list index out of range
+# ```
+
+# ```{note}
+# Typically, going through an array, one index at a time, is not how we want to use lists. 
+# We will talk about going through lists using a *loop* in an upcoming notebook. 
+# ```
 
 # ### Dictionary
 
@@ -498,7 +643,7 @@ print( groceryList[3] )
 # 
 # dictionary[\"street adddress\" (key)] = "123 Apple St." (value)
 
-# In[ ]:
+# In[45]:
 
 
 personalInformation = {}

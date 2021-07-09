@@ -13,6 +13,7 @@ parts:
     - file: Introduction to JupyterLab
   - caption: Python
     chapters:
+      - file: Introduction to Python
       - file: Learning about Variables
       - file: Comparisons
       - file: Loops
