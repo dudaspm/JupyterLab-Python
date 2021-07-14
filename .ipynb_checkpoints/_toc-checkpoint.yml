@@ -16,7 +16,10 @@ parts:
       - file: Introduction to Python
       - file: Learning about Variables
       - file: Comparisons
+      - file: If-Else Conditions
       - file: Loops
+      - file: Loading a Library
+      - file: Creating a Function
       - file: Shopping List
       - file: Guessing Game
     

@@ -14,15 +14,12 @@
 
 # ## Functions
 
-# Functions allow us to do repeated tasks easily by writing the code only once.  Functions will have a name, inputs and outputs and can be called anywhere the task is repeated.
 # 
-# There are functions that are built in to python, for example we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!
 
-# In[1]:
+# In[3]:
 
 
-aVal = 10.0
-print( type( aVal ) )
+
 
 
 # Functions have four typical parts:
@@ -31,157 +28,68 @@ print( type( aVal ) )
 # * Outputs - what the function gives back
 # * Math/Magic - what the function does
 
-# In python, we use def to define a function with the function name and inputs followed by a colon.  The python function is then separated from the rest of the code by a tab. Some languages use braces rather than indentation.
-# ````python
-# def functionName( inputs ):
-#     # Operate on the inputs
-#     ouputs = inputs + 5
-#     # Return what we want to back
-#     return outputs;
-#    ````
+# 
 
 # Let's look at an example function, which changes degrees Farenheit to Celsius. 
-
-# In[2]:
-
-
-def changeFromFToC( farVal ):
-    # Change the temperature from Farenheit to Celsius
-    cVal = (farVal - 32.0) * 5.0 / 9.0
-    return cVal 
-
-
-# Here, our function name is changeFromFToC, the input is farVal, the temperature in Farenheit, the output is cVal, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.
-
-# In[3]:
-
-
-# Change 14 deg F to Celsius
-print( "#-# 14 Deg Farenheit in Celsius" )
-print( changeFromFToC( 14 ) )
-
-# Change from 68 deg F to Celsius
-print( "\n#-# 68 Deg Farenheit in Celsius" )
-niceTempC = changeFromFToC( 68 )
-print( niceTempC )
-
-
-# ### Multiple inputs and outputs
-
-# Functions can also have multiple inputs and outputs.  The example below changes Farenheit to Celsius and Kelvin.  We can take the outputs individually, or as a list.  You have to either have the same number of outputs as is provided, or just one for a list.
 
 # In[4]:
 
 
-def changeFromFToCAndK( farVal ):
-    # Change the temperature from Farenheit to Celsius and Kelvin
-    cVal = (farVal - 32.0) * 5.0 / 9.0
-    kVal= cVal + 273.15
-    return cVal, kVal    
-    
-# Change 14 deg F to Celsius and Kelvin
-print( "#-# 14 Deg Farenheit in Celsius and Kelvin" )
-print( changeFromFToCAndK( 14 ) )
-
-# Change 212 deg F to Celsius and Kelvin
-print( "\n#-# 212 Deg Farenheit in Celsius and Kelvin" )
-boilingC, boilingK = changeFromFToCAndK( 212 ) 
-print( boilingC )
-print( boilingK )
-
-# Change 32 deg F to Celsius and Kelvin
-print( "\n#-# 32 Deg Farenheit in Celsius and Kelvin" )
-freezing = changeFromFToCAndK( 32 ) 
-print( freezing[0] )
-print( freezing[1] )
 
 
-# The example function below to calculate the wind chill uses two inputs and only calculates the returned value.
+
+# Here, our function name is changeFromFToC, the input is farVal, the temperature in Farenheit, the output is cVal, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.
 
 # In[5]:
 
 
-def windChillFar( tempF, windMPH ):
-    # Calculate the wind chill index using
-    # tempF: Temperature in Farenheit
-    # windMPH: Wind in miles per hour
-    # to return the wind chill index
-    return 35.74 + (0.6215 * tempF) - (35.75 * windMPH**.16) + (0.4275 * tempF * windMPH**.16)
-
-print( "#-# Wind chill at 32 with 8 mph wind" )
-print( windChillFar( 32, 8 ) )
 
 
-# ### Functions calling other functions
 
-# Functions can call other functions.  Here we add three using a function to add two and then adding one.
+# 
+
+# Functions can also have multiple inputs and outputs.  The example below changes Farenheit to Celsius and Kelvin.  We can take the outputs individually, or as a list.  You have to either have the same number of outputs as is provided, or just one for a list.
 
 # In[6]:
 
 
-def addTwo( inValAddTwo ):
-    # Add two to the input
-    return inValAddTwo + 2
-
-def addThree( inValAddThree ):
-    # Add three two the input
-    return addTwo( inValAddThree ) + 1
-
-# Add three to four
-print( "#-# Add three to four using addThree, which calls addTwo" )
-print( addThree( 4 ) )
 
 
-# Functions can also call themselves - these are called recursive functions.  See how we calculate the factorial by subtracting one and calling the function again. 
+
+# The example function below to calculate the wind chill uses two inputs and only calculates the returned value.
 
 # In[7]:
 
 
-def factorialRecursive( facIn ):
-    # Calculate the factorial
-    if facIn == 1:
-        return facIn
-    else:
-        return facIn * factorialRecursive( facIn - 1)
-
-# Use a recursive function to calculate the factorial of 5
-print( "\n#-# Use a recursive function to calculate the factorial of 5" )
-print( factorialRecursive( 5 ) )
 
 
-# ### The gotcha for functions: Where variables can be used
 
-# The biggest gotcha on functions is with variable scope: 
-# * Variables defined in a function are not accessible from the outside
-# * Functions have access to more than just the variables passed in
+# 
+
+# 
 
 # In[8]:
 
 
-# Function to add four
-def addFour( inValAddFour ):
-    middleVal = addTwo( inValAddFour )
-    finalAns = addTwo( middleVal )
-    print( "#-# Print from In Function" )
-    print( "startingVal = ", startingVal )
-    print( "middleVal = ", middleVal )
-    print( "finalAns = ", finalAns )
-    return finalAns
-    
-#-#-#-#-#-#-#
-# Not in the function - this is what runs
-startingVal = 10
 
-# Call the function using startingVal as the input parameter
-fourAdded = addFour( startingVal )
 
-# Print out some things
-print( "\n#-# Print after the function" )
-print( "startingVal = ", startingVal )
-print( "fourAdded = " , fourAdded )
 
-# This won't work because middleVal was only defined within the function
-print( "middleVal = ", middleVal )
+# 
+
+# In[9]:
+
+
+
+
+
+# 
+
+# 
+
+# In[10]:
+
+
+
 
 
 # ## For Loops
@@ -194,7 +102,7 @@ print( "middleVal = ", middleVal )
 # 
 # The sequence can be any list.  We set up for loop using the for and in keywords, a colon, and all of the code within the for loop indented
 
-# In[11]:
+# In[1]:
 
 
 exampleList = ['a', 'niner', 6, 6.1, 'V@@@', 1001/2, 42]
@@ -213,7 +121,7 @@ for loopVar in exampleList:
 # 
 # We can use the len() and range() functions to show the length and create indices.  We can then iterate using the indices, rather than the values.  Here we loop through the same someNumbers list using spot, the index.
 
-# In[12]:
+# In[2]:
 
 
 someNumbers = [ -3, -2, -1, 0, 1, 2, 3 ] 
@@ -229,7 +137,7 @@ for spot in range( len( someNumbers ) ):
 
 # You may have noticed that the second line is indented.  This is how we indicate what is in the loop.  Our loop can have many lines (all indented).  The first line that isn't indented indicates we are out of the loop.  This is the python syntax for in and out of the loop; other coding languages use other things such as braces {}.  Note that blank lines don't matter, just indentation.
 
-# In[13]:
+# In[3]:
 
 
 for val in someNumbers:
@@ -260,7 +168,7 @@ print( "#-# Outside the loop #-#" )
 
 # The condition being set by the while statement will cause this to run as long as the statement is true
 
-# In[14]:
+# In[4]:
 
 
 answer = 'up'
@@ -279,7 +187,7 @@ print( "Is answer equal to up? = ", answer == 'up' )
 
 # One thing to note is that the while loop won't ever be entered if the condition is false when the statement 
 
-# In[15]:
+# In[5]:
 
 
 answer = 'up'
@@ -300,7 +208,7 @@ print( "Is answer equal to down? = ", answer == 'down' )
 # 
 # We need to initialize our criterion variable to 0 and set up an iterator to count up for us.
 
-# In[16]:
+# In[6]:
 
 
 pushToLarge = 0
@@ -320,7 +228,7 @@ print( pushToLarge )
 
 # While loops will keep iterating as long as the statement stays true.  Infinite loops are caused by a condition that always stays true.  Use the stop button (black square) to stop this errorneous code, which will never stop after uncommenting. 
 
-# In[17]:
+# In[7]:
 
 
 # Uncomment all the lines below and run if you want an infinite loop to run
@@ -332,13 +240,13 @@ print( pushToLarge )
 
 # ## Conditioning Data
 
-# We can condition our data using if-else statements and switch cases.  If-else statements allow us to do different things if a certain criterion is met or not. We can count the odds and evens in our someNumbers list.
+# 
 
 # ### If-Else Statements
 
 # The if statement starts with if and then lists a condition that may or may not be met. If the condition is true, we do what is listed.  If it is not, we move on. 
 
-# In[18]:
+# In[8]:
 
 
 answer = 42
@@ -352,7 +260,7 @@ if answer > 50:
 
 # In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an else statement
 
-# In[19]:
+# In[9]:
 
 
 answer = 42
@@ -370,7 +278,7 @@ else:
 
 # Here's a more complicated example.  We count the number of odd and even values in someNumbers by using an if-else statement to separate the odds (which have a remainder or modulo of 1 when divided by 2) from the evens.
 
-# In[23]:
+# In[10]:
 
 
 someNumbers = [ -3, -2, -1, 0, 1, 2, 3 ] 
@@ -403,7 +311,7 @@ print( "evens = ", evens )
 # ```
 # to provide another condition. Let's count the odds again, and count the evens but split between those that are greater than or equal to 0 and those that aren't, and change all of the negative evens to 0.  Note that we use the index of the value so that we can set the value to 0 for the negative evens.
 
-# In[25]:
+# In[11]:
 
 
 someNumbers = [ -3, -2, -1, 0, 1, 2, 3 ] 
@@ -436,7 +344,7 @@ print( "someNumbers = ", someNumbers )
 
 # Note: we don't need a final else if we don't care about values that don't meet our earlier criteria.  Here, we skip the final else, doing nothing if the even number is less than or equal to 0.
 
-# In[26]:
+# In[12]:
 
 
 print( "someNumbers = ", someNumbers )
@@ -463,7 +371,7 @@ print( "posEvens = ", posEvens )
 
 # Switch Cases are specialized if-else statements - the criteria must be met exactly. Let's work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaulation.  We will use numbers as the keys and use the abbreviations as the values. 
 
-# In[27]:
+# In[13]:
 
 
 monthSwap = {1:'Jan',2:'Feb',3:'Mar',4:'Apr',5:'May',6:'Jun',7:'Jul',8:'Aug',9:'Sep',10:'Oct',11:'Nov',12:'Dec'}
@@ -475,7 +383,7 @@ monthSwap = {1:'Jan',2:'Feb',3:'Mar',4:'Apr',5:'May',6:'Jun',7:'Jul',8:'Aug',9:'
 # ```
 # The value listed in default is returned if the given key isn't present.
 
-# In[28]:
+# In[14]:
 
 
 print( "monthSwap = ", monthSwap)
@@ -491,7 +399,7 @@ print( monthSwap.get(19,"oooooops!") )
 
 # Let's use our dictionairy to print out some birthdays, given the day, month and year in numerical format.  Note that we use the get function of the dictionary, which has error checking, and then gather the same info without get and the error checking.
 
-# In[29]:
+# In[15]:
 
 
 birthdayMonths = [4,2,11,9,15]

@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="What is a variable?" href="Learning%20about%20Variables.html" />
+    <link rel="next" title="Learning about Variables" href="Learning%20about%20Variables.html" />
     <link rel="prev" title="Introduction to JupyterLab" href="Introduction%20to%20JupyterLab.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,7 +124,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Learning%20about%20Variables.html">
-   What is a variable?
+   Learning about Variables
   </a>
  </li>
  <li class="toctree-l1">
@@ -133,8 +133,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="If-Else%20Conditions.html">
+   If-Else Conditions
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Loops.html">
    Introduction to Functions, Loops and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Loading%20a%20Library.html">
+   Loading a Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Creating%20a%20Function.html">
+   Creating a Function
   </a>
  </li>
  <li class="toctree-l1">
@@ -292,6 +307,11 @@
    Resources
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-errors">
+   Common Errors
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -310,7 +330,7 @@
 <h2>Comments in Python<a class="headerlink" href="#comments-in-python" title="Permalink to this headline">¶</a></h2>
 <p>In Python, we can creat comments in the code itself. Considering we can use markdown langauge (as you see here 😁), we won’t be using this too much in this notebook. Though, here is an example.</p>
 <p>Basically, you use the… umm… hashtag? number sign? pound sign?</p>
-<p>This thing #</p>
+<p>This thing -&gt; #</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I am a comment in Python</span>
@@ -398,6 +418,38 @@ print(...)
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
 <p>Highly suggest looking for answers using <a class="reference external" href="https://stackoverflow.com/help/searching">StackOverflow</a></p>
 </div>
+<div class="section" id="common-errors">
+<h2>Common Errors<a class="headerlink" href="#common-errors" title="Permalink to this headline">¶</a></h2>
+<p>One of the most common errors in Python is the dreaded</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+ <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span>
+
+  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-1-0dcc020fd5cb&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">indent</span>
+</pre></div>
+</div>
+<p>Why does this occur? Well because Python uses spacing or tabs to distinquish where things like loops, functions, and if/else statements start and end. So, if you add an extra space or tab at the beginning of the statement, you will see this message. If you do, check your spacing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Python can get weird with issue. As you can, technically, start code wherever. As long as you are consistent. The next cell shows an example of this… oddity.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>                <span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+                <span class="mi">3</span><span class="o">+</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>still works!</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -426,7 +478,7 @@ print(...)
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Introduction%20to%20JupyterLab.html" title="previous page">Introduction to JupyterLab</a>
-    <a class='right-next' id="next-link" href="Learning%20about%20Variables.html" title="next page">What is a variable?</a>
+    <a class='right-next' id="next-link" href="Learning%20about%20Variables.html" title="next page">Learning about Variables</a>
 
         </div>
         

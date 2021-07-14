@@ -11,9 +11,9 @@
 # 
 # Basically, you use the... umm... hashtag? number sign? pound sign? 
 # 
-# This thing #
+# This thing -> #
 
-# In[4]:
+# In[1]:
 
 
 # I am a comment in Python
@@ -38,7 +38,7 @@
 # 
 # Let's use the classic example.
 
-# In[7]:
+# In[2]:
 
 
 print( "hello, world!" )
@@ -46,7 +46,7 @@ print( "hello, world!" )
 
 # OR
 
-# In[8]:
+# In[3]:
 
 
 print("hello, world!")
@@ -62,7 +62,7 @@ print("hello, world!")
 # 
 # ... function is exactly what it is. It is a function to 🌟 help 🌟 you understand the basic usage of another function. 
 
-# In[9]:
+# In[4]:
 
 
 help(print)
@@ -71,3 +71,39 @@ help(print)
 # ## Resources
 
 # Highly suggest looking for answers using [StackOverflow](https://stackoverflow.com/help/searching)
+
+# ## Common Errors
+
+# One of the most common errors in Python is the dreaded 
+# 
+# ```python
+# 2 + 2
+#  3 + 3
+# 
+#   File "<ipython-input-1-0dcc020fd5cb>", line 2
+#     3 + 3
+#     ^
+# IndentationError: unexpected indent
+# ```
+# 
+# Why does this occur? Well because Python uses spacing or tabs to distinquish where things like loops, functions, and if/else statements start and end. So, if you add an extra space or tab at the beginning of the statement, you will see this message. If you do, check your spacing. 
+
+# ```{note}
+# Python can get weird with issue. As you can, technically, start code wherever. As long as you are consistent. The next cell shows an example of this... oddity.
+# 
+# ```
+
+# In[5]:
+
+
+2+2
+3+3
+
+
+# still works! 
+
+# In[ ]:
+
+
+
+

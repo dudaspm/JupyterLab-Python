@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Let’s create a shopping list!" href="Shopping%20List.html" />
-    <link rel="prev" title="Comparison Operators" href="Comparisons.html" />
+    <link rel="next" title="Loading a Library" href="Loading%20a%20Library.html" />
+    <link rel="prev" title="If-Else Conditions" href="If-Else%20Conditions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -89,6 +89,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Getting Starting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebook%20Introduction.html">
+   Notebook Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Jupyter Lab
  </span>
 </p>
@@ -106,8 +118,13 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Introduction%20to%20Python.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Learning%20about%20Variables.html">
-   What is a variable?
+   Learning about Variables
   </a>
  </li>
  <li class="toctree-l1">
@@ -115,9 +132,24 @@
    Comparison Operators
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="If-Else%20Conditions.html">
+   If-Else Conditions
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Introduction to Functions, Loops and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Loading%20a%20Library.html">
+   Loading a Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Creating%20a%20Function.html">
+   Creating a Function
   </a>
  </li>
  <li class="toctree-l1">
@@ -259,23 +291,6 @@
   <a class="reference internal nav-link" href="#functions">
    Functions
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-inputs-and-outputs">
-     Multiple inputs and outputs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions-calling-other-functions">
-     Functions calling other functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-gotcha-for-functions-where-variables-can-be-used">
-     The gotcha for functions: Where variables can be used
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-loops">
@@ -342,21 +357,6 @@
 </ul>
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p>Functions allow us to do repeated tasks easily by writing the code only once.  Functions will have a name, inputs and outputs and can be called anywhere the task is repeated.</p>
-<p>There are functions that are built in to python, for example we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aVal</span> <span class="o">=</span> <span class="mf">10.0</span>
-<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span> <span class="n">aVal</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
-</pre></div>
-</div>
-</div>
-</div>
 <p>Functions have four typical parts:</p>
 <ul class="simple">
 <li><p>Name - what you call your function</p></li>
@@ -364,226 +364,10 @@
 <li><p>Outputs - what the function gives back</p></li>
 <li><p>Math/Magic - what the function does</p></li>
 </ul>
-<p>In python, we use def to define a function with the function name and inputs followed by a colon.  The python function is then separated from the rest of the code by a tab. Some languages use braces rather than indentation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">functionName</span><span class="p">(</span> <span class="n">inputs</span> <span class="p">):</span>
-    <span class="c1"># Operate on the inputs</span>
-    <span class="n">ouputs</span> <span class="o">=</span> <span class="n">inputs</span> <span class="o">+</span> <span class="mi">5</span>
-    <span class="c1"># Return what we want to back</span>
-    <span class="k">return</span> <span class="n">outputs</span><span class="p">;</span>
-</pre></div>
-</div>
 <p>Let’s look at an example function, which changes degrees Farenheit to Celsius.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeFromFToC</span><span class="p">(</span> <span class="n">farVal</span> <span class="p">):</span>
-    <span class="c1"># Change the temperature from Farenheit to Celsius</span>
-    <span class="n">cVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">farVal</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span>
-    <span class="k">return</span> <span class="n">cVal</span> 
-</pre></div>
-</div>
-</div>
-</div>
 <p>Here, our function name is changeFromFToC, the input is farVal, the temperature in Farenheit, the output is cVal, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change 14 deg F to Celsius</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# 14 Deg Farenheit in Celsius&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">changeFromFToC</span><span class="p">(</span> <span class="mi">14</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Change from 68 deg F to Celsius</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# 68 Deg Farenheit in Celsius&quot;</span> <span class="p">)</span>
-<span class="n">niceTempC</span> <span class="o">=</span> <span class="n">changeFromFToC</span><span class="p">(</span> <span class="mi">68</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">niceTempC</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# 14 Deg Farenheit in Celsius
--10.0
-
-#-# 68 Deg Farenheit in Celsius
-20.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="multiple-inputs-and-outputs">
-<h3>Multiple inputs and outputs<a class="headerlink" href="#multiple-inputs-and-outputs" title="Permalink to this headline">¶</a></h3>
 <p>Functions can also have multiple inputs and outputs.  The example below changes Farenheit to Celsius and Kelvin.  We can take the outputs individually, or as a list.  You have to either have the same number of outputs as is provided, or just one for a list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeFromFToCAndK</span><span class="p">(</span> <span class="n">farVal</span> <span class="p">):</span>
-    <span class="c1"># Change the temperature from Farenheit to Celsius and Kelvin</span>
-    <span class="n">cVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">farVal</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span>
-    <span class="n">kVal</span><span class="o">=</span> <span class="n">cVal</span> <span class="o">+</span> <span class="mf">273.15</span>
-    <span class="k">return</span> <span class="n">cVal</span><span class="p">,</span> <span class="n">kVal</span>    
-    
-<span class="c1"># Change 14 deg F to Celsius and Kelvin</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# 14 Deg Farenheit in Celsius and Kelvin&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">changeFromFToCAndK</span><span class="p">(</span> <span class="mi">14</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Change 212 deg F to Celsius and Kelvin</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# 212 Deg Farenheit in Celsius and Kelvin&quot;</span> <span class="p">)</span>
-<span class="n">boilingC</span><span class="p">,</span> <span class="n">boilingK</span> <span class="o">=</span> <span class="n">changeFromFToCAndK</span><span class="p">(</span> <span class="mi">212</span> <span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span> <span class="n">boilingC</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">boilingK</span> <span class="p">)</span>
-
-<span class="c1"># Change 32 deg F to Celsius and Kelvin</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# 32 Deg Farenheit in Celsius and Kelvin&quot;</span> <span class="p">)</span>
-<span class="n">freezing</span> <span class="o">=</span> <span class="n">changeFromFToCAndK</span><span class="p">(</span> <span class="mi">32</span> <span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span> <span class="n">freezing</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">freezing</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# 14 Deg Farenheit in Celsius and Kelvin
-(-10.0, 263.15)
-
-#-# 212 Deg Farenheit in Celsius and Kelvin
-100.0
-373.15
-
-#-# 32 Deg Farenheit in Celsius and Kelvin
-0.0
-273.15
-</pre></div>
-</div>
-</div>
-</div>
 <p>The example function below to calculate the wind chill uses two inputs and only calculates the returned value.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">windChillFar</span><span class="p">(</span> <span class="n">tempF</span><span class="p">,</span> <span class="n">windMPH</span> <span class="p">):</span>
-    <span class="c1"># Calculate the wind chill index using</span>
-    <span class="c1"># tempF: Temperature in Farenheit</span>
-    <span class="c1"># windMPH: Wind in miles per hour</span>
-    <span class="c1"># to return the wind chill index</span>
-    <span class="k">return</span> <span class="mf">35.74</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.6215</span> <span class="o">*</span> <span class="n">tempF</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">35.75</span> <span class="o">*</span> <span class="n">windMPH</span><span class="o">**</span><span class="mf">.16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.4275</span> <span class="o">*</span> <span class="n">tempF</span> <span class="o">*</span> <span class="n">windMPH</span><span class="o">**</span><span class="mf">.16</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Wind chill at 32 with 8 mph wind&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">windChillFar</span><span class="p">(</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">8</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Wind chill at 32 with 8 mph wind
-24.846007283646554
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="functions-calling-other-functions">
-<h3>Functions calling other functions<a class="headerlink" href="#functions-calling-other-functions" title="Permalink to this headline">¶</a></h3>
-<p>Functions can call other functions.  Here we add three using a function to add two and then adding one.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addTwo</span><span class="p">(</span> <span class="n">inValAddTwo</span> <span class="p">):</span>
-    <span class="c1"># Add two to the input</span>
-    <span class="k">return</span> <span class="n">inValAddTwo</span> <span class="o">+</span> <span class="mi">2</span>
-
-<span class="k">def</span> <span class="nf">addThree</span><span class="p">(</span> <span class="n">inValAddThree</span> <span class="p">):</span>
-    <span class="c1"># Add three two the input</span>
-    <span class="k">return</span> <span class="n">addTwo</span><span class="p">(</span> <span class="n">inValAddThree</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="c1"># Add three to four</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Add three to four using addThree, which calls addTwo&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">addThree</span><span class="p">(</span> <span class="mi">4</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Add three to four using addThree, which calls addTwo
-7
-</pre></div>
-</div>
-</div>
-</div>
-<p>Functions can also call themselves - these are called recursive functions.  See how we calculate the factorial by subtracting one and calling the function again.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorialRecursive</span><span class="p">(</span> <span class="n">facIn</span> <span class="p">):</span>
-    <span class="c1"># Calculate the factorial</span>
-    <span class="k">if</span> <span class="n">facIn</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">facIn</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">facIn</span> <span class="o">*</span> <span class="n">factorialRecursive</span><span class="p">(</span> <span class="n">facIn</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Use a recursive function to calculate the factorial of 5</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Use a recursive function to calculate the factorial of 5&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">factorialRecursive</span><span class="p">(</span> <span class="mi">5</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Use a recursive function to calculate the factorial of 5
-120
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="the-gotcha-for-functions-where-variables-can-be-used">
-<h3>The gotcha for functions: Where variables can be used<a class="headerlink" href="#the-gotcha-for-functions-where-variables-can-be-used" title="Permalink to this headline">¶</a></h3>
-<p>The biggest gotcha on functions is with variable scope:</p>
-<ul class="simple">
-<li><p>Variables defined in a function are not accessible from the outside</p></li>
-<li><p>Functions have access to more than just the variables passed in</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to add four</span>
-<span class="k">def</span> <span class="nf">addFour</span><span class="p">(</span> <span class="n">inValAddFour</span> <span class="p">):</span>
-    <span class="n">middleVal</span> <span class="o">=</span> <span class="n">addTwo</span><span class="p">(</span> <span class="n">inValAddFour</span> <span class="p">)</span>
-    <span class="n">finalAns</span> <span class="o">=</span> <span class="n">addTwo</span><span class="p">(</span> <span class="n">middleVal</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#-# Print from In Function&quot;</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;startingVal = &quot;</span><span class="p">,</span> <span class="n">startingVal</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;middleVal = &quot;</span><span class="p">,</span> <span class="n">middleVal</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;finalAns = &quot;</span><span class="p">,</span> <span class="n">finalAns</span> <span class="p">)</span>
-    <span class="k">return</span> <span class="n">finalAns</span>
-    
-<span class="c1">#-#-#-#-#-#-#</span>
-<span class="c1"># Not in the function - this is what runs</span>
-<span class="n">startingVal</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="c1"># Call the function using startingVal as the input parameter</span>
-<span class="n">fourAdded</span> <span class="o">=</span> <span class="n">addFour</span><span class="p">(</span> <span class="n">startingVal</span> <span class="p">)</span>
-
-<span class="c1"># Print out some things</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Print after the function&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;startingVal = &quot;</span><span class="p">,</span> <span class="n">startingVal</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;fourAdded = &quot;</span> <span class="p">,</span> <span class="n">fourAdded</span> <span class="p">)</span>
-
-<span class="c1"># This won&#39;t work because middleVal was only defined within the function</span>
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;middleVal = &quot;</span><span class="p">,</span> <span class="n">middleVal</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#-# Print from In Function
-startingVal =  10
-middleVal =  12
-finalAns =  14
-
-#-# Print after the function
-startingVal =  10
-fourAdded =  14
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">b6beff6955a7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> 
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1"># This won&#39;t work because middleVal was only defined within the function</span>
-<span class="ne">---&gt; </span><span class="mi">24</span> <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;middleVal = &quot;</span><span class="p">,</span> <span class="n">middleVal</span> <span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;middleVal&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="for-loops">
 <h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
@@ -828,7 +612,6 @@ counter =  5 pushToLarge =  2
 </div>
 <div class="section" id="conditioning-data">
 <h2>Conditioning Data<a class="headerlink" href="#conditioning-data" title="Permalink to this headline">¶</a></h2>
-<p>We can condition our data using if-else statements and switch cases.  If-else statements allow us to do different things if a certain criterion is met or not. We can count the odds and evens in our someNumbers list.</p>
 <div class="section" id="if-else-statements">
 <h3>If-Else Statements<a class="headerlink" href="#if-else-statements" title="Permalink to this headline">¶</a></h3>
 <p>The if statement starts with if and then lists a condition that may or may not be met. If the condition is true, we do what is listed.  If it is not, we move on.</p>
@@ -1087,7 +870,7 @@ oooooops! 15 2015
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-29-b2157a63f782&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">b2157a63f782</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span><span class="s2">&quot;oooooops!&quot;</span><span class="p">),</span> <span class="n">birthdayDays</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="n">birthdayYears</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="c1"># Print without get, which gives an error if passed a key that doesn&#39;t exist</span>
 <span class="ne">---&gt; </span><span class="mi">11</span>     <span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="p">[</span><span class="n">birthdayMonths</span><span class="p">[</span><span class="n">spot</span><span class="p">]],</span> <span class="n">birthdayDays</span><span class="p">[</span><span class="n">spot</span><span class="p">],</span> <span class="n">birthdayYears</span><span class="p">[</span><span class="n">spot</span><span class="p">]</span> <span class="p">)</span>
@@ -1240,8 +1023,8 @@ oooooops! 15 2015
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Comparisons.html" title="previous page">Comparison Operators</a>
-    <a class='right-next' id="next-link" href="Shopping%20List.html" title="next page">Let’s create a shopping list!</a>
+    <a class='left-prev' id="prev-link" href="If-Else%20Conditions.html" title="previous page">If-Else Conditions</a>
+    <a class='right-next' id="next-link" href="Loading%20a%20Library.html" title="next page">Loading a Library</a>
 
         </div>
         
