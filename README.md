@@ -14,7 +14,9 @@ This is the source files for creating Python and Matplotlib code in Jupyter Lab 
 * Getting Started with Matplotlib (80% completed)
 * Tables to Idioms (50% completed)
 
-:black_square:
+:radio_button:
+
+
 ## Contributors
 
 If you are interested in contributing, let me know! 
