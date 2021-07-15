@@ -9,27 +9,25 @@
 # 
 # At the top page, you will see:
 # 
-# ![icons at the top right corner of the screen](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen1.png)
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen1.png" alt="icons at the top right corner of the screen" style="width:200px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # Select the icon on the left, the rocket ship:
 # 
-# ![rocket ship icon for running the notebook](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen2.png)
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen2.png" alt="rocket ship icon for running the notebook" style="width:200px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # Then go down to "Live Code":
 # 
-# ![selecting Live Code](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen4.png)
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen4.png" alt="selecting Live Code" style="width:200px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # You should see at the top of the page a loading bar that cycles through mulitple states. 
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen6.png" alt="loading bar, first cycle" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
 # 
-# ![loading bar, first cycle](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen6.png)
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen7.png" alt="loading bar, second cycle" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
 # 
-# ![loading bar, second cycle](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen7.png)
-# 
-# ![loading bar, thrid cycle](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen8.png)
+# <img alt="loading bar, thrid cycle" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen8.png" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # Then, finally:
-# 
-# ![loading bar, final cycle](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen9.png)
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen9.png" alt="loading bar, final cycle" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # Try this for yourself! 
 # 
