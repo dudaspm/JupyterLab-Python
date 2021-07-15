@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Let’s create a shopping list!" href="Shopping%20List.html" />
-    <link rel="prev" title="Creating a Function" href="Creating%20a%20Function.html" />
+    <link rel="next" title="Creating a Function" href="Creating%20a%20Function.html" />
+    <link rel="prev" title="Loops" href="Loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -139,12 +139,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Loops.html">
-   Introduction to Functions, Loops and Sorting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Creating%20a%20Function.html">
-   Creating a Function
+   Loops
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -152,6 +147,18 @@
    Loading a Library
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Creating%20a%20Function.html">
+   Creating a Function
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Example Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Shopping%20List.html">
    Let’s create a shopping list!
@@ -348,13 +355,13 @@
 </ul>
 <div class="section" id="built-in-modules">
 <h2>Built in Modules<a class="headerlink" href="#built-in-modules" title="Permalink to this headline">¶</a></h2>
-<p>Python uses modules to make additional functionality available.  Modules can be thought of as libraries with many functions, data types and characteristics that can be used once these are loaded.</p>
+<p>Python uses modules to make additional functionality available.  Modules can be thought of as libraries with many functions, data types, and characteristics that can be used once loaded.</p>
 <p>We load modules using the import statement:</p>
 <ul class="simple">
 <li><p>Highly recommend import using a name (import module as name)</p></li>
 <li><p>Use the name to keep multiply defined functions separate</p></li>
 <li><p>You can import only individual functions from a module</p></li>
-<li><p>You can also rename functions</p></li>
+<li><p>You can also rename functions.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -385,19 +392,16 @@
 <li><p>pandas</p></li>
 </ul>
 <p>Modules based on their topic can be found: <a class="reference external" href="https://wiki.python.org/moin/UsefulModules">https://wiki.python.org/moin/UsefulModules</a></p>
-<p>Some modules are already included on the system.  You may have to add or update some yourself. Python uses pip for module addition, which includes dependencies. Typically users will put modules in their own space using –user, rather than install them globally. For example, to add cython and to update matplolib you would uncomment:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install cython --user</span>
-<span class="c1">#!pip install matplotlib --user --upgrade</span>
+<p>Some modules are already included on the system.  You may have to add or update some yourself. Python uses pip for module addition, which includes dependencies. Typically users will put modules in their own space using –user, rather than install them globally. For example, to add cython and to update matplolib you would run in a cell:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nx">pip</span> <span class="nx">install</span> <span class="nx">cython</span> <span class="o">--</span><span class="nx">user</span>
+
+<span class="o">!</span><span class="nx">pip</span> <span class="nx">install</span> <span class="nx">matplotlib</span> <span class="o">--</span><span class="nx">user</span> <span class="o">--</span><span class="nx">upgrade</span>
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="homade-modules">
 <h2>Homade Modules<a class="headerlink" href="#homade-modules" title="Permalink to this headline">¶</a></h2>
-<p>You can also build your own modules: just place what you want in a python file (<fileName>.py) in your working directory.  Note that you need an empty file named <strong>init</strong>.py in this directory as well. You can then load your module just like the built in modules.  For example, if a file called <a class="reference external" href="http://adamsTrigs.py">adamsTrigs.py</a> contained:</p>
+<p>You can also build your own modules. To do this, place what you want in a python file (<fileName>.py) in your working directory.  Note that you need an empty file named <strong>init</strong>.py in this directory as well. You can then load your module just like the built-in modules.  For example, if a file called <a class="reference external" href="http://adamsTrigs.py">adamsTrigs.py</a> contained:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">mt</span>
 <span class="k">def</span> <span class="nf">printTrigVals</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">angle</span><span class="p">,</span><span class="n">mt</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span><span class="n">mt</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span><span class="n">mt</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="p">)</span>
@@ -426,7 +430,7 @@
 <h2>Helpful hints for modules<a class="headerlink" href="#helpful-hints-for-modules" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dir">
 <h3>Dir<a class="headerlink" href="#dir" title="Permalink to this headline">¶</a></h3>
-<p>Python has a built in command called dir to show the directory (contents) of a module. This provides lots of info, including the function names.</p>
+<p>Python has a built-in command called dir to show the directory (contents) of a module. This command provides lots of info, including the function names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">adamsTrigs</span> <span class="k">as</span> <span class="nn">aT</span>
@@ -460,7 +464,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;In&#39;,
  &#39;Out&#39;,
  &#39;_&#39;,
- &#39;_4&#39;,
+ &#39;_3&#39;,
  &#39;__&#39;,
  &#39;___&#39;,
  &#39;__builtin__&#39;,
@@ -476,7 +480,6 @@
  &#39;_i2&#39;,
  &#39;_i3&#39;,
  &#39;_i4&#39;,
- &#39;_i5&#39;,
  &#39;_ih&#39;,
  &#39;_ii&#39;,
  &#39;_iii&#39;,
@@ -495,7 +498,7 @@
 </div>
 <div class="section" id="main">
 <h3>Main<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h3>
-<p>We can aso define code that will only run if the file is being run directly.  This will not run if the file is being loaded by another as a module.</p>
+<p>We can also define code that will only run if the file is being run directly.  This will not run if the file is being loaded by another.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -511,13 +514,13 @@
 </div>
 </div>
 </div>
-<p>This is often used in files to read in data, where individual data sets are read into discrete files, which are then read into a main function as modules.  You can make figures showing individual data-sets to test if you are reading correctly in the read file.  Rather than make these each time you include that data read file as a module, you can put the plotting in an if statement like this.</p>
+<p>This is often used in files to read in data, where individual data sets are read into discrete files, which are then read into the main function as modules.  You can make figures showing individual data sets to test if you are reading correctly in the read file.  Rather than make these each time you include that data read file as a module, you can put the plotting in an if statement like this.</p>
 </div>
 </div>
 </div>
 <div class="section" id="check-yourself">
 <h1>Check yourself<a class="headerlink" href="#check-yourself" title="Permalink to this headline">¶</a></h1>
-<p>Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy.)</p>
+<p>Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here</span>
@@ -560,8 +563,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Creating%20a%20Function.html" title="previous page">Creating a Function</a>
-    <a class='right-next' id="next-link" href="Shopping%20List.html" title="next page">Let’s create a shopping list!</a>
+    <a class='left-prev' id="prev-link" href="Loops.html" title="previous page">Loops</a>
+    <a class='right-next' id="next-link" href="Creating%20a%20Function.html" title="next page">Creating a Function</a>
 
         </div>
         
