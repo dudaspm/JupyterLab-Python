@@ -139,17 +139,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Loops.html">
-   Introduction to Functions, Loops and Sorting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Creating%20a%20Function.html">
-   Creating a Function
+   Loops
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Loading%20a%20Library.html">
    Loading a Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Creating%20a%20Function.html">
+   Creating a Function
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,7 +384,7 @@
 <li><p>Comparing different data types</p></li>
 <li><p>Making multiple comparisons at once</p></li>
 </ul>
-<p>Comparison operators are important on their own (how do these things compare?) and are also useful for sorting and switching (see the next notebook.)</p>
+<p>Comparison operators are important on their own (how do these things compare?) and are also useful for sorting and switching (see the next notebook).</p>
 <div class="section" id="are-these-things-the-same">
 <h2>Are these things the same?<a class="headerlink" href="#are-these-things-the-same" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="numeric-comparisons">
@@ -410,7 +410,7 @@
 </div>
 </div>
 </div>
-<p>The first comparison operator is ‘==’ which tests to see if two variables are equal.</p>
+<p>The first comparison operator is ‘==’, which tests to see if two variables are equal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;kitten =&quot;</span><span class="p">,</span> <span class="n">kitten</span><span class="p">,</span> <span class="s2">&quot;; dog =&quot;</span><span class="p">,</span> <span class="n">dog</span><span class="p">,</span> <span class="s2">&quot;; bee = &quot;</span><span class="p">,</span> <span class="n">bee</span> <span class="p">)</span>
@@ -579,7 +579,7 @@ TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt
 </div>
 <div class="section" id="toy-car-problem">
 <h2>Toy (Car) Problem<a class="headerlink" href="#toy-car-problem" title="Permalink to this headline">¶</a></h2>
-<p>To start thinking of these concepts from a logical perspective, let’s create a toy (car) problem. Here are a bunch of either toy cars with various colors and costs.  Here is how they labeled.</p>
+<p>To start thinking of these concepts from a logical perspective, let’s create a toy (car) problem. Here are a bunch of toy cars with various colors and costs.  Here is how they labeled.</p>
 <p>auto:</p>
 <ul class="simple">
 <li><p>car</p></li>
@@ -710,7 +710,7 @@ TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt
 <ul class="simple">
 <li><p>If the <em>V</em> CATA bus is coming around the corner, then I need to run towards the bus stop.</p></li>
 </ul>
-<p>requires several things for it to be true, and to require running.  We can break these things out with:</p>
+<p>requires several things for it to be true and to require running.  We can break these things out with:</p>
 <ul class="simple">
 <li><p>If there is a vehicle coming around the corner <strong>AND</strong> that vehicle is a CATA bus <strong>AND</strong> that CATA bus is a V</p>
 <ul>
@@ -718,14 +718,14 @@ TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt
 </ul>
 </li>
 </ul>
-<p>We will only run towards the bus stop if all of the statements are true</p>
+<p>We will only run towards the bus stop if all of the statements are true.</p>
 <div class="section" id="and">
 <h3>AND<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>the <strong>and</strong> operator will return True if all of the conditions are met</p>
 </div>
-<p>Let’s create another scenario for this around clothes. For this let’s assume:</p>
+<p>Let’s create another scenario for this around clothes. For this, let’s assume:</p>
 <p>face = 😎</p>
 <p>shirt = 👕</p>
 <p>pants = 👖</p>
@@ -760,7 +760,7 @@ False
 </div>
 </div>
 </div>
-<p>We can also string as many comparisons together as we want</p>
+<p>We can also string as many comparisons together as we want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="p">)</span>
@@ -943,7 +943,7 @@ True
 </div>
 <div class="section" id="try-it-out">
 <h2>Try It Out!<a class="headerlink" href="#try-it-out" title="Permalink to this headline">¶</a></h2>
-<p>Try to fill in code to fulfill the request!  Here are some variables used in the excercise</p>
+<p>Try to fill in code to fulfill the request!  Here are some variables used in the exercise</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dogA_color</span> <span class="o">=</span> <span class="s1">&#39;brown&#39;</span>

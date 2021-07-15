@@ -332,8 +332,8 @@
 <p>We can condition our data using if-else statements and switch cases.  If-else statements allow us to do different things if a certain criterion is met or not. We can count the odds and evens in our someNumbers list.</p>
 <div class="section" id="if">
 <h2>if<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h2>
-<p>The <em>if</em> statement starts with if and then lists a condition that may or may not be met. If the condition is true, we do what is listed. If it is not, we move on.</p>
-<p>Our example here is straightforward, if answer is greater than 30, print something.</p>
+<p>The <em>if</em> statement starts with if and then lists a condition that may or may not is met. If the condition is true, we do what is listed. If it is not, we move on.</p>
+<p>Our example here is straightforward; if answer is greater than 30, print something.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span>
@@ -362,14 +362,14 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note the structure of a Python if/else statement. Where some languages use { } to denote the start and end of the if/else statement. Python uses spaces.</p>
+<p>Note the structure of a Python if/else statement where some languages use { } to denote the start and end of the if/else statement. Python uses spaces.</p>
 <p>if (condition): &lt;-colon</p>
 <p>&lt;- space or tab</p>
 <p>Anything that is also spaced or tab is <em>part</em> of the if statement.</p>
 </div>
 <div class="section" id="where-the-if-starts-and-ends">
 <h3>Where the if Starts and Ends<a class="headerlink" href="#where-the-if-starts-and-ends" title="Permalink to this headline">¶</a></h3>
-<p>As mentioned in our note, the if/else statement uses spacing to indicate where it starts and end. To highlight this, let’s look at an example.</p>
+<p>As mentioned in our note, the if/else statement uses spacing to indicate where it starts and ends. To highlight this, let’s look at an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Into the If/Else!&quot;</span><span class="p">)</span>
@@ -426,7 +426,7 @@ Out of the If/Else!
 </div>
 <div class="section" id="elif-else-if">
 <h2>elif (else if)<a class="headerlink" href="#elif-else-if" title="Permalink to this headline">¶</a></h2>
-<p>If-else statements can also be stacked together, to allow for additional sorting using multiple conditions.  The way this is done in python is by using</p>
+<p>If-else statements can also be stacked together to allow for additional sorting using multiple conditions.  The way this is done in python is by using</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span>
 </pre></div>
 </div>
@@ -463,7 +463,7 @@ Out of the If/Else!
 </div>
 <div class="section" id="switch-cases">
 <h3>Switch Cases<a class="headerlink" href="#switch-cases" title="Permalink to this headline">¶</a></h3>
-<p>Switch Cases are specialized if-else statements - the criteria must be met exactly. Let’s work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaulation.  We will use numbers as the keys and use the abbreviations as the values.</p>
+<p>Switch Cases are specialized if-else statements - the criteria must be met precisely. Let’s work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaluation.  We will use numbers as the keys and use the abbreviations as the values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthSwap</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s1">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">:</span><span class="s1">&#39;May&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">:</span><span class="s1">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">:</span><span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="s1">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">:</span><span class="s1">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">:</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">:</span><span class="s1">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">:</span><span class="s1">&#39;Dec&#39;</span><span class="p">}</span>

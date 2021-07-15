@@ -7,9 +7,9 @@
 
 # ## if
 
-# The *if* statement starts with if and then lists a condition that may or may not be met. If the condition is true, we do what is listed. If it is not, we move on. 
+# The *if* statement starts with if and then lists a condition that may or may not is met. If the condition is true, we do what is listed. If it is not, we move on. 
 # 
-# Our example here is straightforward, if answer is greater than 30, print something.
+# Our example here is straightforward; if answer is greater than 30, print something.
 
 # In[1]:
 
@@ -32,7 +32,7 @@ if answer > 50:
 
 
 # ```{note}
-# Note the structure of a Python if/else statement. Where some languages use { } to denote the start and end of the if/else statement. Python uses spaces. 
+# Note the structure of a Python if/else statement where some languages use { } to denote the start and end of the if/else statement. Python uses spaces. 
 # 
 # if (condition): <-colon
 # 
@@ -44,7 +44,7 @@ if answer > 50:
 
 # ### Where the if Starts and Ends
 
-# As mentioned in our note, the if/else statement uses spacing to indicate where it starts and end. To highlight this, let's look at an example. 
+# As mentioned in our note, the if/else statement uses spacing to indicate where it starts and ends. To highlight this, let's look at an example. 
 
 # In[3]:
 
@@ -86,7 +86,7 @@ else:
 
 # ## elif (else if)
 
-# If-else statements can also be stacked together, to allow for additional sorting using multiple conditions.  The way this is done in python is by using 
+# If-else statements can also be stacked together to allow for additional sorting using multiple conditions.  The way this is done in python is by using 
 # ```python
 # elif
 # ```
@@ -120,7 +120,7 @@ else:
 
 # ### Switch Cases
 
-# Switch Cases are specialized if-else statements - the criteria must be met exactly. Let's work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaulation.  We will use numbers as the keys and use the abbreviations as the values. 
+# Switch Cases are specialized if-else statements - the criteria must be met precisely. Let's work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaluation.  We will use numbers as the keys and use the abbreviations as the values. 
 
 # In[6]:
 

@@ -17,7 +17,7 @@
 # * loop variable - the value of the sequence currently being used
 # * sequence - the data we iterate over
 # 
-# The sequence can be any list.  We set up *for loop* using the *for* and *in* keywords, a colon, and all of the code within the *for loop* indented
+# The sequence can be any list.  We set up *for loop* using the *for* and *in* keywords, a colon, and all of the code within the *for loop* indented.
 
 # In[1]:
 
@@ -86,7 +86,7 @@ for steve in groceryList:
     print (steve)
 
 
-# Going back to our original list. See how much easier it is to print these values?exampleList
+# Going back to our original list. See how much easier it is to print these values? 
 
 # In[6]:
 
@@ -173,7 +173,7 @@ print( "Outside the loop" )
 # "put them on" 😎
 # ``` 
 # 
-# Can you see where each has their unique take on looping? Of course you don't; you are wearing sunglasses indoors. Take them off first, then check out their uniqueness.
+# Can you see where each has their unique take on looping? Of course, you don't; you are wearing sunglasses indoors. Take them off first, then check out their uniqueness.
 
 # The condition being set by the while statement will cause this to run as long as the statement is true.
 
@@ -188,7 +188,7 @@ while (counting < 10):
     print ("\t","after:",counting)
 
 
-# One thing to note is that the while loop won't ever be entered if the condition is false when the statement 
+# One thing to note is that the while loop won't ever be entered if the condition is false when the statement begins as false.
 
 # In[12]:
 
@@ -203,7 +203,7 @@ while (startAtTen < 10):
 
 # ##### 😈 A VERY MEAN Example 😈
 
-# Let's see where we can use this type of loop. In this 😈 VERY MEAN Example 😈. We are creating a set of 30 random numbers from 1 to 50. The *while* will run until it hits its first even number and print this out. Can you spot its MEAN intention?
+# Let's see where we can use this type of loop, in this 😈 VERY MEAN Example 😈. We are creating a set of 30 random numbers from 1 to 50. The *while* will run until it hits its first even number and print this out. Can you spot its MEAN intention?
 
 # In[13]:
 
@@ -219,10 +219,10 @@ while ( randomList[index] % 2 ):
 print ( "the first even number is:", randomList[index])
 
 
-# So why is this very mean?! Look out our warning.
+# So why is this very mean?! Look at our warning.
 
 # ```{warning}
-# While loops will keep iterating as long as the statement stays true.  Infinite loops are caused by a condition that always stays true.  Use the stop button ( 🔲 but filled in ) to stop this errorneous code. Here is an example of this type of code. 
+# While loops will keep iterating as long as the statement stays true.  Infinite loops are caused by a condition that always stays true.  Use the stop button ( 🔲 but filled in ) to stop this erroneous code. Here is an example of this type of code. 
 # ```
 
 # ```python
@@ -235,7 +235,7 @@ print ( "the first even number is:", randomList[index])
 #     counting = counting + 1
 # ```
 
-# This is 😈 A VERY MEAN Example 😈 because it is possible to have a set without a single even numbers. The odds of picking an even or an odd is a coin flip (50%). Now do this 30 times. What are the odds of flipping a coin 30 times without a single "Tails?" 
+# This is 😈 A VERY MEAN Example 😈 because it is possible to have a set without a single even number. The odds of picking an even or an odd is a coin flip (50%). Now do this 30 times. What are the odds of flipping a coin 30 times without a single "Tails?" 
 # 
 # $\frac{1}{2}$ = 1 coin
 # 
@@ -247,11 +247,11 @@ print ( "the first even number is:", randomList[index])
 # 
 # $(\frac{1}{2})^{30}$ = 30 coin = $(\frac{1}{1073741824})$  OR one in 1 billion, 73 million, 741 thousand, 824. 
 # 
-# Meaning, a person out of 1073741824 will have a infinite loop! 
+# Meaning, a person out of 1073741824 will have an infinite loop! 
 # 
 # MUAHAHAHA!!!
 
-# ## Check yourself
+# ## Your Turn
 
 # Try to fill in code to fulfill the request!  Here is a variable used in the excercises
 
@@ -261,7 +261,7 @@ print ( "the first even number is:", randomList[index])
 aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 
-# Write a function that returns the length of aListOfNumbers as well as the maximum value. Hint: max() is a built in function
+# Write a function that returns the length of aListOfNumbers as well as the maximum value. Hint: max() is a built-in function
 
 # In[15]:
 

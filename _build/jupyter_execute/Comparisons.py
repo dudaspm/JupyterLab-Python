@@ -12,7 +12,7 @@
 # * Comparing different data types
 # * Making multiple comparisons at once
 # 
-# Comparison operators are important on their own (how do these things compare?) and are also useful for sorting and switching (see the next notebook.) 
+# Comparison operators are important on their own (how do these things compare?) and are also useful for sorting and switching (see the next notebook).
 
 # ## Are these things the same?
 
@@ -37,7 +37,7 @@ bee = 11
 print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 
-# The first comparison operator is '==' which tests to see if two variables are equal. 
+# The first comparison operator is '==', which tests to see if two variables are equal. 
 
 # In[2]:
 
@@ -151,7 +151,7 @@ print( "TheNumbers type is ", type( TheNumbers ), "; and TheCharacters type is "
 
 # ## Toy (Car) Problem
 # 
-# To start thinking of these concepts from a logical perspective, let's create a toy (car) problem. Here are a bunch of either toy cars with various colors and costs.  Here is how they labeled.
+# To start thinking of these concepts from a logical perspective, let's create a toy (car) problem. Here are a bunch of toy cars with various colors and costs.  Here is how they labeled.
 # 
 # auto:
 # - car
@@ -201,11 +201,11 @@ get_ipython().run_cell_magic('html', '', '<div id="pick1"></div>\n<label for="qu
 # The individual testable (true/false) components need to be broken apart. For example,
 # * If the *V* CATA bus is coming around the corner, then I need to run towards the bus stop.
 # 
-# requires several things for it to be true, and to require running.  We can break these things out with:
+# requires several things for it to be true and to require running.  We can break these things out with:
 # * If there is a vehicle coming around the corner **AND** that vehicle is a CATA bus **AND** that CATA bus is a V 
 #     * then I need to run towards the bus stop
 # 
-# We will only run towards the bus stop if all of the statements are true
+# We will only run towards the bus stop if all of the statements are true.
 
 # ### AND
 
@@ -213,7 +213,7 @@ get_ipython().run_cell_magic('html', '', '<div id="pick1"></div>\n<label for="qu
 # the **and** operator will return True if all of the conditions are met
 # ```
 
-# Let's create another scenario for this around clothes. For this let's assume:
+# Let's create another scenario for this around clothes. For this, let's assume:
 # 
 # face = 😎 
 # 
@@ -244,7 +244,7 @@ print (pants == "jeans")
 print( (shirt == "sweater") and (pants == "jeans") )
 
 
-# We can also string as many comparisons together as we want
+# We can also string as many comparisons together as we want.
 
 # In[11]:
 
@@ -304,7 +304,7 @@ get_ipython().run_cell_magic('html', '', '<div id="pick2"></div>\n<label for="qu
 
 # ## Try It Out!
 
-# Try to fill in code to fulfill the request!  Here are some variables used in the excercise
+# Try to fill in code to fulfill the request!  Here are some variables used in the exercise
 
 # In[15]:
 

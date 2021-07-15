@@ -20,6 +20,8 @@ parts:
       - file: Loops
       - file: Loading a Library
       - file: Creating a Function
+  - caption: Example Python
+    chapters:
       - file: Shopping List
       - file: Guessing Game
     

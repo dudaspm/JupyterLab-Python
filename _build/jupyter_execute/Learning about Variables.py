@@ -3,9 +3,9 @@
 
 # # Learning about Variables
 
-# When we are developing our idea, we sometime need to use values multiple times or change the value based on our code. This is where variables become very helpful. Let's look at an example.
+# When we are developing our idea, we sometimes need to use values multiple times or change the value based on our code. This concept is where variables become very helpful. Let's look at an example.
 # 
-# In this example, we are adding a few numbers togethers. In this instance, if all we care about is getting the result (similar to a calculator). Then variables are not needed. 
+# In this example, we are adding a few numbers together. In this instance, if all we care about is getting the result (similar to a calculator). Then variables are not needed. 
 
 # In[1]:
 
@@ -13,7 +13,7 @@
 5 + 3 + 16
 
 
-# But let's look an example where we need to get the circumference of a circle using multiple radii. The equation for the circumference of a circle is: $C = 2 \pi r$
+# But let's look at an example where we need to get the circumference of a circle using multiple radii. The equation for the circumference of a circle is: $C = 2 \pi r$
 
 # Let's say the radius is 5
 
@@ -24,7 +24,7 @@
 
 
 # OK, how about radius 10 and 11 and 4 and ... 
-# Well in this, we might not want to rewrite 3.14159265359 over and over. So, in this case, we want to create a variable for this and we will call it pi. 
+# Well, in this example, we might not want to rewrite 3.14159265359 over and over. So, in this case, we want to create a variable for this, and we will call it pi. 
 
 # In[3]:
 
@@ -83,7 +83,7 @@ pi = 3.14159265359
 # ### Camel Case
 
 # <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CamelCase_new.svg" alt="camel case" width="100" style="float:right"/>
-# Variable names must be one continous string of letters/numbers. So, let's say we wanted to create a variable called "number of kittens." Instead calling this variable <em>number of kittens</em>, I would call it <em>numberOfKittens</em>. Why the capitalization? because it makes it easier to separate out the words in the name. As in, <em>numberofkittens</em> vs. <em>numberOfKittens</em>. We have a fun name for this: camel case. 
+# Variable names must be one continuous string of letters/numbers. So, let's say we wanted to create a variable called "number of kittens." Instead calling this variable <em>number of kittens</em>, I would call it <em>numberOfKittens</em>. Why the capitalization? Because it makes it easier to separate the words in the name. As in, <em>numberofkittens</em> vs. <em>numberOfKittens</em>. We have a fun name for this: camel case. 
 
 # <cite>File:CamelCase new.svg. (2020, April 15). Wikimedia Commons, the free media repository. Retrieved 15:25, June 3, 2020 from https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&oldid=411544943.</cite>
 
@@ -97,7 +97,7 @@ pi = 3.14159265359
 numberOfKittens = 0
 
 
-# One thing we might want to do is to have Python tell us what **type** this variable is. Well Python has a function for this called
+# One thing we might want to do is to have Python tell us what **type** this variable is. Well, Python has a function for this called
 # 
 # ```python
 # type()
@@ -109,7 +109,7 @@ numberOfKittens = 0
 type( numberOfKittens )
 
 
-# So this checks out, we made an int and it is showing us we have an int.
+# So this checks out, we made an int, and it is showing us we have an int.
 # 
 # Now, once we have a variable, it is not static. We can change the value as much as we need to. Running the next cell will continually add 10 to our original variable. 
 # 
@@ -143,10 +143,10 @@ display(html(' '.join([str(elem) for elem in listOfCats])))
 # ### Floating points or floats
 
 # Floats are similar to integers, but with more precision.
-# Float comes from Floating point or a number with a decimal point. 
+# Float comes from a Floating point or a number with a decimal point. 
 # 
 # This example starts at 0, but note that this is .0 
-# Adding the decimal tells Python that we should have a float value instead of an interger. 
+# Adding the decimal tells Python that we should have a float value instead of an integer. 
 
 # In[12]:
 
@@ -164,12 +164,12 @@ type( aFloatVariable )
 
 # Looks good. 
 # 
-# And again, we will add 10 to this. There is something specific interesting here, see if you spot it.
+# And again, we will add 10 to this. There is something specific interesting here; see if you spot it.
 
 # aFloatVariable = aFloatVariable + 10
 # aFloatVariable
 
-# If you guessed "mixing a float and interger," you got it. Let's see an example. 
+# If you guessed "mixing a float and an integer," you got it. Let's see an example. 
 
 # #### Mixing integers and floats
 
@@ -193,7 +193,7 @@ letsSeeWhatHappens
 # #### type-cast
 
 # ```{note}
-# type-cast is temporary. If you do not use a type-cast, the variable will revert back to its original variable type. 
+# type-cast is temporary. If you do not use a type-cast, the variable will revert to its original variable type. 
 # ```
 
 # Let's switch our numberOfKittens to a float using 
@@ -239,9 +239,9 @@ display(md('<br />'.join([str(elem) for elem in printList])))
 
 # ### String or str
 
-# So, up to this point, we started our conversation working with numbers. Well, what about the other things that are not numbers... like text? Well for text, we use something called a String or str. 
+# So, up to this point, we started our conversation working with numbers. Well, what about the other things that are not numbers... like text? Well, for text, we use something called a String or str. 
 # 
-# Strings allow us to capture a single character up to thousands of charcters (actually, much more than this). Let's go through a tradition example of "Hello, World!" but with my slight spin to it. 
+# Strings allow us to capture a single character up to thousands of characters (actually, much more than this). Let's go through a traditional example of "Hello, World!" but with my slight spin to it. 
 
 # In[18]:
 
@@ -249,7 +249,7 @@ display(md('<br />'.join([str(elem) for elem in printList])))
 helloStatement = "Hello, everyone!"
 
 
-# As you can see, can capture text and other alphanumeric and special characters. There are several unique functions for strings but first, let's double check and see what type we from our helloStatement.
+# As you can see, can capture text and other alphanumeric and special characters. There are several unique functions for strings but first, let's double-check and see what type we from our helloStatement.
 
 # In[19]:
 
@@ -257,10 +257,10 @@ helloStatement = "Hello, everyone!"
 type( helloStatement )
 
 
-# Not too suprising, we see this is type str or string. 
+# Not too surprising, we see this is type str or string. 
 
 # ```{note}
-# For those coming from another programming language. Sometimes other programming languages will have a specific designation for a single character string or as it is called, a character. Python has a one-size fits-all label for text and that is string. Here, let me prove it. 
+# For those coming from another programming language. Sometimes other programming languages will have a specific designation for a single character string or, as it is called, a character. Python has a one-size-fits-all label for text, and that is a string. Here, let me prove it. 
 # ```
 
 # In[20]:
@@ -272,9 +272,9 @@ type( singleCharacter )
 
 # #### String Indexing/String Slicing
 
-# One of the first way to interact with our string is to take a lookg at individual characters by using their **index**.
+# One of the first ways to interact with our string is to take a look at individual characters by using their **index**.
 # 
-# The **index** is position (or multiple positions) for each character in the string. So, if we look at our string, we have Hello, everyone! If we wanted to see the first letter *H*, we can reference this using the index or the position where the letter is in the string. 
+# The **index** is position (or multiple positions) for each character in the string. So, if we look at our string, we have Hello, everyone! If we wanted to see the first letter *H*, we could reference this using the index or the position where the letter is in the string. 
 
 # In[21]:
 
@@ -282,7 +282,7 @@ type( singleCharacter )
 helloStatement[1] 
 
 
-# ohh.. wait a minute. We were expecting the letter *H* but we got *e*. What happened?
+# ohh.. wait a minute. We were expecting the letter *H*, but we got *e*. What happened?
 
 # ```{note}
 # For indexes, we always start at the number 0. So, 0 is the first thing, 1 is the second thing, and so on.
@@ -355,7 +355,7 @@ print( helloStatement.find("Hello") )
 
 
 # ```{note}
-# When using .find(), if the function can NOT find the letters sequence given. It will return -1. 
+# When using *.find()*, if the function can NOT find the sequence of the letters given. It will return -1. 
 # ```
 
 # ##### Formatting
@@ -376,8 +376,8 @@ print( helloStatement.split(" ") )
 
 
 # ```{note}
-# Split will eventually become your best friend. This is a **great** function to use when using data that is uniquelly spaced. 
-# As in comma seperate values or CSV. 
+# *.split()* will eventually become your best friend. *.split()* is a **great** function to use when using uniquelly spaced data. 
+# As in comma separated values or CSV. 
 # ```
 
 # ##### Chaining Functions
@@ -393,11 +393,11 @@ print( helloStatement[:5].lower().find("hello") )
 
 # #### Concatenating Strings
 # 
-# When you want to put two strings together, we say you *concatentate* the strings. There are multiple ways of doing this but presented are what I believe to be the three most common ways. 
+# When you want to put two strings together, we say you *concatenate* the strings. There are multiple ways of doing this but presented are what I believe to be the three most common ways. 
 
 # ##### + Method
 
-# This is the most straightforward method of the three but there can be some issues. You simply add a plus sign *+* between your strings. Let's take a look at this. 
+# This is the most straightforward method of the three, but there can be some issues. You simply add a plus sign *+* between your strings. Let's take a look at this. 
 
 # In[31]:
 
@@ -466,7 +466,7 @@ print ( "%s, %s" % ("hello", "everyone") )
 get_ipython().run_cell_magic('html', '', '<figure>\n<video width="720" height="360" controls muted >\n  <source src="https://github.com/dudaspm/JupyterLab-Python/blob/main/images/percent_cat.mp4?raw=true" type=video/mp4>\n</video>\n  <figcaption>(No Audio) Video of how % concatenate works with substituting strings. </figcaption>\n</figure>')
 
 
-# Ok, but what about numbers?
+# OK, but what about numbers?
 
 # In[35]:
 
@@ -474,7 +474,7 @@ get_ipython().run_cell_magic('html', '', '<figure>\n<video width="720" height="3
 print ( "%s, %s%s%s" % ("hello","every",1,"!") )
 
 
-# Still works! This is why I like this method. You pick the formating and just feed in the strings. 
+# Still works! This reason is why I like this method. You pick the formating and feed in the strings. 
 
 # ##### join() Method
 
@@ -482,7 +482,7 @@ print ( "%s, %s%s%s" % ("hello","every",1,"!") )
 # ```python
 # .join()
 # ```
-# This is a create function to be aware of, as it will allow you the ability to join strings with a specific, static format. What do I mean static formating? Well, unlike the % method that can be formatted exactly how I want it. The .join() method requires a specific pattern. Example time!
+# This is a create function to be aware of, as it will allow you the ability to join strings with a specific, static format. What do I mean by static formatting? Well, unlike the % method, that can be formatted exactly how I want it. The .join() method requires a specific pattern. Example time!
 
 # In[36]:
 
@@ -502,7 +502,7 @@ print ( " ".join(["hello, ", "everyone!"]) )
 # .join(["hello, ", "everyone!"])
 # ```
 # 
-# Notice that the join has the brackets around it. Technically, you are feeding this an array or list (we have not talked about this yet). This again, like *.split()*, this will be a great asset to you in the future. 
+# Notice that the join has the brackets around it. Technically, you are feeding this an array or list (we have not talked about this yet). This function again, like *.split()*, will be a great asset to you in the future. 
 # 
 # Let's show this with our number again. 
 
@@ -517,7 +517,7 @@ print ( " ".join(["hello, ", "everyone!"]) )
 # TypeError: sequence item 2: expected str instance, int found
 # ```
 
-# Same issue as before, we need to type-cast. 
+# The same issue as before, we need to type-cast. 
 
 # In[37]:
 
@@ -525,7 +525,7 @@ print ( " ".join(["hello, ", "everyone!"]) )
 print ( " ".join(["hello, ", "every", str(1), "!"]) )
 
 
-# Notice the spaces? Again, we are saying with *the splitter* what each string is going be seperated by, so in this case, everything is going to split by spaces. 
+# Notice the spaces? Again, we are saying with *the splitter* what each string is going to be seperated by, so in this case, everything will be split by spaces. 
 
 # ### Booleans
 
@@ -540,7 +540,7 @@ type( someCondition )
 
 # #### Boolean Logic
 
-# We will talk about boolean logic more in the next section [Comparisons](Comparisons.html)
+# We will talk about boolean logic more in the next section (Comparisons)
 
 # In[39]:
 
@@ -633,7 +633,7 @@ print( groceryList[1] )
 # ```
 
 # ```{note}
-# Typically, going through an array, one index at a time, is not how we want to use lists. 
+# Typically, going through an array, one index at a time is not how we want to use lists. 
 # We will talk about going through lists using a *loop* in an upcoming notebook. 
 # ```
 
@@ -655,10 +655,4 @@ print( personalInformation )
 
 # Note the order.
 
-# Again, to do this more efficiently, we will be using loops (for and while, we will talk about later).
-
-# In[ ]:
-
-
-
-
+# Again, to do this more efficiently, we will be using loops (we will talk about later).
