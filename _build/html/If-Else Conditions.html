@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to Functions, Loops and Sorting" href="Loops.html" />
+    <link rel="next" title="Loops" href="Loops.html" />
     <link rel="prev" title="Comparison Operators" href="Comparisons.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -139,7 +139,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Loops.html">
-   Introduction to Functions, Loops and Sorting
+   Loops
   </a>
  </li>
  <li class="toctree-l1">
@@ -308,6 +308,13 @@
   <a class="reference internal nav-link" href="#elif-else-if">
    elif (else if)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#switch-cases">
+     Switch Cases
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -356,37 +363,62 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note the structure of a Python if/else statement. Where some languages use { } to denote the start and end of the if/else statement. Python uses spaces.</p>
-<p>if (condition): &lt;-colon
-&lt;- space or tab</p>
+<p>if (condition): &lt;-colon</p>
+<p>&lt;- space or tab</p>
 <p>Anything that is also spaced or tab is <em>part</em> of the if statement.</p>
 </div>
 <div class="section" id="where-the-if-starts-and-ends">
 <h3>Where the if Starts and Ends<a class="headerlink" href="#where-the-if-starts-and-ends" title="Permalink to this headline">¶</a></h3>
-<p>As mentioned in our note, the if/else statement uses space</p>
+<p>As mentioned in our note, the if/else statement uses spacing to indicate where it starts and end. To highlight this, let’s look at an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Into the If/Else!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="mi">10</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In the If/Else!&quot;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Still in the If/Else!&quot;</span><span class="p">)</span>
+    
+    
+    
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;How do I get out of here!?&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Out of the If/Else!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Into the If/Else!
+Out of the If/Else!
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="else">
 <h2>else<a class="headerlink" href="#else" title="Permalink to this headline">¶</a></h2>
-<p>In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an else statement</p>
+<p>In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an <em>else</em> statement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span>
 
 <span class="k">if</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is greater than 30&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">answer</span><span class="p">,</span> <span class="s2">&quot;&gt; 30&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is not greater than 30&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">answer</span><span class="p">,</span> <span class="s2">&quot;&lt; 30&quot;</span><span class="p">)</span>
     
 <span class="k">if</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is greater than 50&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">answer</span><span class="p">,</span> <span class="s2">&quot;&gt; 50&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;This number is not greater than 50&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">answer</span><span class="p">,</span> <span class="s2">&quot;&lt; 50&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This number is greater than 30
-This number is not greater than 50
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42 &gt; 30
+42 &lt; 50
 </pre></div>
 </div>
 </div>
@@ -398,7 +430,74 @@ This number is not greater than 50
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span>
 </pre></div>
 </div>
-<p>to provide another condition. Let’s count the odds again, and count the evens but split between those that are greater than or equal to 0 and those that aren’t, and change all of the negative evens to 0.  Note that we use the index of the value so that we can set the value to 0 for the negative evens.</p>
+<p>This will chain conditions, but once one condition is true. It will stop ✋</p>
+<p>Let’s take a look at an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">favoriteColor</span> <span class="o">=</span> <span class="s2">&quot;Yellow&quot;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">favoriteColor</span> <span class="o">==</span> <span class="s2">&quot;Red&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;My favorite color is red.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">favoriteColor</span> <span class="o">==</span> <span class="s2">&quot;Orange&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;My favorite color is orange.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">favoriteColor</span> <span class="o">==</span> <span class="s2">&quot;Yellow&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;My favorite color is yellow.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">favoriteColor</span> <span class="o">==</span> <span class="s2">&quot;Green&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;My favorite color is green.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">favoriteColor</span> <span class="o">==</span> <span class="s2">&quot;Blue&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;My favorite color is blue.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">favoriteColor</span> <span class="o">==</span> <span class="s2">&quot;Indigo&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;My favorite color is indigo.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">favoriteColor</span> <span class="o">==</span> <span class="s2">&quot;Violet&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;My favorite color is violet.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;I don&#39;t have a favorite color.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My favorite color is yellow.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="switch-cases">
+<h3>Switch Cases<a class="headerlink" href="#switch-cases" title="Permalink to this headline">¶</a></h3>
+<p>Switch Cases are specialized if-else statements - the criteria must be met exactly. Let’s work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaulation.  We will use numbers as the keys and use the abbreviations as the values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthSwap</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s1">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">:</span><span class="s1">&#39;May&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">:</span><span class="s1">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">:</span><span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="s1">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">:</span><span class="s1">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">:</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">:</span><span class="s1">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">:</span><span class="s1">&#39;Dec&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;monthSwap = &quot;</span><span class="p">,</span> <span class="n">monthSwap</span><span class="p">)</span>
+
+<span class="c1"># Print out the 5th month</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Key = 5&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;oooooops!&quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Print out the 19th month</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#-# Key = 19&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">monthSwap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="s2">&quot;oooooops!&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>monthSwap =  {1: &#39;Jan&#39;, 2: &#39;Feb&#39;, 3: &#39;Mar&#39;, 4: &#39;Apr&#39;, 5: &#39;May&#39;, 6: &#39;Jun&#39;, 7: &#39;Jul&#39;, 8: &#39;Aug&#39;, 9: &#39;Sep&#39;, 10: &#39;Oct&#39;, 11: &#39;Nov&#39;, 12: &#39;Dec&#39;}
+
+#-# Key = 5
+May
+
+#-# Key = 19
+oooooops!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -428,7 +527,7 @@ This number is not greater than 50
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Comparisons.html" title="previous page">Comparison Operators</a>
-    <a class='right-next' id="next-link" href="Loops.html" title="next page">Introduction to Functions, Loops and Sorting</a>
+    <a class='right-next' id="next-link" href="Loops.html" title="next page">Loops</a>
 
         </div>
         

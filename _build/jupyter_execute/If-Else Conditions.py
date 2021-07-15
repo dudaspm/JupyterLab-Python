@@ -35,6 +35,7 @@ if answer > 50:
 # Note the structure of a Python if/else statement. Where some languages use { } to denote the start and end of the if/else statement. Python uses spaces. 
 # 
 # if (condition): <-colon
+# 
 #  <- space or tab
 #  
 # Anything that is also spaced or tab is *part* of the if statement. 
@@ -43,26 +44,44 @@ if answer > 50:
 
 # ### Where the if Starts and Ends
 
-# As mentioned in our note, the if/else statement uses space
+# As mentioned in our note, the if/else statement uses spacing to indicate where it starts and end. To highlight this, let's look at an example. 
+
+# In[3]:
+
+
+print("Into the If/Else!")
+
+if (10 < 2):
+    print("In the If/Else!")
+    
+    print("Still in the If/Else!")
+    
+    
+    
+    
+    print("How do I get out of here!?")
+
+print("Out of the If/Else!")
+
 
 # ## else
 
-# In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an else statement
+# In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an *else* statement. 
 
-# In[3]:
+# In[4]:
 
 
 answer = 42
 
 if answer > 30:
-    print( "This number is greater than 30")
+    print( answer, "> 30")
 else:
-    print( "This number is not greater than 30")
+    print( answer, "< 30")
     
 if answer > 50:
-    print( "This number is greater than 50")
+    print( answer, "> 50")
 else:
-    print( "This number is not greater than 50")
+    print( answer, "< 50")
 
 
 # ## elif (else if)
@@ -71,4 +90,60 @@ else:
 # ```python
 # elif
 # ```
-# to provide another condition. Let's count the odds again, and count the evens but split between those that are greater than or equal to 0 and those that aren't, and change all of the negative evens to 0.  Note that we use the index of the value so that we can set the value to 0 for the negative evens.
+# 
+# This will chain conditions, but once one condition is true. It will stop ✋
+# 
+# Let's take a look at an example.
+
+# In[5]:
+
+
+favoriteColor = "Yellow"
+
+if (favoriteColor == "Red"):
+    print ("My favorite color is red.")
+elif (favoriteColor == "Orange"):
+    print ("My favorite color is orange.")
+elif (favoriteColor == "Yellow"):
+    print ("My favorite color is yellow.")
+elif (favoriteColor == "Green"):
+    print ("My favorite color is green.")
+elif (favoriteColor == "Blue"):
+    print ("My favorite color is blue.")
+elif (favoriteColor == "Indigo"):
+    print ("My favorite color is indigo.")
+elif (favoriteColor == "Violet"):
+    print ("My favorite color is violet.")
+else:
+    print ("I don't have a favorite color.")
+
+
+# ### Switch Cases
+
+# Switch Cases are specialized if-else statements - the criteria must be met exactly. Let's work on an example that changes between month numbers and month names. We first set up a dictionary that will be used for the evaulation.  We will use numbers as the keys and use the abbreviations as the values. 
+
+# In[6]:
+
+
+monthSwap = {1:'Jan',2:'Feb',3:'Mar',4:'Apr',5:'May',6:'Jun',7:'Jul',8:'Aug',9:'Sep',10:'Oct',11:'Nov',12:'Dec'}
+
+
+# In[7]:
+
+
+print( "monthSwap = ", monthSwap)
+
+# Print out the 5th month
+print( "\n#-# Key = 5")
+print( monthSwap.get(5,"oooooops!") )
+
+# Print out the 19th month
+print( "\n#-# Key = 19")
+print( monthSwap.get(19,"oooooops!") )
+
+
+# In[ ]:
+
+
+
+

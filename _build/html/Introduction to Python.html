@@ -139,7 +139,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Loops.html">
-   Introduction to Functions, Loops and Sorting
+   Loops
   </a>
  </li>
  <li class="toctree-l1">
@@ -325,11 +325,11 @@
                 
   <div class="section" id="introduction-to-python">
 <h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">¶</a></h1>
-<p>In this section I wanted to introduce a few basic concepts and give an outline of this section.</p>
+<p>In this section, I wanted to introduce a few basic concepts and give an outline of this section.</p>
 <div class="section" id="comments-in-python">
 <h2>Comments in Python<a class="headerlink" href="#comments-in-python" title="Permalink to this headline">¶</a></h2>
-<p>In Python, we can creat comments in the code itself. Considering we can use markdown langauge (as you see here 😁), we won’t be using this too much in this notebook. Though, here is an example.</p>
-<p>Basically, you use the… umm… hashtag? number sign? pound sign?</p>
+<p>In Python, we can create comments in the code itself. Considering we can use markdown language (as you see here 😁), we won’t use this too much in this notebook. Though, here is an example.</p>
+<p>Basically, you use the… umm… hashtag? Number sign? Pound sign?</p>
 <p>This thing -&gt; #</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -356,7 +356,7 @@
 </pre></div>
 </div>
 <p>…several times in this notebook.</p>
-<p>Basically, it is a function to print out strings, variables, numbers, functions, etc.</p>
+<p><em>print()</em> is a function to print out strings, variables, numbers, functions, etc.</p>
 <p>Let’s use the classic example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -374,6 +374,19 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello, world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, world!
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>print()</em> can do some fun things as well. As in, giving it more than one thing to print with commas between them. This will print both things with spaces.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;hello,&quot;</span><span class="p">,</span> <span class="s2">&quot;world!&quot;</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -430,10 +443,10 @@ print(...)
 <span class="ne">IndentationError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">indent</span>
 </pre></div>
 </div>
-<p>Why does this occur? Well because Python uses spacing or tabs to distinquish where things like loops, functions, and if/else statements start and end. So, if you add an extra space or tab at the beginning of the statement, you will see this message. If you do, check your spacing.</p>
+<p>Why does this occur? Well, because Python uses spacing or tabs to distinguish where things like loops, functions, and if/else statements start and end. So, if you add an extra space or tab at the beginning of the statement, you will see this message. If you do, check your spacing.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Python can get weird with issue. As you can, technically, start code wherever. As long as you are consistent. The next cell shows an example of this… oddity.</p>
+<p>Python can get weird with this issue. As you can, technically, start code wherever as long as you are consistent. The next cell shows an example of this… oddity.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -18,7 +18,7 @@
 
 # #### Text 
 
-# Text Cells allow you to add text (via Markdown), which includes tables, images, links, bullet lists, numbered list, LaTeX, blockquote, among other things. 
+# Text Cells allow you to add text (via Markdown), which includes tables, images, links, bullet lists, numbered lists, LaTeX, blockquote, among other things. 
 
 # ##### Table 
 # 

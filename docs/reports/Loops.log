@@ -17,26 +17,22 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-birthdayMonths = [4,2,11,9,15]
-birthdayDays = [6,12,24,23,15]
-birthdayYears = [1955,1983,1999,2010,2015]
-
-# Cycle through all of the birthdays and print out 
-for spot in range(len(birthdayDays)):
-    print ( "\n#-# Spot = ", spot )
-    # Print using get, which has built in error checking
-    print( monthSwap.get(birthdayMonths[spot],"oooooops!"), birthdayDays[spot], birthdayYears[spot] )
-    # Print without get, which gives an error if passed a key that doesn't exist
-    print( monthSwap[birthdayMonths[spot]], birthdayDays[spot], birthdayYears[spot] )
+for val in someNumbers:
+    print( "val = ", val )
+    
+    print( "Inside the loop" )
+print( "#-# Outside the loop #-#" )
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mKeyError[0m                                  Traceback (most recent call last)
-[1;32m<ipython-input-15-b2157a63f782>[0m in [0;36m<module>[1;34m[0m
-[0;32m      9[0m     [0mprint[0m[1;33m([0m [0mmonthSwap[0m[1;33m.[0m[0mget[0m[1;33m([0m[0mbirthdayMonths[0m[1;33m[[0m[0mspot[0m[1;33m][0m[1;33m,[0m[1;34m"oooooops!"[0m[1;33m)[0m[1;33m,[0m [0mbirthdayDays[0m[1;33m[[0m[0mspot[0m[1;33m][0m[1;33m,[0m [0mbirthdayYears[0m[1;33m[[0m[0mspot[0m[1;33m][0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0;32m     10[0m     [1;31m# Print without get, which gives an error if passed a key that doesn't exist[0m[1;33m[0m[1;33m[0m[1;33m[0m[0m
-[1;32m---> 11[1;33m     [0mprint[0m[1;33m([0m [0mmonthSwap[0m[1;33m[[0m[0mbirthdayMonths[0m[1;33m[[0m[0mspot[0m[1;33m][0m[1;33m][0m[1;33m,[0m [0mbirthdayDays[0m[1;33m[[0m[0mspot[0m[1;33m][0m[1;33m,[0m [0mbirthdayYears[0m[1;33m[[0m[0mspot[0m[1;33m][0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m
-[1;31mKeyError[0m: 15
-KeyError: 15
+[1;31mNameError[0m                                 Traceback (most recent call last)
+[1;32m<ipython-input-10-44a76cff2aaf>[0m in [0;36m<module>[1;34m[0m
+[1;32m----> 1[1;33m [1;32mfor[0m [0mval[0m [1;32min[0m [0msomeNumbers[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      2[0m     [0mprint[0m[1;33m([0m [1;34m"val = "[0m[1;33m,[0m [0mval[0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      3[0m [1;33m[0m[0m
+[0;32m      4[0m     [0mprint[0m[1;33m([0m [1;34m"Inside the loop"[0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      5[0m [0mprint[0m[1;33m([0m [1;34m"#-# Outside the loop #-#"[0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mNameError[0m: name 'someNumbers' is not defined
+NameError: name 'someNumbers' is not defined
 
