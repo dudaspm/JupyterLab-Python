@@ -20,6 +20,9 @@ parts:
       - file: Loops
       - file: Loading a Library
       - file: Creating a Function
+  - caption: Workshops
+    chapters:
+      - file: 1 Hour Workshop
   - caption: Example Python
     chapters:
       - file: Shopping List

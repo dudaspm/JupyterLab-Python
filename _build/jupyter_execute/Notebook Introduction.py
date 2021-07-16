@@ -17,17 +17,17 @@
 # 
 # Then go down to "Live Code":
 # 
-# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen4.png" alt="selecting Live Code" style="width:200px;margin-left:auto;margin-right:auto;display:block;">
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen4.png" alt="selecting Live Code" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # You should see at the top of the page a loading bar that cycles through mulitple states. 
-# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen6.png" alt="loading bar, first cycle" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen6.png" alt="loading bar, first cycle" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
-# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen7.png" alt="loading bar, second cycle" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen7.png" alt="loading bar, second cycle" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
-# <img alt="loading bar, thrid cycle" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen8.png" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
+# <img alt="loading bar, thrid cycle" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen8.png" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # Then, finally:
-# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen9.png" alt="loading bar, final cycle" style="width:220px;margin-left:auto;margin-right:auto;display:block;">
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen9.png" alt="loading bar, final cycle" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # Try this for yourself! 
 # 
@@ -43,7 +43,7 @@
 
 # As you can see you can also export these notebooks to Binder or Google Colab. 
 # 
-# ![Bonder or Google Colab options](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen3.png)
+# <img alt="Binder or Google Colab options" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen3.png" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # This will take you to their respective websites but you can work with them there, if you would like!
 
