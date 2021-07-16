@@ -22,7 +22,7 @@ parts:
       - file: Creating a Function
   - caption: Workshops
     chapters:
-      - file: 1 Hour Workshop
+      - file: Workshop Notebook
   - caption: Example Python
     chapters:
       - file: Shopping List
