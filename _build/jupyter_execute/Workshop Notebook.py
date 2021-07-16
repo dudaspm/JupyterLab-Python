@@ -26,7 +26,9 @@
 # 
 # <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen7.png" alt="loading bar, second cycle" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
-# <img alt="loading bar, thrid cycle" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen8.png" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
+# <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen7b.png" alt="loading bar, thrid cycle" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
+# 
+# <img alt="loading bar, fourth cycle" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen8.png" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 # 
 # Then, finally:
 # <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen9.png" alt="loading bar, final cycle" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
