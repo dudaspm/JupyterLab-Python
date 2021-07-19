@@ -1,14 +1,14 @@
 # JupyterLab + Python
 
-Link to notebook: https://dudaspm.github.io/JupyterLab-Python/intro.html
+Link to notebook: https://dudaspm.github.io/JupyterLab-Python
 
 This is the source files for creating Python and Matplotlib code in Jupyter Lab and Google Colab. This book is an introduction to both platforms and will cover:
-* Notebook Introduction (70% completed)
-* Introduction to Python (90% completed)
+* Notebook Introduction (Completed)
+* Introduction to Python (Completed)
 * How to get started using JupyterLab (Completed)
 * Learning about Variables (Completed)
 * Comparisons (Completed)
-* Loops (50% completed)
+* Loops (Completed)
 * Shopping List (needs to be redone)
 * Guessing Game (needs to be redone)
 * Getting Started with Matplotlib (80% completed)

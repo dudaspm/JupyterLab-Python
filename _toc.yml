@@ -23,6 +23,7 @@ parts:
   - caption: Workshops
     chapters:
       - file: Workshop Notebook
+      - file: Workshop Notebook-Abridged
   - caption: Example Python
     chapters:
       - file: Shopping List
