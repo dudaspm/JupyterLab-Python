@@ -7,7 +7,7 @@ root: intro
 parts:
   - caption: Getting Starting
     chapters:
-    - file: Notebook Introduction
+    - file: Notebook Introduction - 🐸
   - caption: Jupyter Lab
     chapters:
     - file: Introduction to JupyterLab
