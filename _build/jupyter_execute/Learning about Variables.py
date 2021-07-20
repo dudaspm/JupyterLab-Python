@@ -493,12 +493,12 @@ print ( " ".join(["hello, ", "everyone!"]) )
 # There are two parts to this. 
 # 
 # *The splitter*
-# * ```python
+# ```python
 # " "
 # ```
 # 
 # *The fill*
-# * ```python
+# ```python
 # .join(["hello, ", "everyone!"])
 # ```
 # 
