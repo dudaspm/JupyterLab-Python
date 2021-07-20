@@ -3,7 +3,7 @@
 
 # # Workshop Notebook Abridged
 
-# ## Notebook Introduction
+# ## Notebook Introduction - 🐸 - frog
 
 # In[1]:
 
@@ -30,7 +30,7 @@
 # 
 # Also, a huge *thank you* to Adam Lavely (https://github.com/adamlavely) for developing some of the intial notebooks! 
 
-# ## Introduction to JupyterLab
+# ## Introduction to JupyterLab - 🐘 - elephant
 
 # ### Where am I? (JupyterLab Notebook)
 
@@ -144,7 +144,7 @@ get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
 
 # More information can be found here: [Jupyter ✨ MAGIC ✨](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
 
-# ## Introduction to Python
+# ## Introduction to Python - 🐧 - penguin
 
 # In this section, I wanted to introduce a few basic concepts and give an outline of this section. 
 
@@ -233,7 +233,7 @@ help(print)
 # 
 # Why does this occur? Well, because Python uses spacing or tabs to distinguish where things like loops, functions, and if/else statements start and end. So, if you add an extra space or tab at the beginning of the statement, you will see this message. If you do, check your spacing. 
 
-# ## Learning about Variables
+# ## Learning about Variables - 🐳 - whale
 
 # In[16]:
 
@@ -522,17 +522,17 @@ print ( "%s, %s" % ("hello", "everyone") )
 # There are three parts to this. 
 # 
 # *The format*
-# * ```python
+# ```python
 # "%s, %s"
 # ```
 # 
 # *The break*
-# * ```python
+# ```python
 # %
 # ```
 # 
 # *The fill*
-# * ```python
+# ```python
 # ("hello", "everyone")
 # ```
 # 
@@ -678,7 +678,7 @@ print( personalInformation )
 
 # Again, to do this more efficiently, we will be using loops (we will talk about later).
 
-# ## Comparison Operators
+# ## Comparison Operators - 🐭 - mouse
 
 # We need to be able to compare different variables.  We will be working on:
 # * Are these things the same?
@@ -992,7 +992,7 @@ print( dogA_color == dogB_color )
 # Try it out here:
 
 
-# ## If-Else Conditions
+# ## If-Else Conditions - 🐴 - horse
 
 # We can condition our data using if-else statements and switch cases.  If-else statements allow us to do different things if a certain criterion is met or not. We can count the odds and evens in our someNumbers list.
 
@@ -1110,7 +1110,7 @@ else:
 # * While Loops
 # 
 
-# ### For Loops
+# ### For Loops - 🐨 - koala
 
 # Loops allow us to do the same thing to each item in a list or array. One of the most basic types of loops is a *for loop* - this allows us to iterate over any sequence.
 # 
@@ -1401,7 +1401,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 # Try it here:
 
 
-# ## Loading a Library
+# ## Loading a Library - 🐠 - fish
 
 # Modules are python's way of organizing functions, variables and constructors, similar to libraries in other languages.  In this section, we will look at:
 # * Using existing python modules
@@ -1461,7 +1461,7 @@ print( mathCos( np.pi ) )
 # Try it here
 
 
-# ## Creating a Function
+# ## Creating a Function - 🐲 - dragon
 
 # Functions allow us to do repeated tasks easily by writing the code only once.  Functions will have a name, inputs, and outputs and can be called anywhere the task is repeated.
 # 
