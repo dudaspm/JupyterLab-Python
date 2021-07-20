@@ -72,13 +72,69 @@
 ## then hit the play button
 
 
+# ### Jupyter ✨ MAGIC ✨
+
+# When using other languages in Jupyter/JupyterLab, we need to designate the cell we are using with this langauge or function. To "activate" these language, we need to use ✨ MAGIC ✨. Here are a couple of examples.
+
+# #### HTML
+
+# In[4]:
+
+
+get_ipython().run_cell_magic('html', '', '<ol>\n  <li>apple</li>\n  <li>banana</li>\n  <li>cookies</li>\n</ol>')
+
+
+# #### SVG
+
+# In[5]:
+
+
+get_ipython().run_cell_magic('svg', '', '<svg height="100" width="100">\n  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="steelblue" />\n</svg>')
+
+
+# #### R Language
+
+# In[6]:
+
+
+get_ipython().run_line_magic('load_ext', 'rpy2.ipython')
+
+
+# In[7]:
+
+
+get_ipython().run_cell_magic('R', '', 'data <- c(1,2,3)\nprint(data)')
+
+
+# #### SQL
+
+# In[8]:
+
+
+get_ipython().run_cell_magic('capture', '', 'pip install ipython-sql')
+
+
+# In[9]:
+
+
+get_ipython().run_line_magic('load_ext', 'sql')
+
+
+# In[10]:
+
+
+get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
+
+
+# More information can be found here: [Jupyter ✨ MAGIC ✨](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
+
 # ## Introduction to Python
 
 # In this section, I wanted to introduce a few basic concepts and give an outline of this section. 
 
 # ### Comments in Python
 
-# In[4]:
+# In[11]:
 
 
 # I am a comment in Python
@@ -103,7 +159,7 @@
 # 
 # Let's use the classic example.
 
-# In[5]:
+# In[12]:
 
 
 print( "hello, world!" )
@@ -111,7 +167,7 @@ print( "hello, world!" )
 
 # OR
 
-# In[6]:
+# In[13]:
 
 
 print("hello, world!")
@@ -119,7 +175,7 @@ print("hello, world!")
 
 # *print()* can do some fun things as well. As in, giving it more than one thing to print with commas between them. This will print both things with spaces.
 
-# In[7]:
+# In[14]:
 
 
 print( "hello,", "world!" )
@@ -135,7 +191,7 @@ print( "hello,", "world!" )
 # 
 # ... function is exactly what it is. It is a function to 🌟 help 🌟 you understand the basic usage of another function. 
 
-# In[8]:
+# In[15]:
 
 
 help(print)
@@ -163,7 +219,7 @@ help(print)
 
 # ## Learning about Variables
 
-# In[9]:
+# In[16]:
 
 
 5 + 3 + 16
@@ -173,13 +229,13 @@ help(print)
 
 # Let's say the radius is 5
 
-# In[10]:
+# In[17]:
 
 
 2 * 3.14159265359 * 5
 
 
-# In[11]:
+# In[18]:
 
 
 pi = 3.14159265359
@@ -189,19 +245,19 @@ pi = 3.14159265359
 # 
 # Let's try those radii again (10, 11, 4)
 
-# In[12]:
+# In[19]:
 
 
 2 * pi * 10
 
 
-# In[13]:
+# In[20]:
 
 
 2 * pi * 11
 
 
-# In[14]:
+# In[21]:
 
 
 2 * pi * 4
@@ -213,7 +269,7 @@ pi = 3.14159265359
 
 # As mentioned, integers are whole numbers. Let's create an example. How about we use our numberOfKittens. We will then set this value to 0. As in, we have 0 kittens.
 
-# In[15]:
+# In[22]:
 
 
 numberOfKittens = 0
@@ -225,7 +281,7 @@ numberOfKittens = 0
 # type()
 # ```
 
-# In[16]:
+# In[23]:
 
 
 type( numberOfKittens )
@@ -237,7 +293,7 @@ type( numberOfKittens )
 # 
 # Try running this a few times.
 
-# In[17]:
+# In[24]:
 
 
 numberOfKittens = numberOfKittens + 10
@@ -252,7 +308,7 @@ numberOfKittens
 # This example starts at 0, but note that this is .0 
 # Adding the decimal tells Python that we should have a float value instead of an integer. 
 
-# In[18]:
+# In[25]:
 
 
 aFloatVariable = .0
@@ -260,7 +316,7 @@ aFloatVariable = .0
 
 # Let's again, check the variable type. 
 
-# In[19]:
+# In[26]:
 
 
 type( aFloatVariable )
@@ -279,7 +335,7 @@ type( aFloatVariable )
 
 # In Python (3, more specifically), the variable will always take the form of the most precision. So, by default, a float.
 
-# In[20]:
+# In[27]:
 
 
 letsSeeWhatHappens = numberOfKittens + aFloatVariable
@@ -301,13 +357,13 @@ letsSeeWhatHappens
 # int()
 # ```
 
-# In[21]:
+# In[28]:
 
 
 float(numberOfKittens)
 
 
-# In[22]:
+# In[29]:
 
 
 int(aFloatVariable)
@@ -315,7 +371,7 @@ int(aFloatVariable)
 
 # #### String or str
 
-# In[23]:
+# In[30]:
 
 
 helloStatement = "Hello, everyone!"
@@ -323,7 +379,7 @@ helloStatement = "Hello, everyone!"
 
 # As you can see, can capture text and other alphanumeric and special characters. There are several unique functions for strings but first, let's double-check and see what type we from our helloStatement.
 
-# In[24]:
+# In[31]:
 
 
 type( helloStatement )
@@ -333,7 +389,7 @@ type( helloStatement )
 
 # ##### String Indexing/String Slicing
 
-# In[25]:
+# In[32]:
 
 
 helloStatement[1] 
@@ -345,7 +401,7 @@ helloStatement[1]
 
 # Let's try this again. 
 
-# In[26]:
+# In[33]:
 
 
 helloStatement[0]
@@ -359,7 +415,7 @@ helloStatement[0]
 
 # ###### Indexing Multiple Letters
 
-# In[27]:
+# In[34]:
 
 
 print( helloStatement[0:5] )
@@ -374,13 +430,13 @@ print( helloStatement[0:5] )
 # 
 # There is also a shortcut way of writing this, without the 0. 
 
-# In[28]:
+# In[35]:
 
 
 print( helloStatement[:5] )
 
 
-# In[29]:
+# In[36]:
 
 
 print( helloStatement[5:] )
@@ -390,7 +446,7 @@ print( helloStatement[5:] )
 
 # ###### Formatting
 
-# In[30]:
+# In[37]:
 
 
 print( helloStatement.capitalize() )
@@ -399,7 +455,7 @@ print( helloStatement.lower() )
 
 # ###### Split
 
-# In[31]:
+# In[38]:
 
 
 print( helloStatement.split(" ") )
@@ -416,7 +472,7 @@ print( helloStatement.split(" ") )
 
 # This is the most straightforward method of the three, but there can be some issues. You simply add a plus sign *+* between your strings. Let's take a look at this. 
 
-# In[32]:
+# In[39]:
 
 
 print ( "hello, " + "everyone!")
@@ -429,7 +485,7 @@ print ( "hello, " + "everyone!")
 # str()
 # ```
 
-# In[33]:
+# In[40]:
 
 
 print ( "hello, " + "every" + str(1) + "!")
@@ -441,7 +497,7 @@ print ( "hello, " + "every" + str(1) + "!")
 # 
 # In this case, we use a %s (s = string) for each string we want to embed in our overall string. 
 
-# In[34]:
+# In[41]:
 
 
 print ( "%s, %s" % ("hello", "everyone") )
@@ -468,7 +524,7 @@ print ( "%s, %s" % ("hello", "everyone") )
 
 # OK, but what about numbers?
 
-# In[35]:
+# In[42]:
 
 
 print ( "%s, %s%s%s" % ("hello","every",1,"!") )
@@ -482,7 +538,7 @@ print ( "%s, %s%s%s" % ("hello","every",1,"!") )
 
 # Booleans are used to do comparisions (true/false), (1/0), (yes/no)
 
-# In[36]:
+# In[43]:
 
 
 someCondition = True
@@ -493,13 +549,13 @@ type( someCondition )
 
 # We will talk about boolean logic more in the next section (Comparisons)
 
-# In[37]:
+# In[44]:
 
 
 (someCondition == False)
 
 
-# In[38]:
+# In[45]:
 
 
 if (False): 
@@ -510,7 +566,7 @@ if (True):
 
 # A more "traditional" way to do booleans is to use 0 and 1. In Python, any number other than 0 is True. Including negative numbers and decimals. 
 
-# In[39]:
+# In[46]:
 
 
 if (0): 
@@ -533,7 +589,7 @@ if (.4):
 # 
 # 1. Define the list initially
 
-# In[40]:
+# In[47]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -546,7 +602,7 @@ print( groceryList )
 # .append()
 # ```
 
-# In[41]:
+# In[48]:
 
 
 groceryList = []
@@ -560,7 +616,7 @@ print( groceryList )
 # For indexes, we always start at the number 0. So, 0 is the first thing, 1 is the second thing, and so on.
 # ```
 
-# In[42]:
+# In[49]:
 
 
 print( groceryList[2] )
@@ -592,7 +648,7 @@ print( groceryList[1] )
 # 
 # dictionary[\"street adddress\" (key)] = "123 Apple St." (value)
 
-# In[43]:
+# In[50]:
 
 
 personalInformation = {}
@@ -627,7 +683,7 @@ print( personalInformation )
 # 
 # 🐝 = 11
 
-# In[44]:
+# In[51]:
 
 
 kitten = 10
@@ -639,7 +695,7 @@ print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 # The first comparison operator is '==', which tests to see if two variables are equal. 
 
-# In[45]:
+# In[52]:
 
 
 print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
@@ -662,7 +718,7 @@ print( kitten == bee )
 # - food2 = 🍪
 # - food3 = 🍎
 
-# In[46]:
+# In[53]:
 
 
 food1 = 'apple'
@@ -682,7 +738,7 @@ print( food1 == food3 )
 # #### This is Logical... NOT!
 # We can also test to see if two values are not equal using the '!=' operator.
 
-# In[47]:
+# In[54]:
 
 
 print( "food1 =", food1,"; food2 =", food2,"; food3 =", food3 )
@@ -707,13 +763,13 @@ print( food1 != food3 )
 # #### Math Comparisons 101
 # We can also compare the magnitude of values using '<', '<=', '>'and '>=', which will return 'True' if the condition is being met.
 
-# In[48]:
+# In[55]:
 
 
 print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 
-# In[49]:
+# In[56]:
 
 
 print( "Is kitten less than dog?")
@@ -731,7 +787,7 @@ print( kitten > dog )
 
 # We do have to watch out for our types. Characters and numerics are **not** the same.
 
-# In[50]:
+# In[57]:
 
 
 TheCharacters = "10"
@@ -785,7 +841,7 @@ print( "TheNumbers type is ", type( TheNumbers ), "; and TheCharacters type is "
 # 
 # 
 
-# In[51]:
+# In[58]:
 
 
 face = "sunglasses"
@@ -805,7 +861,7 @@ print( (shirt == "sweater") and (pants == "jeans") )
 
 # We can also string as many comparisons together as we want.
 
-# In[52]:
+# In[59]:
 
 
 print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (1 < 8) )
@@ -815,7 +871,7 @@ print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (
 
 # the **or** operator will return True if at least *1* of the conditions is met
 
-# In[53]:
+# In[60]:
 
 
 print( "face =", face, "; shirt =", shirt, "; pants = ", pants )
@@ -835,7 +891,7 @@ print( (shirt == "sweater") or (pants == "jeans") )
 
 # the **not** will reverse or switch the  meaning of the and/or operators
 
-# In[54]:
+# In[61]:
 
 
 print( "face =", face, "; shirt =", shirt, "; pants = ", pants )
@@ -855,7 +911,7 @@ print( not (shirt == "sweater") and (pants == "jeans") )
 
 # Try to fill in code to fulfill the request!  Here are some variables used in the exercise
 
-# In[55]:
+# In[62]:
 
 
 dogA_color = 'brown'
@@ -873,7 +929,7 @@ dogB_name = 'lady'
 
 # Is dogA the same color as dogB? (False)
 
-# In[56]:
+# In[63]:
 
 
 # Example:
@@ -882,7 +938,7 @@ print( dogA_color == dogB_color )
 
 # Does dogA have the same name as dogB? (False)
 
-# In[57]:
+# In[64]:
 
 
 # Try it out here:
@@ -890,7 +946,7 @@ print( dogA_color == dogB_color )
 
 # Is dogA older than dogB? (True)
 
-# In[58]:
+# In[65]:
 
 
 # Try it out here:
@@ -898,7 +954,7 @@ print( dogA_color == dogB_color )
 
 # Is dogA the same sex as dogB? (False)
 
-# In[59]:
+# In[66]:
 
 
 # Try it out here:
@@ -906,7 +962,7 @@ print( dogA_color == dogB_color )
 
 # Is dogA heavier than dogB and have a different name than dogB? (True)
 
-# In[60]:
+# In[67]:
 
 
 # Try it out here:
@@ -914,7 +970,7 @@ print( dogA_color == dogB_color )
 
 # Does dogA have a different age than dogB and not a different sex than dogB? (False)
 
-# In[61]:
+# In[68]:
 
 
 # Try it out here:
@@ -928,7 +984,7 @@ print( dogA_color == dogB_color )
 
 # The *if* statement starts with if and then lists a condition that may or may not is met. If the condition is true, we do what is listed. If it is not, we move on. 
 
-# In[62]:
+# In[69]:
 
 
 answer = 42
@@ -939,7 +995,7 @@ if answer > 30:
 
 # OK, same concept. 
 
-# In[63]:
+# In[70]:
 
 
 answer = 42
@@ -958,7 +1014,7 @@ if answer > 50:
 
 # #### Where the if Starts and Ends
 
-# In[64]:
+# In[71]:
 
 
 print("Into the If/Else!")
@@ -980,7 +1036,7 @@ print("Out of the If/Else!")
 
 # In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an *else* statement. 
 
-# In[65]:
+# In[72]:
 
 
 answer = 42
@@ -1007,7 +1063,7 @@ else:
 # 
 # Let's take a look at an example.
 
-# In[66]:
+# In[73]:
 
 
 favoriteColor = "Yellow"
@@ -1048,7 +1104,7 @@ else:
 # 
 # The sequence can be any list.  We set up *for loop* using the *for* and *in* keywords, a colon, and all of the code within the *for loop* indented.
 
-# In[67]:
+# In[74]:
 
 
 exampleList = ['a', 'niner', 6, 6.1, 'V@@@', 1001/2, 42]
@@ -1058,7 +1114,7 @@ print( exampleList )
 
 # Now, before we talked about accessing elements in a list or array by their index. Meaning, if we wanted to print this out, we would need to...
 
-# In[68]:
+# In[75]:
 
 
 print( exampleList[0] )
@@ -1091,7 +1147,7 @@ print( exampleList[6] )
 # 
 # Remember me? 
 
-# In[69]:
+# In[76]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -1102,7 +1158,7 @@ for itemInOurList in groceryList:
 
 # Like mentioned, we name the variable. Here is the same idea again.
 
-# In[70]:
+# In[77]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -1113,7 +1169,7 @@ for steve in groceryList:
 
 # Going back to our original list. See how much easier it is to print these values? 
 
-# In[71]:
+# In[78]:
 
 
 for item in exampleList:
@@ -1135,14 +1191,14 @@ for item in exampleList:
 # 
 # functions to show the length and create indices.  We can then iterate using the index rather than the values. Let's show off these functions. 
 
-# In[72]:
+# In[79]:
 
 
 groceryList = ["apple", "banana", "eggs"]
 print ( len(groceryList) )
 
 
-# In[73]:
+# In[80]:
 
 
 print ( range(3) )
@@ -1150,7 +1206,7 @@ print ( range(3) )
 
 # *range()* can be a bit misleading. The range is always one less than what you might expect. Meaning, *range(0,3)* goes from 0 to 1 to 2 to... that's it. So when using *range()* think about it as *range(starting number, ending number - 1)*
 
-# In[74]:
+# In[81]:
 
 
 for index in range(len(groceryList)):
@@ -1159,7 +1215,7 @@ for index in range(len(groceryList)):
 
 # You may have noticed that the second line is indented.  Like we saw before with If/Else statements. This indent is how we indicate what is in the loop.  Our loop can have many lines (all indented).  The first line that isn't indented indicates we are out of the loop.  This indent is the python syntax for in and out of the loop; other coding languages use other things such as braces {}.  Note that blank lines don't matter, just indentation.
 
-# In[75]:
+# In[82]:
 
 
 print( "Starting the loop" )
@@ -1200,7 +1256,7 @@ print( "Outside the loop" )
 
 # The condition being set by the while statement will cause this to run as long as the statement is true.
 
-# In[76]:
+# In[83]:
 
 
 counting = 0
@@ -1213,7 +1269,7 @@ while (counting < 10):
 
 # One thing to note is that the while loop won't ever be entered if the condition is false when the statement begins as false.
 
-# In[77]:
+# In[84]:
 
 
 startAtTen = 10
@@ -1228,7 +1284,7 @@ while (startAtTen < 10):
 
 # Let's see where we can use this type of loop, in this 😈 VERY MEAN Example 😈. We are creating a set of 30 random numbers from 1 to 50. The *while* will run until it hits its first even number and print this out. Can you spot its MEAN intention?
 
-# In[78]:
+# In[85]:
 
 
 import random
@@ -1278,7 +1334,7 @@ print ( "the first even number is:", randomList[index])
 
 # Try to fill in code to fulfill the request!  Here is a variable used in the excercises
 
-# In[79]:
+# In[86]:
 
 
 aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
@@ -1286,7 +1342,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Write a function that returns the length of aListOfNumbers as well as the maximum value. Hint: max() is a built-in function
 
-# In[80]:
+# In[87]:
 
 
 # Try it here:
@@ -1294,7 +1350,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Use a for loop to add up all of the numbers in aListOfNumbers.
 
-# In[81]:
+# In[88]:
 
 
 # Try it here:
@@ -1302,7 +1358,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Use a while loop to find the first number in aListOfNumbers that is both greater than 5 and a multiple of 4.
 
-# In[82]:
+# In[89]:
 
 
 # Try it here:
@@ -1315,7 +1371,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 # 
 # using if, elif and else.
 
-# In[83]:
+# In[90]:
 
 
 # Try it here:
@@ -1323,7 +1379,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Create a dictionary with keys 1-8 corresponding to the words one, two, three, etc. Loop through aListofNumbers to print out the word corresponding to the digit and provide a default value of 'Not Found' if the key is not contained within the dictionary.  You should get: six three four five seven eight Not Found
 
-# In[84]:
+# In[91]:
 
 
 # Try it here:
@@ -1340,7 +1396,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Python uses modules to make additional functionality available.  Modules can be thought of as libraries with many functions, data types, and characteristics that can be used once loaded. 
 
-# In[85]:
+# In[92]:
 
 
 # Import all functions using a name
@@ -1375,7 +1431,7 @@ print( mathCos( np.pi ) )
 
 # Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy).
 
-# In[86]:
+# In[93]:
 
 
 # Try it here
@@ -1383,7 +1439,7 @@ print( mathCos( np.pi ) )
 
 # Does numpy include functions called log10 and banana?
 
-# In[87]:
+# In[94]:
 
 
 # Try it here
@@ -1395,7 +1451,7 @@ print( mathCos( np.pi ) )
 # 
 # There are functions that are built into python; for example, we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!
 
-# In[88]:
+# In[95]:
 
 
 aVal = 10.0
@@ -1421,7 +1477,7 @@ print( type( aVal ) )
 
 # Let's look at an example function, which changes degrees Fahrenheit to Celsius. 
 
-# In[89]:
+# In[96]:
 
 
 def changeFromFToC( farVal ):
@@ -1431,7 +1487,7 @@ def changeFromFToC( farVal ):
 
 # Here, our function name is *changeFromFToC*, the input is *farVal*, the temperature in Fahrenheit, the output is *cVal*, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.
 
-# In[90]:
+# In[97]:
 
 
 print( "Change 14 deg F to Celsius" )
@@ -1452,7 +1508,7 @@ print( niceTempC )
 
 # ##### Multiple Output Function
 
-# In[91]:
+# In[98]:
 
 
 def changeFromFToCAndK( farVal ):
@@ -1464,7 +1520,7 @@ def changeFromFToCAndK( farVal ):
 
 # ##### Output: List
 
-# In[92]:
+# In[99]:
 
 
 def changeFromFToCAndK( farVal ):
@@ -1484,7 +1540,7 @@ print( freezing[1] )
 
 # ##### Output: Multiple Variables 
 
-# In[93]:
+# In[100]:
 
 
 print( "Change 212 deg F to Celsius and Kelvin" )
@@ -1495,7 +1551,7 @@ print( boilingK )
 
 # ##### Multiple Input Function
 
-# In[94]:
+# In[101]:
 
 
 def changeFromFToCOrK( farVal, tempType ):
@@ -1507,19 +1563,19 @@ def changeFromFToCOrK( farVal, tempType ):
         return "invalid temperature type"
 
 
-# In[95]:
+# In[102]:
 
 
 print ( changeFromFToCOrK(70,"C") )
 
 
-# In[96]:
+# In[103]:
 
 
 print ( changeFromFToCOrK(70,"K") )
 
 
-# In[97]:
+# In[104]:
 
 
 print ( changeFromFToCOrK(70,"W") )
@@ -1533,7 +1589,7 @@ print ( changeFromFToCOrK(70,"W") )
 # * Functions have access to more than just the variables passed in
 # ```
 
-# In[98]:
+# In[105]:
 
 
 def addAnAnimal( animal ):
@@ -1604,7 +1660,7 @@ print ("function output:",addAnAnimal( dog ))
 
 # Try to fill in code to fulfill the request!  Here is a variable used in the excercises.
 
-# In[99]:
+# In[106]:
 
 
 aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
@@ -1612,7 +1668,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Write a function that returns the length of aListOfNumbers as well as the maximum value. Hint: max() is a built-in function
 
-# In[100]:
+# In[107]:
 
 
 ## try here!

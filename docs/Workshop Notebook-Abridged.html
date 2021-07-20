@@ -374,6 +374,33 @@
      Your turn!
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-magic">
+     Jupyter ✨ MAGIC ✨
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#html">
+       HTML
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svg">
+       SVG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#r-language">
+       R Language
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sql">
+       SQL
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -840,6 +867,115 @@
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="jupyter-magic">
+<h3>Jupyter ✨ MAGIC ✨<a class="headerlink" href="#jupyter-magic" title="Permalink to this headline">¶</a></h3>
+<p>When using other languages in Jupyter/JupyterLab, we need to designate the cell we are using with this langauge or function. To “activate” these language, we need to use ✨ MAGIC ✨. Here are a couple of examples.</p>
+<div class="section" id="html">
+<h4>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>apple<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>banana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>cookies<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol>
+  <li>apple</li>
+  <li>banana</li>
+  <li>cookies</li>
+</ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="svg">
+<h4>SVG<a class="headerlink" href="#svg" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">svg</span>
+&lt;svg height=&quot;100&quot; width=&quot;100&quot;&gt;
+  &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;40&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; fill=&quot;steelblue&quot; /&gt;
+&lt;/svg&gt;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Workshop Notebook-Abridged_28_0.svg" src="_images/Workshop Notebook-Abridged_28_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="r-language">
+<h4>R Language<a class="headerlink" href="#r-language" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\users\dudas\anaconda3\envs\wintest\lib\site-packages\rpy2\robjects\packages.py:367: UserWarning: The symbol &#39;quartz&#39; is not in this R namespace/package.
+  &quot;The symbol &#39;%s&#39; is not in this R namespace/package.&quot; % name
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+data &lt;- c(1,2,3)
+print(data)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sql">
+<h4>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span><span class="o">-</span><span class="n">sql</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> sql
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sql</span> sqlite:///exampleDatabase.db
+</pre></div>
+</div>
+</div>
+</div>
+<p>More information can be found here: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">Jupyter ✨ MAGIC ✨</a></p>
 </div>
 </div>
 </div>
@@ -1465,9 +1601,7 @@ As in comma separated values or CSV.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yes for 1!
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yes for 2!
+yes for 2!
 yes for -3!
 yes for .4!
 </pre></div>
@@ -1692,7 +1826,10 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>food1 = apple ; food2 = cookie ; food3 = apple
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>food1 = apple ; food2 = cookie 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>; food3 = apple
 Is food1 not equal to food2?
 True
 Is food1 not equal to food3?
@@ -1873,7 +2010,10 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face =
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> sunglasses ; shirt = tshirt ; pants =  jeans
 Am I wearing sunglasses or jeans?
 True
 True
@@ -1907,7 +2047,10 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ; shirt = tshirt ; pants =  jeans
 Am I wearing sunglasses and not jeans?
 True
 False
@@ -2175,9 +2318,7 @@ Out of the If/Else!
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>niner
+niner
 6
 6.1
 V@@@
@@ -2304,10 +2445,7 @@ V@@@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>index:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0 value: apple
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>index: 0 value: apple
 index: 1 value: banana
 index: 2 value: eggs
 </pre></div>
@@ -2379,10 +2517,7 @@ Outside the loop
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before: 0
 	 after: 1
 before: 1
 	 after: 2
@@ -2437,9 +2572,9 @@ before: 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[30, 46, 37, 3, 35]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 10, 21, 47, 24]
 start loop
-the first even number is: 30
+the first even number is: 12
 </pre></div>
 </div>
 </div>
@@ -2723,9 +2858,7 @@ Change 32 deg F to Celsius and Kelvin
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Change 212 deg F to Celsius and Kelvin
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
+100.0
 373.15
 </pre></div>
 </div>
