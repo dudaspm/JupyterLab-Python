@@ -444,17 +444,17 @@ print ( "%s, %s" % ("hello", "everyone") )
 # There are three parts to this. 
 # 
 # *The format*
-# * ```python
+# ```python
 # "%s, %s"
 # ```
 # 
 # *The break*
-# * ```python
+# ```python
 # %
 # ```
 # 
 # *The fill*
-# * ```python
+# ```python
 # ("hello", "everyone")
 # ```
 # 

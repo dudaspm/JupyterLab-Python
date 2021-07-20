@@ -94,6 +94,22 @@ get_ipython().run_cell_magic('svg', '', '<svg height="100" width="100">\n  <circ
 
 # #### R Language
 
+# In Google Colab, you do *not* need to install anything, but if you are going to do this on your local machine (your computer). 
+# 
+# ![Anaconda Prompt - installing r-essentials](https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/command.PNG)
+# 
+# You will need to install a few things first. To do this, open up the *Anaconda Prompt (anaconda3)* and run the following two commands:
+# 
+# ```jupyter
+# conda install -c r r-essentials
+# ```
+# and
+# ```jupyter
+# conda install -c r rpy2
+# ```
+# 
+# then continue from here.
+
 # In[6]:
 
 
@@ -111,7 +127,7 @@ get_ipython().run_cell_magic('R', '', 'data <- c(1,2,3)\nprint(data)')
 # In[8]:
 
 
-get_ipython().run_cell_magic('capture', '', 'pip install ipython-sql')
+get_ipython().run_cell_magic('capture', '', '!pip install ipython-sql')
 
 
 # In[9]:

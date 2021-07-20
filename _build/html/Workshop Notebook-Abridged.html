@@ -911,6 +911,17 @@
 </div>
 <div class="section" id="r-language">
 <h4>R Language<a class="headerlink" href="#r-language" title="Permalink to this headline">¶</a></h4>
+<p>In Google Colab, you do <em>not</em> need to install anything, but if you are going to do this on your local machine (your computer).</p>
+<p><img alt="Anaconda Prompt - installing r-essentials" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/command.PNG" /></p>
+<p>You will need to install a few things first. To do this, open up the <em>Anaconda Prompt (anaconda3)</em> and run the following two commands:</p>
+<div class="highlight-jupyter notranslate"><div class="highlight"><pre><span></span>conda install -c r r-essentials
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-jupyter notranslate"><div class="highlight"><pre><span></span>conda install -c r rpy2
+</pre></div>
+</div>
+<p>then continue from here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
@@ -955,8 +966,8 @@ print(data)
 <h4>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span><span class="o">-</span><span class="n">sql</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+!pip install ipython-sql
 </pre></div>
 </div>
 </div>
@@ -1826,10 +1837,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>food1 = apple ; food2 = cookie 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>; food3 = apple
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>food1 = apple ; food2 = cookie ; food3 = apple
 Is food1 not equal to food2?
 True
 Is food1 not equal to food3?
@@ -2010,10 +2018,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face =
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> sunglasses ; shirt = tshirt ; pants =  jeans
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
 Am I wearing sunglasses or jeans?
 True
 True
@@ -2047,10 +2052,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ; shirt = tshirt ; pants =  jeans
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
 Am I wearing sunglasses and not jeans?
 True
 False
@@ -2301,6 +2303,9 @@ Out of the If/Else!
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;niner&#39;, 6, 6.1, &#39;V@@@&#39;, 500.5, 42]
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Now, before we talked about accessing elements in a list or array by their index. Meaning, if we wanted to print this out, we would need to…</p>
@@ -2530,7 +2535,10 @@ before: 4
 before: 5
 	 after: 6
 before: 6
-	 after: 7
+	 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>after: 7
 before: 7
 	 after: 8
 before: 8
@@ -2572,9 +2580,9 @@ before: 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 10, 21, 47, 24]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[35, 15, 7, 10, 28]
 start loop
-the first even number is: 12
+the first even number is: 10
 </pre></div>
 </div>
 </div>
@@ -2688,7 +2696,9 @@ the first even number is: 12
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
--1.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0
 </pre></div>
 </div>
 </div>
