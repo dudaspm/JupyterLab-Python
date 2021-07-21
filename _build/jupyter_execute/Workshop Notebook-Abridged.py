@@ -30,6 +30,8 @@
 # 
 # Also, a huge *thank you* to Adam Lavely (https://github.com/adamlavely) for developing some of the intial notebooks! 
 
+# ***
+
 # ## Introduction to JupyterLab - 🐘 - elephant
 
 # ### Where am I? (JupyterLab Notebook)
@@ -144,6 +146,8 @@ get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
 
 # More information can be found here: [Jupyter ✨ MAGIC ✨](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
 
+# ***
+
 # ## Introduction to Python - 🐧 - penguin
 
 # In this section, I wanted to introduce a few basic concepts and give an outline of this section. 
@@ -181,17 +185,9 @@ get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
 print( "hello, world!" )
 
 
-# OR
-
-# In[13]:
-
-
-print("hello, world!")
-
-
 # *print()* can do some fun things as well. As in, giving it more than one thing to print with commas between them. This will print both things with spaces.
 
-# In[14]:
+# In[13]:
 
 
 print( "hello,", "world!" )
@@ -207,7 +203,7 @@ print( "hello,", "world!" )
 # 
 # ... function is exactly what it is. It is a function to 🌟 help 🌟 you understand the basic usage of another function. 
 
-# In[15]:
+# In[14]:
 
 
 help(print)
@@ -233,6 +229,20 @@ help(print)
 # 
 # Why does this occur? Well, because Python uses spacing or tabs to distinguish where things like loops, functions, and if/else statements start and end. So, if you add an extra space or tab at the beginning of the statement, you will see this message. If you do, check your spacing. 
 
+# ### Your turn!
+# 
+# Print out the help information for a function called type().
+
+# In[15]:
+
+
+# Add a comment here 
+
+# Remove this and print the help for type()
+
+
+# ***
+
 # ## Learning about Variables - 🐳 - whale
 
 # In[16]:
@@ -241,7 +251,9 @@ help(print)
 5 + 3 + 16
 
 
-# But let's look at an example where we need to get the circumference of a circle using multiple radii. The equation for the circumference of a circle is: $C = 2 \pi r$
+# But let's look at an example where we need to get the circumference of a circle using multiple radii. The equation for the circumference of a circle is: 
+# 
+# $C = 2 \pi r$
 
 # Let's say the radius is 5
 
@@ -313,7 +325,7 @@ type( numberOfKittens )
 
 
 numberOfKittens = numberOfKittens + 10
-numberOfKittens
+print( numberOfKittens )
 
 
 # #### Floating points or floats
@@ -342,21 +354,15 @@ type( aFloatVariable )
 # 
 # And again, we will add 10 to this. There is something specific interesting here; see if you spot it.
 
-# aFloatVariable = aFloatVariable + 10
-# aFloatVariable
-
-# If you guessed "mixing a float and an integer," you got it. Let's see an example. 
-
-# ##### Mixing integers and floats
-
-# In Python (3, more specifically), the variable will always take the form of the most precision. So, by default, a float.
-
 # In[27]:
 
 
-letsSeeWhatHappens = numberOfKittens + aFloatVariable
-letsSeeWhatHappens
+aFloatVariable = aFloatVariable + 10
 
+print( aFloatVariable )
+
+
+# If you guessed "mixing a float and an integer," you got it. Let's see an example. 
 
 # ##### type-cast
 
@@ -662,7 +668,9 @@ print( groceryList[1] )
 
 # Dictionaries are used to index based on a specific key. As in:
 # 
-# dictionary[\"street adddress\" (key)] = "123 Apple St." (value)
+# ```python
+# dictionary["street adddress" (key)] = "123 Apple St." (value)
+# ```
 
 # In[50]:
 
@@ -677,6 +685,27 @@ print( personalInformation )
 # Note the order.
 
 # Again, to do this more efficiently, we will be using loops (we will talk about later).
+
+# ### Your turn!
+# 
+# 1. Create a list
+# 2. append() three items
+#     1. an integer
+#     2. a float
+#     3. a string
+# 3. print this list
+
+# In[51]:
+
+
+## list create
+## append() integer
+## append() float
+## append() string
+## print() list
+
+
+# ***
 
 # ## Comparison Operators - 🐭 - mouse
 
@@ -699,7 +728,7 @@ print( personalInformation )
 # 
 # 🐝 = 11
 
-# In[51]:
+# In[52]:
 
 
 kitten = 10
@@ -711,7 +740,7 @@ print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 # The first comparison operator is '==', which tests to see if two variables are equal. 
 
-# In[52]:
+# In[53]:
 
 
 print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
@@ -734,7 +763,7 @@ print( kitten == bee )
 # - food2 = 🍪
 # - food3 = 🍎
 
-# In[53]:
+# In[54]:
 
 
 food1 = 'apple'
@@ -748,13 +777,16 @@ print( food1 == food2 )
 print( "Is food1 equal to food3?")
 print( food1 == food3 )
 
+print( "Is apple equal to Apple?")
+print( "apple" == "Apple" )
+
 
 # ### Are these things different?
 
 # #### This is Logical... NOT!
 # We can also test to see if two values are not equal using the '!=' operator.
 
-# In[54]:
+# In[55]:
 
 
 print( "food1 =", food1,"; food2 =", food2,"; food3 =", food3 )
@@ -779,13 +811,13 @@ print( food1 != food3 )
 # #### Math Comparisons 101
 # We can also compare the magnitude of values using '<', '<=', '>'and '>=', which will return 'True' if the condition is being met.
 
-# In[55]:
+# In[56]:
 
 
 print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 
-# In[56]:
+# In[57]:
 
 
 print( "Is kitten less than dog?")
@@ -800,23 +832,6 @@ print( kitten >= dog )
 print( "Is kitten greater than dog?")
 print( kitten > dog )
 
-
-# We do have to watch out for our types. Characters and numerics are **not** the same.
-
-# In[57]:
-
-
-TheCharacters = "10"
-TheNumbers = 10
-
-print( "Is TheNumbers equal to TheCharacters?")
-print( TheNumbers == TheCharacters )
-print( "TheNumbers type is ", type( TheNumbers ), "; and TheCharacters type is ", type( TheCharacters ) )
-
-
-# We can compare integers and floats (!) but not other disparate data types.
-# 
-# If you let python take care of your data-types, be warned that they could be different from what you think they are!
 
 # varible = varible is **not** the same thing as variable == variable
 # 
@@ -948,49 +963,10 @@ dogB_name = 'lady'
 # In[63]:
 
 
-# Example:
-print( dogA_color == dogB_color )
+# print out result
 
 
-# Does dogA have the same name as dogB? (False)
-
-# In[64]:
-
-
-# Try it out here:
-
-
-# Is dogA older than dogB? (True)
-
-# In[65]:
-
-
-# Try it out here:
-
-
-# Is dogA the same sex as dogB? (False)
-
-# In[66]:
-
-
-# Try it out here:
-
-
-# Is dogA heavier than dogB and have a different name than dogB? (True)
-
-# In[67]:
-
-
-# Try it out here:
-
-
-# Does dogA have a different age than dogB and not a different sex than dogB? (False)
-
-# In[68]:
-
-
-# Try it out here:
-
+# ***
 
 # ## If-Else Conditions - 🐴 - horse
 
@@ -1000,7 +976,7 @@ print( dogA_color == dogB_color )
 
 # The *if* statement starts with if and then lists a condition that may or may not is met. If the condition is true, we do what is listed. If it is not, we move on. 
 
-# In[69]:
+# In[64]:
 
 
 answer = 42
@@ -1011,7 +987,7 @@ if answer > 30:
 
 # OK, same concept. 
 
-# In[70]:
+# In[65]:
 
 
 answer = 42
@@ -1030,7 +1006,7 @@ if answer > 50:
 
 # #### Where the if Starts and Ends
 
-# In[71]:
+# In[66]:
 
 
 print("Into the If/Else!")
@@ -1052,7 +1028,7 @@ print("Out of the If/Else!")
 
 # In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an *else* statement. 
 
-# In[72]:
+# In[67]:
 
 
 answer = 42
@@ -1079,7 +1055,7 @@ else:
 # 
 # Let's take a look at an example.
 
-# In[73]:
+# In[68]:
 
 
 favoriteColor = "Yellow"
@@ -1102,6 +1078,18 @@ else:
     print ("I don't have a favorite color.")
 
 
+# ### Your turn!
+# 
+# Copy the above example ↑ and add your favorite color!
+
+# In[69]:
+
+
+## Copy code here
+
+
+# ***
+
 # ## Loops - 🐨 - koala
 
 # One of the programming features is that we have many options to do the same tasking multiple times.  The three methods we will be looking at are:
@@ -1120,7 +1108,7 @@ else:
 # 
 # The sequence can be any list.  We set up *for loop* using the *for* and *in* keywords, a colon, and all of the code within the *for loop* indented.
 
-# In[74]:
+# In[70]:
 
 
 exampleList = ['a', 'niner', 6, 6.1, 'V@@@', 1001/2, 42]
@@ -1130,7 +1118,7 @@ print( exampleList )
 
 # Now, before we talked about accessing elements in a list or array by their index. Meaning, if we wanted to print this out, we would need to...
 
-# In[75]:
+# In[71]:
 
 
 print( exampleList[0] )
@@ -1163,7 +1151,7 @@ print( exampleList[6] )
 # 
 # Remember me? 
 
-# In[76]:
+# In[72]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -1174,7 +1162,7 @@ for itemInOurList in groceryList:
 
 # Like mentioned, we name the variable. Here is the same idea again.
 
-# In[77]:
+# In[73]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -1185,7 +1173,7 @@ for steve in groceryList:
 
 # Going back to our original list. See how much easier it is to print these values? 
 
-# In[78]:
+# In[74]:
 
 
 for item in exampleList:
@@ -1207,31 +1195,33 @@ for item in exampleList:
 # 
 # functions to show the length and create indices.  We can then iterate using the index rather than the values. Let's show off these functions. 
 
-# In[79]:
+# In[75]:
 
 
 groceryList = ["apple", "banana", "eggs"]
 print ( len(groceryList) )
 
 
-# In[80]:
+# In[76]:
 
 
 print ( range(3) )
 
 
-# *range()* can be a bit misleading. The range is always one less than what you might expect. Meaning, *range(0,3)* goes from 0 to 1 to 2 to... that's it. So when using *range()* think about it as *range(starting number, ending number - 1)*
+# *range()* can be a bit misleading. The range is always one less than what you might expect. Meaning, *range(0,3)* goes from 0 to 1 to 2 to... that's it. So when using *range()* think about it as 
+# 
+# ```python
+# range(starting number, ending number - 1)
+# ```
 
-# In[81]:
+# In[77]:
 
 
 for index in range(len(groceryList)):
     print("index:",index,"value:",groceryList[index])
 
 
-# You may have noticed that the second line is indented.  Like we saw before with If/Else statements. This indent is how we indicate what is in the loop.  Our loop can have many lines (all indented).  The first line that isn't indented indicates we are out of the loop.  This indent is the python syntax for in and out of the loop; other coding languages use other things such as braces {}.  Note that blank lines don't matter, just indentation.
-
-# In[82]:
+# In[78]:
 
 
 print( "Starting the loop" )
@@ -1272,7 +1262,7 @@ print( "Outside the loop" )
 
 # The condition being set by the while statement will cause this to run as long as the statement is true.
 
-# In[83]:
+# In[79]:
 
 
 counting = 0
@@ -1285,7 +1275,7 @@ while (counting < 10):
 
 # One thing to note is that the while loop won't ever be entered if the condition is false when the statement begins as false.
 
-# In[84]:
+# In[80]:
 
 
 startAtTen = 10
@@ -1296,29 +1286,9 @@ while (startAtTen < 10):
     print ("\t","after:",startAtTen )
 
 
-# ###### 😈 A VERY MEAN Example 😈
-
-# Let's see where we can use this type of loop, in this 😈 VERY MEAN Example 😈. We are creating a set of 30 random numbers from 1 to 50. The *while* will run until it hits its first even number and print this out. Can you spot its MEAN intention?
-
-# In[85]:
-
-
-import random
-randomList = [random.randrange(1, 50, 1) for i in range(30)]
-print ( randomList[0:5] )
-
-index = 0
-print ("start loop")
-while ( randomList[index] % 2 ):
-    index = index + 1
-print ( "the first even number is:", randomList[index])
-
-
-# So why is this very mean?! Look at our warning.
-
-# ```{warning}
+# 
 # While loops will keep iterating as long as the statement stays true.  Infinite loops are caused by a condition that always stays true.  Use the stop button ( 🔲 but filled in ) to stop this erroneous code. Here is an example of this type of code. 
-# ```
+# 
 
 # ```python
 # counting = 0
@@ -1330,76 +1300,25 @@ print ( "the first even number is:", randomList[index])
 #     counting = counting + 1
 # ```
 
-# This is 😈 A VERY MEAN Example 😈 because it is possible to have a set without a single even number. The odds of picking an even or an odd is a coin flip (50%). Now do this 30 times. What are the odds of flipping a coin 30 times without a single "Tails?" 
-# 
-# $\frac{1}{2}$ = 1 coin
-# 
-# $\frac{1}{2} * \frac{1}{2}$ = 2 coins
-# 
-# $\frac{1}{2} * \frac{1}{2} * \frac{1}{2}$ = 3 coins
-# 
-# $(\frac{1}{2})^n$ = n coin
-# 
-# $(\frac{1}{2})^{30}$ = 30 coin = $(\frac{1}{1073741824})$  OR one in 1 billion, 73 million, 741 thousand, 824. 
-# 
-# Meaning, a person out of 1073741824 will have an infinite loop! 
-# 
-# MUAHAHAHA!!!
-
 # ### Your turn!
 
 # Try to fill in code to fulfill the request!  Here is a variable used in the excercises
 
-# In[86]:
+# In[81]:
 
 
 aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 
-# Write a function that returns the length of aListOfNumbers as well as the maximum value. Hint: max() is a built-in function
-
-# In[87]:
-
-
-# Try it here:
-
-
 # Use a for loop to add up all of the numbers in aListOfNumbers.
 
-# In[88]:
+# In[82]:
 
 
 # Try it here:
 
 
-# Use a while loop to find the first number in aListOfNumbers that is both greater than 5 and a multiple of 4.
-
-# In[89]:
-
-
-# Try it here:
-
-
-# Count the number of values in aListOfNumbers that are:
-# * even
-# * odd and divisible by three
-# * odd and not divisible by three
-# 
-# using if, elif and else.
-
-# In[90]:
-
-
-# Try it here:
-
-
-# Create a dictionary with keys 1-8 corresponding to the words one, two, three, etc. Loop through aListofNumbers to print out the word corresponding to the digit and provide a default value of 'Not Found' if the key is not contained within the dictionary.  You should get: six three four five seven eight Not Found
-
-# In[91]:
-
-
-# Try it here:
-
+# ***
 
 # ## Loading a Library - 🐠 - fish
 
@@ -1412,7 +1331,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Python uses modules to make additional functionality available.  Modules can be thought of as libraries with many functions, data types, and characteristics that can be used once loaded. 
 
-# In[92]:
+# In[83]:
 
 
 # Import all functions using a name
@@ -1443,23 +1362,17 @@ print( mathCos( np.pi ) )
 
 # We can also use dir to see what is currently available to use:
 
-# ### Your Turn!
+# ### Your turn!
 
 # Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy).
 
-# In[93]:
+# In[84]:
 
 
 # Try it here
 
 
-# Does numpy include functions called log10 and banana?
-
-# In[94]:
-
-
-# Try it here
-
+# ***
 
 # ## Creating a Function - 🐲 - dragon
 
@@ -1467,7 +1380,7 @@ print( mathCos( np.pi ) )
 # 
 # There are functions that are built into python; for example, we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!
 
-# In[95]:
+# In[85]:
 
 
 aVal = 10.0
@@ -1493,7 +1406,7 @@ print( type( aVal ) )
 
 # Let's look at an example function, which changes degrees Fahrenheit to Celsius. 
 
-# In[96]:
+# In[86]:
 
 
 def changeFromFToC( farVal ):
@@ -1503,7 +1416,7 @@ def changeFromFToC( farVal ):
 
 # Here, our function name is *changeFromFToC*, the input is *farVal*, the temperature in Fahrenheit, the output is *cVal*, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.
 
-# In[97]:
+# In[87]:
 
 
 print( "Change 14 deg F to Celsius" )
@@ -1514,89 +1427,6 @@ niceTempC = changeFromFToC( 68 )
 print( niceTempC )
 
 
-# Your turn! What is the temperature today? Convert it to Celsius. 
-# 
-# For those who have the temperature in Celsius and want to convert it to Fahrenheit. Define a new function to do this.
-
-# #### Multiple inputs and outputs
-
-# Here is an example of multiple outputs. We can actually work the output in a couple of different ways.
-
-# ##### Multiple Output Function
-
-# In[98]:
-
-
-def changeFromFToCAndK( farVal ):
-    # Change the temperature from Fahrenheit to Celsius and Kelvin
-    cVal = (farVal - 32.0) * 5.0 / 9.0
-    kVal= cVal + 273.15
-    return cVal, kVal  
-
-
-# ##### Output: List
-
-# In[99]:
-
-
-def changeFromFToCAndK( farVal ):
-    # Change the temperature from Fahrenheit to Celsius and Kelvin
-    cVal = (farVal - 32.0) * 5.0 / 9.0
-    kVal= cVal + 273.15
-    return cVal, kVal    
-    
-print( "Change 14 deg F to Celsius and Kelvin" )
-print( changeFromFToCAndK( 14 ) )
-
-print( "Change 32 deg F to Celsius and Kelvin" )
-freezing = changeFromFToCAndK( 32 ) 
-print( freezing[0] )
-print( freezing[1] )
-
-
-# ##### Output: Multiple Variables 
-
-# In[100]:
-
-
-print( "Change 212 deg F to Celsius and Kelvin" )
-boilingC, boilingK = changeFromFToCAndK( 212 ) 
-print( boilingC )
-print( boilingK )
-
-
-# ##### Multiple Input Function
-
-# In[101]:
-
-
-def changeFromFToCOrK( farVal, tempType ):
-    if (tempType == "C"):
-        return (farVal - 32.0) * 5.0 / 9.0
-    elif (tempType == "K"):
-        return ((farVal - 32.0) * 5.0 / 9.0) + 273.15
-    else:
-        return "invalid temperature type"
-
-
-# In[102]:
-
-
-print ( changeFromFToCOrK(70,"C") )
-
-
-# In[103]:
-
-
-print ( changeFromFToCOrK(70,"K") )
-
-
-# In[104]:
-
-
-print ( changeFromFToCOrK(70,"W") )
-
-
 # #### Function Gotcha! 😆 
 
 # ```{note}
@@ -1605,7 +1435,7 @@ print ( changeFromFToCOrK(70,"W") )
 # * Functions have access to more than just the variables passed in
 # ```
 
-# In[105]:
+# In[88]:
 
 
 def addAnAnimal( animal ):
@@ -1672,20 +1502,26 @@ print ("function output:",addAnAnimal( dog ))
 # ```
 #     
 
-# ### Your Turn!
+# ### Your turn! 
+# 
+# What is the temperature today? Convert it to Celsius. 
+# 
+# For those who have the temperature in Celsius and want to convert it to Fahrenheit. Define a new function to do this.
 
-# Try to fill in code to fulfill the request!  Here is a variable used in the excercises.
-
-# In[106]:
-
-
-aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
-
-
-# Write a function that returns the length of aListOfNumbers as well as the maximum value. Hint: max() is a built-in function
-
-# In[107]:
+# In[89]:
 
 
-## try here!
+# Try it here
+
+
+# ***
+
+# ## The End
+
+# Thank you again for attending the ICDS Python/JupyterLab Workshop! 
+
+# In[ ]:
+
+
+
 
