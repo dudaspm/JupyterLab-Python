@@ -1102,7 +1102,7 @@ else:
     print ("I don't have a favorite color.")
 
 
-# ## Loops
+# ## Loops - 🐨 - koala
 
 # One of the programming features is that we have many options to do the same tasking multiple times.  The three methods we will be looking at are:
 # * Functions (later notebook)
@@ -1110,7 +1110,7 @@ else:
 # * While Loops
 # 
 
-# ### For Loops - 🐨 - koala
+# ### For Loops
 
 # Loops allow us to do the same thing to each item in a list or array. One of the most basic types of loops is a *for loop* - this allows us to iterate over any sequence.
 # 

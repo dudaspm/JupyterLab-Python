@@ -10,19 +10,18 @@ parts:
     - file: Notebook Introduction - 🐸
   - caption: Jupyter Lab
     chapters:
-    - file: Introduction to JupyterLab
+    - file: Introduction to JupyterLab - 🐘
   - caption: Python
     chapters:
-      - file: Introduction to Python
-      - file: Learning about Variables
-      - file: Comparisons
-      - file: If-Else Conditions
-      - file: Loops
-      - file: Loading a Library
-      - file: Creating a Function
+      - file: Introduction to Python - 🐧
+      - file: Learning about Variables - 🐳
+      - file: Comparisons - 🐭
+      - file: If-Else Conditions - 🐴
+      - file: Loops - 🐨
+      - file: Loading a Library - 🐠
+      - file: Creating a Function - 🐲
   - caption: Workshops
     chapters:
-      - file: Workshop Notebook
       - file: Workshop Notebook-Abridged
   - caption: Example Python
     chapters:
