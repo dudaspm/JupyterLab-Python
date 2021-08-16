@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search &#8212; JupyterLab + Python</title>
+    <title>All About Google Colab and JupyterLab &#8212; JupyterLab + Python</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -33,7 +33,6 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -50,16 +49,13 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to JupyterLab - 🐘" href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html" />
+    <link rel="prev" title="Notebook Introduction - 🐸" href="Notebook%20Introduction%20-%20%F0%9F%90%B8.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -79,7 +75,7 @@
       <h1 class="site-logo" id="site-title">JupyterLab + Python</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="#" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -96,14 +92,14 @@
   Getting Starting
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Notebook%20Introduction%20-%20%F0%9F%90%B8.html">
    Notebook Introduction - 🐸
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="All%20About%20Google%20Colab%20and%20JupyterLab.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    All About Google Colab and JupyterLab
   </a>
  </li>
@@ -245,7 +241,36 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/All About Google Colab and JupyterLab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/All About Google Colab and JupyterLab.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -256,11 +281,61 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/All About Google Colab and JupyterLab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/All About Google Colab and JupyterLab.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connecting-to-your-google-drive">
+   Connecting to Your Google Drive
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-the-icon-to-connect">
+     Selecting the Icon to Connect
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connecting-using-google-colab-code">
+     Connecting Using Google Colab Code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -269,33 +344,54 @@
         
               <div>
                 
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    Searching for multiple words only shows matches that contain
-    all words.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="all-about-google-colab-and-jupyterlab">
+<h1>All About Google Colab and JupyterLab<a class="headerlink" href="#all-about-google-colab-and-jupyterlab" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="connecting-to-your-google-drive">
+<h2>Connecting to Your Google Drive<a class="headerlink" href="#connecting-to-your-google-drive" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to connect to your Google Drive.</p>
+<div class="section" id="selecting-the-icon-to-connect">
+<h3>Selecting the Icon to Connect<a class="headerlink" href="#selecting-the-icon-to-connect" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/connectToDrive.PNG"><img alt="Icon for Connecting to Google Colab" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/connectToDrive.PNG" style="width: 300px;" /></a>
+</div>
+<div class="section" id="connecting-using-google-colab-code">
+<h3>Connecting Using Google Colab Code<a class="headerlink" href="#connecting-using-google-colab-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will look something like this:</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/googleColabConnect.PNG"><img alt="Connecting to Google Colab with Code" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/googleColabConnect.PNG" style="width: 300px;" /></a>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "dudaspm/JupyterLab-Python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Notebook%20Introduction%20-%20%F0%9F%90%B8.html" title="previous page">Notebook Introduction - 🐸</a>
+    <a class='right-next' id="next-link" href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html" title="next page">Introduction to JupyterLab - 🐘</a>
 
         </div>
         

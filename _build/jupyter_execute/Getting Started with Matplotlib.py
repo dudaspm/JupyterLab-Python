@@ -434,7 +434,7 @@ zVals = data[(data.MONTH==3) & (data.YEAR==2000)].TMIN # dependent
 
 # Creat the figure
 fig, ax = plt.subplots(1)
-colors = brewer.get_cmap('Pastel1',2)
+colors = brewer.get_cmap('Set1',2)
 # Add our data and change the color, marker type and linestyle
 ax.plot( xVals, yVals, marker='o', linestyle=':',  label = '2020', color=colors(0))
 ax.plot( xVals, zVals, marker='s', linestyle='-',  label = '2000', color=colors(1))
