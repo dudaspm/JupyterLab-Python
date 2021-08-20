@@ -7,7 +7,10 @@ email: pmd19@psu.edu
 copyright: "2021"  # Copyright year to be placed in the footer
 description: >- # this means to ignore newlines until "baseurl:"
   My JupyterLab + Python Book
-  
+
+sphinx:
+  config:
+    language: en
 # the name of your GitHub Repo. 
 # If there is no subpath for your site, use an empty string ""  
 baseurl: "/JupyterLab-Python" #@@@ CHANGE THIS -5 @@@#

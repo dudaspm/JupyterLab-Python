@@ -4,13 +4,19 @@
 # In[1]:
 
 
-import rpy2
+import graphviz
+dot = graphviz.Digraph()
 
+# Add nodes
+dot.node('A', 'Content')
+dot.node('B', 'drive')
+dot.node('C', 'MyDrive')
 
-# In[3]:
+# Add edges
+dot.edges(['AB','BC'])
 
-
-get_ipython().system('pip install rpy2')
+# Visualize the graph
+dot
 
 
 # In[ ]:
