@@ -8,10 +8,11 @@ parts:
   - caption: Getting Starting
     chapters:
     - file: Notebook Introduction - 🐸
-    - file: All About Google Colab and JupyterLab
-  - caption: Jupyter Lab
+
+  - caption: JupyterLab and its Environments
     chapters:
     - file: Introduction to JupyterLab - 🐘
+    - file: All About Google Colab - 🐦
   - caption: Python
     chapters:
       - file: Introduction to Python - 🐧
