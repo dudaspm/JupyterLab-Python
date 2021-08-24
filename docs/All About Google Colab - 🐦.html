@@ -382,10 +382,10 @@
 <h1>All About Google Colab - 🐦<a class="headerlink" href="#all-about-google-colab" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="working-with-data">
 <h2>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h2>
-<p><span id="id1">[<a class="reference internal" href="Tables%20to%20Idioms.html#id6">Goo</a>]</span></p>
+<p>For this notebook, we will be focusing on using Google Colab <span id="id1">[<a class="reference internal" href="Tables%20to%20Idioms.html#id6">Goo</a>]</span></p>
 <div class="section" id="a-temporary-solution">
 <h3>A Temporary Solution<a class="headerlink" href="#a-temporary-solution" title="Permalink to this headline">¶</a></h3>
-<p>You can create and interactive with files when you access Google Colab, <em>BUT</em> they will disappear after your session ends. An example would be:</p>
+<p>You can create and interact with files when you access Google Colab, <em>BUT</em> they will disappear after your session ends. An example would be:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;thanosSnapping.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
@@ -398,7 +398,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Super serious here.
-If files are not written to your local machine or your Google Drive. They will be <strong>gone</strong> the next time you log-in.</p>
+If files are not written to your local machine or your Google Drive. They will be <strong>gone</strong> the next time you log in.</p>
 </div>
 <p>We need a better solution for this. So, let’s take a look at these options.</p>
 </div>
@@ -420,26 +420,26 @@ If files are not written to your local machine or your Google Drive. They will b
 </div>
 <div class="section" id="i-am-connected-now-what">
 <h4>I am Connected, Now What?<a class="headerlink" href="#i-am-connected-now-what" title="Permalink to this headline">¶</a></h4>
-<p>It can be a bit difficult to figure out where to place files and where your files are located at in Google Colab. Once you connect you will need to navigate the folder structure to find your file. They did not make this very easy to find. Here is a quick screenshot.</p>
+<p>It can be a bit difficult to figure out where to place files and where your files are located in Google Colab. Once you connect, you will need to navigate the folder structure to find your file. They did not make this very easy to find. Here is a quick screenshot.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/contentFolder.PNG"><img alt="file structure in Google Colab" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/contentFolder.PNG" style="width: 400px;" /></a>
 </div>
 </div>
 <div class="section" id="connecting-to-gitlab">
 <h3>Connecting to Gitlab<a class="headerlink" href="#connecting-to-gitlab" title="Permalink to this headline">¶</a></h3>
-<p>Another way to work with data outside of your Google Drive is using something like GitHub or in our case GitLab. A bit of a warning before we begin.</p>
+<p>Another way to work with data outside of your Google Drive is using something like GitHub or, in our case GitLab. A bit of a warning before we begin.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Github is open repository. Any file placed on Github is available for <em>ANYONE</em> to view, download, or edit.</p>
+<p>Github is an open repository. Any file placed on Github is available for <em>ANYONE</em> to view, download, or edit.</p>
 </div>
 <p>Make sure you read of the terms of services as well!</p>
 <p>For accessing GitLab through Penn State, here is the link (<a class="reference external" href="https://git.psu.edu/">https://git.psu.edu/</a>). You do need to setup a username/password to start creating.</p>
 <p>If you are interest in using Git, let me show the basics.</p>
 <div class="section" id="creating-a-connection-ssh">
 <h4>Creating a Connection (SSH)<a class="headerlink" href="#creating-a-connection-ssh" title="Permalink to this headline">¶</a></h4>
-<p>The first step in this process is to create a connectiong between Google Colab and GitLab, and this starts with saying to Google Colab: You can connect to this resource because I gave you access. The way we do this is to create an <em>SSH Key</em>.</p>
+<p>The first step in this process is to create a connection between Google Colab and GitLab, and this starts with saying to Google Colab: You can connect to this resource because I gave you access. The way we do this is to create an <em>SSH Key</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Code will run in Google Colab, but has been commented out to work on the website.</p>
+<p>Code will run in Google Colab but has been commented out to work on the website.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh-keygen -t ed25519 -C &quot;SSH key for google colab&quot;
 </pre></div>
@@ -462,7 +462,7 @@ If files are not written to your local machine or your Google Drive. They will b
 </div>
 </div>
 </div>
-<p>We now need to tell SSH, that the PSU GitLab is fine to connect to (it is a known host).</p>
+<p>We now need to tell SSH that the PSU GitLab is fine to connect to (it is a known host).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh-keyscan git.psu.edu &gt;&gt; /root/.ssh/known_hosts
 </pre></div>
 </div>
@@ -494,7 +494,7 @@ Welcome to GitLab, &#64;you!</p>
 </div>
 <div class="section" id="the-push-and-pull-of-git">
 <h4>The Push and Pull of Git<a class="headerlink" href="#the-push-and-pull-of-git" title="Permalink to this headline">¶</a></h4>
-<p>Git, basically, is a push and pull mechanism. You <em>pull</em> your project down from GitLab. Make changes. Then <em>push</em> it back to GitLab. Here is an example of doing this with your our file from before. First, we <strong>clone</strong> the repository.</p>
+<p>Git, basically, is a push and pull mechanism. You <em>pull</em> your project down from GitLab. Make changes. Then <em>push</em> it back to GitLab. Here is an example of doing this with your file from before. First, we <strong>clone</strong> the repository.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone git@git.psu.edu:pmd19/workshop_temp.git
 </pre></div>
 </div>
@@ -505,7 +505,7 @@ Welcome to GitLab, &#64;you!</p>
 </div>
 </div>
 </div>
-<p>We then <strong>pull</strong> the current content from GitLab. Note cd stands for Change Directory and pwd stands for Print Work Directory.</p>
+<p>We then <strong>pull</strong> the current content from GitLab. Note cd stands for Change Directory, and PWD stands for Print Work Directory.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%cd /content/workshop_temp
 !pwd
 !git pull origin master
@@ -539,7 +539,7 @@ f.close()
 </div>
 </div>
 </div>
-<p>Git wants to make sure it knows who is updating what, so it needs a person and an email address to associate the changes. We then <strong>commit</strong> to these changes and finally, we <strong>push</strong> our changes to GitLab.</p>
+<p>Git wants to make sure it knows who is updating what, so it needs a person and an email address to associate the changes. We then <strong>commit</strong> to these changes, and finally, we <strong>push</strong> our changes to GitLab.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git config --global user.email &#39;pmd19@psu.edu&#39;
 !git config --global user.name &#39;Patrick Dudas&#39;
 !git commit -m &quot;testing&quot;

@@ -4,12 +4,12 @@
 # # All About Google Colab - 🐦
 
 # ## Working with Data 
-# {cite:ps}`GoogleColaboratoryIO`
+# For this notebook, we will be focusing on using Google Colab {cite:ps}`GoogleColaboratoryIO`
 # 
 
 # ### A Temporary Solution
 # 
-# You can create and interactive with files when you access Google Colab, *BUT* they will disappear after your session ends. An example would be:
+# You can create and interact with files when you access Google Colab, *BUT* they will disappear after your session ends. An example would be:
 
 # In[1]:
 
@@ -21,7 +21,7 @@ f.close()
 
 # ```{warning} 
 # Super serious here. 
-# If files are not written to your local machine or your Google Drive. They will be **gone** the next time you log-in.
+# If files are not written to your local machine or your Google Drive. They will be **gone** the next time you log in.
 # ```
 
 # We need a better solution for this. So, let's take a look at these options. 
@@ -55,7 +55,7 @@ f.close()
 
 # #### I am Connected, Now What?
 # 
-# It can be a bit difficult to figure out where to place files and where your files are located at in Google Colab. Once you connect you will need to navigate the folder structure to find your file. They did not make this very easy to find. Here is a quick screenshot.
+# It can be a bit difficult to figure out where to place files and where your files are located in Google Colab. Once you connect, you will need to navigate the folder structure to find your file. They did not make this very easy to find. Here is a quick screenshot.
 # 
 # 
 # ```{image} https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/contentFolder.PNG
@@ -65,10 +65,10 @@ f.close()
 # ```
 
 # ### Connecting to Gitlab
-# Another way to work with data outside of your Google Drive is using something like GitHub or in our case GitLab. A bit of a warning before we begin.
+# Another way to work with data outside of your Google Drive is using something like GitHub or, in our case GitLab. A bit of a warning before we begin.
 
 # ```{warning}
-# Github is open repository. Any file placed on Github is available for *ANYONE* to view, download, or edit. 
+# Github is an open repository. Any file placed on Github is available for *ANYONE* to view, download, or edit. 
 # ```
 
 # Make sure you read of the terms of services as well! 
@@ -79,12 +79,12 @@ f.close()
 # 
 # #### Creating a Connection (SSH)
 # 
-# The first step in this process is to create a connectiong between Google Colab and GitLab, and this starts with saying to Google Colab: You can connect to this resource because I gave you access. The way we do this is to create an *SSH Key*.
+# The first step in this process is to create a connection between Google Colab and GitLab, and this starts with saying to Google Colab: You can connect to this resource because I gave you access. The way we do this is to create an *SSH Key*.
 # 
 # 
 
 # ```{note}
-# Code will run in Google Colab, but has been commented out to work on the website. 
+# Code will run in Google Colab but has been commented out to work on the website. 
 # ```
 
 # ```python
@@ -109,7 +109,7 @@ f.close()
 #!cat /root/.ssh/id_ed25519.pub
 
 
-# We now need to tell SSH, that the PSU GitLab is fine to connect to (it is a known host). 
+# We now need to tell SSH that the PSU GitLab is fine to connect to (it is a known host). 
 # 
 # ```python
 # !ssh-keyscan git.psu.edu >> /root/.ssh/known_hosts
@@ -143,7 +143,7 @@ f.close()
 
 # #### The Push and Pull of Git
 
-# Git, basically, is a push and pull mechanism. You *pull* your project down from GitLab. Make changes. Then *push* it back to GitLab. Here is an example of doing this with your our file from before. First, we **clone** the repository. 
+# Git, basically, is a push and pull mechanism. You *pull* your project down from GitLab. Make changes. Then *push* it back to GitLab. Here is an example of doing this with your file from before. First, we **clone** the repository. 
 # 
 # ```python
 # !git clone git@git.psu.edu:pmd19/workshop_temp.git
@@ -155,7 +155,7 @@ f.close()
 #!git clone git@git.psu.edu:pmd19/workshop_temp.git
 
 
-# We then **pull** the current content from GitLab. Note cd stands for Change Directory and pwd stands for Print Work Directory. 
+# We then **pull** the current content from GitLab. Note cd stands for Change Directory, and PWD stands for Print Work Directory. 
 # 
 # ```python
 # %cd /content/workshop_temp
@@ -191,7 +191,7 @@ f.close()
 #!git add "thanosSnapping.txt"
 
 
-# Git wants to make sure it knows who is updating what, so it needs a person and an email address to associate the changes. We then **commit** to these changes and finally, we **push** our changes to GitLab.
+# Git wants to make sure it knows who is updating what, so it needs a person and an email address to associate the changes. We then **commit** to these changes, and finally, we **push** our changes to GitLab.
 # 
 # ```python
 # !git config --global user.email 'pmd19@psu.edu'
