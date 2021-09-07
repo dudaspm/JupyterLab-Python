@@ -24,7 +24,8 @@ parts:
       - file: Creating a Function - 🐲
   - caption: Workshops
     chapters:
-      - file: Workshop Notebook-Abridged
+      - file: Python + Google Colab Workshop Notebook Abridged
+      - file: JupyterLab + Google Colab Workshop Notebook Abridged
       - file: FAQ
   - caption: Example Python
     chapters:
