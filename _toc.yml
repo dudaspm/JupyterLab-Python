@@ -1,38 +1,7 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-
-format: jb-book
-root: intro
-parts:
-  - caption: Getting Starting
-    chapters:
-    - file: Notebook Introduction - 🐸
-
-  - caption: JupyterLab and its Environments
-    chapters:
-    - file: Introduction to JupyterLab - 🐘
-    - file: All About Google Colab - 🐦
-  - caption: Python
-    chapters:
-      - file: Introduction to Python - 🐧
-      - file: Learning about Variables - 🐳
-      - file: Comparisons - 🐭
-      - file: If-Else Conditions - 🐴
-      - file: Loops - 🐨
-      - file: Loading a Library - 🐠
-      - file: Creating a Function - 🐲
-  - caption: Workshops
-    chapters:
-      - file: Python + Google Colab Workshop Notebook Abridged
-      - file: JupyterLab + Google Colab Workshop Notebook Abridged
-      - file: FAQ
-  - caption: Example Python
-    chapters:
-      - file: Shopping List
-      - file: Guessing Game
-    
-  - caption: Matplotlib
-    chapters:
-      - file: Getting Started with Matplotlib
-      - file: Tables to Idioms
+- file: intro
+- file: content
+  sections:
+    - file: Introduction to JupyterLab
