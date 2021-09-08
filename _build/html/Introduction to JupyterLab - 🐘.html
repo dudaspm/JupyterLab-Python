@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,19 +42,19 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to Python - 🐧" href="Introduction%20to%20Python%20-%20%F0%9F%90%A7.html" />
-    <link rel="prev" title="All About Google Colab and JupyterLab" href="All%20About%20Google%20Colab%20and%20JupyterLab.html" />
+    <link rel="next" title="All About Google Colab - 🐦" href="All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html" />
+    <link rel="prev" title="Notebook Introduction - 🐸" href="Notebook%20Introduction%20-%20%F0%9F%90%B8.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -80,7 +80,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -100,21 +100,21 @@
    Notebook Introduction - 🐸
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="All%20About%20Google%20Colab%20and%20JupyterLab.html">
-   All About Google Colab and JupyterLab
-  </a>
- </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Jupyter Lab
+  JupyterLab and its Environments
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Introduction to JupyterLab - 🐘
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">
+   All About Google Colab - 🐦
   </a>
  </li>
 </ul>
@@ -167,8 +167,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Workshop%20Notebook-Abridged.html">
-   Workshop Notebook Abridged
+  <a class="reference internal" href="Python%20%2B%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">
+   Python + Google Colab Workshop Notebook Abridged
   </a>
  </li>
  <li class="toctree-l1">
@@ -316,7 +316,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#where-am-i-jupyterlab-notebook">
@@ -378,6 +378,33 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#code">
        Code
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-magic">
+     Jupyter ✨ MAGIC ✨
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#html">
+       HTML
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svg">
+       SVG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#r-language">
+       R Language
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sql">
+       SQL
       </a>
      </li>
     </ul>
@@ -520,6 +547,112 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </div>
 </div>
 </div>
+<div class="section" id="jupyter-magic">
+<h3>Jupyter ✨ MAGIC ✨<a class="headerlink" href="#jupyter-magic" title="Permalink to this headline">¶</a></h3>
+<p>When using other languages in Jupyter/JupyterLab, we need to designate the cell we are using with this langauge or function. To “activate” these language, we need to use ✨ MAGIC ✨. Here are a couple of examples.</p>
+<div class="section" id="html">
+<h4>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>apple<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>banana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>cookies<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol>
+  <li>apple</li>
+  <li>banana</li>
+  <li>cookies</li>
+</ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="svg">
+<h4>SVG<a class="headerlink" href="#svg" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">svg</span>
+&lt;svg height=&quot;100&quot; width=&quot;100&quot;&gt;
+  &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;40&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; fill=&quot;steelblue&quot; /&gt;
+&lt;/svg&gt;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Introduction to JupyterLab - 🐘_25_0.svg" src="_images/Introduction to JupyterLab - 🐘_25_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="r-language">
+<h4>R Language<a class="headerlink" href="#r-language" title="Permalink to this headline">¶</a></h4>
+<p>In Google Colab, you do <em>not</em> need to install anything, but if you are going to do this on your local machine (your computer).</p>
+<p><img alt="Anaconda Prompt - installing r-essentials" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/command.PNG" /></p>
+<p>You will need to install a few things first. To do this, open up the <em>Anaconda Prompt (anaconda3)</em> and run the following two commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">r</span> <span class="n">r</span><span class="o">-</span><span class="n">essentials</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">r</span> <span class="n">rpy2</span>
+</pre></div>
+</div>
+<p>finally,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">rpy2</span><span class="o">.</span><span class="n">ipython</span>
+</pre></div>
+</div>
+<p>In a new cell, we can then add our R code and see it working.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">R</span>
+<span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s try this out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s try here! </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sql">
+<h4>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+!pip install ipython-sql
+</pre></div>
+</div>
+</div>
+</div>
+<p>What’s</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
+</pre></div>
+</div>
+<p>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
+</pre></div>
+</div>
+<p>is another bit of magic that <em>captures</em> the output of the cell and does not print it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> sql
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sql</span> sqlite:///exampleDatabase.db
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -546,12 +679,32 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="All%20About%20Google%20Colab%20and%20JupyterLab.html" title="previous page">All About Google Colab and JupyterLab</a>
-    <a class='right-next' id="next-link" href="Introduction%20to%20Python%20-%20%F0%9F%90%A7.html" title="next page">Introduction to Python - 🐧</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Notebook%20Introduction%20-%20%F0%9F%90%B8.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Notebook Introduction - 🐸</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">All About Google Colab - 🐦</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
@@ -561,7 +714,7 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
         
           By Patrick M. Dudas<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2021 - The Pennsylvania State University.<br/>
       </p>
     </div>
   </footer>

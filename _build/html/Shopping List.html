@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
@@ -78,7 +78,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -98,21 +98,21 @@
    Notebook Introduction - 🐸
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="All%20About%20Google%20Colab%20and%20JupyterLab.html">
-   All About Google Colab and JupyterLab
-  </a>
- </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Jupyter Lab
+  JupyterLab and its Environments
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">
    Introduction to JupyterLab - 🐘
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">
+   All About Google Colab - 🐦
   </a>
  </li>
 </ul>
@@ -165,8 +165,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Workshop%20Notebook-Abridged.html">
-   Workshop Notebook Abridged
+  <a class="reference internal" href="Python%20%2B%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">
+   Python + Google Colab Workshop Notebook Abridged
   </a>
  </li>
  <li class="toctree-l1">
@@ -314,7 +314,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#first-let-s-just-create-a-list">
@@ -479,8 +479,8 @@ bread
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
-2.19
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+1.97
 </pre></div>
 </div>
 </div>
@@ -497,10 +497,10 @@ bread
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.58
-1.65
-2.16
-1.57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.65
+2.09
+2.09
+2.18
 </pre></div>
 </div>
 </div>
@@ -565,10 +565,12 @@ Trader Joes
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk 3.42
-eggs 2.35
-sauce 2.91
-spaghetti 1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk 2.58
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eggs 2.35
+sauce 2.5
+spaghetti 0.92
 bread 1.56
 </pre></div>
 </div>
@@ -645,7 +647,7 @@ bread 1.56
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;milk&#39;: {&#39;Wegmans&#39;: 3.8, &#39;Wal-Mart&#39;: 2.57, &#39;Giant&#39;: 3.05, &#39;Trader Joes&#39;: 3.63}, &#39;eggs&#39;: {&#39;Wegmans&#39;: 1.74, &#39;Wal-Mart&#39;: 2.09, &#39;Giant&#39;: 2.0, &#39;Trader Joes&#39;: 1.65}, &#39;sauce&#39;: {&#39;Wegmans&#39;: 2.79, &#39;Wal-Mart&#39;: 2.93, &#39;Giant&#39;: 3.0, &#39;Trader Joes&#39;: 2.79}, &#39;spaghetti&#39;: {&#39;Wegmans&#39;: 0.84, &#39;Wal-Mart&#39;: 0.91, &#39;Giant&#39;: 0.83, &#39;Trader Joes&#39;: 0.85}, &#39;bread&#39;: {&#39;Wegmans&#39;: 1.73, &#39;Wal-Mart&#39;: 1.41, &#39;Giant&#39;: 1.48, &#39;Trader Joes&#39;: 1.5}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;milk&#39;: {&#39;Wegmans&#39;: 3.93, &#39;Wal-Mart&#39;: 3.72, &#39;Giant&#39;: 3.22, &#39;Trader Joes&#39;: 3.65}, &#39;eggs&#39;: {&#39;Wegmans&#39;: 1.66, &#39;Wal-Mart&#39;: 2.29, &#39;Giant&#39;: 2.24, &#39;Trader Joes&#39;: 2.26}, &#39;sauce&#39;: {&#39;Wegmans&#39;: 2.12, &#39;Wal-Mart&#39;: 2.17, &#39;Giant&#39;: 2.57, &#39;Trader Joes&#39;: 2.68}, &#39;spaghetti&#39;: {&#39;Wegmans&#39;: 0.77, &#39;Wal-Mart&#39;: 0.97, &#39;Giant&#39;: 0.97, &#39;Trader Joes&#39;: 0.88}, &#39;bread&#39;: {&#39;Wegmans&#39;: 1.47, &#39;Wal-Mart&#39;: 1.41, &#39;Giant&#39;: 1.61, &#39;Trader Joes&#39;: 1.36}}
 </pre></div>
 </div>
 </div>
@@ -697,7 +699,7 @@ bread
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;milk&#39;, {&#39;Wegmans&#39;: 3.8, &#39;Wal-Mart&#39;: 2.57, &#39;Giant&#39;: 3.05, &#39;Trader Joes&#39;: 3.63}), (&#39;eggs&#39;, {&#39;Wegmans&#39;: 1.74, &#39;Wal-Mart&#39;: 2.09, &#39;Giant&#39;: 2.0, &#39;Trader Joes&#39;: 1.65}), (&#39;sauce&#39;, {&#39;Wegmans&#39;: 2.79, &#39;Wal-Mart&#39;: 2.93, &#39;Giant&#39;: 3.0, &#39;Trader Joes&#39;: 2.79}), (&#39;spaghetti&#39;, {&#39;Wegmans&#39;: 0.84, &#39;Wal-Mart&#39;: 0.91, &#39;Giant&#39;: 0.83, &#39;Trader Joes&#39;: 0.85}), (&#39;bread&#39;, {&#39;Wegmans&#39;: 1.73, &#39;Wal-Mart&#39;: 1.41, &#39;Giant&#39;: 1.48, &#39;Trader Joes&#39;: 1.5})])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;milk&#39;, {&#39;Wegmans&#39;: 3.93, &#39;Wal-Mart&#39;: 3.72, &#39;Giant&#39;: 3.22, &#39;Trader Joes&#39;: 3.65}), (&#39;eggs&#39;, {&#39;Wegmans&#39;: 1.66, &#39;Wal-Mart&#39;: 2.29, &#39;Giant&#39;: 2.24, &#39;Trader Joes&#39;: 2.26}), (&#39;sauce&#39;, {&#39;Wegmans&#39;: 2.12, &#39;Wal-Mart&#39;: 2.17, &#39;Giant&#39;: 2.57, &#39;Trader Joes&#39;: 2.68}), (&#39;spaghetti&#39;, {&#39;Wegmans&#39;: 0.77, &#39;Wal-Mart&#39;: 0.97, &#39;Giant&#39;: 0.97, &#39;Trader Joes&#39;: 0.88}), (&#39;bread&#39;, {&#39;Wegmans&#39;: 1.47, &#39;Wal-Mart&#39;: 1.41, &#39;Giant&#39;: 1.61, &#39;Trader Joes&#39;: 1.36})])
 </pre></div>
 </div>
 </div>
@@ -714,20 +716,20 @@ bread
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
-{&#39;Wegmans&#39;: 3.8, &#39;Wal-Mart&#39;: 2.57, &#39;Giant&#39;: 3.05, &#39;Trader Joes&#39;: 3.63}
-[(&#39;Giant&#39;, 3.05), (&#39;Trader Joes&#39;, 3.63), (&#39;Wal-Mart&#39;, 2.57), (&#39;Wegmans&#39;, 3.8)]
+{&#39;Wegmans&#39;: 3.93, &#39;Wal-Mart&#39;: 3.72, &#39;Giant&#39;: 3.22, &#39;Trader Joes&#39;: 3.65}
+[(&#39;Giant&#39;, 3.22), (&#39;Trader Joes&#39;, 3.65), (&#39;Wal-Mart&#39;, 3.72), (&#39;Wegmans&#39;, 3.93)]
 eggs
-{&#39;Wegmans&#39;: 1.74, &#39;Wal-Mart&#39;: 2.09, &#39;Giant&#39;: 2.0, &#39;Trader Joes&#39;: 1.65}
-[(&#39;Giant&#39;, 2.0), (&#39;Trader Joes&#39;, 1.65), (&#39;Wal-Mart&#39;, 2.09), (&#39;Wegmans&#39;, 1.74)]
+{&#39;Wegmans&#39;: 1.66, &#39;Wal-Mart&#39;: 2.29, &#39;Giant&#39;: 2.24, &#39;Trader Joes&#39;: 2.26}
+[(&#39;Giant&#39;, 2.24), (&#39;Trader Joes&#39;, 2.26), (&#39;Wal-Mart&#39;, 2.29), (&#39;Wegmans&#39;, 1.66)]
 sauce
-{&#39;Wegmans&#39;: 2.79, &#39;Wal-Mart&#39;: 2.93, &#39;Giant&#39;: 3.0, &#39;Trader Joes&#39;: 2.79}
-[(&#39;Giant&#39;, 3.0), (&#39;Trader Joes&#39;, 2.79), (&#39;Wal-Mart&#39;, 2.93), (&#39;Wegmans&#39;, 2.79)]
+{&#39;Wegmans&#39;: 2.12, &#39;Wal-Mart&#39;: 2.17, &#39;Giant&#39;: 2.57, &#39;Trader Joes&#39;: 2.68}
+[(&#39;Giant&#39;, 2.57), (&#39;Trader Joes&#39;, 2.68), (&#39;Wal-Mart&#39;, 2.17), (&#39;Wegmans&#39;, 2.12)]
 spaghetti
-{&#39;Wegmans&#39;: 0.84, &#39;Wal-Mart&#39;: 0.91, &#39;Giant&#39;: 0.83, &#39;Trader Joes&#39;: 0.85}
-[(&#39;Giant&#39;, 0.83), (&#39;Trader Joes&#39;, 0.85), (&#39;Wal-Mart&#39;, 0.91), (&#39;Wegmans&#39;, 0.84)]
+{&#39;Wegmans&#39;: 0.77, &#39;Wal-Mart&#39;: 0.97, &#39;Giant&#39;: 0.97, &#39;Trader Joes&#39;: 0.88}
+[(&#39;Giant&#39;, 0.97), (&#39;Trader Joes&#39;, 0.88), (&#39;Wal-Mart&#39;, 0.97), (&#39;Wegmans&#39;, 0.77)]
 bread
-{&#39;Wegmans&#39;: 1.73, &#39;Wal-Mart&#39;: 1.41, &#39;Giant&#39;: 1.48, &#39;Trader Joes&#39;: 1.5}
-[(&#39;Giant&#39;, 1.48), (&#39;Trader Joes&#39;, 1.5), (&#39;Wal-Mart&#39;, 1.41), (&#39;Wegmans&#39;, 1.73)]
+{&#39;Wegmans&#39;: 1.47, &#39;Wal-Mart&#39;: 1.41, &#39;Giant&#39;: 1.61, &#39;Trader Joes&#39;: 1.36}
+[(&#39;Giant&#39;, 1.61), (&#39;Trader Joes&#39;, 1.36), (&#39;Wal-Mart&#39;, 1.41), (&#39;Wegmans&#39;, 1.47)]
 </pre></div>
 </div>
 </div>
@@ -769,105 +771,103 @@ bread
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>####################In for loop####################
 milk
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#From comparePrices function#
-(&#39;Wegmans&#39;, 3.8)
-At the store Wegmans the price is 3.8
+#From comparePrices function#
+(&#39;Wegmans&#39;, 3.93)
+At the store Wegmans the price is 3.93
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Wal-Mart&#39;, 2.57)
-At the store Wal-Mart the price is 2.57
+(&#39;Wal-Mart&#39;, 3.72)
+At the store Wal-Mart the price is 3.72
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Giant&#39;, 3.05)
-At the store Giant the price is 3.05
+(&#39;Giant&#39;, 3.22)
+At the store Giant the price is 3.22
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Trader Joes&#39;, 3.63)
-At the store Trader Joes the price is 3.63
+(&#39;Trader Joes&#39;, 3.65)
+At the store Trader Joes the price is 3.65
 #End comparePrices function#
-[(&#39;Wal-Mart&#39;, 2.57), (&#39;Giant&#39;, 3.05), (&#39;Trader Joes&#39;, 3.63), (&#39;Wegmans&#39;, 3.8)]
+[(&#39;Giant&#39;, 3.22), (&#39;Trader Joes&#39;, 3.65), (&#39;Wal-Mart&#39;, 3.72), (&#39;Wegmans&#39;, 3.93)]
 ####################Out for loop####################
 ####################In for loop####################
 eggs
 #From comparePrices function#
-(&#39;Wegmans&#39;, 1.74)
-At the store Wegmans the price is 1.74
+(&#39;Wegmans&#39;, 1.66)
+At the store Wegmans the price is 1.66
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Wal-Mart&#39;, 2.09)
-At the store Wal-Mart the price is 2.09
+(&#39;Wal-Mart&#39;, 2.29)
+At the store Wal-Mart the price is 2.29
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Giant&#39;, 2.0)
-At the store Giant the price is 2.0
+(&#39;Giant&#39;, 2.24)
+At the store Giant the price is 2.24
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Trader Joes&#39;, 1.65)
-At the store Trader Joes the price is 1.65
+(&#39;Trader Joes&#39;, 2.26)
+At the store Trader Joes the price is 2.26
 #End comparePrices function#
-[(&#39;Trader Joes&#39;, 1.65), (&#39;Wegmans&#39;, 1.74), (&#39;Giant&#39;, 2.0), (&#39;Wal-Mart&#39;, 2.09)]
+[(&#39;Wegmans&#39;, 1.66), (&#39;Giant&#39;, 2.24), (&#39;Trader Joes&#39;, 2.26), (&#39;Wal-Mart&#39;, 2.29)]
 ####################Out for loop####################
 ####################In for loop####################
 sauce
 #From comparePrices function#
-(&#39;Wegmans&#39;, 2.79)
-At the store Wegmans the price is 2.79
+(&#39;Wegmans&#39;, 2.12)
+At the store Wegmans the price is 2.12
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Wal-Mart&#39;, 2.93)
-At the store Wal-Mart the price is 2.93
+(&#39;Wal-Mart&#39;, 2.17)
+At the store Wal-Mart the price is 2.17
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Giant&#39;, 3.0)
-At the store Giant the price is 3.0
+(&#39;Giant&#39;, 2.57)
+At the store Giant the price is 2.57
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Trader Joes&#39;, 2.79)
-At the store Trader Joes the price is 2.79
+(&#39;Trader Joes&#39;, 2.68)
+At the store Trader Joes the price is 2.68
 #End comparePrices function#
-[(&#39;Wegmans&#39;, 2.79), (&#39;Trader Joes&#39;, 2.79), (&#39;Wal-Mart&#39;, 2.93), (&#39;Giant&#39;, 3.0)]
+[(&#39;Wegmans&#39;, 2.12), (&#39;Wal-Mart&#39;, 2.17), (&#39;Giant&#39;, 2.57), (&#39;Trader Joes&#39;, 2.68)]
 ####################Out for loop####################
 ####################In for loop####################
 spaghetti
 #From comparePrices function#
-(&#39;Wegmans&#39;, 0.84)
-At the store Wegmans the price is 0.84
+(&#39;Wegmans&#39;, 0.77)
+At the store Wegmans the price is 0.77
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Wal-Mart&#39;, 0.91)
-At the store Wal-Mart the price is 0.91
+(&#39;Wal-Mart&#39;, 0.97)
+At the store Wal-Mart the price is 0.97
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Giant&#39;, 0.83)
-At the store Giant the price is 0.83
+(&#39;Giant&#39;, 0.97)
+At the store Giant the price is 0.97
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Trader Joes&#39;, 0.85)
-At the store Trader Joes the price is 0.85
+(&#39;Trader Joes&#39;, 0.88)
+At the store Trader Joes the price is 0.88
 #End comparePrices function#
-[(&#39;Giant&#39;, 0.83), (&#39;Wegmans&#39;, 0.84), (&#39;Trader Joes&#39;, 0.85), (&#39;Wal-Mart&#39;, 0.91)]
+[(&#39;Wegmans&#39;, 0.77), (&#39;Trader Joes&#39;, 0.88), (&#39;Wal-Mart&#39;, 0.97), (&#39;Giant&#39;, 0.97)]
 ####################Out for loop####################
 ####################In for loop####################
 bread
 #From comparePrices function#
-(&#39;Wegmans&#39;, 1.73)
-At the store Wegmans the price is 1.73
+(&#39;Wegmans&#39;, 1.47)
+At the store Wegmans the price is 1.47
 #End comparePrices function#
 #From comparePrices function#
 (&#39;Wal-Mart&#39;, 1.41)
 At the store Wal-Mart the price is 1.41
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Giant&#39;, 1.48)
-At the store Giant the price is 1.48
+(&#39;Giant&#39;, 1.61)
+At the store Giant the price is 1.61
 #End comparePrices function#
 #From comparePrices function#
-(&#39;Trader Joes&#39;, 1.5)
-At the store Trader Joes the price is 1.5
+(&#39;Trader Joes&#39;, 1.36)
+At the store Trader Joes the price is 1.36
 #End comparePrices function#
-[(&#39;Wal-Mart&#39;, 1.41), (&#39;Giant&#39;, 1.48), (&#39;Trader Joes&#39;, 1.5), (&#39;Wegmans&#39;, 1.73)]
+[(&#39;Trader Joes&#39;, 1.36), (&#39;Wal-Mart&#39;, 1.41), (&#39;Wegmans&#39;, 1.47), (&#39;Giant&#39;, 1.61)]
 ####################Out for loop####################
 </pre></div>
 </div>
@@ -886,15 +886,15 @@ At the store Trader Joes the price is 1.5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
-[(&#39;Wal-Mart&#39;, 2.57), (&#39;Giant&#39;, 3.05), (&#39;Trader Joes&#39;, 3.63), (&#39;Wegmans&#39;, 3.8)]
+[(&#39;Giant&#39;, 3.22), (&#39;Trader Joes&#39;, 3.65), (&#39;Wal-Mart&#39;, 3.72), (&#39;Wegmans&#39;, 3.93)]
 eggs
-[(&#39;Trader Joes&#39;, 1.65), (&#39;Wegmans&#39;, 1.74), (&#39;Giant&#39;, 2.0), (&#39;Wal-Mart&#39;, 2.09)]
+[(&#39;Wegmans&#39;, 1.66), (&#39;Giant&#39;, 2.24), (&#39;Trader Joes&#39;, 2.26), (&#39;Wal-Mart&#39;, 2.29)]
 sauce
-[(&#39;Wegmans&#39;, 2.79), (&#39;Trader Joes&#39;, 2.79), (&#39;Wal-Mart&#39;, 2.93), (&#39;Giant&#39;, 3.0)]
+[(&#39;Wegmans&#39;, 2.12), (&#39;Wal-Mart&#39;, 2.17), (&#39;Giant&#39;, 2.57), (&#39;Trader Joes&#39;, 2.68)]
 spaghetti
-[(&#39;Giant&#39;, 0.83), (&#39;Wegmans&#39;, 0.84), (&#39;Trader Joes&#39;, 0.85), (&#39;Wal-Mart&#39;, 0.91)]
+[(&#39;Wegmans&#39;, 0.77), (&#39;Trader Joes&#39;, 0.88), (&#39;Wal-Mart&#39;, 0.97), (&#39;Giant&#39;, 0.97)]
 bread
-[(&#39;Wal-Mart&#39;, 1.41), (&#39;Giant&#39;, 1.48), (&#39;Trader Joes&#39;, 1.5), (&#39;Wegmans&#39;, 1.73)]
+[(&#39;Trader Joes&#39;, 1.36), (&#39;Wal-Mart&#39;, 1.41), (&#39;Wegmans&#39;, 1.47), (&#39;Giant&#39;, 1.61)]
 </pre></div>
 </div>
 </div>
@@ -913,38 +913,38 @@ bread
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
-Wal-Mart: 2.57
-Giant: 3.05
-Trader Joes: 3.63
-Wegmans: 3.8
+Giant: 3.22
+Trader Joes: 3.65
+Wal-Mart: 3.72
+Wegmans: 3.93
 
 
 eggs
-Trader Joes: 1.65
-Wegmans: 1.74
-Giant: 2.0
-Wal-Mart: 2.09
+Wegmans: 1.66
+Giant: 2.24
+Trader Joes: 2.26
+Wal-Mart: 2.29
 
 
 sauce
-Wegmans: 2.79
-Trader Joes: 2.79
-Wal-Mart: 2.93
-Giant: 3.0
+Wegmans: 2.12
+Wal-Mart: 2.17
+Giant: 2.57
+Trader Joes: 2.68
 
 
 spaghetti
-Giant: 0.83
-Wegmans: 0.84
-Trader Joes: 0.85
-Wal-Mart: 0.91
+Wegmans: 0.77
+Trader Joes: 0.88
+Wal-Mart: 0.97
+Giant: 0.97
 
 
 bread
+Trader Joes: 1.36
 Wal-Mart: 1.41
-Giant: 1.48
-Trader Joes: 1.5
-Wegmans: 1.73
+Wegmans: 1.47
+Giant: 1.61
 </pre></div>
 </div>
 </div>
@@ -975,12 +975,32 @@ Wegmans: 1.73
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="FAQ.html" title="previous page">FAQ</a>
-    <a class='right-next' id="next-link" href="Guessing%20Game.html" title="next page">A Python guessing game for jupyter</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="FAQ.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">FAQ</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Guessing%20Game.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">A Python guessing game for jupyter</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
@@ -990,7 +1010,7 @@ Wegmans: 1.73
         
           By Patrick M. Dudas<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2021 - The Pennsylvania State University.<br/>
       </p>
     </div>
   </footer>

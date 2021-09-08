@@ -16,7 +16,7 @@ import pandas as pd
 
 # ### Getting the data
 
-# In[2]:
+# In[3]:
 
 
 url="https://gist.githubusercontent.com/dudaspm/e518430a731ac11f52de9217311c674d/raw/4c2f2bd6639582a420ef321493188deebc4a575e/StateCollege2000-2020.csv"
@@ -27,7 +27,7 @@ data = data.fillna(0) # replace all NAs with 0s
 
 # ### Viewing the data
 
-# In[3]:
+# In[4]:
 
 
 data.head()
@@ -48,7 +48,7 @@ data.head()
 
 # ### Correlation
 
-# In[4]:
+# In[5]:
 
 
 import matplotlib.pyplot as plt
@@ -81,7 +81,7 @@ plt.show()
 
 # Plots are ways of showing data.  We will use pyplot from the matplotlib library as it is simple and common.
 
-# In[5]:
+# In[6]:
 
 
 import matplotlib.pyplot as plt
@@ -109,7 +109,7 @@ plt.close( fig )
 # 
 # We can add things like labels and a title to help provide context.
 
-# In[6]:
+# In[7]:
 
 
 import matplotlib.pyplot as plt
@@ -139,7 +139,7 @@ plt.close( fig )
 # 
 # You can either specify these things individually, or with shorthand notation
 
-# In[7]:
+# In[8]:
 
 
 import matplotlib.pyplot as plt
@@ -169,7 +169,7 @@ plt.close( fig )
 
 # We can also add legends and text to our figures.  
 
-# In[8]:
+# In[9]:
 
 
 import matplotlib.pyplot as plt
@@ -207,7 +207,7 @@ plt.close( fig )
 
 # Let's take advantage of adding an additional subplot, and change the y-axes of the different plots separately. We use the sharex to indicate that the x-axes should be the same.  Note that the figure handle refers to the entire figure and the axes are individual sets of axes that occur within the figure.
 
-# In[9]:
+# In[10]:
 
 
 import matplotlib.pyplot as plt
@@ -249,7 +249,7 @@ plt.close( figd )
 
 # Everything so far has just been in the jupyter notebook environment.  We can save the files using the savefig function.  You can then use the Home tab within jupyter to download the file to your local machine.
 
-# In[10]:
+# In[11]:
 
 
 import matplotlib.pyplot as plt
@@ -293,7 +293,7 @@ plt.close( figd )
 
 # ### Publication Quality Plots
 
-# In[11]:
+# In[12]:
 
 
 import matplotlib.pyplot as plt
@@ -332,7 +332,7 @@ plt.close( fig )
 
 # Next, I want to move the labels to the end of the lines. 
 
-# In[12]:
+# In[13]:
 
 
 import matplotlib.pyplot as plt
@@ -372,7 +372,7 @@ plt.close( fig )
 
 # Let's make the Axis Titles larger
 
-# In[13]:
+# In[14]:
 
 
 import matplotlib.pyplot as plt
@@ -414,7 +414,7 @@ plt.close( fig )
 # 
 # http://colorbrewer2.org
 
-# In[14]:
+# In[15]:
 
 
 import matplotlib.cm as brewer
@@ -422,7 +422,7 @@ for colors in brewer.datad:
     print( colors )
 
 
-# In[15]:
+# In[16]:
 
 
 import matplotlib.pyplot as plt
@@ -459,7 +459,7 @@ plt.close( fig )
 
 # Finally, we might want to highlight a certain data points with a line or lines. 
 
-# In[16]:
+# In[17]:
 
 
 import matplotlib.pyplot as plt
@@ -503,7 +503,7 @@ plt.close( fig )
 
 # Changing the size of the figure.
 
-# In[17]:
+# In[18]:
 
 
 import matplotlib.pyplot as plt

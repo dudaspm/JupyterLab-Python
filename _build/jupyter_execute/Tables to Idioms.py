@@ -40,7 +40,7 @@ data.total_distributed = data.total_distributed/100000
 data.people_vaccinated = data.people_vaccinated/100000
 
 
-# In[2]:
+# In[5]:
 
 
 data.head()
@@ -58,7 +58,7 @@ data.head()
 
 # ### Today's and Yesterday's date and data
 
-# In[3]:
+# In[6]:
 
 
 from datetime import datetime, timedelta
@@ -76,7 +76,7 @@ data[data.date==yesterdaysDate].head()
 
 # <cite>Scatter Plot — Matplotlib 3.3.4 Documentation. https://matplotlib.org/stable/gallery/shapes_and_collections/scatter.html. Accessed 14 Mar. 2021.</cite>
 
-# In[4]:
+# In[7]:
 
 
 px = 1/plt.rcParams['figure.dpi']  # pixel in inches
@@ -100,7 +100,7 @@ plt.close( fig )
 # <cite>Grouped Bar Chart with Labels — Matplotlib 3.3.4 Documentation. https://matplotlib.org/stable/gallery/lines_bars_and_markers/barchart.html. Accessed 14 Mar. 2021.
 # </cite>
 
-# In[5]:
+# In[8]:
 
 
 # creating the bar plot
@@ -118,7 +118,7 @@ plt.show( fig )
 plt.close( fig )
 
 
-# In[6]:
+# In[9]:
 
 
 # creating the bar plot
@@ -139,7 +139,7 @@ plt.show( fig )
 plt.close( fig )
 
 
-# In[7]:
+# In[10]:
 
 
 # creating the bar plot
@@ -163,7 +163,7 @@ plt.close( fig )
 
 # ### Paired Bar Chart
 
-# In[8]:
+# In[11]:
 
 
 import numpy as np
@@ -198,7 +198,7 @@ plt.show( fig )
 plt.close( fig )
 
 
-# In[9]:
+# In[13]:
 
 
 import numpy as np
