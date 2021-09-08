@@ -197,6 +197,8 @@ get_ipython().run_line_magic('load_ext', 'sql')
 get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
 
 
+# More information can be found here: [Jupyter ✨ MAGIC ✨](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
+
 # In[ ]:
 
 
