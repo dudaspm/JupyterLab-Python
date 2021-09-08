@@ -118,7 +118,7 @@ get_ipython().run_cell_magic('svg', '', '<svg height="100" width="100">\n  <circ
 get_ipython().run_line_magic('load_ext', 'rpy2.ipython')
 
 
-# In[7]:
+# In[27]:
 
 
 get_ipython().run_cell_magic('R', '', 'data <- c(1,2,3)\nprint(data)')
@@ -126,19 +126,19 @@ get_ipython().run_cell_magic('R', '', 'data <- c(1,2,3)\nprint(data)')
 
 # #### SQL
 
-# In[8]:
+# In[19]:
 
 
 get_ipython().run_cell_magic('capture', '', '!pip install ipython-sql')
 
 
-# In[9]:
+# In[20]:
 
 
 get_ipython().run_line_magic('load_ext', 'sql')
 
 
-# In[10]:
+# In[21]:
 
 
 get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
@@ -154,7 +154,7 @@ get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
 
 # ### Comments in Python
 
-# In[11]:
+# In[5]:
 
 
 # I am a comment in Python
@@ -179,7 +179,7 @@ get_ipython().run_line_magic('sql', 'sqlite:///exampleDatabase.db')
 # 
 # Let's use the classic example.
 
-# In[12]:
+# In[6]:
 
 
 print( "hello, world!" )
@@ -187,7 +187,7 @@ print( "hello, world!" )
 
 # *print()* can do some fun things as well. As in, giving it more than one thing to print with commas between them. This will print both things with spaces.
 
-# In[13]:
+# In[8]:
 
 
 print( "hello,", "world!" )
@@ -203,7 +203,7 @@ print( "hello,", "world!" )
 # 
 # ... function is exactly what it is. It is a function to 🌟 help 🌟 you understand the basic usage of another function. 
 
-# In[14]:
+# In[9]:
 
 
 help(print)
@@ -233,7 +233,7 @@ help(print)
 # 
 # Print out the help information for a function called type().
 
-# In[15]:
+# In[3]:
 
 
 # Add a comment here 
@@ -245,7 +245,7 @@ help(print)
 
 # ## Learning about Variables - 🐳 - whale
 
-# In[16]:
+# In[11]:
 
 
 5 + 3 + 16
@@ -257,13 +257,13 @@ help(print)
 
 # Let's say the radius is 5
 
-# In[17]:
+# In[12]:
 
 
 2 * 3.14159265359 * 5
 
 
-# In[18]:
+# In[13]:
 
 
 pi = 3.14159265359
@@ -273,19 +273,19 @@ pi = 3.14159265359
 # 
 # Let's try those radii again (10, 11, 4)
 
-# In[19]:
+# In[14]:
 
 
 2 * pi * 10
 
 
-# In[20]:
+# In[15]:
 
 
 2 * pi * 11
 
 
-# In[21]:
+# In[16]:
 
 
 2 * pi * 4
@@ -297,7 +297,7 @@ pi = 3.14159265359
 
 # As mentioned, integers are whole numbers. Let's create an example. How about we use our numberOfKittens. We will then set this value to 0. As in, we have 0 kittens.
 
-# In[22]:
+# In[9]:
 
 
 numberOfKittens = 0
@@ -309,7 +309,7 @@ numberOfKittens = 0
 # type()
 # ```
 
-# In[23]:
+# In[10]:
 
 
 type( numberOfKittens )
@@ -321,7 +321,7 @@ type( numberOfKittens )
 # 
 # Try running this a few times.
 
-# In[24]:
+# In[11]:
 
 
 numberOfKittens = numberOfKittens + 10
@@ -336,7 +336,7 @@ print( numberOfKittens )
 # This example starts at 0, but note that this is .0 
 # Adding the decimal tells Python that we should have a float value instead of an integer. 
 
-# In[25]:
+# In[5]:
 
 
 aFloatVariable = .0
@@ -344,7 +344,7 @@ aFloatVariable = .0
 
 # Let's again, check the variable type. 
 
-# In[26]:
+# In[6]:
 
 
 type( aFloatVariable )
@@ -354,7 +354,7 @@ type( aFloatVariable )
 # 
 # And again, we will add 10 to this. There is something specific interesting here; see if you spot it.
 
-# In[27]:
+# In[7]:
 
 
 aFloatVariable = aFloatVariable + 10
@@ -379,13 +379,13 @@ print( aFloatVariable )
 # int()
 # ```
 
-# In[28]:
+# In[23]:
 
 
 float(numberOfKittens)
 
 
-# In[29]:
+# In[24]:
 
 
 int(aFloatVariable)
@@ -393,7 +393,7 @@ int(aFloatVariable)
 
 # #### String or str
 
-# In[30]:
+# In[25]:
 
 
 helloStatement = "Hello, everyone!"
@@ -401,7 +401,7 @@ helloStatement = "Hello, everyone!"
 
 # As you can see, can capture text and other alphanumeric and special characters. There are several unique functions for strings but first, let's double-check and see what type we from our helloStatement.
 
-# In[31]:
+# In[26]:
 
 
 type( helloStatement )
@@ -411,7 +411,7 @@ type( helloStatement )
 
 # ##### String Indexing/String Slicing
 
-# In[32]:
+# In[27]:
 
 
 helloStatement[1] 
@@ -423,7 +423,7 @@ helloStatement[1]
 
 # Let's try this again. 
 
-# In[33]:
+# In[28]:
 
 
 helloStatement[0]
@@ -437,7 +437,7 @@ helloStatement[0]
 
 # ###### Indexing Multiple Letters
 
-# In[34]:
+# In[29]:
 
 
 print( helloStatement[0:5] )
@@ -452,13 +452,13 @@ print( helloStatement[0:5] )
 # 
 # There is also a shortcut way of writing this, without the 0. 
 
-# In[35]:
+# In[30]:
 
 
 print( helloStatement[:5] )
 
 
-# In[36]:
+# In[31]:
 
 
 print( helloStatement[5:] )
@@ -468,7 +468,7 @@ print( helloStatement[5:] )
 
 # ###### Formatting
 
-# In[37]:
+# In[32]:
 
 
 print( helloStatement.capitalize() )
@@ -477,7 +477,7 @@ print( helloStatement.lower() )
 
 # ###### Split
 
-# In[38]:
+# In[33]:
 
 
 print( helloStatement.split(" ") )
@@ -494,7 +494,7 @@ print( helloStatement.split(" ") )
 
 # This is the most straightforward method of the three, but there can be some issues. You simply add a plus sign *+* between your strings. Let's take a look at this. 
 
-# In[39]:
+# In[34]:
 
 
 print ( "hello, " + "everyone!")
@@ -507,7 +507,7 @@ print ( "hello, " + "everyone!")
 # str()
 # ```
 
-# In[40]:
+# In[35]:
 
 
 print ( "hello, " + "every" + str(1) + "!")
@@ -519,7 +519,7 @@ print ( "hello, " + "every" + str(1) + "!")
 # 
 # In this case, we use a %s (s = string) for each string we want to embed in our overall string. 
 
-# In[41]:
+# In[36]:
 
 
 print ( "%s, %s" % ("hello", "everyone") )
@@ -546,7 +546,7 @@ print ( "%s, %s" % ("hello", "everyone") )
 
 # OK, but what about numbers?
 
-# In[42]:
+# In[37]:
 
 
 print ( "%s, %s%s%s" % ("hello","every",1,"!") )
@@ -560,7 +560,7 @@ print ( "%s, %s%s%s" % ("hello","every",1,"!") )
 
 # Booleans are used to do comparisions (true/false), (1/0), (yes/no)
 
-# In[43]:
+# In[40]:
 
 
 someCondition = True
@@ -571,13 +571,13 @@ type( someCondition )
 
 # We will talk about boolean logic more in the next section (Comparisons)
 
-# In[44]:
+# In[41]:
 
 
 (someCondition == False)
 
 
-# In[45]:
+# In[42]:
 
 
 if (False): 
@@ -588,7 +588,7 @@ if (True):
 
 # A more "traditional" way to do booleans is to use 0 and 1. In Python, any number other than 0 is True. Including negative numbers and decimals. 
 
-# In[46]:
+# In[43]:
 
 
 if (0): 
@@ -611,7 +611,7 @@ if (.4):
 # 
 # 1. Define the list initially
 
-# In[47]:
+# In[44]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -624,7 +624,7 @@ print( groceryList )
 # .append()
 # ```
 
-# In[48]:
+# In[45]:
 
 
 groceryList = []
@@ -638,7 +638,7 @@ print( groceryList )
 # For indexes, we always start at the number 0. So, 0 is the first thing, 1 is the second thing, and so on.
 # ```
 
-# In[49]:
+# In[46]:
 
 
 print( groceryList[2] )
@@ -672,7 +672,7 @@ print( groceryList[1] )
 # dictionary["street adddress" (key)] = "123 Apple St." (value)
 # ```
 
-# In[50]:
+# In[47]:
 
 
 personalInformation = {}
@@ -695,7 +695,7 @@ print( personalInformation )
 #     3. a string
 # 3. print this list
 
-# In[51]:
+# In[12]:
 
 
 ## list create
@@ -728,7 +728,7 @@ print( personalInformation )
 # 
 # 🐝 = 11
 
-# In[52]:
+# In[48]:
 
 
 kitten = 10
@@ -740,7 +740,7 @@ print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 # The first comparison operator is '==', which tests to see if two variables are equal. 
 
-# In[53]:
+# In[49]:
 
 
 print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
@@ -763,7 +763,7 @@ print( kitten == bee )
 # - food2 = 🍪
 # - food3 = 🍎
 
-# In[54]:
+# In[13]:
 
 
 food1 = 'apple'
@@ -786,7 +786,7 @@ print( "apple" == "Apple" )
 # #### This is Logical... NOT!
 # We can also test to see if two values are not equal using the '!=' operator.
 
-# In[55]:
+# In[51]:
 
 
 print( "food1 =", food1,"; food2 =", food2,"; food3 =", food3 )
@@ -811,13 +811,13 @@ print( food1 != food3 )
 # #### Math Comparisons 101
 # We can also compare the magnitude of values using '<', '<=', '>'and '>=', which will return 'True' if the condition is being met.
 
-# In[56]:
+# In[52]:
 
 
 print( "kitten =", kitten, "; dog =", dog, "; bee = ", bee )
 
 
-# In[57]:
+# In[53]:
 
 
 print( "Is kitten less than dog?")
@@ -872,7 +872,7 @@ print( kitten > dog )
 # 
 # 
 
-# In[58]:
+# In[55]:
 
 
 face = "sunglasses"
@@ -892,7 +892,7 @@ print( (shirt == "sweater") and (pants == "jeans") )
 
 # We can also string as many comparisons together as we want.
 
-# In[59]:
+# In[56]:
 
 
 print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (1 < 8) )
@@ -902,7 +902,7 @@ print( (1 < 2) and (1 < 3) and (1 < 4) and (1 < 5) and (1 < 6) and (1 < 7) and (
 
 # the **or** operator will return True if at least *1* of the conditions is met
 
-# In[60]:
+# In[57]:
 
 
 print( "face =", face, "; shirt =", shirt, "; pants = ", pants )
@@ -922,7 +922,7 @@ print( (shirt == "sweater") or (pants == "jeans") )
 
 # the **not** will reverse or switch the  meaning of the and/or operators
 
-# In[61]:
+# In[58]:
 
 
 print( "face =", face, "; shirt =", shirt, "; pants = ", pants )
@@ -942,7 +942,7 @@ print( not (shirt == "sweater") and (pants == "jeans") )
 
 # Try to fill in code to fulfill the request!  Here are some variables used in the exercise
 
-# In[62]:
+# In[59]:
 
 
 dogA_color = 'brown'
@@ -960,7 +960,7 @@ dogB_name = 'lady'
 
 # Is dogA the same color as dogB? (False)
 
-# In[63]:
+# In[14]:
 
 
 # print out result
@@ -976,7 +976,7 @@ dogB_name = 'lady'
 
 # The *if* statement starts with if and then lists a condition that may or may not is met. If the condition is true, we do what is listed. If it is not, we move on. 
 
-# In[64]:
+# In[66]:
 
 
 answer = 42
@@ -987,7 +987,7 @@ if answer > 30:
 
 # OK, same concept. 
 
-# In[65]:
+# In[67]:
 
 
 answer = 42
@@ -1006,7 +1006,7 @@ if answer > 50:
 
 # #### Where the if Starts and Ends
 
-# In[66]:
+# In[68]:
 
 
 print("Into the If/Else!")
@@ -1028,7 +1028,7 @@ print("Out of the If/Else!")
 
 # In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an *else* statement. 
 
-# In[67]:
+# In[69]:
 
 
 answer = 42
@@ -1055,7 +1055,7 @@ else:
 # 
 # Let's take a look at an example.
 
-# In[68]:
+# In[70]:
 
 
 favoriteColor = "Yellow"
@@ -1082,7 +1082,7 @@ else:
 # 
 # Copy the above example ↑ and add your favorite color!
 
-# In[69]:
+# In[ ]:
 
 
 ## Copy code here
@@ -1108,7 +1108,7 @@ else:
 # 
 # The sequence can be any list.  We set up *for loop* using the *for* and *in* keywords, a colon, and all of the code within the *for loop* indented.
 
-# In[70]:
+# In[71]:
 
 
 exampleList = ['a', 'niner', 6, 6.1, 'V@@@', 1001/2, 42]
@@ -1118,7 +1118,7 @@ print( exampleList )
 
 # Now, before we talked about accessing elements in a list or array by their index. Meaning, if we wanted to print this out, we would need to...
 
-# In[71]:
+# In[72]:
 
 
 print( exampleList[0] )
@@ -1151,7 +1151,7 @@ print( exampleList[6] )
 # 
 # Remember me? 
 
-# In[72]:
+# In[73]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -1162,7 +1162,7 @@ for itemInOurList in groceryList:
 
 # Like mentioned, we name the variable. Here is the same idea again.
 
-# In[73]:
+# In[74]:
 
 
 groceryList = ["apple", "banana", "eggs"]
@@ -1173,7 +1173,7 @@ for steve in groceryList:
 
 # Going back to our original list. See how much easier it is to print these values? 
 
-# In[74]:
+# In[75]:
 
 
 for item in exampleList:
@@ -1195,14 +1195,14 @@ for item in exampleList:
 # 
 # functions to show the length and create indices.  We can then iterate using the index rather than the values. Let's show off these functions. 
 
-# In[75]:
+# In[76]:
 
 
 groceryList = ["apple", "banana", "eggs"]
 print ( len(groceryList) )
 
 
-# In[76]:
+# In[77]:
 
 
 print ( range(3) )
@@ -1214,14 +1214,14 @@ print ( range(3) )
 # range(starting number, ending number - 1)
 # ```
 
-# In[77]:
+# In[78]:
 
 
 for index in range(len(groceryList)):
     print("index:",index,"value:",groceryList[index])
 
 
-# In[78]:
+# In[79]:
 
 
 print( "Starting the loop" )
@@ -1262,7 +1262,7 @@ print( "Outside the loop" )
 
 # The condition being set by the while statement will cause this to run as long as the statement is true.
 
-# In[79]:
+# In[80]:
 
 
 counting = 0
@@ -1275,7 +1275,7 @@ while (counting < 10):
 
 # One thing to note is that the while loop won't ever be entered if the condition is false when the statement begins as false.
 
-# In[80]:
+# In[15]:
 
 
 startAtTen = 10
@@ -1304,7 +1304,7 @@ while (startAtTen < 10):
 
 # Try to fill in code to fulfill the request!  Here is a variable used in the excercises
 
-# In[81]:
+# In[83]:
 
 
 aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
@@ -1312,7 +1312,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Use a for loop to add up all of the numbers in aListOfNumbers.
 
-# In[82]:
+# In[85]:
 
 
 # Try it here:
@@ -1331,7 +1331,7 @@ aListOfNumbers = [6, 3, 4, 5, 7, 8, 9 ]
 
 # Python uses modules to make additional functionality available.  Modules can be thought of as libraries with many functions, data types, and characteristics that can be used once loaded. 
 
-# In[83]:
+# In[89]:
 
 
 # Import all functions using a name
@@ -1366,7 +1366,7 @@ print( mathCos( np.pi ) )
 
 # Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy).
 
-# In[84]:
+# In[90]:
 
 
 # Try it here
@@ -1380,7 +1380,7 @@ print( mathCos( np.pi ) )
 # 
 # There are functions that are built into python; for example, we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!
 
-# In[85]:
+# In[92]:
 
 
 aVal = 10.0
@@ -1406,7 +1406,7 @@ print( type( aVal ) )
 
 # Let's look at an example function, which changes degrees Fahrenheit to Celsius. 
 
-# In[86]:
+# In[93]:
 
 
 def changeFromFToC( farVal ):
@@ -1416,7 +1416,7 @@ def changeFromFToC( farVal ):
 
 # Here, our function name is *changeFromFToC*, the input is *farVal*, the temperature in Fahrenheit, the output is *cVal*, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.
 
-# In[87]:
+# In[94]:
 
 
 print( "Change 14 deg F to Celsius" )
@@ -1435,7 +1435,7 @@ print( niceTempC )
 # * Functions have access to more than just the variables passed in
 # ```
 
-# In[88]:
+# In[102]:
 
 
 def addAnAnimal( animal ):
@@ -1508,7 +1508,7 @@ print ("function output:",addAnAnimal( dog ))
 # 
 # For those who have the temperature in Celsius and want to convert it to Fahrenheit. Define a new function to do this.
 
-# In[89]:
+# In[16]:
 
 
 # Try it here
