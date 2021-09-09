@@ -22,7 +22,7 @@
 import pandas as pd
 
 
-# In[2]:
+# In[3]:
 
 
 url="https://gist.githubusercontent.com/dudaspm/e518430a731ac11f52de9217311c674d/raw/4c2f2bd6639582a420ef321493188deebc4a575e/StateCollege2000-2020.csv"
@@ -31,7 +31,7 @@ data=pd.read_csv(url)
 data = data.fillna(0) # replace all NAs with 0s
 
 
-# In[3]:
+# In[4]:
 
 
 data.head()
@@ -56,13 +56,13 @@ data.head()
 
 # #### Filter by year
 
-# In[4]:
+# In[10]:
 
 
 data[data.YEAR==2020].head()
 
 
-# In[5]:
+# In[7]:
 
 
 data[(data.YEAR==2020) & (data.MONTH==11)].head()
@@ -70,7 +70,7 @@ data[(data.YEAR==2020) & (data.MONTH==11)].head()
 
 # #### Filter by WT_HAIL or WT_HighWinds
 
-# In[6]:
+# In[9]:
 
 
 data[(data.WT_HAIL==1) | (data.WT_HIGHWINDS==1)].head()

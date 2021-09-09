@@ -15,7 +15,7 @@ get_ipython().run_cell_magic('capture', '', '!pip install rpy2')
 get_ipython().run_line_magic('load_ext', 'rpy2.ipython')
 
 
-# In[3]:
+# In[22]:
 
 
 get_ipython().run_cell_magic('R', '', 'library(installr)\ninstall.packages.zip("https://cran.r-project.org/bin/windows/contrib/4.2/ggplot2_3.3.3.zip")')
