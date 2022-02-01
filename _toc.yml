@@ -7,32 +7,33 @@ root: intro
 parts:
   - caption: Getting Starting
     chapters:
-    - file: Notebook Introduction - 🐸
+    - file: chapter1/Notebook Introduction - 🐸
 
   - caption: JupyterLab and its Environments
     chapters:
-    - file: Introduction to JupyterLab - 🐘
-    - file: All About Google Colab - 🐦
+    - file: chapter1/Introduction to JupyterLab - 🐘
+    - file: chapter1/All About Google Colab - 🐦
+    - file: chapter1/FAQ
   - caption: Python
     chapters:
-      - file: Introduction to Python - 🐧
-      - file: Learning about Variables - 🐳
-      - file: Comparisons - 🐭
-      - file: If-Else Conditions - 🐴
-      - file: Loops - 🐨
-      - file: Loading a Library - 🐠
-      - file: Creating a Function - 🐲
+      - file: chapter2/Introduction to Python - 🐧
+      - file: chapter2/Learning about Variables - 🐳
+      - file: chapter2/Comparisons - 🐭
+      - file: chapter2/If-Else Conditions - 🐴
+      - file: chapter2/Loops - 🐨
+      - file: chapter2/Loading a Library - 🐠
+      - file: chapter2/Creating a Function - 🐲
   - caption: Workshops
     chapters:
-      - file: Python and Google Colab Workshop Notebook Abridged
-      - file: JupyterLab and Google Colab Workshop Notebook Abridged
-      - file: FAQ
+      - file: workshops/Python and Google Colab Workshop Notebook Abridged
+      - file: workshops/JupyterLab and Google Colab Workshop Notebook Abridged
+
   - caption: Example Python
     chapters:
-      - file: Shopping List
-      - file: Guessing Game
+      - file: chapter3/Shopping List
+      - file: chapter3/Guessing Game
     
   - caption: Matplotlib
     chapters:
-      - file: Getting Started with Matplotlib
-      - file: Tables to Idioms
+      - file: chapter3/Getting Started with Matplotlib
+      - file: chapter3/Tables to Idioms
