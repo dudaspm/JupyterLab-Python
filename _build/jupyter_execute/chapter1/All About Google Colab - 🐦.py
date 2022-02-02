@@ -208,3 +208,45 @@ f.close()
 #!git commit -m "testing"
 #!git push git@git.psu.edu:pmd19/workshop_temp.git
 
+
+# ## Things to be Aware of in Google Colab
+
+# ```{warning}
+# I am writing this on 2/2/2022 (lots of 2s there). So, if this is the ⌛ future ⌛, some of these options may have changed.
+# ```
+
+# ### Keyboard Shortcuts
+# 
+# Shown below is how you find keyboard shortcuts for any operating system. 
+# 
+# <img alt="Keyboard Shortcuts in Google Colab" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/keyboardshortcuts.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;">
+
+# ```{note}
+# By far, the most used keyboard shortcut that I use is ctrl+Enter (Windows) or ⌘+Enter (Mac). This command will run the content of the current cell.
+# ```
+
+# ### Downloading or Reusing a Notebook in Another Environment
+# 
+# Sometimes you want to download your notebook either as a notebook (.ipynb) or a python (.py) file. Here is how. 
+# 
+# <img alt="How to Download as .py" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/downloadAspy.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;">
+
+# ### Renaming Your Notebook
+# 
+# <img alt="How to rename your notebook" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/renamingNotebook.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;">
+# 
+# This figure above showcases how you rename your notebook. Too be honest, I do not care for how this is implemented, because...
+
+# ```{warning}
+# When you rename your notebook, do not delete the .ipynb. This will remove the file extension. DO BETTER, GOOGLE COLAB!
+# ```
+
+# ### Sharing a Notebook
+# 
+# Like other Google Workspace applications, you can also share notebooks. Just select the *Share* button in the top-right.
+# 
+# <img alt="How to share your notebook" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/shareNotebook.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;">
+
+# ```{warning}
+# Another warning?! So, unlike Google Docs. You cannot have multiple people work on the same notebook. Actually, sharing could lead to others overwriting other people's work. DO BETTER, GOOGLE COLAB!
+# ```

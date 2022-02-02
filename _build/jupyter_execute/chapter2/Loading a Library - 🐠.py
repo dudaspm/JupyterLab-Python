@@ -59,7 +59,7 @@ print( mathCos( np.pi ) )
 # ```
 # then I can load the module and use this function locally by either importing everything in the file, or just the function we are interested in.
 
-# In[2]:
+# In[5]:
 
 
 import adamsTrigs as aT
@@ -75,7 +75,7 @@ trigVals( np.pi / 5)
 
 # Python has a built-in command called dir to show the directory (contents) of a module. This command provides lots of info, including the function names.
 
-# In[3]:
+# In[6]:
 
 
 import adamsTrigs as aT
@@ -84,7 +84,7 @@ dir( aT )
 
 # We can also use dir to see what is currently available to use:
 
-# In[4]:
+# In[7]:
 
 
 dir()
@@ -94,7 +94,7 @@ dir()
 
 # We can also define code that will only run if the file is being run directly.  This will not run if the file is being loaded by another. 
 
-# In[5]:
+# In[8]:
 
 
 if __name__ == "__main__":
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
 # Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy).
 
-# In[6]:
+# In[10]:
 
 
 # Try it here
@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
 # Does numpy include functions called log10 and banana?
 
-# In[7]:
+# In[12]:
 
 
 # Try it here

@@ -42,7 +42,7 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
@@ -267,10 +267,10 @@
 <div class="section" id="acknowledgement">
 <h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
 <p>Slides created by and for:
-<cite>Munzner, T. (2014). Visualization analysis and design. CRC press.</cite> <span id="id1">[<a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id5">Mun14</a>]</span></p>
+<cite>Munzner, T. (2014). Visualization analysis and design. CRC press.</cite> <span id="id1">[<a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id5">Mun14</a>]</span></p>
 <p>Used by permission of the author.</p>
 <p>Image from:
-<cite>Wickham, H. (2010). A layered grammar of graphics. Journal of Computational and Graphical Statistics, 19(1), 3-28.</cite> <span id="id2">[<a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id3">Wic10</a>]</span></p>
+<cite>Wickham, H. (2010). A layered grammar of graphics. Journal of Computational and Graphical Statistics, 19(1), 3-28.</cite> <span id="id2">[<a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id3">Wic10</a>]</span></p>
 <p id="id3"><dl class="citation">
 <dt class="label" id="id6"><span class="brackets">Goo</span></dt>
 <dd><p>URL: <a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb">https://colab.research.google.com/notebooks/io.ipynb</a>.</p>
@@ -306,6 +306,20 @@
 <span class="n">data</span><span class="o">.</span><span class="n">total_vaccinations</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">total_vaccinations</span><span class="o">/</span><span class="mi">100000</span>
 <span class="n">data</span><span class="o">.</span><span class="n">total_distributed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">total_distributed</span><span class="o">/</span><span class="mi">100000</span>
 <span class="n">data</span><span class="o">.</span><span class="n">people_vaccinated</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">people_vaccinated</span><span class="o">/</span><span class="mi">100000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_6468</span><span class="o">/</span><span class="mf">1897816263.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/us_state_vaccinations.csv&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
 </pre></div>
 </div>
 </div>
@@ -349,105 +363,93 @@
       <th>daily_vaccinations</th>
       <th>daily_vaccinations_per_million</th>
       <th>share_doses_used</th>
-      <th>total_boosters</th>
-      <th>total_boosters_per_hundred</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>282</th>
-      <td>2021-10-21</td>
+      <th>1</th>
+      <td>2021-01-13</td>
       <td>Alabama</td>
-      <td>47.32829</td>
-      <td>69.9977</td>
-      <td>26.37734</td>
-      <td>44.16</td>
-      <td>96.53</td>
-      <td>2165154.0</td>
-      <td>53.80</td>
-      <td>142.76</td>
-      <td>9910.0</td>
-      <td>9029.0</td>
-      <td>1841.0</td>
-      <td>0.676</td>
-      <td>134615.0</td>
-      <td>2.75</td>
+      <td>0.84040</td>
+      <td>3.78975</td>
+      <td>0.74792</td>
+      <td>0.19</td>
+      <td>1.71</td>
+      <td>9245.0</td>
+      <td>1.53</td>
+      <td>7.73</td>
+      <td>5906.0</td>
+      <td>5906.0</td>
+      <td>1205.0</td>
+      <td>0.222</td>
     </tr>
     <tr>
-      <th>283</th>
-      <td>2021-10-22</td>
+      <th>3</th>
+      <td>2021-01-15</td>
       <td>Alabama</td>
-      <td>47.42444</td>
-      <td>70.4527</td>
-      <td>26.44229</td>
-      <td>44.26</td>
-      <td>96.72</td>
-      <td>2170323.0</td>
-      <td>53.93</td>
-      <td>143.69</td>
-      <td>9615.0</td>
-      <td>9226.0</td>
-      <td>1882.0</td>
-      <td>0.673</td>
-      <td>138996.0</td>
-      <td>2.83</td>
+      <td>1.00567</td>
+      <td>4.44650</td>
+      <td>0.86956</td>
+      <td>0.28</td>
+      <td>2.05</td>
+      <td>13488.0</td>
+      <td>1.77</td>
+      <td>9.07</td>
+      <td>8267.0</td>
+      <td>7478.0</td>
+      <td>1525.0</td>
+      <td>0.226</td>
     </tr>
     <tr>
-      <th>284</th>
-      <td>2021-10-23</td>
+      <th>7</th>
+      <td>2021-01-19</td>
       <td>Alabama</td>
-      <td>47.59947</td>
-      <td>70.6248</td>
-      <td>26.48588</td>
-      <td>44.36</td>
-      <td>97.08</td>
-      <td>2174923.0</td>
-      <td>54.02</td>
-      <td>144.04</td>
-      <td>17503.0</td>
-      <td>10252.0</td>
-      <td>2091.0</td>
-      <td>0.674</td>
-      <td>147525.0</td>
-      <td>3.01</td>
+      <td>1.30795</td>
+      <td>4.44650</td>
+      <td>1.14319</td>
+      <td>0.33</td>
+      <td>2.67</td>
+      <td>16346.0</td>
+      <td>2.33</td>
+      <td>9.07</td>
+      <td>7557.0</td>
+      <td>7523.0</td>
+      <td>1534.0</td>
+      <td>0.294</td>
     </tr>
     <tr>
-      <th>285</th>
-      <td>2021-10-24</td>
+      <th>8</th>
+      <td>2021-01-20</td>
       <td>Alabama</td>
-      <td>47.66186</td>
-      <td>70.6178</td>
-      <td>26.50133</td>
-      <td>44.39</td>
-      <td>97.21</td>
-      <td>2176540.0</td>
-      <td>54.05</td>
-      <td>144.02</td>
-      <td>6239.0</td>
-      <td>8961.0</td>
-      <td>1828.0</td>
-      <td>0.675</td>
-      <td>150656.0</td>
-      <td>3.07</td>
+      <td>1.39200</td>
+      <td>4.83275</td>
+      <td>1.21113</td>
+      <td>0.37</td>
+      <td>2.84</td>
+      <td>17956.0</td>
+      <td>2.47</td>
+      <td>9.86</td>
+      <td>8405.0</td>
+      <td>7880.0</td>
+      <td>1607.0</td>
+      <td>0.288</td>
     </tr>
     <tr>
-      <th>286</th>
-      <td>2021-10-25</td>
+      <th>9</th>
+      <td>2021-01-21</td>
       <td>Alabama</td>
-      <td>47.73728</td>
-      <td>70.5884</td>
-      <td>26.52037</td>
-      <td>44.42</td>
-      <td>97.36</td>
-      <td>2177980.0</td>
-      <td>54.09</td>
-      <td>143.96</td>
-      <td>7542.0</td>
-      <td>9136.0</td>
-      <td>1863.0</td>
-      <td>0.676</td>
-      <td>154781.0</td>
-      <td>3.16</td>
+      <td>1.65919</td>
+      <td>4.93125</td>
+      <td>1.44429</td>
+      <td>0.44</td>
+      <td>3.38</td>
+      <td>21345.0</td>
+      <td>2.95</td>
+      <td>10.06</td>
+      <td>26719.0</td>
+      <td>10517.0</td>
+      <td>2145.0</td>
+      <td>0.336</td>
     </tr>
   </tbody>
 </table>
@@ -510,105 +512,93 @@ Source Link: <a class="reference external" href="https://github.com/owid/covid-1
       <th>daily_vaccinations</th>
       <th>daily_vaccinations_per_million</th>
       <th>share_doses_used</th>
-      <th>total_boosters</th>
-      <th>total_boosters_per_hundred</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>384</th>
-      <td>2022-01-31</td>
+      <th>58</th>
+      <td>2021-03-11</td>
       <td>Alabama</td>
-      <td>59.60126</td>
-      <td>88.97300</td>
-      <td>30.00205</td>
-      <td>49.46</td>
-      <td>121.56</td>
-      <td>2425057.0</td>
-      <td>61.19</td>
-      <td>181.46</td>
-      <td>3779.0</td>
-      <td>7091.0</td>
-      <td>1446.0</td>
-      <td>0.670</td>
-      <td>800020.0</td>
-      <td>16.32</td>
+      <td>12.09802</td>
+      <td>18.16230</td>
+      <td>7.90864</td>
+      <td>9.23</td>
+      <td>24.67</td>
+      <td>452746.0</td>
+      <td>16.13</td>
+      <td>37.04</td>
+      <td>35982.0</td>
+      <td>25376.0</td>
+      <td>5175.0</td>
+      <td>0.666</td>
     </tr>
     <tr>
-      <th>770</th>
-      <td>2022-01-31</td>
+      <th>117</th>
+      <td>2021-03-11</td>
       <td>Alaska</td>
-      <td>10.69009</td>
-      <td>13.91705</td>
-      <td>4.96628</td>
-      <td>58.39</td>
-      <td>146.13</td>
-      <td>427182.0</td>
-      <td>67.89</td>
-      <td>190.24</td>
-      <td>1957.0</td>
-      <td>1020.0</td>
-      <td>1394.0</td>
-      <td>0.768</td>
-      <td>168834.0</td>
-      <td>23.08</td>
+      <td>3.13365</td>
+      <td>4.62875</td>
+      <td>1.90712</td>
+      <td>16.70</td>
+      <td>42.84</td>
+      <td>122197.0</td>
+      <td>26.07</td>
+      <td>63.27</td>
+      <td>5596.0</td>
+      <td>5211.0</td>
+      <td>7123.0</td>
+      <td>0.677</td>
     </tr>
     <tr>
-      <th>1156</th>
-      <td>2022-01-31</td>
+      <th>176</th>
+      <td>2021-03-11</td>
       <td>American Samoa</td>
-      <td>0.83602</td>
-      <td>0.91010</td>
-      <td>0.42097</td>
-      <td>78.26</td>
-      <td>176.41</td>
-      <td>37089.0</td>
-      <td>88.83</td>
-      <td>192.04</td>
+      <td>0.23696</td>
+      <td>0.43210</td>
+      <td>0.15085</td>
+      <td>15.63</td>
+      <td>42.55</td>
+      <td>8706.0</td>
+      <td>27.09</td>
+      <td>77.59</td>
       <td>0.0</td>
-      <td>87.0</td>
-      <td>1836.0</td>
-      <td>0.919</td>
-      <td>5044.0</td>
-      <td>10.64</td>
+      <td>296.0</td>
+      <td>5315.0</td>
+      <td>0.548</td>
     </tr>
     <tr>
-      <th>1542</th>
-      <td>2022-01-31</td>
+      <th>235</th>
+      <td>2021-03-11</td>
       <td>Arizona</td>
-      <td>111.83491</td>
-      <td>135.48220</td>
-      <td>51.05550</td>
-      <td>58.84</td>
-      <td>153.65</td>
-      <td>4282544.0</td>
-      <td>70.14</td>
-      <td>186.13</td>
-      <td>15075.0</td>
-      <td>17788.0</td>
-      <td>2444.0</td>
-      <td>0.825</td>
-      <td>1601100.0</td>
-      <td>22.00</td>
+      <td>23.50374</td>
+      <td>29.09125</td>
+      <td>14.96266</td>
+      <td>10.88</td>
+      <td>32.29</td>
+      <td>792205.0</td>
+      <td>20.56</td>
+      <td>39.97</td>
+      <td>56815.0</td>
+      <td>52921.0</td>
+      <td>7271.0</td>
+      <td>0.808</td>
     </tr>
     <tr>
-      <th>1928</th>
-      <td>2022-01-31</td>
+      <th>294</th>
+      <td>2021-03-11</td>
       <td>Arkansas</td>
-      <td>40.04380</td>
-      <td>56.12120</td>
-      <td>19.62479</td>
-      <td>52.73</td>
-      <td>132.69</td>
-      <td>1591368.0</td>
-      <td>65.03</td>
-      <td>185.97</td>
-      <td>2603.0</td>
-      <td>4445.0</td>
-      <td>1473.0</td>
-      <td>0.714</td>
-      <td>577188.0</td>
-      <td>19.13</td>
+      <td>8.00091</td>
+      <td>12.09300</td>
+      <td>5.14556</td>
+      <td>9.47</td>
+      <td>26.51</td>
+      <td>285811.0</td>
+      <td>17.05</td>
+      <td>40.07</td>
+      <td>907.0</td>
+      <td>13675.0</td>
+      <td>4531.0</td>
+      <td>0.662</td>
     </tr>
   </tbody>
 </table>

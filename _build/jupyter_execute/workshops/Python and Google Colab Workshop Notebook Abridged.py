@@ -1412,7 +1412,7 @@ print( mathCos( np.pi ) )
 
 # Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy).
 
-# In[85]:
+# In[90]:
 
 
 # Try it here
@@ -1426,7 +1426,7 @@ print( mathCos( np.pi ) )
 # 
 # There are functions that are built into python; for example, we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!
 
-# In[86]:
+# In[92]:
 
 
 aVal = 10.0
@@ -1452,7 +1452,7 @@ print( type( aVal ) )
 
 # Let's look at an example function, which changes degrees Fahrenheit to Celsius. 
 
-# In[87]:
+# In[93]:
 
 
 def changeFromFToC( farVal ):
@@ -1462,7 +1462,7 @@ def changeFromFToC( farVal ):
 
 # Here, our function name is *changeFromFToC*, the input is *farVal*, the temperature in Fahrenheit, the output is *cVal*, and the temperature in Celsius. We can print or store the output from the function.  Note that the function has to be defined before we use it - the cell with the function definition has to have run before we can call the function.
 
-# In[88]:
+# In[94]:
 
 
 print( "Change 14 deg F to Celsius" )
@@ -1481,7 +1481,7 @@ print( niceTempC )
 # * Functions have access to more than just the variables passed in
 # ```
 
-# In[89]:
+# In[102]:
 
 
 def addAnAnimal( animal ):
@@ -1554,7 +1554,7 @@ print ("function output:",addAnAnimal( dog ))
 # 
 # For those who have the temperature in Celsius and want to convert it to Fahrenheit. Define a new function to do this.
 
-# In[90]:
+# In[16]:
 
 
 # Try it here
