@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Let’s create a shopping list! &#8212; Jupyter Lab + Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Shopping List';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Lab + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Jupyter Lab + Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Starting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">Notebook Introduction - 🐸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLab and its Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">Introduction to JupyterLab - 🐘</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">All About Google Colab - 🐦</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">FAQ - 🐻</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter3/Shopping List.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter3/Shopping List.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button"
+   title="Suggest edit"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter3/Shopping List.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Let’s create a shopping list!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-let-s-just-create-a-list">First, let’s just create a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-let-s-add-some-prices">Second, let’s add some prices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-some-serious-code-here">Third, some serious code here</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="let-s-create-a-shopping-list">
+<h1>Let’s create a shopping list!<a class="headerlink" href="#let-s-create-a-shopping-list" title="Link to this heading">#</a></h1>
+<section id="first-let-s-just-create-a-list">
+<h2>First, let’s just create a list<a class="headerlink" href="#first-let-s-just-create-a-list" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shoppingList</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a function to add new items to my shopping list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addToShoppingList</span><span class="p">(</span><span class="n">itemToAdd</span><span class="p">):</span>
+    <span class="n">shoppingList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">itemToAdd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Walking around my kitchen I notice we are missing milk.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">addToShoppingList</span><span class="p">(</span><span class="s2">&quot;milk&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have 3 eggs left (always want 6 on hand).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numberOfEggs</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">numberOfEggs</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">):</span> <span class="n">addToShoppingList</span><span class="p">(</span><span class="s2">&quot;eggs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I want to make spaghetti for dinner (need sauce, spaghetti, and bread).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spaghettiRecipe</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sauce&quot;</span><span class="p">,</span><span class="s2">&quot;spaghetti&quot;</span><span class="p">,</span><span class="s2">&quot;bread&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">spaghettiRecipe</span><span class="p">:</span>
+    <span class="n">addToShoppingList</span><span class="p">(</span><span class="n">ingredient</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see what we have so far.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">shoppingList</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;milk&#39;, &#39;eggs&#39;, &#39;sauce&#39;, &#39;spaghetti&#39;, &#39;bread&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Not the easiest to read. Let’s try this another way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
+eggs
+sauce
+spaghetti
+bread
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="second-let-s-add-some-prices">
+<h2>Second, let’s add some prices<a class="headerlink" href="#second-let-s-add-some-prices" title="Link to this heading">#</a></h2>
+<p>So I want to keep an eye on my budget, so I note all the prices.</p>
+<p>First, I will set all prices to 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shoppingPrices</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingList</span><span class="p">:</span>
+    <span class="n">shoppingPrices</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">shoppingPrices</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;milk&#39;: 0, &#39;eggs&#39;: 0, &#39;sauce&#39;: 0, &#39;spaghetti&#39;: 0, &#39;bread&#39;: 0}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now I will manually add prices for each item.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shoppingPrices</span><span class="p">[</span><span class="s1">&#39;spaghetti&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">.99</span>
+<span class="n">shoppingPrices</span><span class="p">[</span><span class="s1">&#39;eggs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.99</span>
+<span class="n">shoppingPrices</span><span class="p">[</span><span class="s1">&#39;sauce&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.15</span>
+<span class="n">shoppingPrices</span><span class="p">[</span><span class="s1">&#39;milk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.85</span>
+<span class="n">shoppingPrices</span><span class="p">[</span><span class="s1">&#39;bread&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.49</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">shoppingPrices</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;milk&#39;: 2.85, &#39;eggs&#39;: 1.99, &#39;sauce&#39;: 2.15, &#39;spaghetti&#39;: 0.99, &#39;bread&#39;: 1.49}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Also, I don’t want to manually put in values.</p>
+<p>For this example, I will just use random values. Let’s see an example of how to do this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first, import the random library</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="c1"># to create a random integer, use randint and the range (lowest values, highest values (-1))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1"># now make this into a decimal price</span>
+<span class="c1"># example for eggs, let&#39;s assume the price can go from 1.50 to 2.50 (NOTE the 251)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">251</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+1.55
+</pre></div>
+</div>
+</div>
+</div>
+<p>why are we only getting two options (1 or 2)?</p>
+<p>We need a decimal! So let’s type-cast using float().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">251</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">251</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">251</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">251</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.55
+1.56
+1.61
+1.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s define are ranges:</p>
+<ul class="simple">
+<li><p>Spaghetti (.75 - 1.00)</p></li>
+<li><p>Eggs (1.50 - 2.50)</p></li>
+<li><p>Sauce (2.00 - 3.00)</p></li>
+<li><p>Milk (2.50 - 4.00)</p></li>
+<li><p>Bread (1.25 - 1.75)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createRandomPrice</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">item</span><span class="o">==</span><span class="s2">&quot;spaghetti&quot;</span><span class="p">):</span> <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">item</span><span class="o">==</span><span class="s2">&quot;eggs&quot;</span><span class="p">):</span> <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">item</span><span class="o">==</span><span class="s2">&quot;sauce&quot;</span><span class="p">):</span> <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">item</span><span class="o">==</span><span class="s2">&quot;milk&quot;</span><span class="p">):</span> <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">item</span><span class="o">==</span><span class="s2">&quot;bread&quot;</span><span class="p">):</span> <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span><span class="mi">175</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="third-some-serious-code-here">
+<h2>Third, some serious code here<a class="headerlink" href="#third-some-serious-code-here" title="Link to this heading">#</a></h2>
+<p>Idea!! I will go to multiple stores to get the best prices!</p>
+<p>Here is what I need:</p>
+<p>We will need a list of stores (Wegmans, Wal-Mart, Giant, Trader Joes).</p>
+<p>For each store, we will need a list of the stores and our shopping list.</p>
+<p>Let’s start with our store names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">storeNames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Wegmans&quot;</span><span class="p">,</span><span class="s2">&quot;Wal-Mart&quot;</span><span class="p">,</span><span class="s2">&quot;Giant&quot;</span><span class="p">,</span><span class="s2">&quot;Trader Joes&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">storeName</span> <span class="ow">in</span> <span class="n">storeNames</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">storeName</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wegmans
+Wal-Mart
+Giant
+Trader Joes
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, let’s test this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">item</span><span class="p">,</span> <span class="n">createRandomPrice</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk 3.51
+eggs 1.54
+sauce 2.84
+spaghetti 0.9
+bread 1.6
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is what we want in the end. For each store, we have a price for each item.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>food</p></th>
+<th class="head"><p>Wegmans</p></th>
+<th class="head"><p>Wal-Mart</p></th>
+<th class="head"><p>Giant</p></th>
+<th class="head"><p>Trader Joes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>spaghetti</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+</tr>
+<tr class="row-odd"><td><p>eggs</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+</tr>
+<tr class="row-even"><td><p>sauce</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+</tr>
+<tr class="row-odd"><td><p>milk</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+</tr>
+<tr class="row-even"><td><p>bread</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+<td><p>x.xx</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>First, we need a Dictionary for each item and for each item another Dictionary for the store/prices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shoppingPricesByStores</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingList</span><span class="p">:</span>
+    <span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">shoppingPricesByStores</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;milk&#39;: {}, &#39;eggs&#39;: {}, &#39;sauce&#39;: {}, &#39;spaghetti&#39;: {}, &#39;bread&#39;: {}}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now for each item, we set both the store name and the random price.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingPricesByStores</span><span class="p">:</span>
+    <span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">storeName</span> <span class="ow">in</span> <span class="n">storeNames</span><span class="p">:</span>
+        <span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="n">storeName</span><span class="p">]</span> <span class="o">=</span> <span class="n">createRandomPrice</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">shoppingPricesByStores</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;milk&#39;: {&#39;Wegmans&#39;: 3.59, &#39;Wal-Mart&#39;: 3.26, &#39;Giant&#39;: 3.55, &#39;Trader Joes&#39;: 3.2}, &#39;eggs&#39;: {&#39;Wegmans&#39;: 1.95, &#39;Wal-Mart&#39;: 2.36, &#39;Giant&#39;: 2.38, &#39;Trader Joes&#39;: 1.82}, &#39;sauce&#39;: {&#39;Wegmans&#39;: 2.08, &#39;Wal-Mart&#39;: 2.69, &#39;Giant&#39;: 3.0, &#39;Trader Joes&#39;: 2.19}, &#39;spaghetti&#39;: {&#39;Wegmans&#39;: 0.89, &#39;Wal-Mart&#39;: 0.88, &#39;Giant&#39;: 0.94, &#39;Trader Joes&#39;: 0.81}, &#39;bread&#39;: {&#39;Wegmans&#39;: 1.34, &#39;Wal-Mart&#39;: 1.67, &#39;Giant&#39;: 1.35, &#39;Trader Joes&#39;: 1.34}}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we need to sort. We use a sorting function (sorted).</p>
+<p>Let’s try first with just sorted (shoppingPricesByStores[item]).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">shoppingPricesByStores</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bread&#39;, &#39;eggs&#39;, &#39;milk&#39;, &#39;sauce&#39;, &#39;spaghetti&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hmm… not what we are looking for. We want to sort based on prices per store.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingPricesByStores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
+[&#39;Giant&#39;, &#39;Trader Joes&#39;, &#39;Wal-Mart&#39;, &#39;Wegmans&#39;]
+eggs
+[&#39;Giant&#39;, &#39;Trader Joes&#39;, &#39;Wal-Mart&#39;, &#39;Wegmans&#39;]
+sauce
+[&#39;Giant&#39;, &#39;Trader Joes&#39;, &#39;Wal-Mart&#39;, &#39;Wegmans&#39;]
+spaghetti
+[&#39;Giant&#39;, &#39;Trader Joes&#39;, &#39;Wal-Mart&#39;, &#39;Wegmans&#39;]
+bread
+[&#39;Giant&#39;, &#39;Trader Joes&#39;, &#39;Wal-Mart&#39;, &#39;Wegmans&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is sorting based on the name of the store; we need to sort based on the amount.</p>
+<p>There is actually a function we can use, called items(), which as it sounds, gives us all items in our dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shoppingPricesByStores</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;milk&#39;, {&#39;Wegmans&#39;: 3.59, &#39;Wal-Mart&#39;: 3.26, &#39;Giant&#39;: 3.55, &#39;Trader Joes&#39;: 3.2}), (&#39;eggs&#39;, {&#39;Wegmans&#39;: 1.95, &#39;Wal-Mart&#39;: 2.36, &#39;Giant&#39;: 2.38, &#39;Trader Joes&#39;: 1.82}), (&#39;sauce&#39;, {&#39;Wegmans&#39;: 2.08, &#39;Wal-Mart&#39;: 2.69, &#39;Giant&#39;: 3.0, &#39;Trader Joes&#39;: 2.19}), (&#39;spaghetti&#39;, {&#39;Wegmans&#39;: 0.89, &#39;Wal-Mart&#39;: 0.88, &#39;Giant&#39;: 0.94, &#39;Trader Joes&#39;: 0.81}), (&#39;bread&#39;, {&#39;Wegmans&#39;: 1.34, &#39;Wal-Mart&#39;: 1.67, &#39;Giant&#39;: 1.35, &#39;Trader Joes&#39;: 1.34})])
+</pre></div>
+</div>
+</div>
+</div>
+<p>So let’s try using that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingPricesByStores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
+{&#39;Wegmans&#39;: 3.59, &#39;Wal-Mart&#39;: 3.26, &#39;Giant&#39;: 3.55, &#39;Trader Joes&#39;: 3.2}
+[(&#39;Giant&#39;, 3.55), (&#39;Trader Joes&#39;, 3.2), (&#39;Wal-Mart&#39;, 3.26), (&#39;Wegmans&#39;, 3.59)]
+eggs
+{&#39;Wegmans&#39;: 1.95, &#39;Wal-Mart&#39;: 2.36, &#39;Giant&#39;: 2.38, &#39;Trader Joes&#39;: 1.82}
+[(&#39;Giant&#39;, 2.38), (&#39;Trader Joes&#39;, 1.82), (&#39;Wal-Mart&#39;, 2.36), (&#39;Wegmans&#39;, 1.95)]
+sauce
+{&#39;Wegmans&#39;: 2.08, &#39;Wal-Mart&#39;: 2.69, &#39;Giant&#39;: 3.0, &#39;Trader Joes&#39;: 2.19}
+[(&#39;Giant&#39;, 3.0), (&#39;Trader Joes&#39;, 2.19), (&#39;Wal-Mart&#39;, 2.69), (&#39;Wegmans&#39;, 2.08)]
+spaghetti
+{&#39;Wegmans&#39;: 0.89, &#39;Wal-Mart&#39;: 0.88, &#39;Giant&#39;: 0.94, &#39;Trader Joes&#39;: 0.81}
+[(&#39;Giant&#39;, 0.94), (&#39;Trader Joes&#39;, 0.81), (&#39;Wal-Mart&#39;, 0.88), (&#39;Wegmans&#39;, 0.89)]
+bread
+{&#39;Wegmans&#39;: 1.34, &#39;Wal-Mart&#39;: 1.67, &#39;Giant&#39;: 1.35, &#39;Trader Joes&#39;: 1.34}
+[(&#39;Giant&#39;, 1.35), (&#39;Trader Joes&#39;, 1.34), (&#39;Wal-Mart&#39;, 1.67), (&#39;Wegmans&#39;, 1.34)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, I will define a function (I will explain this more in a second).</p>
+<p>Also, I marked a couple of print statements to showcase what is going on.</p>
+<p>All this function does is take tuple and returns the second item in the tuple.</p>
+<p>REMEMBER, computer talk here.. 1 = 2, because it starts at 0, 1, 2,…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">comparePrices</span> <span class="p">(</span><span class="n">itemToSort</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#From comparePrices function#&quot;</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">itemToSort</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;At the store &quot;</span><span class="o">+</span><span class="n">itemToSort</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; the price is &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span> <span class="n">itemToSort</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;#End comparePrices function#&quot;</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">itemToSort</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can add a “key” that tells the sorting function, which value to sort on.</p>
+<p>So reading this in more non-technical speak:</p>
+<ol class="arabic simple">
+<li><p>For each item in dictionary called shoppingPricesByStores</p></li>
+<li><p>Print item name</p></li>
+<li><p>Then sort by the pair (storeName and price)</p></li>
+<li><p>Use the function comparePrices to tell sorting to sort by the price.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingPricesByStores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;####################In for loop####################&quot;</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">comparePrices</span><span class="p">)</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;####################Out for loop####################&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>####################In for loop####################
+milk
+#From comparePrices function#
+(&#39;Wegmans&#39;, 3.59)
+At the store Wegmans the price is 3.59
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Wal-Mart&#39;, 3.26)
+At the store Wal-Mart the price is 3.26
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Giant&#39;, 3.55)
+At the store Giant the price is 3.55
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Trader Joes&#39;, 3.2)
+At the store Trader Joes the price is 3.2
+#End comparePrices function#
+[(&#39;Trader Joes&#39;, 3.2), (&#39;Wal-Mart&#39;, 3.26), (&#39;Giant&#39;, 3.55), (&#39;Wegmans&#39;, 3.59)]
+####################Out for loop####################
+####################In for loop####################
+eggs
+#From comparePrices function#
+(&#39;Wegmans&#39;, 1.95)
+At the store Wegmans the price is 1.95
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Wal-Mart&#39;, 2.36)
+At the store Wal-Mart the price is 2.36
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Giant&#39;, 2.38)
+At the store Giant the price is 2.38
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Trader Joes&#39;, 1.82)
+At the store Trader Joes the price is 1.82
+#End comparePrices function#
+[(&#39;Trader Joes&#39;, 1.82), (&#39;Wegmans&#39;, 1.95), (&#39;Wal-Mart&#39;, 2.36), (&#39;Giant&#39;, 2.38)]
+####################Out for loop####################
+####################In for loop####################
+sauce
+#From comparePrices function#
+(&#39;Wegmans&#39;, 2.08)
+At the store Wegmans the price is 2.08
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Wal-Mart&#39;, 2.69)
+At the store Wal-Mart the price is 2.69
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Giant&#39;, 3.0)
+At the store Giant the price is 3.0
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Trader Joes&#39;, 2.19)
+At the store Trader Joes the price is 2.19
+#End comparePrices function#
+[(&#39;Wegmans&#39;, 2.08), (&#39;Trader Joes&#39;, 2.19), (&#39;Wal-Mart&#39;, 2.69), (&#39;Giant&#39;, 3.0)]
+####################Out for loop####################
+####################In for loop####################
+spaghetti
+#From comparePrices function#
+(&#39;Wegmans&#39;, 0.89)
+At the store Wegmans the price is 0.89
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Wal-Mart&#39;, 0.88)
+At the store Wal-Mart the price is 0.88
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Giant&#39;, 0.94)
+At the store Giant the price is 0.94
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Trader Joes&#39;, 0.81)
+At the store Trader Joes the price is 0.81
+#End comparePrices function#
+[(&#39;Trader Joes&#39;, 0.81), (&#39;Wal-Mart&#39;, 0.88), (&#39;Wegmans&#39;, 0.89), (&#39;Giant&#39;, 0.94)]
+####################Out for loop####################
+####################In for loop####################
+bread
+#From comparePrices function#
+(&#39;Wegmans&#39;, 1.34)
+At the store Wegmans the price is 1.34
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Wal-Mart&#39;, 1.67)
+At the store Wal-Mart the price is 1.67
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Giant&#39;, 1.35)
+At the store Giant the price is 1.35
+#End comparePrices function#
+#From comparePrices function#
+(&#39;Trader Joes&#39;, 1.34)
+At the store Trader Joes the price is 1.34
+#End comparePrices function#
+[(&#39;Wegmans&#39;, 1.34), (&#39;Trader Joes&#39;, 1.34), (&#39;Giant&#39;, 1.35), (&#39;Wal-Mart&#39;, 1.67)]
+####################Out for loop####################
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can short-hand this a bit by using lambda.</p>
+<p>Lambda is like a micro-function. We use it once and that’s it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingPricesByStores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">storeAmount</span><span class="p">:</span> <span class="n">storeAmount</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="c1"># Python 3</span>
+    <span class="c1">#print( sorted(shoppingPricesByStores[item].items(), key=lambda (store,amount): (amount)) ) # Python 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
+[(&#39;Trader Joes&#39;, 3.2), (&#39;Wal-Mart&#39;, 3.26), (&#39;Giant&#39;, 3.55), (&#39;Wegmans&#39;, 3.59)]
+eggs
+[(&#39;Trader Joes&#39;, 1.82), (&#39;Wegmans&#39;, 1.95), (&#39;Wal-Mart&#39;, 2.36), (&#39;Giant&#39;, 2.38)]
+sauce
+[(&#39;Wegmans&#39;, 2.08), (&#39;Trader Joes&#39;, 2.19), (&#39;Wal-Mart&#39;, 2.69), (&#39;Giant&#39;, 3.0)]
+spaghetti
+[(&#39;Trader Joes&#39;, 0.81), (&#39;Wal-Mart&#39;, 0.88), (&#39;Wegmans&#39;, 0.89), (&#39;Giant&#39;, 0.94)]
+bread
+[(&#39;Wegmans&#39;, 1.34), (&#39;Trader Joes&#39;, 1.34), (&#39;Giant&#39;, 1.35), (&#39;Wal-Mart&#39;, 1.67)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s print this out a bit neater.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shoppingPricesByStores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span>
+    <span class="c1">#for key, value in sorted(shoppingPricesByStores[item].items(), key=lambda (store,amount): (amount)): # Python 2</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">shoppingPricesByStores</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">storeAmount</span><span class="p">:</span> <span class="n">storeAmount</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">):</span> <span class="c1"># Python 3</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>milk
+Trader Joes: 3.2
+Wal-Mart: 3.26
+Giant: 3.55
+Wegmans: 3.59
+
+
+eggs
+Trader Joes: 1.82
+Wegmans: 1.95
+Wal-Mart: 2.36
+Giant: 2.38
+
+
+sauce
+Wegmans: 2.08
+Trader Joes: 2.19
+Wal-Mart: 2.69
+Giant: 3.0
+
+
+spaghetti
+Trader Joes: 0.81
+Wal-Mart: 0.88
+Wegmans: 0.89
+Giant: 0.94
+
+
+bread
+Wegmans: 1.34
+Trader Joes: 1.34
+Giant: 1.35
+Wal-Mart: 1.67
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "dudaspm/JupyterLab-Python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-let-s-just-create-a-list">First, let’s just create a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-let-s-add-some-prices">Second, let’s add some prices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-some-serious-code-here">Third, some serious code here</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick M. Dudas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021 - The Pennsylvania State University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

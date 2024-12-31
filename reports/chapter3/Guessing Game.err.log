@@ -1,0 +1,127 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/dudaspm/.local/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/dudaspm/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/dudaspm/.local/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/dudaspm/.local/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/dudaspm/.local/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# guessingGame
+# A python number guessing game
+#
+# Adam Lavely
+# adam.lavely.psu@gmail.com
+#
+# Created for ICS Python Training Series
+# Spring 2019
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# This is a number guessing game.  Python
+# uses a random number generator to get
+# a target between minVal and maxVal
+# and then the guesser must guess this
+# number using greater/less than clues.
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# Load the modules we need
+
+# Use random to get the random number 
+import random as rd 
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# Functions required
+
+def guessChecker( guessVal ):
+    # Function to verify that the guess an integer
+    if guessVal.isdigit() == True:
+        return True
+    else:
+        print("Bad input, please use an integer")
+        return False
+    
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# Background info
+minVal=1
+maxVal=100
+goodGuesses=1
+ANSWER=rd.randint( minVal, maxVal)
+answerRight = 'Nope'
+
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# Play the game
+print( "Guess an integer such that", minVal, " <= X <= ", maxVal )
+
+while answerRight == 'Nope':
+    
+    # Get the guess
+    
+    guess = input("\nEnter an integer: ")
+    
+    # Check to make sure the guess is an integer
+    goodAns = guessChecker( guess )
+    
+    # Yes an integer
+    if goodAns == True:
+        guessInt = int( guess ) 
+        
+        # Check to see if guess is above the answer 
+        if guessInt > ANSWER:
+            print("Answer is too high, please guess again")
+            maxVal = guessInt
+            goodGuesses = goodGuesses+1
+            print( "Your current inclusive range is ", minVal, " - ", maxVal )
+        elif guessInt < ANSWER:
+            print("Answer is too low, please guess again")
+            minVal = guessInt
+            goodGuesses = goodGuesses+1
+            print( "Your current inclusive range is ", minVal, " - ", maxVal )
+        else:
+            print("\nHurray, you guessed ", ANSWER, " in ", goodGuesses, " guesses! " )
+            answerRight = 'Yep'
+    
+    # Not an integer
+    else:
+        print( "Please try again")    
+------------------
+
+----- stdout -----
+Guess an integer such that 1  <= X <=  100
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Cell [0;32mIn[1], line 54[0m
+[1;32m     48[0m [38;5;28mprint[39m( [38;5;124m"[39m[38;5;124mGuess an integer such that[39m[38;5;124m"[39m, minVal, [38;5;124m"[39m[38;5;124m <= X <= [39m[38;5;124m"[39m, maxVal )
+[1;32m     50[0m [38;5;28;01mwhile[39;00m answerRight [38;5;241m==[39m [38;5;124m'[39m[38;5;124mNope[39m[38;5;124m'[39m:
+[1;32m     51[0m     
+[1;32m     52[0m     [38;5;66;03m# Get the guess[39;00m
+[0;32m---> 54[0m     guess [38;5;241m=[39m [38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mEnter an integer: [39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m     56[0m     [38;5;66;03m# Check to make sure the guess is an integer[39;00m
+[1;32m     57[0m     goodAns [38;5;241m=[39m guessChecker( guess )
+
+File [0;32m~/.local/lib/python3.10/site-packages/ipykernel/kernelbase.py:1281[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
+[1;32m   1279[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[1;32m   1280[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[0;32m-> 1281[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
+[1;32m   1282[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[1;32m   1283[0m     [38;5;28mstr[39m(prompt),
+[1;32m   1284[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[1;32m   1285[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[1;32m   1286[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m   1287[0m )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+
