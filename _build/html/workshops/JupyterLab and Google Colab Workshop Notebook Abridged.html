@@ -1,432 +1,482 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>JupyterLab and Google Colab Workshop Notebook Abridged &#8212; Jupyter Lab + Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/JupyterLab and Google Colab Workshop Notebook Abridged';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+    <link rel="prev" title="Python and Google Colab Workshop Notebook Abridged" href="Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
       
-      <h1 class="site-logo" id="site-title">Jupyter Lab + Python</h1>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Jupyter Lab + Python
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Getting Starting
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">
-   Notebook Introduction - 🐸
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  JupyterLab and its Environments
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">
-   Introduction to JupyterLab - 🐘
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">
-   All About Google Colab - 🐦
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">
-   FAQ - 🐻
-  </a>
- </li>
-</ul>
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/workshops/JupyterLab and Google Colab Workshop Notebook Abridged.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
+  
+    
+  
 
-            <!-- Source interaction buttons -->
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Lab + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
-        
-        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/workshops/JupyterLab and Google Colab Workshop Notebook Abridged.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/workshops/JupyterLab and Google Colab Workshop Notebook Abridged.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/workshops/JupyterLab and Google Colab Workshop Notebook Abridged.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notebook-introduction">
-   Notebook Introduction - 🐸
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-use-this-notebook">
-     How to Use this Notebook
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#export-to-binder-or-google-colab">
-   Export to Binder or Google Colab
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#thank-you">
-     Thank you!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-jupyterlab">
-   Introduction to JupyterLab - 🐘
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#where-am-i-jupyterlab-notebook">
-     Where am I? (JupyterLab Notebook)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cells">
-     Cells
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#two-types-of-cells">
-       Two types of Cells
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#text">
-         Text
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#table">
-           Table
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#image">
-           Image
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#link">
-           Link
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#bullet-list">
-           Bullet List
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#numbered-list">
-           Numbered List
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#latex">
-           LaTeX
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#blockquotes">
-           Blockquotes
-          </a>
-         </li>
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Jupyter Lab + Python
+                </a>
+            </li>
         </ul>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#code">
-         Code
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#jupyter-magic">
-       Jupyter ✨ MAGIC ✨
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#html">
-         HTML
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#r-language">
-         R Language
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#sql">
-         SQL
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#all-about-google-colab">
-   All About Google Colab - 🐦
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-data">
-     Working with Data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-temporary-solution">
-       A Temporary Solution
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#connecting-to-your-google-drive">
-       Connecting to Your Google Drive
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#selecting-the-icon-to-connect">
-         Selecting the Icon to Connect
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#connecting-using-google-colab-code">
-         Connecting Using Google Colab Code
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#i-am-connected-now-what">
-         I am Connected, Now What?
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#connecting-to-gitlab">
-       Connecting to Gitlab
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#creating-a-connection-ssh">
-         Creating a Connection (SSH)
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#the-push-and-pull-of-git">
-         The Push and Pull of Git
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Starting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">Notebook Introduction - 🐸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLab and its Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">Introduction to JupyterLab - 🐘</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">All About Google Colab - 🐦</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">FAQ - 🐻</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Introduction%20to%20Python%20-%20%F0%9F%90%A7.html">Introduction to Python - 🐧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Learning%20about%20Variables%20-%20%F0%9F%90%B3.html">Learning about Variables - 🐳</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Comparisons%20-%20%F0%9F%90%AD.html">Comparisons - 🐭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/If-Else%20Conditions%20-%20%F0%9F%90%B4.html">If-Else Conditions - 🐴</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loops%20-%20%F0%9F%90%A8.html">Loops - 🐨</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loading%20a%20Library%20-%20%F0%9F%90%A0.html">Loading a Library - 🐠</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Tables%20to%20Idioms.html">Tables to Idioms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">Python and Google Colab Workshop Notebook Abridged</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/workshops/JupyterLab and Google Colab Workshop Notebook Abridged.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/dudaspm/JupyterLab-Python/edit/main/workshops/JupyterLab and Google Colab Workshop Notebook Abridged.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button"
+   title="Suggest edit"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workshops/JupyterLab and Google Colab Workshop Notebook Abridged.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>JupyterLab and Google Colab Workshop Notebook Abridged</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-introduction">Notebook Introduction - 🐸</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-notebook">How to Use this Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-binder-or-google-colab">Export to Binder or Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thank-you">Thank you!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-jupyterlab">Introduction to JupyterLab - 🐘</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-am-i-jupyterlab-notebook">Where am I? (JupyterLab Notebook)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cells">Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-types-of-cells">Two types of Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#image">Image</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#link">Link</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#bullet-list">Bullet List</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#numbered-list">Numbered List</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">LaTeX</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#blockquotes">Blockquotes</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-magic">Jupyter ✨ MAGIC ✨</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#html">HTML</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#r-language">R Language</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-about-google-colab">All About Google Colab - 🐦</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-data">Working with Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-temporary-solution">A Temporary Solution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-your-google-drive">Connecting to Your Google Drive</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-the-icon-to-connect">Selecting the Icon to Connect</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-using-google-colab-code">Connecting Using Google Colab Code</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-connected-now-what">I am Connected, Now What?</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-gitlab">Connecting to Gitlab</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-connection-ssh">Creating a Connection (SSH)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#the-push-and-pull-of-git">The Push and Pull of Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="jupyterlab-and-google-colab-workshop-notebook-abridged">
-<h1>JupyterLab and Google Colab Workshop Notebook Abridged<a class="headerlink" href="#jupyterlab-and-google-colab-workshop-notebook-abridged" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="notebook-introduction">
-<h2>Notebook Introduction - 🐸<a class="headerlink" href="#notebook-introduction" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="how-to-use-this-notebook">
-<h3>How to Use this Notebook<a class="headerlink" href="#how-to-use-this-notebook" title="Permalink to this headline">¶</a></h3>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyterlab-and-google-colab-workshop-notebook-abridged">
+<h1>JupyterLab and Google Colab Workshop Notebook Abridged<a class="headerlink" href="#jupyterlab-and-google-colab-workshop-notebook-abridged" title="Link to this heading">#</a></h1>
+<section id="notebook-introduction">
+<h2>Notebook Introduction - 🐸<a class="headerlink" href="#notebook-introduction" title="Link to this heading">#</a></h2>
+<section id="how-to-use-this-notebook">
+<h3>How to Use this Notebook<a class="headerlink" href="#how-to-use-this-notebook" title="Link to this heading">#</a></h3>
 <p>This notebook allows you to both follow the text and interact with the code directly.</p>
 <p>At the top page, you will see:</p>
 <img src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen1.png" alt="icons at the top right corner of the screen" style="width:200px;margin-left:auto;margin-right:auto;display:block;">
@@ -455,60 +505,65 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="export-to-binder-or-google-colab">
-<h2>Export to Binder or Google Colab<a class="headerlink" href="#export-to-binder-or-google-colab" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="export-to-binder-or-google-colab">
+<h2>Export to Binder or Google Colab<a class="headerlink" href="#export-to-binder-or-google-colab" title="Link to this heading">#</a></h2>
 <p>As you can see you can also export these notebooks to Binder or Google Colab.</p>
 <img alt="Binder or Google Colab options" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen3.png" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 <p>This will take you to their respective websites but you can work with them there, if you would like!</p>
-<div class="section" id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
 <p>I know it tradition to have the refences at the end of books, but when you are standing on the shoulders of giants. You thank them first.</p>
-<p id="id1"><dl class="citation">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id8">Goo</a></span></dt>
-<dd><p>URL: <a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb">https://colab.research.google.com/notebooks/io.ipynb</a>.</p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">GG16</span></dt>
-<dd><p>B Granger and J Grout. Jupyterlab: building blocks for interactive computing. <em>Slides of presentation made at SciPy</em>, 2016.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets">Mun14</span></dt>
-<dd><p>Tamara Munzner. <em>Visualization analysis and design</em>. CRC press, 2014.</p>
-</dd>
-<dt class="label" id="id3"><span class="brackets">Wic10</span></dt>
-<dd><p>Hadley Wickham. A layered grammar of graphics. <em>Journal of Computational and Graphical Statistics</em>, 19(1):3–28, 2010.</p>
-</dd>
-</dl>
-</p>
+<div class="docutils container" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">Goo</a><span class="fn-bracket">]</span></span>
+<p>URL: <a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb">https://colab.research.google.com/notebooks/io.ipynb</a>.</p>
 </div>
-<div class="section" id="thank-you">
-<h3>Thank you!<a class="headerlink" href="#thank-you" title="Permalink to this headline">¶</a></h3>
-<p>Also, a huge <em>thank you</em> to Adam Lavely (<a class="reference external" href="https://github.com/adamlavely">https://github.com/adamlavely</a>) for developing some of the intial notebooks!</p>
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>GG16<span class="fn-bracket">]</span></span>
+<p>B Granger and J Grout. Jupyterlab: building blocks for interactive computing. <em>Slides of presentation made at SciPy</em>, 2016.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Mun14<span class="fn-bracket">]</span></span>
+<p>Tamara Munzner. <em>Visualization analysis and design</em>. CRC press, 2014.</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Wic10<span class="fn-bracket">]</span></span>
+<p>Hadley Wickham. A layered grammar of graphics. <em>Journal of Computational and Graphical Statistics</em>, 19(1):3–28, 2010.</p>
 </div>
 </div>
-<div class="section" id="introduction-to-jupyterlab">
-<h2>Introduction to JupyterLab - 🐘<a class="headerlink" href="#introduction-to-jupyterlab" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="where-am-i-jupyterlab-notebook">
-<h3>Where am I? (JupyterLab Notebook)<a class="headerlink" href="#where-am-i-jupyterlab-notebook" title="Permalink to this headline">¶</a></h3>
+</div>
+</section>
+<section id="thank-you">
+<h3>Thank you!<a class="headerlink" href="#thank-you" title="Link to this heading">#</a></h3>
+<p>Also, a huge <em>thank you</em> to Adam Lavely (<a class="github reference external" href="https://github.com/adamlavely">adamlavely</a>) for developing some of the intial notebooks!</p>
+</section>
+</section>
+<section id="introduction-to-jupyterlab">
+<h2>Introduction to JupyterLab - 🐘<a class="headerlink" href="#introduction-to-jupyterlab" title="Link to this heading">#</a></h2>
+<section id="where-am-i-jupyterlab-notebook">
+<h3>Where am I? (JupyterLab Notebook)<a class="headerlink" href="#where-am-i-jupyterlab-notebook" title="Link to this heading">#</a></h3>
 <p>Jupyter is a powerful suite of tools that allows us to do many things.</p>
 <p>Jupyter is capable of running <strong>Ju</strong>lia, <strong>Pyt</strong>hon and <strong>R</strong>, as well as some other things.</p>
-</div>
-<div class="section" id="cells">
-<h3>Cells<a class="headerlink" href="#cells" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cells">
+<h3>Cells<a class="headerlink" href="#cells" title="Link to this heading">#</a></h3>
 <p>Each box is called a cell.</p>
-<div class="section" id="two-types-of-cells">
-<h4>Two types of Cells<a class="headerlink" href="#two-types-of-cells" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="text">
-<h5>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h5>
+<section id="two-types-of-cells">
+<h4>Two types of Cells<a class="headerlink" href="#two-types-of-cells" title="Link to this heading">#</a></h4>
+<section id="text">
+<h5>Text<a class="headerlink" href="#text" title="Link to this heading">#</a></h5>
 <p>Text Cells allow you to add text (via Markdown), which includes tables, images, links, bullet lists, numbered lists, LaTeX, blockquote, among other things.</p>
-<div class="section" id="table">
-<h6>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h6>
+<section id="table">
+<h6>Table<a class="headerlink" href="#table" title="Link to this heading">#</a></h6>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>| This | is   |
 |------|------|
 |   a  | table| 
 </pre></div>
 </div>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>This</p></th>
 <th class="head"><p>is</p></th>
@@ -521,27 +576,28 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="image">
-<h6>Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h6>
+</section>
+<section id="image">
+<h6>Image<a class="headerlink" href="#image" title="Link to this heading">#</a></h6>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>![<span class="nt">Wheat Field with Cypresses</span>](<span class="na">images/vangogh.jpg</span>)
 </pre></div>
 </div>
 <p><img alt="Wheat Field with Cypresses" src="workshops/images/vangogh.jpg" /></p>
-</div>
-<div class="section" id="link">
-<h6>Link<a class="headerlink" href="#link" title="Permalink to this headline">¶</a></h6>
+</section>
+<section id="link">
+<h6>Link<a class="headerlink" href="#link" title="Link to this heading">#</a></h6>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>[<span class="nt">Attribution</span>](<span class="na">https://www.metmuseum.org/art/collection/search/436535</span>)
 </pre></div>
 </div>
 <p>Vincent van Gogh / Public domain
 The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gift, 1993 -
 <a class="reference external" href="https://www.metmuseum.org/art/collection/search/436535">Attribution</a></p>
-</div>
-<div class="section" id="bullet-list">
-<h6>Bullet List<a class="headerlink" href="#bullet-list" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">*</span> I am a
-    <span class="k">*</span> bullet
-<span class="k">*</span> list
+</section>
+<section id="bullet-list">
+<h6>Bullet List<a class="headerlink" href="#bullet-list" title="Link to this heading">#</a></h6>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">*</span><span class="w"> </span>I am a
+<span class="w">    </span><span class="k">*</span><span class="w"> </span>bullet
+<span class="k">*</span><span class="w"> </span>list
 </pre></div>
 </div>
 <ul class="simple">
@@ -552,40 +608,40 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </li>
 <li><p>list</p></li>
 </ul>
-</div>
-<div class="section" id="numbered-list">
-<h6>Numbered List<a class="headerlink" href="#numbered-list" title="Permalink to this headline">¶</a></h6>
+</section>
+<section id="numbered-list">
+<h6>Numbered List<a class="headerlink" href="#numbered-list" title="Link to this heading">#</a></h6>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">1.</span> I am a
-  <span class="k">1.</span> numbered
+<span class="w">  </span><span class="k">1.</span> numbered
 <span class="k">1.</span> list
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>I am a</p></li>
 <li><p>numbered</p></li>
 <li><p>list</p></li>
 </ol>
-</div>
-<div class="section" id="latex">
-<h6>LaTeX<a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h6>
+</section>
+<section id="latex">
+<h6>LaTeX<a class="headerlink" href="#latex" title="Link to this heading">#</a></h6>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>$$e=mc^2$$
 </pre></div>
 </div>
 <div class="math notranslate nohighlight">
 \[e=mc^2\]</div>
-</div>
-<div class="section" id="blockquotes">
-<h6>Blockquotes<a class="headerlink" href="#blockquotes" title="Permalink to this headline">¶</a></h6>
+</section>
+<section id="blockquotes">
+<h6>Blockquotes<a class="headerlink" href="#blockquotes" title="Link to this heading">#</a></h6>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">&gt; </span><span class="ge">This is a blockquote.</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>This is a blockquote.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="code">
-<h5>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h5>
+</section>
+</section>
+<section id="code">
+<h5>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h5>
 <p>Cells can be run using the Run button ► or selecting one of the run options under the Run menu.</p>
 <p>Try this out! You can change what is in the cell and rerun the same cell, which is useful for debugging.</p>
 <div class="cell docutils container">
@@ -609,13 +665,13 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="jupyter-magic">
-<h4>Jupyter ✨ MAGIC ✨<a class="headerlink" href="#jupyter-magic" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="jupyter-magic">
+<h4>Jupyter ✨ MAGIC ✨<a class="headerlink" href="#jupyter-magic" title="Link to this heading">#</a></h4>
 <p>When using other languages in Jupyter/JupyterLab, we need to designate the cell we are using with this langauge or function. To “activate” these language, we need to use ✨ MAGIC ✨. Here are a couple of examples.</p>
-<div class="section" id="html">
-<h5>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h5>
+<section id="html">
+<h5>HTML<a class="headerlink" href="#html" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
@@ -635,9 +691,9 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </ol>
 </div></div>
 </div>
-</div>
-<div class="section" id="r-language">
-<h5>R Language<a class="headerlink" href="#r-language" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="r-language">
+<h5>R Language<a class="headerlink" href="#r-language" title="Link to this heading">#</a></h5>
 <p>In Google Colab, you do <em>not</em> need to install anything, but if you are going to do this on your local machine (your computer).</p>
 <p><img alt="Anaconda Prompt - installing r-essentials" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/command.PNG" /></p>
 <p>You will need to install a few things first. To do this, open up the <em>Anaconda Prompt (anaconda3)</em> and run the following two commands:</p>
@@ -654,7 +710,7 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </div>
 <p>In a new cell, we can then add our R code and see it working.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">R</span>
-<span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -666,13 +722,13 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="sql">
-<h5>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="sql">
+<h5>SQL<a class="headerlink" href="#sql" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
-!pip install ipython-sql
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span><span class="o">-</span><span class="n">sql</span>
 </pre></div>
 </div>
 </div>
@@ -692,6 +748,62 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;load_ext&#39;</span><span class="p">,</span> <span class="s1">&#39;sql&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2480,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2478</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2479</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2480</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2484</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2485</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/magics/extension.py:33,</span> in <span class="ni">ExtensionMagics.load_ext</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">module_str</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="k">raise</span> <span class="n">UsageError</span><span class="p">(</span><span class="s1">&#39;Missing module name.&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">33</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">extension_manager</span><span class="o">.</span><span class="n">load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="s1">&#39;already loaded&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The </span><span class="si">%s</span><span class="s2"> extension is already loaded. To reload it, use:&quot;</span> <span class="o">%</span> <span class="n">module_str</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/extensions.py:62,</span> in <span class="ni">ExtensionManager.load_extension</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Load an IPython extension by its module name.</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span><span class="sd"> Returns the string &quot;already loaded&quot; if the extension is already loaded,</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="sd"> &quot;no load function&quot; if the module doesn&#39;t have a load_ipython_extension</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="sd"> function, or None if it succeeded.</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">62</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">in</span> <span class="n">BUILTINS_EXTS</span><span class="p">:</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/extensions.py:77,</span> in <span class="ni">ExtensionManager._load_extension</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">77</span>         <span class="n">mod</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="n">mod</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module_str</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_load_ipython_extension</span><span class="p">(</span><span class="n">mod</span><span class="p">):</span>
+
+<span class="nn">File /usr/lib/python3.10/importlib/__init__.py:126,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>             <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1050,</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1027,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1004,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sql&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -701,17 +813,17 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 </div>
 </div>
 <p>More information can be found here: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">Jupyter ✨ MAGIC ✨</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="all-about-google-colab">
-<h2>All About Google Colab - 🐦<a class="headerlink" href="#all-about-google-colab" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="working-with-data">
-<h3>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h3>
-<p>For this notebook, we will be focusing on using Google Colab <span id="id8">[<a class="reference internal" href="Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id4">Goo</a>]</span></p>
-<div class="section" id="a-temporary-solution">
-<h4>A Temporary Solution<a class="headerlink" href="#a-temporary-solution" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+</section>
+<section id="all-about-google-colab">
+<h2>All About Google Colab - 🐦<a class="headerlink" href="#all-about-google-colab" title="Link to this heading">#</a></h2>
+<section id="working-with-data">
+<h3>Working with Data<a class="headerlink" href="#working-with-data" title="Link to this heading">#</a></h3>
+<p>For this notebook, we will be focusing on using Google Colab <span id="id8">[<a class="reference internal" href="Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id4" title="URL: https://colab.research.google.com/notebooks/io.ipynb.">Goo</a>]</span></p>
+<section id="a-temporary-solution">
+<h4>A Temporary Solution<a class="headerlink" href="#a-temporary-solution" title="Link to this heading">#</a></h4>
 <p>You can create and interact with files when you access Google Colab, <em>BUT</em> they will disappear after your session ends. An example would be:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -728,31 +840,31 @@ The Metropolitan Museum of Art, New York - Purchase, The Annenberg Foundation Gi
 If files are not written to your local machine or your Google Drive. They will be <strong>gone</strong> the next time you log in.</p>
 </div>
 <p>We need a better solution for this. So, let’s take a look at these options.</p>
-</div>
-<div class="section" id="connecting-to-your-google-drive">
-<h4>Connecting to Your Google Drive<a class="headerlink" href="#connecting-to-your-google-drive" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="connecting-to-your-google-drive">
+<h4>Connecting to Your Google Drive<a class="headerlink" href="#connecting-to-your-google-drive" title="Link to this heading">#</a></h4>
 <p>There are two ways to connect to your Google Drive.</p>
-<div class="section" id="selecting-the-icon-to-connect">
-<h5>Selecting the Icon to Connect<a class="headerlink" href="#selecting-the-icon-to-connect" title="Permalink to this headline">¶</a></h5>
+<section id="selecting-the-icon-to-connect">
+<h5>Selecting the Icon to Connect<a class="headerlink" href="#selecting-the-icon-to-connect" title="Link to this heading">#</a></h5>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/connectToDrive.PNG"><img alt="Icon for Connecting to Google Colab" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/connectToDrive.PNG" style="width: 400px;" /></a>
-</div>
-<div class="section" id="connecting-using-google-colab-code">
-<h5>Connecting Using Google Colab Code<a class="headerlink" href="#connecting-using-google-colab-code" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="connecting-using-google-colab-code">
+<h5>Connecting Using Google Colab Code<a class="headerlink" href="#connecting-using-google-colab-code" title="Link to this heading">#</a></h5>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will look something like this:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/googleColabConnect.PNG"><img alt="Connecting to Google Colab with Code" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/googleColabConnect.PNG" style="width: 500px;" /></a>
-</div>
-<div class="section" id="i-am-connected-now-what">
-<h5>I am Connected, Now What?<a class="headerlink" href="#i-am-connected-now-what" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="i-am-connected-now-what">
+<h5>I am Connected, Now What?<a class="headerlink" href="#i-am-connected-now-what" title="Link to this heading">#</a></h5>
 <p>It can be a bit difficult to figure out where to place files and where your files are located in Google Colab. Once you connect, you will need to navigate the folder structure to find your file. They did not make this very easy to find. Here is a quick screenshot.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/contentFolder.PNG"><img alt="file structure in Google Colab" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/contentFolder.PNG" style="width: 400px;" /></a>
-</div>
-</div>
-<div class="section" id="connecting-to-gitlab">
-<h4>Connecting to Gitlab<a class="headerlink" href="#connecting-to-gitlab" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="connecting-to-gitlab">
+<h4>Connecting to Gitlab<a class="headerlink" href="#connecting-to-gitlab" title="Link to this heading">#</a></h4>
 <p>Another way to work with data outside of your Google Drive is using something like GitHub or, in our case GitLab. A bit of a warning before we begin.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -761,14 +873,14 @@ If files are not written to your local machine or your Google Drive. They will b
 <p>Make sure you read of the terms of services as well!</p>
 <p>For accessing GitLab through Penn State, here is the link (<a class="reference external" href="https://git.psu.edu/">https://git.psu.edu/</a>). You do need to setup a username/password to start creating.</p>
 <p>If you are interest in using Git, let me show the basics.</p>
-<div class="section" id="creating-a-connection-ssh">
-<h5>Creating a Connection (SSH)<a class="headerlink" href="#creating-a-connection-ssh" title="Permalink to this headline">¶</a></h5>
+<section id="creating-a-connection-ssh">
+<h5>Creating a Connection (SSH)<a class="headerlink" href="#creating-a-connection-ssh" title="Link to this heading">#</a></h5>
 <p>The first step in this process is to create a connection between Google Colab and GitLab, and this starts with saying to Google Colab: You can connect to this resource because I gave you access. The way we do this is to create an <em>SSH Key</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Code will run in Google Colab but has been commented out to work on the website.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh-keygen -t ed25519 -C &quot;SSH key for google colab&quot;
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">ed25519</span> <span class="o">-</span><span class="n">C</span> <span class="s2">&quot;SSH key for google colab&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -779,7 +891,7 @@ If files are not written to your local machine or your Google Drive. They will b
 </div>
 </div>
 <p>To see this file, we will need to read the file using a UNIX command call 😸 (cat or con<strong>cat</strong>enate)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cat /root/.ssh/id_ed25519.pub
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="o">.</span><span class="n">pub</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -790,7 +902,7 @@ If files are not written to your local machine or your Google Drive. They will b
 </div>
 </div>
 <p>We now need to tell SSH that the PSU GitLab is fine to connect to (it is a known host).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh-keyscan git.psu.edu &gt;&gt; /root/.ssh/known_hosts
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">ssh</span><span class="o">-</span><span class="n">keyscan</span> <span class="n">git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">known_hosts</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -803,7 +915,7 @@ If files are not written to your local machine or your Google Drive. They will b
 <p>Now in GitLab, we need to add this SSH key to our account.</p>
 <p><img alt="GitLab adding SSH" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/gitlabSSH.PNG" /></p>
 <p>Finally, let’s test this connection.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh -T git@git.psu.edu
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -818,11 +930,11 @@ If files are not written to your local machine or your Google Drive. They will b
 <div><p>Warning: Permanently added the ECDSA host key for IP address ‘<em><strong>.</strong></em>.<em><strong>.</strong></em>’ to the list of known hosts.
 Welcome to GitLab, &#64;you!</p>
 </div></blockquote>
-</div>
-<div class="section" id="the-push-and-pull-of-git">
-<h5>The Push and Pull of Git<a class="headerlink" href="#the-push-and-pull-of-git" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="the-push-and-pull-of-git">
+<h5>The Push and Pull of Git<a class="headerlink" href="#the-push-and-pull-of-git" title="Link to this heading">#</a></h5>
 <p>Git, basically, is a push and pull mechanism. You <em>pull</em> your project down from GitLab. Make changes. Then <em>push</em> it back to GitLab. Here is an example of doing this with your file from before. First, we <strong>clone</strong> the repository.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone git@git.psu.edu:pmd19/workshop_temp.git
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span><span class="p">:</span><span class="n">pmd19</span><span class="o">/</span><span class="n">workshop_temp</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -833,9 +945,9 @@ Welcome to GitLab, &#64;you!</p>
 </div>
 </div>
 <p>We then <strong>pull</strong> the current content from GitLab. Note cd stands for Change Directory, and PWD stands for Print Work Directory.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%cd /content/workshop_temp
-!pwd
-!git pull origin master
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">workshop_temp</span>
+<span class="err">!</span><span class="n">pwd</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -848,11 +960,11 @@ Welcome to GitLab, &#64;you!</p>
 </div>
 </div>
 <p>We write our file to our directory and <strong>add</strong> it to the list of things we want to update on GitLab.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pwd
-f = open(&quot;thanosSnapping.txt&quot;, &quot;w&quot;)
-f.write(&quot;you should&#39;ve gone for the head&quot;)
-f.close()
-!git add &quot;thanosSnapping.txt&quot;
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pwd</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;thanosSnapping.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;you should&#39;ve gone for the head&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">add</span> <span class="s2">&quot;thanosSnapping.txt&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -867,10 +979,10 @@ f.close()
 </div>
 </div>
 <p>Git wants to make sure it knows who is updating what, so it needs a person and an email address to associate the changes. We then <strong>commit</strong> to these changes, and finally, we <strong>push</strong> our changes to GitLab.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git config --global user.email &#39;pmd19@psu.edu&#39;
-!git config --global user.name &#39;Patrick Dudas&#39;
-!git commit -m &quot;testing&quot;
-!git push git@git.psu.edu:pmd19/workshop_temp.git
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s1">&#39;pmd19@psu.edu&#39;</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s1">&#39;Patrick Dudas&#39;</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;testing&quot;</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">push</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span><span class="p">:</span><span class="n">pmd19</span><span class="o">/</span><span class="n">workshop_temp</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -883,11 +995,11 @@ f.close()
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -901,7 +1013,7 @@ f.close()
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshops"
         },
         predefinedOutput: true
@@ -909,34 +1021,148 @@ f.close()
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-        <div class='prev-next-bottom'>
-            
 
-        </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Patrick M. Dudas<br/>
-        
-            &copy; Copyright 2021 - The Pennsylvania State University.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python and Google Colab Workshop Notebook Abridged</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-introduction">Notebook Introduction - 🐸</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-notebook">How to Use this Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-binder-or-google-colab">Export to Binder or Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thank-you">Thank you!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-jupyterlab">Introduction to JupyterLab - 🐘</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-am-i-jupyterlab-notebook">Where am I? (JupyterLab Notebook)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cells">Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-types-of-cells">Two types of Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#image">Image</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#link">Link</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#bullet-list">Bullet List</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#numbered-list">Numbered List</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">LaTeX</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#blockquotes">Blockquotes</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-magic">Jupyter ✨ MAGIC ✨</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#html">HTML</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#r-language">R Language</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-about-google-colab">All About Google Colab - 🐦</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-data">Working with Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-temporary-solution">A Temporary Solution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-your-google-drive">Connecting to Your Google Drive</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-the-icon-to-connect">Selecting the Icon to Connect</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-using-google-colab-code">Connecting Using Google Colab Code</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-connected-now-what">I am Connected, Now What?</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-gitlab">Connecting to Gitlab</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-connection-ssh">Creating a Connection (SSH)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#the-push-and-pull-of-git">The Push and Pull of Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick M. Dudas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021 - The Pennsylvania State University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

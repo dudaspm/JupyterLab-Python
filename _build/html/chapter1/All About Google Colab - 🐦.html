@@ -1,329 +1,450 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>All About Google Colab - 🐦 &#8212; Jupyter Lab + Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1/All About Google Colab - 🐦';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="FAQ - 🐻" href="FAQ%20-%20%F0%9F%90%BB.html" />
     <link rel="prev" title="Introduction to JupyterLab - 🐘" href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
       
-      <h1 class="site-logo" id="site-title">Jupyter Lab + Python</h1>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Jupyter Lab + Python
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Getting Starting
- </span>
-</p>
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Lab + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Jupyter Lab + Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Starting</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Notebook%20Introduction%20-%20%F0%9F%90%B8.html">
-   Notebook Introduction - 🐸
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Notebook%20Introduction%20-%20%F0%9F%90%B8.html">Notebook Introduction - 🐸</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  JupyterLab and its Environments
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLab and its Environments</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">
-   Introduction to JupyterLab - 🐘
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   All About Google Colab - 🐦
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="FAQ%20-%20%F0%9F%90%BB.html">
-   FAQ - 🐻
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">Introduction to JupyterLab - 🐘</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">All About Google Colab - 🐦</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ%20-%20%F0%9F%90%BB.html">FAQ - 🐻</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Introduction%20to%20Python%20-%20%F0%9F%90%A7.html">Introduction to Python - 🐧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Learning%20about%20Variables%20-%20%F0%9F%90%B3.html">Learning about Variables - 🐳</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Comparisons%20-%20%F0%9F%90%AD.html">Comparisons - 🐭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/If-Else%20Conditions%20-%20%F0%9F%90%B4.html">If-Else Conditions - 🐴</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loops%20-%20%F0%9F%90%A8.html">Loops - 🐨</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loading%20a%20Library%20-%20%F0%9F%90%A0.html">Loading a Library - 🐠</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Tables%20to%20Idioms.html">Tables to Idioms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">Python and Google Colab Workshop Notebook Abridged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter1/All About Google Colab - 🐦.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter1/All About Google Colab - 🐦.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter1/All About Google Colab - 🐦.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<a href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter1/All About Google Colab - 🐦.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button"
+   title="Suggest edit"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/chapter1/All About Google Colab - 🐦.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter1/All About Google Colab - 🐦.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter1/All About Google Colab - 🐦.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>All About Google Colab - 🐦</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-data">
-   Working with Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-temporary-solution">
-     A Temporary Solution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connecting-to-your-google-drive">
-     Connecting to Your Google Drive
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#selecting-the-icon-to-connect">
-       Selecting the Icon to Connect
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#connecting-using-google-colab-code">
-       Connecting Using Google Colab Code
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-am-connected-now-what">
-       I am Connected, Now What?
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connecting-to-gitlab">
-     Connecting to Gitlab
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#creating-a-connection-ssh">
-       Creating a Connection (SSH)
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-push-and-pull-of-git">
-       The Push and Pull of Git
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#things-to-be-aware-of-in-google-colab">
-   Things to be Aware of in Google Colab
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#keyboard-shortcuts">
-     Keyboard Shortcuts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#downloading-or-reusing-a-notebook-in-another-environment">
-     Downloading or Reusing a Notebook in Another Environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#renaming-your-notebook">
-     Renaming Your Notebook
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sharing-a-notebook">
-     Sharing a Notebook
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-data">Working with Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-temporary-solution">A Temporary Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-your-google-drive">Connecting to Your Google Drive</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-the-icon-to-connect">Selecting the Icon to Connect</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-using-google-colab-code">Connecting Using Google Colab Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-connected-now-what">I am Connected, Now What?</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-gitlab">Connecting to Gitlab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-connection-ssh">Creating a Connection (SSH)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-push-and-pull-of-git">The Push and Pull of Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-to-be-aware-of-in-google-colab">Things to be Aware of in Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-or-reusing-a-notebook-in-another-environment">Downloading or Reusing a Notebook in Another Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-your-notebook">Renaming Your Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-a-notebook">Sharing a Notebook</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="all-about-google-colab">
-<h1>All About Google Colab - 🐦<a class="headerlink" href="#all-about-google-colab" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="working-with-data">
-<h2>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h2>
-<p>For this notebook, we will be focusing on using Google Colab <span id="id1">[<a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id4">Goo</a>]</span></p>
-<div class="section" id="a-temporary-solution">
-<h3>A Temporary Solution<a class="headerlink" href="#a-temporary-solution" title="Permalink to this headline">¶</a></h3>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="all-about-google-colab">
+<h1>All About Google Colab - 🐦<a class="headerlink" href="#all-about-google-colab" title="Link to this heading">#</a></h1>
+<section id="working-with-data">
+<h2>Working with Data<a class="headerlink" href="#working-with-data" title="Link to this heading">#</a></h2>
+<p>For this notebook, we will be focusing on using Google Colab <span id="id1">[<a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html#id4" title="URL: https://colab.research.google.com/notebooks/io.ipynb.">Goo</a>]</span></p>
+<section id="a-temporary-solution">
+<h3>A Temporary Solution<a class="headerlink" href="#a-temporary-solution" title="Link to this heading">#</a></h3>
 <p>You can create and interact with files when you access Google Colab, <em>BUT</em> they will disappear after your session ends. An example would be:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -340,31 +461,31 @@
 If files are not written to your local machine or your Google Drive. They will be <strong>gone</strong> the next time you log in.</p>
 </div>
 <p>We need a better solution for this. So, let’s take a look at these options.</p>
-</div>
-<div class="section" id="connecting-to-your-google-drive">
-<h3>Connecting to Your Google Drive<a class="headerlink" href="#connecting-to-your-google-drive" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="connecting-to-your-google-drive">
+<h3>Connecting to Your Google Drive<a class="headerlink" href="#connecting-to-your-google-drive" title="Link to this heading">#</a></h3>
 <p>There are two ways to connect to your Google Drive.</p>
-<div class="section" id="selecting-the-icon-to-connect">
-<h4>Selecting the Icon to Connect<a class="headerlink" href="#selecting-the-icon-to-connect" title="Permalink to this headline">¶</a></h4>
+<section id="selecting-the-icon-to-connect">
+<h4>Selecting the Icon to Connect<a class="headerlink" href="#selecting-the-icon-to-connect" title="Link to this heading">#</a></h4>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/connectToDrive.PNG"><img alt="Icon for Connecting to Google Colab" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/connectToDrive.PNG" style="width: 400px;" /></a>
-</div>
-<div class="section" id="connecting-using-google-colab-code">
-<h4>Connecting Using Google Colab Code<a class="headerlink" href="#connecting-using-google-colab-code" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="connecting-using-google-colab-code">
+<h4>Connecting Using Google Colab Code<a class="headerlink" href="#connecting-using-google-colab-code" title="Link to this heading">#</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will look something like this:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/googleColabConnect.PNG"><img alt="Connecting to Google Colab with Code" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/googleColabConnect.PNG" style="width: 500px;" /></a>
-</div>
-<div class="section" id="i-am-connected-now-what">
-<h4>I am Connected, Now What?<a class="headerlink" href="#i-am-connected-now-what" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="i-am-connected-now-what">
+<h4>I am Connected, Now What?<a class="headerlink" href="#i-am-connected-now-what" title="Link to this heading">#</a></h4>
 <p>It can be a bit difficult to figure out where to place files and where your files are located in Google Colab. Once you connect, you will need to navigate the folder structure to find your file. They did not make this very easy to find. Here is a quick screenshot.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/contentFolder.PNG"><img alt="file structure in Google Colab" class="align-center" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/contentFolder.PNG" style="width: 400px;" /></a>
-</div>
-</div>
-<div class="section" id="connecting-to-gitlab">
-<h3>Connecting to Gitlab<a class="headerlink" href="#connecting-to-gitlab" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="connecting-to-gitlab">
+<h3>Connecting to Gitlab<a class="headerlink" href="#connecting-to-gitlab" title="Link to this heading">#</a></h3>
 <p>Another way to work with data outside of your Google Drive is using something like GitHub or, in our case GitLab. A bit of a warning before we begin.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -373,14 +494,14 @@ If files are not written to your local machine or your Google Drive. They will b
 <p>Make sure you read of the terms of services as well!</p>
 <p>For accessing GitLab through Penn State, here is the link (<a class="reference external" href="https://git.psu.edu/">https://git.psu.edu/</a>). You do need to setup a username/password to start creating.</p>
 <p>If you are interest in using Git, let me show the basics.</p>
-<div class="section" id="creating-a-connection-ssh">
-<h4>Creating a Connection (SSH)<a class="headerlink" href="#creating-a-connection-ssh" title="Permalink to this headline">¶</a></h4>
+<section id="creating-a-connection-ssh">
+<h4>Creating a Connection (SSH)<a class="headerlink" href="#creating-a-connection-ssh" title="Link to this heading">#</a></h4>
 <p>The first step in this process is to create a connection between Google Colab and GitLab, and this starts with saying to Google Colab: You can connect to this resource because I gave you access. The way we do this is to create an <em>SSH Key</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Code will run in Google Colab but has been commented out to work on the website.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh-keygen -t ed25519 -C &quot;SSH key for google colab&quot;
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">ed25519</span> <span class="o">-</span><span class="n">C</span> <span class="s2">&quot;SSH key for google colab&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -391,7 +512,7 @@ If files are not written to your local machine or your Google Drive. They will b
 </div>
 </div>
 <p>To see this file, we will need to read the file using a UNIX command call 😸 (cat or con<strong>cat</strong>enate)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cat /root/.ssh/id_ed25519.pub
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="o">.</span><span class="n">pub</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -402,7 +523,7 @@ If files are not written to your local machine or your Google Drive. They will b
 </div>
 </div>
 <p>We now need to tell SSH that the PSU GitLab is fine to connect to (it is a known host).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh-keyscan git.psu.edu &gt;&gt; /root/.ssh/known_hosts
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">ssh</span><span class="o">-</span><span class="n">keyscan</span> <span class="n">git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">known_hosts</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -415,7 +536,7 @@ If files are not written to your local machine or your Google Drive. They will b
 <p>Now in GitLab, we need to add this SSH key to our account.</p>
 <p><img alt="GitLab adding SSH" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/gitlabSSH.PNG" /></p>
 <p>Finally, let’s test this connection.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ssh -T git@git.psu.edu
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -430,11 +551,11 @@ If files are not written to your local machine or your Google Drive. They will b
 <div><p>Warning: Permanently added the ECDSA host key for IP address ‘<em><strong>.</strong></em>.<em><strong>.</strong></em>’ to the list of known hosts.
 Welcome to GitLab, &#64;you!</p>
 </div></blockquote>
-</div>
-<div class="section" id="the-push-and-pull-of-git">
-<h4>The Push and Pull of Git<a class="headerlink" href="#the-push-and-pull-of-git" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="the-push-and-pull-of-git">
+<h4>The Push and Pull of Git<a class="headerlink" href="#the-push-and-pull-of-git" title="Link to this heading">#</a></h4>
 <p>Git, basically, is a push and pull mechanism. You <em>pull</em> your project down from GitLab. Make changes. Then <em>push</em> it back to GitLab. Here is an example of doing this with your file from before. First, we <strong>clone</strong> the repository.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone git@git.psu.edu:pmd19/workshop_temp.git
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span><span class="p">:</span><span class="n">pmd19</span><span class="o">/</span><span class="n">workshop_temp</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -445,9 +566,9 @@ Welcome to GitLab, &#64;you!</p>
 </div>
 </div>
 <p>We then <strong>pull</strong> the current content from GitLab. Note cd stands for Change Directory, and PWD stands for Print Work Directory.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%cd /content/workshop_temp
-!pwd
-!git pull origin master
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">workshop_temp</span>
+<span class="err">!</span><span class="n">pwd</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -460,11 +581,11 @@ Welcome to GitLab, &#64;you!</p>
 </div>
 </div>
 <p>We write our file to our directory and <strong>add</strong> it to the list of things we want to update on GitLab.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pwd
-f = open(&quot;thanosSnapping.txt&quot;, &quot;w&quot;)
-f.write(&quot;you should&#39;ve gone for the head&quot;)
-f.close()
-!git add &quot;thanosSnapping.txt&quot;
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pwd</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;thanosSnapping.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;you should&#39;ve gone for the head&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">add</span> <span class="s2">&quot;thanosSnapping.txt&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -479,10 +600,10 @@ f.close()
 </div>
 </div>
 <p>Git wants to make sure it knows who is updating what, so it needs a person and an email address to associate the changes. We then <strong>commit</strong> to these changes, and finally, we <strong>push</strong> our changes to GitLab.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git config --global user.email &#39;pmd19@psu.edu&#39;
-!git config --global user.name &#39;Patrick Dudas&#39;
-!git commit -m &quot;testing&quot;
-!git push git@git.psu.edu:pmd19/workshop_temp.git
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s1">&#39;pmd19@psu.edu&#39;</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s1">&#39;Patrick Dudas&#39;</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;testing&quot;</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">push</span> <span class="n">git</span><span class="nd">@git</span><span class="o">.</span><span class="n">psu</span><span class="o">.</span><span class="n">edu</span><span class="p">:</span><span class="n">pmd19</span><span class="o">/</span><span class="n">workshop_temp</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -495,46 +616,46 @@ f.close()
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="things-to-be-aware-of-in-google-colab">
-<h2>Things to be Aware of in Google Colab<a class="headerlink" href="#things-to-be-aware-of-in-google-colab" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="things-to-be-aware-of-in-google-colab">
+<h2>Things to be Aware of in Google Colab<a class="headerlink" href="#things-to-be-aware-of-in-google-colab" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>I am writing this on 2/2/2022 (lots of 2s there). So, if this is the ⌛ future ⌛, some of these options may have changed.</p>
 </div>
-<div class="section" id="keyboard-shortcuts">
-<h3>Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h3>
+<section id="keyboard-shortcuts">
+<h3>Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Link to this heading">#</a></h3>
 <p>Shown below is how you find keyboard shortcuts for any operating system.</p>
 <img alt="Keyboard Shortcuts in Google Colab" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/keyboardshortcuts.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;"><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By far, the most used keyboard shortcut that I use is ctrl+Enter (Windows) or ⌘+Enter (Mac). This command will run the content of the current cell.</p>
 </div>
-</div>
-<div class="section" id="downloading-or-reusing-a-notebook-in-another-environment">
-<h3>Downloading or Reusing a Notebook in Another Environment<a class="headerlink" href="#downloading-or-reusing-a-notebook-in-another-environment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="downloading-or-reusing-a-notebook-in-another-environment">
+<h3>Downloading or Reusing a Notebook in Another Environment<a class="headerlink" href="#downloading-or-reusing-a-notebook-in-another-environment" title="Link to this heading">#</a></h3>
 <p>Sometimes you want to download your notebook either as a notebook (.ipynb) or a python (.py) file. Here is how.</p>
-<img alt="How to Download as .py" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/downloadAspy.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;"></div>
-<div class="section" id="renaming-your-notebook">
-<h3>Renaming Your Notebook<a class="headerlink" href="#renaming-your-notebook" title="Permalink to this headline">¶</a></h3>
+<img alt="How to Download as .py" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/downloadAspy.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;"></section>
+<section id="renaming-your-notebook">
+<h3>Renaming Your Notebook<a class="headerlink" href="#renaming-your-notebook" title="Link to this heading">#</a></h3>
 <img alt="How to rename your notebook" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/renamingNotebook.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;">
 <p>This figure above showcases how you rename your notebook. Too be honest, I do not care for how this is implemented, because…</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>When you rename your notebook, do not delete the .ipynb. This will remove the file extension. DO BETTER, GOOGLE COLAB!</p>
 </div>
-</div>
-<div class="section" id="sharing-a-notebook">
-<h3>Sharing a Notebook<a class="headerlink" href="#sharing-a-notebook" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sharing-a-notebook">
+<h3>Sharing a Notebook<a class="headerlink" href="#sharing-a-notebook" title="Link to this heading">#</a></h3>
 <p>Like other Google Workspace applications, you can also share notebooks. Just select the <em>Share</em> button in the top-right.</p>
 <img alt="How to share your notebook" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/shareNotebook.png" style="width:450px;margin-left:auto;margin-right:auto;display:block;"><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Another warning?! So, unlike Google Docs. You cannot have multiple people work on the same notebook. Actually, sharing could lead to others overwriting other people’s work. DO BETTER, GOOGLE COLAB!</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -548,7 +669,7 @@ f.close()
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapter1"
         },
         predefinedOutput: true
@@ -556,36 +677,125 @@ f.close()
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html" title="previous page">Introduction to JupyterLab - 🐘</a>
-    <a class='right-next' id="next-link" href="FAQ%20-%20%F0%9F%90%BB.html" title="next page">FAQ - 🐻</a>
 
-        </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Patrick M. Dudas<br/>
-        
-            &copy; Copyright 2021 - The Pennsylvania State University.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to JupyterLab - 🐘</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="FAQ%20-%20%F0%9F%90%BB.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FAQ - 🐻</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-data">Working with Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-temporary-solution">A Temporary Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-your-google-drive">Connecting to Your Google Drive</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-the-icon-to-connect">Selecting the Icon to Connect</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-using-google-colab-code">Connecting Using Google Colab Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-connected-now-what">I am Connected, Now What?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-gitlab">Connecting to Gitlab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-connection-ssh">Creating a Connection (SSH)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-push-and-pull-of-git">The Push and Pull of Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-to-be-aware-of-in-google-colab">Things to be Aware of in Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-or-reusing-a-notebook-in-another-environment">Downloading or Reusing a Notebook in Another Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-your-notebook">Renaming Your Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-a-notebook">Sharing a Notebook</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick M. Dudas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021 - The Pennsylvania State University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
