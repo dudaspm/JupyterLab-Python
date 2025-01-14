@@ -1,317 +1,444 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Comparisons - 🐭 &#8212; Jupyter Lab + Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2/Comparisons - 🐭';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+    <link rel="next" title="If-Else Conditions - 🐴" href="If-Else%20Conditions%20-%20%F0%9F%90%B4.html" />
+    <link rel="prev" title="Learning about Variables - 🐳" href="Learning%20about%20Variables%20-%20%F0%9F%90%B3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
       
-      <h1 class="site-logo" id="site-title">Jupyter Lab + Python</h1>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Jupyter Lab + Python
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Getting Starting
- </span>
-</p>
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Lab + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Jupyter Lab + Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Starting</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">
-   Notebook Introduction - 🐸
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">Notebook Introduction - 🐸</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  JupyterLab and its Environments
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLab and its Environments</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">
-   Introduction to JupyterLab - 🐘
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">
-   All About Google Colab - 🐦
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">
-   FAQ - 🐻
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">Introduction to JupyterLab - 🐘</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">All About Google Colab - 🐦</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">FAQ - 🐻</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introduction%20to%20Python%20-%20%F0%9F%90%A7.html">Introduction to Python - 🐧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning%20about%20Variables%20-%20%F0%9F%90%B3.html">Learning about Variables - 🐳</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Comparisons - 🐭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="If-Else%20Conditions%20-%20%F0%9F%90%B4.html">If-Else Conditions - 🐴</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Loops%20-%20%F0%9F%90%A8.html">Loops - 🐨</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Loading%20a%20Library%20-%20%F0%9F%90%A0.html">Loading a Library - 🐠</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Tables%20to%20Idioms.html">Tables to Idioms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">Python and Google Colab Workshop Notebook Abridged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter2/Comparisons - 🐭.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter2/Comparisons - 🐭.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter2/Comparisons - 🐭.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<a href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter2/Comparisons - 🐭.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button"
+   title="Suggest edit"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/chapter2/Comparisons - 🐭.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter2/Comparisons - 🐭.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter2/Comparisons - 🐭.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Comparisons - 🐭</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#are-these-things-the-same">
-   Are these things the same?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numeric-comparisons">
-     Numeric Comparisons
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#character-comparisons">
-     Character Comparisons
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#are-these-things-different">
-   Are these things different?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#this-is-logical-not">
-     This is Logical… NOT!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-these-things-compare">
-   How do these things compare?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#math-comparisons-101">
-     Math Comparisons 101
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toy-car-problem">
-   Toy (Car) Problem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-comparisons">
-   Multiple Comparisons
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#and">
-     AND
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#or">
-     OR
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#not">
-     Not
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#try-it-out">
-   Try It Out!
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-the-same">Are these things the same?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-comparisons">Numeric Comparisons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-comparisons">Character Comparisons</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-different">Are these things different?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-logical-not">This is Logical… NOT!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-these-things-compare">How do these things compare?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-comparisons-101">Math Comparisons 101</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-car-problem">Toy (Car) Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">Multiple Comparisons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not">Not</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try It Out!</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="comparisons">
-<h1>Comparisons - 🐭<a class="headerlink" href="#comparisons" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="comparisons">
+<h1>Comparisons - 🐭<a class="headerlink" href="#comparisons" title="Link to this heading">#</a></h1>
 <p>We need to be able to compare different variables.  We will be working on:</p>
 <ul class="simple">
 <li><p>Are these things the same?</p></li>
@@ -324,10 +451,10 @@
 <li><p>Making multiple comparisons at once</p></li>
 </ul>
 <p>Comparison operators are important on their own (how do these things compare?) and are also useful for sorting and switching (see the next notebook).</p>
-<div class="section" id="are-these-things-the-same">
-<h2>Are these things the same?<a class="headerlink" href="#are-these-things-the-same" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="numeric-comparisons">
-<h3>Numeric Comparisons<a class="headerlink" href="#numeric-comparisons" title="Permalink to this headline">¶</a></h3>
+<section id="are-these-things-the-same">
+<h2>Are these things the same?<a class="headerlink" href="#are-these-things-the-same" title="Link to this heading">#</a></h2>
+<section id="numeric-comparisons">
+<h3>Numeric Comparisons<a class="headerlink" href="#numeric-comparisons" title="Link to this heading">#</a></h3>
 <p>We have already initiated variables by setting something equal to something else - let’s do that here by setting kitten 🐈 equal to 10 and then setting dog 🐕 equal to kitten 🐈. Finally, 🐝 bee will be equal to 11.</p>
 <p>So…</p>
 <p>🐈 = 10</p>
@@ -373,9 +500,9 @@ False
 </div>
 </div>
 <p>This tells us that kitten is equal to dog, because it returns <em>True</em> and kitten is not equal to bee, as that returns <em>False</em>.</p>
-</div>
-<div class="section" id="character-comparisons">
-<h3>Character Comparisons<a class="headerlink" href="#character-comparisons" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="character-comparisons">
+<h3>Character Comparisons<a class="headerlink" href="#character-comparisons" title="Link to this heading">#</a></h3>
 <p>We can also do comparisons with other variable types.  Here’s an example with strings instead of integers.</p>
 <p>Let’s think about some foods, how about:</p>
 <ul class="simple">
@@ -408,12 +535,12 @@ True
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="are-these-things-different">
-<h2>Are these things different?<a class="headerlink" href="#are-these-things-different" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="this-is-logical-not">
-<h3>This is Logical… NOT!<a class="headerlink" href="#this-is-logical-not" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="are-these-things-different">
+<h2>Are these things different?<a class="headerlink" href="#are-these-things-different" title="Link to this heading">#</a></h2>
+<section id="this-is-logical-not">
+<h3>This is Logical… NOT!<a class="headerlink" href="#this-is-logical-not" title="Link to this heading">#</a></h3>
 <p>We can also test to see if two values are not equal using the ‘!=’ operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -441,12 +568,12 @@ False
 <p>So, what did we learn?</p>
 <p>🍎 == 🍎 = <em>True</em></p>
 <p>🍎 != 🍪 = <em>True</em></p>
-</div>
-</div>
-<div class="section" id="how-do-these-things-compare">
-<h2>How do these things compare?<a class="headerlink" href="#how-do-these-things-compare" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="math-comparisons-101">
-<h3>Math Comparisons 101<a class="headerlink" href="#math-comparisons-101" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="how-do-these-things-compare">
+<h2>How do these things compare?<a class="headerlink" href="#how-do-these-things-compare" title="Link to this heading">#</a></h2>
+<section id="math-comparisons-101">
+<h3>Math Comparisons 101<a class="headerlink" href="#math-comparisons-101" title="Link to this heading">#</a></h3>
 <p>We can also compare the magnitude of values using ‘&lt;’, ‘&lt;=’, ‘&gt;’and ‘&gt;=’, which will return ‘True’ if the condition is being met.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -514,10 +641,10 @@ TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt
 </div>
 <p>We can compare integers and floats (!) but not other disparate data types.</p>
 <p>If you let python take care of your data-types, be warned that they could be different from what you think they are!</p>
-</div>
-</div>
-<div class="section" id="toy-car-problem">
-<h2>Toy (Car) Problem<a class="headerlink" href="#toy-car-problem" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="toy-car-problem">
+<h2>Toy (Car) Problem<a class="headerlink" href="#toy-car-problem" title="Link to this heading">#</a></h2>
 <p>To start thinking of these concepts from a logical perspective, let’s create a toy (car) problem. Here are a bunch of toy cars with various colors and costs.  Here is how they labeled.</p>
 <p>auto:</p>
 <ul class="simple">
@@ -536,108 +663,14 @@ TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt
 <ul class="simple">
 <li><p>1 &lt;= cost &lt;= 5</p></li>
 </ul>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output text_html"><div id="pick1"></div>
-<label for="query">Python:</label>
-<input type="text" id="query" name="query" autocomplete="off" value='auto == "car"''>
-<input type="button" value="search" onclick="queryData(document.getElementById('query').value)">
-<script>
-    var svg, data; 
-    function createAutos() {
-        var width = 600
-        var height = 400
-        var col = 6
-        var row = 4
-        svg = d3.select("div#pick1").append("svg")
-            .attr("width", width)
-            .attr("height", height)
-        var autos = ["car","truck"]
-        var colors = ["red", "blue", "yellow", "white", "black"]
-        var shapes = []
-        shapes.push([[0,.4],[0,.6],[.25,.8],[.75,.8],[1,.6],[1,.4]])
-        shapes.push([[0,.4],[0,.7],[.6,.7],[.6,.9],[.8,.9],[1,.7],[1,.4]])
-        data = d3.range(col*row).map((d,i)=> {  
-            a = Math.floor(Math.random() * autos.length)
-            return ({"auto":autos[a],
-            "shape":shapes[a],
-            "color":colors[Math.floor(Math.random() * colors.length)],
-            "cost":+Math.ceil(Math.random() * 5),
-            "id":"auto_"+i})
-            })
-
-        var xScale = d3.scaleLinear().range([5,(width/col)-5]).domain([0,1])
-        var yScale = d3.scaleLinear().range([(height/row)-10, 10]).domain([0,1])
-        var line = d3.line()
-            .x((d,i)=> xScale(d[0])) 
-            .y((d,i)=> yScale(d[1])) 
-            .curve(d3.curveLinearClosed)
-        var g = svg.selectAll("g").data(data)
-            .join("g")
-            .attr("transform", (d,i) => { 
-                return "translate(" + ((width/col)*Math.floor(i/row)) +","+ ((height/row)*(i%row)) +")"
-            })
-
-        g.selectAll("path")
-            .data(d=>[d])
-            .join("path")
-            .attr("id",d=>d.id)
-            .attr("d", d => line(d.shape))
-            .style("stroke", "black")
-            .style("stroke-width", 3) 
-            .style("fill", d => d.color)
-
-        g.selectAll("circle#tire1").data(d=>[d]).join("circle")
-            .attr("id","tire1")
-            .attr("cx", xScale(.2))
-            .attr("cy", yScale(.4))
-            .attr("r",width/(col*10))  
-
-        g.selectAll("circle#tire2").data(d=>[d]).join("circle")
-            .attr("id","tire2")
-            .attr("cx", xScale(.8))
-            .attr("cy", yScale(.4))
-            .attr("r",width/(col*10))    
-
-        g.selectAll("text#cost").data(d=>[d]).join("text")
-            .attr("id","cost")
-            .attr("x", (width/col)/2)
-            .attr("y", 10)
-            .style("text-anchor","middle")
-            .text(d=> "$"+d.cost+"-"+d.color)
-
-    }
-    function queryData(x) {
-        x = x.replaceAll("\"","")
-        x = x.replaceAll(" ","")
-        if (x.includes("==")) selected = data.filter(d=>d[x.split("==")[0]] == x.split("==")[1]).map(d=>d.id)
-        else if (x.includes(">=")) selected = data.filter(d=>d[x.split(">=")[0]] >= x.split(">=")[1]).map(d=>d.id)
-        else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)
-        else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)
-        else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)
-        else if (x.includes("!=")) selected = data.filter(d=>d[x.split("!=")[0]] != x.split("!=")[1]).map(d=>d.id)
-        else if (x.includes("=")) selected = data.map(d=>d.id)
-        else selected = []
-        svg.selectAll("path")
-            .transition()
-            .delay((d,i) => i*50)
-            .style("opacity",d=> (selected.indexOf(d.id)+1) ? 1 : .2)
-    }
-    createAutos()
-</script>
-
-</div></div>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>varible = varible is <strong>not</strong> the same thing as variable == variable</p>
 <p>varible = varible will <strong>always</strong> return true</p>
 </div>
-</div>
-<div class="section" id="multiple-comparisons">
-<h2>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="multiple-comparisons">
+<h2>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Link to this heading">#</a></h2>
 <p>We can make multiple comparisons at once by stringing the statements</p>
 <ul class="simple">
 <li><p>and</p></li>
@@ -658,8 +691,8 @@ TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt
 </li>
 </ul>
 <p>We will only run towards the bus stop if all of the statements are true.</p>
-<div class="section" id="and">
-<h3>AND<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
+<section id="and">
+<h3>AND<a class="headerlink" href="#and" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>the <strong>and</strong> operator will return True if all of the conditions are met</p>
@@ -687,7 +720,7 @@ TheNumbers type is  &lt;class &#39;int&#39;&gt; ; and TheCharacters type is  &lt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Am I wearing sunglasses and jeans?
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Am I wearing sunglasses and jeans?
 True
 True
 True
@@ -707,14 +740,14 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="or">
-<h3>OR<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="or">
+<h3>OR<a class="headerlink" href="#or" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>the <strong>or</strong> operator will return True if at least <em>1</em> of the conditions is met</p>
@@ -736,7 +769,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
 Am I wearing sunglasses or jeans?
 True
 True
@@ -749,9 +782,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="not">
-<h3>Not<a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="not">
+<h3>Not<a class="headerlink" href="#not" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>the <strong>not</strong> will reverse or switch the  meaning of the and/or operators</p>
@@ -773,7 +806,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face = sunglasses ; shirt = tshirt ; pants =  jeans
 Am I wearing sunglasses and not jeans?
 True
 False
@@ -786,102 +819,10 @@ True
 </div>
 </div>
 </div>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output text_html"><div id="pick2"></div>
-<label for="query">Python:</label>
-<input type="text" id="query" name="query" autocomplete="off" value='auto == "car"''>
-<input type="button" value="search" onclick="queryData(document.getElementById('query').value)">
-<script>
-    var svg, data; 
-    function createAutos() {
-        var width = 600
-        var height = 400
-        var col = 6
-        var row = 4
-        svg = d3.select("div#pick2").append("svg")
-            .attr("width", width)
-            .attr("height", height)
-        var autos = ["car","truck"]
-        var colors = ["red", "blue", "yellow", "white", "black"]
-        var shapes = []
-        shapes.push([[0,.4],[0,.6],[.25,.8],[.75,.8],[1,.6],[1,.4]])
-        shapes.push([[0,.4],[0,.7],[.6,.7],[.6,.9],[.8,.9],[1,.7],[1,.4]])
-        data = d3.range(col*row).map((d,i)=> {  
-            a = Math.floor(Math.random() * autos.length)
-            return ({"auto":autos[a],
-            "shape":shapes[a],
-            "color":colors[Math.floor(Math.random() * colors.length)],
-            "cost":+Math.ceil(Math.random() * 5),
-            "id":"auto_"+i})
-            })
-
-        var xScale = d3.scaleLinear().range([5,(width/col)-5]).domain([0,1])
-        var yScale = d3.scaleLinear().range([(height/row)-10, 10]).domain([0,1])
-        var line = d3.line()
-            .x((d,i)=> xScale(d[0])) 
-            .y((d,i)=> yScale(d[1])) 
-            .curve(d3.curveLinearClosed)
-        var g = svg.selectAll("g").data(data)
-            .join("g")
-            .attr("transform", (d,i) => { 
-                return "translate(" + ((width/col)*Math.floor(i/row)) +","+ ((height/row)*(i%row)) +")"
-            })
-
-        g.selectAll("path")
-            .data(d=>[d])
-            .join("path")
-            .attr("id",d=>d.id)
-            .attr("d", d => line(d.shape))
-            .style("stroke", "black")
-            .style("stroke-width", 3) 
-            .style("fill", d => d.color)
-
-        g.selectAll("circle#tire1").data(d=>[d]).join("circle")
-            .attr("id","tire1")
-            .attr("cx", xScale(.2))
-            .attr("cy", yScale(.4))
-            .attr("r",width/(col*10))  
-
-        g.selectAll("circle#tire2").data(d=>[d]).join("circle")
-            .attr("id","tire2")
-            .attr("cx", xScale(.8))
-            .attr("cy", yScale(.4))
-            .attr("r",width/(col*10))    
-
-        g.selectAll("text#cost").data(d=>[d]).join("text")
-            .attr("id","cost")
-            .attr("x", (width/col)/2)
-            .attr("y", 10)
-            .style("text-anchor","middle")
-            .text(d=> "$"+d.cost+"-"+d.color)
-
-    }
-    function queryData(x) {
-        x = x.replaceAll("\"","")
-        x = x.replaceAll(" ","")
-        if (x.includes("==")) selected = data.filter(d=>d[x.split("==")[0]] == x.split("==")[1]).map(d=>d.id)
-        else if (x.includes(">=")) selected = data.filter(d=>d[x.split(">=")[0]] >= x.split(">=")[1]).map(d=>d.id)
-        else if (x.includes("<=")) selected = data.filter(d=>d[x.split("<=")[0]] <= x.split("<=")[1]).map(d=>d.id)
-        else if (x.includes(">")) selected = data.filter(d=>d[x.split(">")[0]] > x.split(">")[1]).map(d=>d.id)
-        else if (x.includes("<")) selected = data.filter(d=>d[x.split("<")[0]] < x.split("<")[1]).map(d=>d.id)
-        else if (x.includes("!=")) selected = data.filter(d=>d[x.split("!=")[0]] != x.split("!=")[1]).map(d=>d.id)
-        else if (x.includes("=")) selected = data.map(d=>d.id)
-        else selected = []
-        svg.selectAll("path")
-            .transition()
-            .delay((d,i) => i*50)
-            .style("opacity",d=> (selected.indexOf(d.id)+1) ? 1 : .2)
-    }
-    createAutos()
-</script>
-
-</div></div>
-</div>
-</div>
-</div>
-<div class="section" id="try-it-out">
-<h2>Try It Out!<a class="headerlink" href="#try-it-out" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="try-it-out">
+<h2>Try It Out!<a class="headerlink" href="#try-it-out" title="Link to this heading">#</a></h2>
 <p>Try to fill in code to fulfill the request!  Here are some variables used in the exercise</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -899,8 +840,6 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Is dogA the same color as dogB? (False)</p>
 <div class="cell docutils container">
@@ -911,7 +850,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -923,8 +862,6 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Is dogA older than dogB? (True)</p>
 <div class="cell docutils container">
@@ -933,8 +870,6 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Is dogA the same sex as dogB? (False)</p>
 <div class="cell docutils container">
@@ -943,8 +878,6 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Is dogA heavier than dogB and have a different name than dogB? (True)</p>
 <div class="cell docutils container">
@@ -953,8 +886,6 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
 <p>Does dogA have a different age than dogB and not a different sex than dogB? (False)</p>
 <div class="cell docutils container">
@@ -963,11 +894,9 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><script src='https://d3js.org/d3.v6.min.js'></script></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -981,7 +910,7 @@ True
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapter2"
         },
         predefinedOutput: true
@@ -989,34 +918,124 @@ True
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-        <div class='prev-next-bottom'>
-            
 
-        </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Patrick M. Dudas<br/>
-        
-            &copy; Copyright 2021 - The Pennsylvania State University.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Learning%20about%20Variables%20-%20%F0%9F%90%B3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Learning about Variables - 🐳</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="If-Else%20Conditions%20-%20%F0%9F%90%B4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">If-Else Conditions - 🐴</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-the-same">Are these things the same?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-comparisons">Numeric Comparisons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-comparisons">Character Comparisons</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-different">Are these things different?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-logical-not">This is Logical… NOT!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-these-things-compare">How do these things compare?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-comparisons-101">Math Comparisons 101</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-car-problem">Toy (Car) Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">Multiple Comparisons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not">Not</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try It Out!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick M. Dudas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021 - The Pennsylvania State University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

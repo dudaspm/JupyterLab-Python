@@ -1,694 +1,561 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Python and Google Colab Workshop Notebook Abridged &#8212; Jupyter Lab + Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/Python and Google Colab Workshop Notebook Abridged';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+    <link rel="next" title="JupyterLab and Google Colab Workshop Notebook Abridged" href="JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html" />
+    <link rel="prev" title="Tables to Idioms" href="../chapter3/Tables%20to%20Idioms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
       
-      <h1 class="site-logo" id="site-title">Jupyter Lab + Python</h1>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Jupyter Lab + Python
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Getting Starting
- </span>
-</p>
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Lab + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Jupyter Lab + Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Starting</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">
-   Notebook Introduction - 🐸
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">Notebook Introduction - 🐸</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  JupyterLab and its Environments
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLab and its Environments</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">
-   Introduction to JupyterLab - 🐘
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">
-   All About Google Colab - 🐦
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">
-   FAQ - 🐻
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">Introduction to JupyterLab - 🐘</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">All About Google Colab - 🐦</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">FAQ - 🐻</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Introduction%20to%20Python%20-%20%F0%9F%90%A7.html">Introduction to Python - 🐧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Learning%20about%20Variables%20-%20%F0%9F%90%B3.html">Learning about Variables - 🐳</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Comparisons%20-%20%F0%9F%90%AD.html">Comparisons - 🐭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/If-Else%20Conditions%20-%20%F0%9F%90%B4.html">If-Else Conditions - 🐴</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loops%20-%20%F0%9F%90%A8.html">Loops - 🐨</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loading%20a%20Library%20-%20%F0%9F%90%A0.html">Loading a Library - 🐠</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Tables%20to%20Idioms.html">Tables to Idioms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python and Google Colab Workshop Notebook Abridged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/workshops/Python and Google Colab Workshop Notebook Abridged.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/workshops/Python and Google Colab Workshop Notebook Abridged.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/workshops/Python and Google Colab Workshop Notebook Abridged.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<a href="https://github.com/dudaspm/JupyterLab-Python/edit/main/workshops/Python and Google Colab Workshop Notebook Abridged.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button"
+   title="Suggest edit"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/workshops/Python and Google Colab Workshop Notebook Abridged.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/workshops/Python and Google Colab Workshop Notebook Abridged.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workshops/Python and Google Colab Workshop Notebook Abridged.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python and Google Colab Workshop Notebook Abridged</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notebook-introduction-frog">
-   Notebook Introduction - 🐸 - frog
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#export-to-binder-or-google-colab">
-     Export to Binder or Google Colab
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#thank-you">
-     Thank you!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-jupyterlab-elephant">
-   Introduction to JupyterLab - 🐘 - elephant
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#where-am-i-jupyterlab-notebook">
-     Where am I? (JupyterLab Notebook)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cells">
-     Cells
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#two-types-of-cells">
-       Two types of Cells
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#text">
-         Text
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#code">
-         Code
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#your-turn">
-     Your turn!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyter-magic">
-     Jupyter ✨ MAGIC ✨
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#html">
-       HTML
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#svg">
-       SVG
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#r-language">
-       R Language
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sql">
-       SQL
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-python-penguin">
-   Introduction to Python - 🐧 - penguin
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comments-in-python">
-     Comments in Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#print-function">
-     Print Function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#help-function">
-     Help Function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resources">
-     Resources
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#common-errors">
-     Common Errors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-about-variables-whale">
-   Learning about Variables - 🐳 - whale
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#type-of-variables">
-     Type of Variables
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#integers-or-int">
-       Integers or int
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#floating-points-or-floats">
-       Floating points or floats
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#type-cast">
-         type-cast
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-or-str">
-       String or str
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#string-indexing-string-slicing">
-         String Indexing/String Slicing
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#indexing-multiple-letters">
-           Indexing Multiple Letters
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#string-functions">
-         String functions
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#formatting">
-           Formatting
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#split">
-           Split
-          </a>
-         </li>
-        </ul>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#concatenating-strings">
-         Concatenating Strings
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#method">
-           + Method
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#id10">
-           % Method
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#booleans">
-       Booleans
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#boolean-logic">
-         Boolean Logic
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dictionary">
-       Dictionary
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comparison-operators-mouse">
-   Comparison Operators - 🐭 - mouse
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#are-these-things-the-same">
-     Are these things the same?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numeric-comparisons">
-       Numeric Comparisons
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#character-comparisons">
-       Character Comparisons
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#are-these-things-different">
-     Are these things different?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#this-is-logical-not">
-       This is Logical… NOT!
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-do-these-things-compare">
-     How do these things compare?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#math-comparisons-101">
-       Math Comparisons 101
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-comparisons">
-     Multiple Comparisons
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#and">
-       AND
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#or">
-       OR
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#not">
-       Not
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-else-conditions-horse">
-   If-Else Conditions - 🐴 - horse
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#if">
-     if
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#where-the-if-starts-and-ends">
-       Where the if Starts and Ends
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#else">
-     else
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elif-else-if">
-     elif (else if)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loops-koala">
-   Loops - 🐨 - koala
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-loops">
-     For Loops
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#looping-over-values">
-       Looping Over Values
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#looping-over-indices">
-       Looping Over Indices
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#while-loops">
-     While loops
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#conceptual-example">
-       Conceptual Example
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cooperative-challenge">
-   ⚡Cooperative Challenge⚡
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-a-library-fish">
-   Loading a Library - 🐠 - fish
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#built-in-modules">
-     Built in Modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-function-dragon">
-   Creating a Function - 🐲 - dragon
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-our-own-function">
-     Creating Our Own Function
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#function-gotcha">
-       Function Gotcha! 😆
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     Your turn!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-end">
-   The End
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-introduction-frog">Notebook Introduction - 🐸 - frog</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-binder-or-google-colab">Export to Binder or Google Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thank-you">Thank you!</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-jupyterlab-elephant">Introduction to JupyterLab - 🐘 - elephant</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-am-i-jupyterlab-notebook">Where am I? (JupyterLab Notebook)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cells">Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-types-of-cells">Two types of Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-magic">Jupyter ✨ MAGIC ✨</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#html">HTML</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svg">SVG</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-language">R Language</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-penguin">Introduction to Python - 🐧 - penguin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comments-in-python">Comments in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-function">Print Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-function">Help Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-errors">Common Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-about-variables-whale">Learning about Variables - 🐳 - whale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-of-variables">Type of Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-or-int">Integers or int</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-points-or-floats">Floating points or floats</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#type-cast">type-cast</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-or-str">String or str</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-indexing-string-slicing">String Indexing/String Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-multiple-letters">Indexing Multiple Letters</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating-strings">Concatenating Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#method">+ Method</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">% Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-logic">Boolean Logic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators-mouse">Comparison Operators - 🐭 - mouse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-the-same">Are these things the same?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-comparisons">Numeric Comparisons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#character-comparisons">Character Comparisons</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-different">Are these things different?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-logical-not">This is Logical… NOT!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-these-things-compare">How do these things compare?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#math-comparisons-101">Math Comparisons 101</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">Multiple Comparisons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#not">Not</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-conditions-horse">If-Else Conditions - 🐴 - horse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-if-starts-and-ends">Where the if Starts and Ends</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#else">else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elif-else-if">elif (else if)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-koala">Loops - 🐨 - koala</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-values">Looping Over Values</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-indices">Looping Over Indices</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-example">Conceptual Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cooperative-challenge">⚡Cooperative Challenge⚡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-library-fish">Loading a Library - 🐠 - fish</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-modules">Built in Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-function-dragon">Creating a Function - 🐲 - dragon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-our-own-function">Creating Our Own Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-gotcha">Function Gotcha! 😆</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-end">The End</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="python-and-google-colab-workshop-notebook-abridged">
-<h1>Python and Google Colab Workshop Notebook Abridged<a class="headerlink" href="#python-and-google-colab-workshop-notebook-abridged" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="notebook-introduction-frog">
-<h2>Notebook Introduction - 🐸 - frog<a class="headerlink" href="#notebook-introduction-frog" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-and-google-colab-workshop-notebook-abridged">
+<h1>Python and Google Colab Workshop Notebook Abridged<a class="headerlink" href="#python-and-google-colab-workshop-notebook-abridged" title="Link to this heading">#</a></h1>
+<section id="notebook-introduction-frog">
+<h2>Notebook Introduction - 🐸 - frog<a class="headerlink" href="#notebook-introduction-frog" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
@@ -701,55 +568,60 @@
 </div>
 </div>
 </div>
-<div class="section" id="export-to-binder-or-google-colab">
-<h3>Export to Binder or Google Colab<a class="headerlink" href="#export-to-binder-or-google-colab" title="Permalink to this headline">¶</a></h3>
+<section id="export-to-binder-or-google-colab">
+<h3>Export to Binder or Google Colab<a class="headerlink" href="#export-to-binder-or-google-colab" title="Link to this heading">#</a></h3>
 <p>As you can see you can also export these notebooks to Binder or Google Colab.</p>
 <img alt="Binder or Google Colab options" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/topscreen3.png" style="width:240px;margin-left:auto;margin-right:auto;display:block;">
 <p>This will take you to their respective websites but you can work with them there, if you would like!</p>
-</div>
-<div class="section" id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
 <p>I know it tradition to have the refences at the end of books, but when you are standing on the shoulders of giants. You thank them first.</p>
-<p id="id1"><dl class="citation">
-<dt class="label" id="id4"><span class="brackets">Goo</span></dt>
-<dd><p>URL: <a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb">https://colab.research.google.com/notebooks/io.ipynb</a>.</p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">GG16</span></dt>
-<dd><p>B Granger and J Grout. Jupyterlab: building blocks for interactive computing. <em>Slides of presentation made at SciPy</em>, 2016.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets">Mun14</span></dt>
-<dd><p>Tamara Munzner. <em>Visualization analysis and design</em>. CRC press, 2014.</p>
-</dd>
-<dt class="label" id="id3"><span class="brackets">Wic10</span></dt>
-<dd><p>Hadley Wickham. A layered grammar of graphics. <em>Journal of Computational and Graphical Statistics</em>, 19(1):3–28, 2010.</p>
-</dd>
-</dl>
-</p>
+<div class="docutils container" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Goo<span class="fn-bracket">]</span></span>
+<p>URL: <a class="reference external" href="https://colab.research.google.com/notebooks/io.ipynb">https://colab.research.google.com/notebooks/io.ipynb</a>.</p>
 </div>
-<div class="section" id="thank-you">
-<h3>Thank you!<a class="headerlink" href="#thank-you" title="Permalink to this headline">¶</a></h3>
-<p>Also, a huge <em>thank you</em> to Adam Lavely (<a class="reference external" href="https://github.com/adamlavely">https://github.com/adamlavely</a>) for developing some of the intial notebooks!</p>
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>GG16<span class="fn-bracket">]</span></span>
+<p>B Granger and J Grout. Jupyterlab: building blocks for interactive computing. <em>Slides of presentation made at SciPy</em>, 2016.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Mun14<span class="fn-bracket">]</span></span>
+<p>Tamara Munzner. <em>Visualization analysis and design</em>. CRC press, 2014.</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Wic10<span class="fn-bracket">]</span></span>
+<p>Hadley Wickham. A layered grammar of graphics. <em>Journal of Computational and Graphical Statistics</em>, 19(1):3–28, 2010.</p>
 </div>
 </div>
+</div>
+</section>
+<section id="thank-you">
+<h3>Thank you!<a class="headerlink" href="#thank-you" title="Link to this heading">#</a></h3>
+<p>Also, a huge <em>thank you</em> to Adam Lavely (<a class="github reference external" href="https://github.com/adamlavely">adamlavely</a>) for developing some of the intial notebooks!</p>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="introduction-to-jupyterlab-elephant">
-<h2>Introduction to JupyterLab - 🐘 - elephant<a class="headerlink" href="#introduction-to-jupyterlab-elephant" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="where-am-i-jupyterlab-notebook">
-<h3>Where am I? (JupyterLab Notebook)<a class="headerlink" href="#where-am-i-jupyterlab-notebook" title="Permalink to this headline">¶</a></h3>
+<section id="introduction-to-jupyterlab-elephant">
+<h2>Introduction to JupyterLab - 🐘 - elephant<a class="headerlink" href="#introduction-to-jupyterlab-elephant" title="Link to this heading">#</a></h2>
+<section id="where-am-i-jupyterlab-notebook">
+<h3>Where am I? (JupyterLab Notebook)<a class="headerlink" href="#where-am-i-jupyterlab-notebook" title="Link to this heading">#</a></h3>
 <p>Jupyter is a powerful suite of tools that allows us to do many things.</p>
 <p>Jupyter is capable of running <strong>Ju</strong>lia, <strong>Pyt</strong>hon and <strong>R</strong>, as well as some other things.</p>
-</div>
-<div class="section" id="cells">
-<h3>Cells<a class="headerlink" href="#cells" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cells">
+<h3>Cells<a class="headerlink" href="#cells" title="Link to this heading">#</a></h3>
 <p>Each box is called a cell.</p>
-<div class="section" id="two-types-of-cells">
-<h4>Two types of Cells<a class="headerlink" href="#two-types-of-cells" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="text">
-<h5>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h5>
+<section id="two-types-of-cells">
+<h4>Two types of Cells<a class="headerlink" href="#two-types-of-cells" title="Link to this heading">#</a></h4>
+<section id="text">
+<h5>Text<a class="headerlink" href="#text" title="Link to this heading">#</a></h5>
 <p>Text Cells allow you to add text (via Markdown), which includes tables, images, links, bullet lists, numbered lists, LaTeX, blockquote, among other things.</p>
-</div>
-<div class="section" id="code">
-<h5>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="code">
+<h5>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h5>
 <p>Cells can be run using the Run button ► or selecting one of the run options under the Run menu.</p>
 <p>Try this out! You can change what is in the cell and rerun the same cell, which is useful for debugging.</p>
 <div class="cell docutils container">
@@ -764,19 +636,19 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="your-turn">
-<h3>Your turn!<a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="your-turn">
+<h3>Your turn!<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h3>
 <p>In a new code cell, figure out what <strong>5315 + 5618</strong> is.</p>
 <p>In a new text cell, create “hello, world!”</p>
-</div>
-<div class="section" id="jupyter-magic">
-<h3>Jupyter ✨ MAGIC ✨<a class="headerlink" href="#jupyter-magic" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="jupyter-magic">
+<h3>Jupyter ✨ MAGIC ✨<a class="headerlink" href="#jupyter-magic" title="Link to this heading">#</a></h3>
 <p>When using other languages in Jupyter/JupyterLab, we need to designate the cell we are using with this langauge or function. To “activate” these language, we need to use ✨ MAGIC ✨. Here are a couple of examples.</p>
-<div class="section" id="html">
-<h4>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h4>
+<section id="html">
+<h4>HTML<a class="headerlink" href="#html" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
@@ -796,9 +668,9 @@
 </ol>
 </div></div>
 </div>
-</div>
-<div class="section" id="svg">
-<h4>SVG<a class="headerlink" href="#svg" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="svg">
+<h4>SVG<a class="headerlink" href="#svg" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">svg</span>
@@ -809,11 +681,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Python and Google Colab Workshop Notebook Abridged_29_0.svg" src="../_images/Python and Google Colab Workshop Notebook Abridged_29_0.svg" /></div>
+<img alt="../_images/50b85b8542e46b3664ae412c9179715380dff32499b5e1d134dc5d96d8d95846.svg" src="../_images/50b85b8542e46b3664ae412c9179715380dff32499b5e1d134dc5d96d8d95846.svg" />
 </div>
 </div>
-<div class="section" id="r-language">
-<h4>R Language<a class="headerlink" href="#r-language" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="r-language">
+<h4>R Language<a class="headerlink" href="#r-language" title="Link to this heading">#</a></h4>
 <p>In Google Colab, you do <em>not</em> need to install anything, but if you are going to do this on your local machine (your computer).</p>
 <p><img alt="Anaconda Prompt - installing r-essentials" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/command.PNG" /></p>
 <p>You will need to install a few things first. To do this, open up the <em>Anaconda Prompt (anaconda3)</em> and run the following two commands:</p>
@@ -832,10 +705,66 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\pmd19\Anaconda3\envs\jb\lib\site-packages\rpy2\robjects\packages.py:367: UserWarning: The symbol &#39;quartz&#39; is not in this R namespace/package.
-  &quot;The symbol &#39;%s&#39; is not in this R namespace/package.&quot; % name
-C:\Users\pmd19\Anaconda3\envs\jb\lib\site-packages\rpy2\ipython\rmagic.py:85: UserWarning: The Python package `pandas` is strongly recommended when using `rpy2.ipython`. Unfortunately it could not be loaded, as we did not manage to load `numpy` in the first place (error: No module named &#39;numpy&#39;).
-  &#39;in the first place (error: %s).&#39; % str(ie))
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;load_ext&#39;</span><span class="p">,</span> <span class="s1">&#39;rpy2.ipython&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2480,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2478</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2479</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2480</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2484</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2485</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/magics/extension.py:33,</span> in <span class="ni">ExtensionMagics.load_ext</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">module_str</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="k">raise</span> <span class="n">UsageError</span><span class="p">(</span><span class="s1">&#39;Missing module name.&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">33</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">extension_manager</span><span class="o">.</span><span class="n">load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="s1">&#39;already loaded&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The </span><span class="si">%s</span><span class="s2"> extension is already loaded. To reload it, use:&quot;</span> <span class="o">%</span> <span class="n">module_str</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/extensions.py:62,</span> in <span class="ni">ExtensionManager.load_extension</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Load an IPython extension by its module name.</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span><span class="sd"> Returns the string &quot;already loaded&quot; if the extension is already loaded,</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="sd"> &quot;no load function&quot; if the module doesn&#39;t have a load_ipython_extension</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="sd"> function, or None if it succeeded.</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">62</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">in</span> <span class="n">BUILTINS_EXTS</span><span class="p">:</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/IPython/core/extensions.py:77,</span> in <span class="ni">ExtensionManager._load_extension</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">77</span>         <span class="n">mod</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="n">mod</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module_str</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_load_ipython_extension</span><span class="p">(</span><span class="n">mod</span><span class="p">):</span>
+
+<span class="nn">File /usr/lib/python3.10/importlib/__init__.py:126,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>             <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1050,</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1027,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:992,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:241,</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1050,</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1027,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1004,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;rpy2&#39;
 </pre></div>
 </div>
 </div>
@@ -849,30 +778,18 @@ print(data)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1 2 3
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="sql">
-<h4>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="sql">
+<h4>SQL<a class="headerlink" href="#sql" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
-!pip install ipython-sql
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span><span class="o">-</span><span class="n">sql</span>
 </pre></div>
 </div>
 </div>
@@ -880,6 +797,12 @@ print(data)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> sql
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sql extension is already loaded. To reload it, use:
+  %reload_ext sql
 </pre></div>
 </div>
 </div>
@@ -892,19 +815,19 @@ print(data)
 </div>
 </div>
 <p>More information can be found here: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">Jupyter ✨ MAGIC ✨</a></p>
-</div>
-</div>
-<div class="section" id="id8">
-<h3>Your turn!<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id8">
+<h3>Your turn!<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>In <strong>R</strong>, add 1234 + 2345</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="introduction-to-python-penguin">
-<h2>Introduction to Python - 🐧 - penguin<a class="headerlink" href="#introduction-to-python-penguin" title="Permalink to this headline">¶</a></h2>
+<section id="introduction-to-python-penguin">
+<h2>Introduction to Python - 🐧 - penguin<a class="headerlink" href="#introduction-to-python-penguin" title="Link to this heading">#</a></h2>
 <p>In this section, I wanted to introduce a few basic concepts and give an outline of this section.</p>
-<div class="section" id="comments-in-python">
-<h3>Comments in Python<a class="headerlink" href="#comments-in-python" title="Permalink to this headline">¶</a></h3>
+<section id="comments-in-python">
+<h3>Comments in Python<a class="headerlink" href="#comments-in-python" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I am a comment in Python</span>
@@ -922,9 +845,9 @@ print(data)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="print-function">
-<h3>Print Function<a class="headerlink" href="#print-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="print-function">
+<h3>Print Function<a class="headerlink" href="#print-function" title="Link to this heading">#</a></h3>
 <p>We will being using…</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
 </pre></div>
@@ -957,9 +880,9 @@ print(data)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="help-function">
-<h3>Help Function<a class="headerlink" href="#help-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="help-function">
+<h3>Help Function<a class="headerlink" href="#help-function" title="Link to this heading">#</a></h3>
 <p>The…</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">()</span>
 </pre></div>
@@ -987,13 +910,13 @@ print(...)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="resources">
-<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h3>
 <p>Highly suggest looking for answers using <a class="reference external" href="https://stackoverflow.com/help/searching">StackOverflow</a></p>
-</div>
-<div class="section" id="common-errors">
-<h3>Common Errors<a class="headerlink" href="#common-errors" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="common-errors">
+<h3>Common Errors<a class="headerlink" href="#common-errors" title="Link to this heading">#</a></h3>
 <p>One of the most common errors in Python is the dreaded</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
  <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span>
@@ -1005,9 +928,9 @@ print(...)
 </pre></div>
 </div>
 <p>Why does this occur? Well, because Python uses spacing or tabs to distinguish where things like loops, functions, and if/else statements start and end. So, if you add an extra space or tab at the beginning of the statement, you will see this message. If you do, check your spacing.</p>
-</div>
-<div class="section" id="id9">
-<h3>Your turn!<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>Your turn!<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>Print out the help information for a function called type().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,11 +941,11 @@ print(...)
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="learning-about-variables-whale">
-<h2>Learning about Variables - 🐳 - whale<a class="headerlink" href="#learning-about-variables-whale" title="Permalink to this headline">¶</a></h2>
+<section id="learning-about-variables-whale">
+<h2>Learning about Variables - 🐳 - whale<a class="headerlink" href="#learning-about-variables-whale" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">16</span>
@@ -1095,10 +1018,10 @@ print(...)
 </div>
 </div>
 </div>
-<div class="section" id="type-of-variables">
-<h3>Type of Variables<a class="headerlink" href="#type-of-variables" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="integers-or-int">
-<h4>Integers or int<a class="headerlink" href="#integers-or-int" title="Permalink to this headline">¶</a></h4>
+<section id="type-of-variables">
+<h3>Type of Variables<a class="headerlink" href="#type-of-variables" title="Link to this heading">#</a></h3>
+<section id="integers-or-int">
+<h4>Integers or int<a class="headerlink" href="#integers-or-int" title="Link to this heading">#</a></h4>
 <p>As mentioned, integers are whole numbers. Let’s create an example. How about we use our numberOfKittens. We will then set this value to 0. As in, we have 0 kittens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1139,9 +1062,9 @@ print(...)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="floating-points-or-floats">
-<h4>Floating points or floats<a class="headerlink" href="#floating-points-or-floats" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="floating-points-or-floats">
+<h4>Floating points or floats<a class="headerlink" href="#floating-points-or-floats" title="Link to this heading">#</a></h4>
 <p>Floats are similar to integers, but with more precision.
 Float comes from a Floating point or a number with a decimal point.</p>
 <p>This example starts at 0, but note that this is .0
@@ -1177,14 +1100,14 @@ Adding the decimal tells Python that we should have a float value instead of an 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
 </pre></div>
 </div>
 </div>
 </div>
 <p>If you guessed “mixing a float and an integer,” you got it. Let’s see an example.</p>
-<div class="section" id="type-cast">
-<h5>type-cast<a class="headerlink" href="#type-cast" title="Permalink to this headline">¶</a></h5>
+<section id="type-cast">
+<h5>type-cast<a class="headerlink" href="#type-cast" title="Link to this heading">#</a></h5>
 <p>type-cast is temporary. If you do not use a type-cast, the variable will revert to its original variable type.</p>
 <p>Let’s switch our numberOfKittens to a float using</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">()</span>
@@ -1213,15 +1136,15 @@ Adding the decimal tells Python that we should have a float value instead of an 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="string-or-str">
-<h4>String or str<a class="headerlink" href="#string-or-str" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="string-or-str">
+<h4>String or str<a class="headerlink" href="#string-or-str" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">helloStatement</span> <span class="o">=</span> <span class="s2">&quot;Hello, everyone!&quot;</span>
@@ -1243,8 +1166,8 @@ Adding the decimal tells Python that we should have a float value instead of an 
 </div>
 </div>
 <p>Not too surprising, we see this is type str or string.</p>
-<div class="section" id="string-indexing-string-slicing">
-<h5>String Indexing/String Slicing<a class="headerlink" href="#string-indexing-string-slicing" title="Permalink to this headline">¶</a></h5>
+<section id="string-indexing-string-slicing">
+<h5>String Indexing/String Slicing<a class="headerlink" href="#string-indexing-string-slicing" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">helloStatement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
@@ -1275,8 +1198,8 @@ Adding the decimal tells Python that we should have a float value instead of an 
 <p>There we go!</p>
 <p>Visually, this is how the string looks to Python.</p>
 <p><img alt="Hello, everyone! text" src="https://raw.githubusercontent.com/dudaspm/JupyterLab-Python/main/images/helloEveryone.png" /></p>
-<div class="section" id="indexing-multiple-letters">
-<h6>Indexing Multiple Letters<a class="headerlink" href="#indexing-multiple-letters" title="Permalink to this headline">¶</a></h6>
+<section id="indexing-multiple-letters">
+<h6>Indexing Multiple Letters<a class="headerlink" href="#indexing-multiple-letters" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="p">)</span>
@@ -1319,12 +1242,12 @@ Adding the decimal tells Python that we should have a float value instead of an 
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="string-functions">
-<h5>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h5>
-<div class="section" id="formatting">
-<h6>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h6>
+</section>
+</section>
+<section id="string-functions">
+<h5>String functions<a class="headerlink" href="#string-functions" title="Link to this heading">#</a></h5>
+<section id="formatting">
+<h6>Formatting<a class="headerlink" href="#formatting" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="p">)</span>
@@ -1339,9 +1262,9 @@ hello, everyone!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="split">
-<h6>Split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h6>
+</section>
+<section id="split">
+<h6>Split<a class="headerlink" href="#split" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="p">)</span>
@@ -1356,13 +1279,13 @@ hello, everyone!
 </div>
 <p><em>.split()</em> will eventually become your best friend. <em>.split()</em> is a <strong>great</strong> function to use when using uniquelly spaced data.
 As in comma separated values or CSV.</p>
-</div>
-</div>
-<div class="section" id="concatenating-strings">
-<h5>Concatenating Strings<a class="headerlink" href="#concatenating-strings" title="Permalink to this headline">¶</a></h5>
+</section>
+</section>
+<section id="concatenating-strings">
+<h5>Concatenating Strings<a class="headerlink" href="#concatenating-strings" title="Link to this heading">#</a></h5>
 <p>When you want to put two strings together, we say you <em>concatenate</em> the strings. There are multiple ways of doing this but presented are what I believe to be the three most common ways.</p>
-<div class="section" id="method">
-<h6>+ Method<a class="headerlink" href="#method" title="Permalink to this headline">¶</a></h6>
+<section id="method">
+<h6>+ Method<a class="headerlink" href="#method" title="Link to this heading">#</a></h6>
 <p>This is the most straightforward method of the three, but there can be some issues. You simply add a plus sign <em>+</em> between your strings. Let’s take a look at this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1393,9 +1316,9 @@ As in comma separated values or CSV.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id10">
-<h6>% Method<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h6>
+</section>
+<section id="id10">
+<h6>% Method<a class="headerlink" href="#id10" title="Link to this heading">#</a></h6>
 <p>This is my favorite method out of the three. Let’s see how this works with the same example.</p>
 <p>In this case, we use a %s (s = string) for each string we want to embed in our overall string.</p>
 <div class="cell docutils container">
@@ -1439,11 +1362,11 @@ As in comma separated values or CSV.</p>
 </div>
 <p>Still works! This reason is why I like this method. You pick the formating and feed in the strings.</p>
 <p>The same issue as before, we need to type-cast.</p>
-</div>
-</div>
-</div>
-<div class="section" id="booleans">
-<h4>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="booleans">
+<h4>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h4>
 <p>Booleans are used to do comparisions (true/false), (1/0), (yes/no)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1458,8 +1381,8 @@ As in comma separated values or CSV.</p>
 </div>
 </div>
 </div>
-<div class="section" id="boolean-logic">
-<h5>Boolean Logic<a class="headerlink" href="#boolean-logic" title="Permalink to this headline">¶</a></h5>
+<section id="boolean-logic">
+<h5>Boolean Logic<a class="headerlink" href="#boolean-logic" title="Link to this heading">#</a></h5>
 <p>We will talk about boolean logic more in the next section (Comparisons)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1513,14 +1436,14 @@ yes for .4!
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
 <p>Lists (or also known as Arrays) are exactly that. A list of data.</p>
 <p>There are two options for creating a <em>List</em>.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Define the list initially</p></li>
 </ol>
 <div class="cell docutils container">
@@ -1536,7 +1459,7 @@ yes for .4!
 </div>
 </div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="2">
 <li><p>Create a list and add to it using</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">append</span><span class="p">()</span>
@@ -1594,8 +1517,8 @@ banana
 <p>Typically, going through an array, one index at a time is not how we want to use lists.
 We will talk about going through lists using a <em>loop</em> in an upcoming notebook.</p>
 </div>
-<div class="section" id="dictionary">
-<h4>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h4>
+<section id="dictionary">
+<h4>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">#</a></h4>
 <p>Dictionaries are used to index based on a specific key. As in:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span><span class="p">[</span><span class="s2">&quot;street adddress&quot;</span> <span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;123 Apple St.&quot;</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
@@ -1618,14 +1541,14 @@ We will talk about going through lists using a <em>loop</em> in an upcoming note
 </div>
 <p>Note the order.</p>
 <p>Again, to do this more efficiently, we will be using loops (we will talk about later).</p>
-</div>
-</div>
-<div class="section" id="id11">
-<h3>Your turn!<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+</section>
+</section>
+<section id="id11">
+<h3>Your turn!<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Create a list</p></li>
 <li><p>append() three items</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>an integer</p></li>
 <li><p>a float</p></li>
 <li><p>a string</p></li>
@@ -1644,21 +1567,21 @@ We will talk about going through lists using a <em>loop</em> in an upcoming note
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="comparison-operators-mouse">
-<h2>Comparison Operators - 🐭 - mouse<a class="headerlink" href="#comparison-operators-mouse" title="Permalink to this headline">¶</a></h2>
+<section id="comparison-operators-mouse">
+<h2>Comparison Operators - 🐭 - mouse<a class="headerlink" href="#comparison-operators-mouse" title="Link to this heading">#</a></h2>
 <p>We need to be able to compare different variables.  We will be working on:</p>
 <ul class="simple">
 <li><p>Are these things the same?</p></li>
 <li><p>Are these things not the same?</p></li>
 <li><p>How do these things compare?</p></li>
 </ul>
-<div class="section" id="are-these-things-the-same">
-<h3>Are these things the same?<a class="headerlink" href="#are-these-things-the-same" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="numeric-comparisons">
-<h4>Numeric Comparisons<a class="headerlink" href="#numeric-comparisons" title="Permalink to this headline">¶</a></h4>
+<section id="are-these-things-the-same">
+<h3>Are these things the same?<a class="headerlink" href="#are-these-things-the-same" title="Link to this heading">#</a></h3>
+<section id="numeric-comparisons">
+<h4>Numeric Comparisons<a class="headerlink" href="#numeric-comparisons" title="Link to this heading">#</a></h4>
 <p>We have already initiated variables by setting something equal to something else - let’s do that here by setting kitten 🐈 equal to 10 and then setting dog 🐕 equal to kitten 🐈. Finally, 🐝 bee will be equal to 11.</p>
 <p>So…</p>
 <p>🐈 = 10</p>
@@ -1704,9 +1627,9 @@ False
 </div>
 </div>
 <p>This tells us that kitten is equal to dog, because it returns <em>True</em> and kitten is not equal to bee, as that returns <em>False</em>.</p>
-</div>
-<div class="section" id="character-comparisons">
-<h4>Character Comparisons<a class="headerlink" href="#character-comparisons" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="character-comparisons">
+<h4>Character Comparisons<a class="headerlink" href="#character-comparisons" title="Link to this heading">#</a></h4>
 <p>We can also do comparisons with other variable types.  Here’s an example with strings instead of integers.</p>
 <p>Let’s think about some foods, how about:</p>
 <ul class="simple">
@@ -1744,12 +1667,12 @@ False
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="are-these-things-different">
-<h3>Are these things different?<a class="headerlink" href="#are-these-things-different" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="this-is-logical-not">
-<h4>This is Logical… NOT!<a class="headerlink" href="#this-is-logical-not" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="are-these-things-different">
+<h3>Are these things different?<a class="headerlink" href="#are-these-things-different" title="Link to this heading">#</a></h3>
+<section id="this-is-logical-not">
+<h4>This is Logical… NOT!<a class="headerlink" href="#this-is-logical-not" title="Link to this heading">#</a></h4>
 <p>We can also test to see if two values are not equal using the ‘!=’ operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1777,12 +1700,12 @@ False
 <p>So, what did we learn?</p>
 <p>🍎 == 🍎 = <em>True</em></p>
 <p>🍎 != 🍪 = <em>True</em></p>
-</div>
-</div>
-<div class="section" id="how-do-these-things-compare">
-<h3>How do these things compare?<a class="headerlink" href="#how-do-these-things-compare" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="math-comparisons-101">
-<h4>Math Comparisons 101<a class="headerlink" href="#math-comparisons-101" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="how-do-these-things-compare">
+<h3>How do these things compare?<a class="headerlink" href="#how-do-these-things-compare" title="Link to this heading">#</a></h3>
+<section id="math-comparisons-101">
+<h4>Math Comparisons 101<a class="headerlink" href="#math-comparisons-101" title="Link to this heading">#</a></h4>
 <p>We can also compare the magnitude of values using ‘&lt;’, ‘&lt;=’, ‘&gt;’and ‘&gt;=’, which will return ‘True’ if the condition is being met.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1827,10 +1750,10 @@ False
 </div>
 <p>varible = varible is <strong>not</strong> the same thing as variable == variable</p>
 <p>varible = varible will <strong>always</strong> return true</p>
-</div>
-</div>
-<div class="section" id="multiple-comparisons">
-<h3>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="multiple-comparisons">
+<h3>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Link to this heading">#</a></h3>
 <p>We can make multiple comparisons at once by stringing the statements</p>
 <ul class="simple">
 <li><p>and</p></li>
@@ -1851,8 +1774,8 @@ False
 </li>
 </ul>
 <p>We will only run towards the bus stop if all of the statements are true.</p>
-<div class="section" id="and">
-<h4>AND<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h4>
+<section id="and">
+<h4>AND<a class="headerlink" href="#and" title="Link to this heading">#</a></h4>
 <p>the <strong>and</strong> operator will return True if all of the conditions are met</p>
 <p>Let’s create another scenario for this around clothes. For this, let’s assume:</p>
 <p>face = 😎</p>
@@ -1902,9 +1825,9 @@ False
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="or">
-<h4>OR<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="or">
+<h4>OR<a class="headerlink" href="#or" title="Link to this heading">#</a></h4>
 <p>the <strong>or</strong> operator will return True if at least <em>1</em> of the conditions is met</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1936,9 +1859,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="not">
-<h4>Not<a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="not">
+<h4>Not<a class="headerlink" href="#not" title="Link to this heading">#</a></h4>
 <p>the <strong>not</strong> will reverse or switch the  meaning of the and/or operators</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1970,10 +1893,10 @@ True
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id12">
-<h3>Your turn!<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id12">
+<h3>Your turn!<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>Try to fill in code to fulfill the request!  Here are some variables used in the exercise</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2018,14 +1941,14 @@ True
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="if-else-conditions-horse">
-<h2>If-Else Conditions - 🐴 - horse<a class="headerlink" href="#if-else-conditions-horse" title="Permalink to this headline">¶</a></h2>
+<section id="if-else-conditions-horse">
+<h2>If-Else Conditions - 🐴 - horse<a class="headerlink" href="#if-else-conditions-horse" title="Link to this heading">#</a></h2>
 <p>We can condition our data using if-else statements and switch cases.  If-else statements allow us to do different things if a certain criterion is met or not. We can count the odds and evens in our someNumbers list.</p>
-<div class="section" id="if">
-<h3>if<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+<section id="if">
+<h3>if<a class="headerlink" href="#if" title="Link to this heading">#</a></h3>
 <p>The <em>if</em> statement starts with if and then lists a condition that may or may not is met. If the condition is true, we do what is listed. If it is not, we move on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2057,8 +1980,8 @@ True
 <p>if (condition): &lt;-colon</p>
 <p>&lt;- space or tab</p>
 <p>Anything that is also spaced or tab is <em>part</em> of the if statement.</p>
-<div class="section" id="where-the-if-starts-and-ends">
-<h4>Where the if Starts and Ends<a class="headerlink" href="#where-the-if-starts-and-ends" title="Permalink to this headline">¶</a></h4>
+<section id="where-the-if-starts-and-ends">
+<h4>Where the if Starts and Ends<a class="headerlink" href="#where-the-if-starts-and-ends" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Into the If/Else!&quot;</span><span class="p">)</span>
@@ -2084,10 +2007,10 @@ Out of the If/Else!
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="else">
-<h3>else<a class="headerlink" href="#else" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="else">
+<h3>else<a class="headerlink" href="#else" title="Link to this heading">#</a></h3>
 <p>In these examples, only the numbers that are greater than 30 and 50 will get any response.  We can add a response for values that do not meet the conditional statement found within the if using an <em>else</em> statement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2112,9 +2035,9 @@ Out of the If/Else!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="elif-else-if">
-<h3>elif (else if)<a class="headerlink" href="#elif-else-if" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="elif-else-if">
+<h3>elif (else if)<a class="headerlink" href="#elif-else-if" title="Link to this heading">#</a></h3>
 <p>If-else statements can also be stacked together to allow for additional sorting using multiple conditions.  The way this is done in python is by using</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span>
 </pre></div>
@@ -2150,9 +2073,9 @@ Out of the If/Else!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id13">
-<h3>Your turn!<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id13">
+<h3>Your turn!<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>Copy the above example ↑ and add your favorite color!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2161,19 +2084,19 @@ Out of the If/Else!
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="loops-koala">
-<h2>Loops - 🐨 - koala<a class="headerlink" href="#loops-koala" title="Permalink to this headline">¶</a></h2>
+<section id="loops-koala">
+<h2>Loops - 🐨 - koala<a class="headerlink" href="#loops-koala" title="Link to this heading">#</a></h2>
 <p>One of the programming features is that we have many options to do the same tasking multiple times.  The three methods we will be looking at are:</p>
 <ul class="simple">
 <li><p>Functions (later notebook)</p></li>
 <li><p>For loops</p></li>
 <li><p>While Loops</p></li>
 </ul>
-<div class="section" id="for-loops">
-<h3>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
+<section id="for-loops">
+<h3>For Loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h3>
 <p>Loops allow us to do the same thing to each item in a list or array. One of the most basic types of loops is a <em>for loop</em> - this allows us to iterate over any sequence.</p>
 <p>We set up a for loop using 2 things:</p>
 <ul class="simple">
@@ -2220,8 +2143,8 @@ V@@@
 </div>
 </div>
 </div>
-<div class="section" id="looping-over-values">
-<h4>Looping Over Values<a class="headerlink" href="#looping-over-values" title="Permalink to this headline">¶</a></h4>
+<section id="looping-over-values">
+<h4>Looping Over Values<a class="headerlink" href="#looping-over-values" title="Link to this heading">#</a></h4>
 <p>Very time consuming and frustrating 😤.</p>
 <p>Loops make this sooooooo much easier. There are three parts to a <em>for loop</em>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
@@ -2290,9 +2213,9 @@ V@@@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="looping-over-indices">
-<h4>Looping Over Indices<a class="headerlink" href="#looping-over-indices" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="looping-over-indices">
+<h4>Looping Over Indices<a class="headerlink" href="#looping-over-indices" title="Link to this heading">#</a></h4>
 <p>Sometimes, it’s helpful to iterate using indices.  For example, linear algebra heavy calculations will almost always use indices to make working with vectors and matrices easier.</p>
 <p>We can use the</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">()</span>
@@ -2371,30 +2294,30 @@ Outside the loop
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="while-loops">
-<h3>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="while-loops">
+<h3>While loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h3>
 <p>For loops are used when you have something you are iterating over - you know the length.  You can use a while loop if you don’t know the number of times something will run. The while loop code requires a conditional statement; the loop will continue to run as long as this is true and will not run again as soon as it is false.</p>
-<div class="section" id="conceptual-example">
-<h4>Conceptual Example<a class="headerlink" href="#conceptual-example" title="Permalink to this headline">¶</a></h4>
+<section id="conceptual-example">
+<h4>Conceptual Example<a class="headerlink" href="#conceptual-example" title="Link to this heading">#</a></h4>
 <p>You can think about taking a test in two different ways.</p>
 <blockquote>
 <div><p>Scenario: You are looking through your junk drawer for your sunglasses</p>
 </div></blockquote>
 <p>For loop:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>for item in junk_drawer:
-    if (item == &quot;sunglasses&quot;):
-        &quot;put them on&quot; 😎
-    else:
-        &quot;keep looking&quot;
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">junk_drawer</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">):</span>
+        <span class="s2">&quot;put them on&quot;</span> <span class="err">😎</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="s2">&quot;keep looking&quot;</span>
 </pre></div>
 </div>
 <p>While loop:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>while item != &quot;sunglasses&quot;:
-    &quot;keep looking&quot;
-    item = &quot;some item in the junk drawer&quot;
-&quot;put them on&quot; 😎
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">item</span> <span class="o">!=</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">:</span>
+    <span class="s2">&quot;keep looking&quot;</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot;some item in the junk drawer&quot;</span>
+<span class="s2">&quot;put them on&quot;</span> <span class="err">😎</span>
 </pre></div>
 </div>
 <p>Can you see where each has their unique take on looping? Of course, you don’t; you are wearing sunglasses indoors. Take them off first, then check out their uniqueness.</p>
@@ -2458,10 +2381,10 @@ before: 9
     <span class="n">counting</span> <span class="o">=</span> <span class="n">counting</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id14">
-<h3>Your turn!<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id14">
+<h3>Your turn!<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>Try to fill in code to fulfill the request!  Here is a variable used in the excercises</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2478,11 +2401,11 @@ before: 9
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="cooperative-challenge">
-<h2>⚡Cooperative Challenge⚡<a class="headerlink" href="#cooperative-challenge" title="Permalink to this headline">¶</a></h2>
+<section id="cooperative-challenge">
+<h2>⚡Cooperative Challenge⚡<a class="headerlink" href="#cooperative-challenge" title="Link to this heading">#</a></h2>
 <p>Here is your challenge.</p>
 <p>Working with one (or two) people, you will <em>each</em> think of three favorite, unique colors. <strong>Please use</strong> Red, Orange Yellow Green, Blue, Indigo, and Violet. Note your three favorite colors before programming.</p>
 <blockquote>
@@ -2506,18 +2429,18 @@ Count how many you have similar to each other.</p>
 Create printouts for scenarios where you match 0, 1, 2, 3 values and have a unique printout for each value.</p>
 </div></blockquote>
 <p>You have 15 minutes, GO!!</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="loading-a-library-fish">
-<h2>Loading a Library - 🐠 - fish<a class="headerlink" href="#loading-a-library-fish" title="Permalink to this headline">¶</a></h2>
+<section id="loading-a-library-fish">
+<h2>Loading a Library - 🐠 - fish<a class="headerlink" href="#loading-a-library-fish" title="Link to this heading">#</a></h2>
 <p>Modules are python’s way of organizing functions, variables and constructors, similar to libraries in other languages.  In this section, we will look at:</p>
 <ul class="simple">
 <li><p>Using existing python modules</p></li>
 <li><p>Building our own modules</p></li>
 <li><p>Finding the things that are within modules</p></li>
 </ul>
-<div class="section" id="built-in-modules">
-<h3>Built in Modules<a class="headerlink" href="#built-in-modules" title="Permalink to this headline">¶</a></h3>
+<section id="built-in-modules">
+<h3>Built in Modules<a class="headerlink" href="#built-in-modules" title="Link to this heading">#</a></h3>
 <p>Python uses modules to make additional functionality available.  Modules can be thought of as libraries with many functions, data types, and characteristics that can be used once loaded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2533,16 +2456,8 @@ Create printouts for scenarios where you match 0, 1, 2, 3 values and have a uniq
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_16424</span><span class="o">/</span><span class="mf">1140472914.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import all functions using a name</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># We then use the name to refer to functions from this module</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+-1.0
 </pre></div>
 </div>
 </div>
@@ -2557,15 +2472,15 @@ Create printouts for scenarios where you match 0, 1, 2, 3 values and have a uniq
 </ul>
 <p>Modules based on their topic can be found: <a class="reference external" href="https://wiki.python.org/moin/UsefulModules">https://wiki.python.org/moin/UsefulModules</a></p>
 <p>Some modules are already included on the system.  You may have to add or update some yourself. Python uses pip for module addition, which includes dependencies. Typically users will put modules in their own space using –user, rather than install them globally. For example, to add cython and to update matplolib you would run in a cell:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nx">pip</span> <span class="nx">install</span> <span class="nx">cython</span> <span class="o">--</span><span class="nx">user</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nx">pip</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">cython</span><span class="w"> </span><span class="o">--</span><span class="nx">user</span>
 
-<span class="o">!</span><span class="nx">pip</span> <span class="nx">install</span> <span class="nx">matplotlib</span> <span class="o">--</span><span class="nx">user</span> <span class="o">--</span><span class="nx">upgrade</span>
+<span class="o">!</span><span class="nx">pip</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">matplotlib</span><span class="w"> </span><span class="o">--</span><span class="nx">user</span><span class="w"> </span><span class="o">--</span><span class="nx">upgrade</span>
 </pre></div>
 </div>
 <p>We can also use dir to see what is currently available to use:</p>
-</div>
-<div class="section" id="id15">
-<h3>Your turn!<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3>Your turn!<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>Call the math version of tan() mathTan and print out tangent of pi/2.  (Hint, pi can come from math or numpy).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2574,11 +2489,11 @@ Create printouts for scenarios where you match 0, 1, 2, 3 values and have a uniq
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="creating-a-function-dragon">
-<h2>Creating a Function - 🐲 - dragon<a class="headerlink" href="#creating-a-function-dragon" title="Permalink to this headline">¶</a></h2>
+<section id="creating-a-function-dragon">
+<h2>Creating a Function - 🐲 - dragon<a class="headerlink" href="#creating-a-function-dragon" title="Link to this heading">#</a></h2>
 <p>Functions allow us to do repeated tasks easily by writing the code only once.  Functions will have a name, inputs, and outputs and can be called anywhere the task is repeated.</p>
 <p>There are functions that are built into python; for example, we have already been using the type() function, which tells us the type of variable we are using.  Note that print is also a function!</p>
 <div class="cell docutils container">
@@ -2601,8 +2516,8 @@ Create printouts for scenarios where you match 0, 1, 2, 3 values and have a uniq
 <li><p>Outputs - what the function gives back</p></li>
 <li><p>Math/Magic - what the function does</p></li>
 </ul>
-<div class="section" id="creating-our-own-function">
-<h3>Creating Our Own Function<a class="headerlink" href="#creating-our-own-function" title="Permalink to this headline">¶</a></h3>
+<section id="creating-our-own-function">
+<h3>Creating Our Own Function<a class="headerlink" href="#creating-our-own-function" title="Link to this heading">#</a></h3>
 <p>In python, we use def to define a function with the function name and inputs followed by a colon.  The python function is then separated from the rest of the code by a tab. Some languages use braces rather than indentation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">functionName</span><span class="p">(</span> <span class="n">inputs</span> <span class="p">):</span>
     <span class="c1"># Operate on the inputs</span>
@@ -2642,8 +2557,8 @@ Change from 68 deg F to Celsius
 </div>
 </div>
 </div>
-<div class="section" id="function-gotcha">
-<h4>Function Gotcha! 😆<a class="headerlink" href="#function-gotcha" title="Permalink to this headline">¶</a></h4>
+<section id="function-gotcha">
+<h4>Function Gotcha! 😆<a class="headerlink" href="#function-gotcha" title="Link to this heading">#</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The biggest gotcha on functions is with variable scope:</p>
@@ -2718,10 +2633,10 @@ function output: 11
 <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;newValue&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id16">
-<h3>Your turn!<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id16">
+<h3>Your turn!<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>What is the temperature today? Convert it to Celsius.</p>
 <p>For those who have the temperature in Celsius and want to convert it to Fahrenheit. Define a new function to do this.</p>
 <div class="cell docutils container">
@@ -2731,14 +2646,14 @@ function output: 11
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-end">
-<h2>The End<a class="headerlink" href="#the-end" title="Permalink to this headline">¶</a></h2>
+<section id="the-end">
+<h2>The End<a class="headerlink" href="#the-end" title="Link to this heading">#</a></h2>
 <p>Thank you again for attending the ICDS Python/JupyterLab Workshop!</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2752,7 +2667,7 @@ function output: 11
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshops"
         },
         predefinedOutput: true
@@ -2760,34 +2675,237 @@ function output: 11
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-        <div class='prev-next-bottom'>
-            
 
-        </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Patrick M. Dudas<br/>
-        
-            &copy; Copyright 2021 - The Pennsylvania State University.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter3/Tables%20to%20Idioms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tables to Idioms</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">JupyterLab and Google Colab Workshop Notebook Abridged</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-introduction-frog">Notebook Introduction - 🐸 - frog</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-binder-or-google-colab">Export to Binder or Google Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thank-you">Thank you!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-jupyterlab-elephant">Introduction to JupyterLab - 🐘 - elephant</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-am-i-jupyterlab-notebook">Where am I? (JupyterLab Notebook)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cells">Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-types-of-cells">Two types of Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-magic">Jupyter ✨ MAGIC ✨</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#html">HTML</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svg">SVG</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-language">R Language</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-penguin">Introduction to Python - 🐧 - penguin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comments-in-python">Comments in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-function">Print Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-function">Help Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-errors">Common Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-about-variables-whale">Learning about Variables - 🐳 - whale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-of-variables">Type of Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-or-int">Integers or int</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-points-or-floats">Floating points or floats</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#type-cast">type-cast</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-or-str">String or str</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-indexing-string-slicing">String Indexing/String Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-multiple-letters">Indexing Multiple Letters</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating-strings">Concatenating Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#method">+ Method</a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">% Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-logic">Boolean Logic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators-mouse">Comparison Operators - 🐭 - mouse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-the-same">Are these things the same?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-comparisons">Numeric Comparisons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#character-comparisons">Character Comparisons</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-these-things-different">Are these things different?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-logical-not">This is Logical… NOT!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-these-things-compare">How do these things compare?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#math-comparisons-101">Math Comparisons 101</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">Multiple Comparisons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#not">Not</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-conditions-horse">If-Else Conditions - 🐴 - horse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-if-starts-and-ends">Where the if Starts and Ends</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#else">else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elif-else-if">elif (else if)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-koala">Loops - 🐨 - koala</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-values">Looping Over Values</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-indices">Looping Over Indices</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-example">Conceptual Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cooperative-challenge">⚡Cooperative Challenge⚡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-library-fish">Loading a Library - 🐠 - fish</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-modules">Built in Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-function-dragon">Creating a Function - 🐲 - dragon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-our-own-function">Creating Our Own Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-gotcha">Function Gotcha! 😆</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Your turn!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-end">The End</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick M. Dudas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021 - The Pennsylvania State University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

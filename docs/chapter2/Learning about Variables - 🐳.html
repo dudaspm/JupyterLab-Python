@@ -1,375 +1,462 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Learning about Variables - 🐳 &#8212; Jupyter Lab + Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2/Learning about Variables - 🐳';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+    <link rel="next" title="Comparisons - 🐭" href="Comparisons%20-%20%F0%9F%90%AD.html" />
+    <link rel="prev" title="Introduction to Python - 🐧" href="Introduction%20to%20Python%20-%20%F0%9F%90%A7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
       
-      <h1 class="site-logo" id="site-title">Jupyter Lab + Python</h1>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Jupyter Lab + Python
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Getting Starting
- </span>
-</p>
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Lab + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Jupyter Lab + Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Starting</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">
-   Notebook Introduction - 🐸
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">Notebook Introduction - 🐸</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  JupyterLab and its Environments
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLab and its Environments</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">
-   Introduction to JupyterLab - 🐘
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">
-   All About Google Colab - 🐦
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">
-   FAQ - 🐻
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">Introduction to JupyterLab - 🐘</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">All About Google Colab - 🐦</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">FAQ - 🐻</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introduction%20to%20Python%20-%20%F0%9F%90%A7.html">Introduction to Python - 🐧</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Learning about Variables - 🐳</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Comparisons%20-%20%F0%9F%90%AD.html">Comparisons - 🐭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="If-Else%20Conditions%20-%20%F0%9F%90%B4.html">If-Else Conditions - 🐴</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Loops%20-%20%F0%9F%90%A8.html">Loops - 🐨</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Loading%20a%20Library%20-%20%F0%9F%90%A0.html">Loading a Library - 🐠</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Tables%20to%20Idioms.html">Tables to Idioms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">Python and Google Colab Workshop Notebook Abridged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter2/Learning about Variables - 🐳.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        <a class="edit-button" href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter2/Learning about Variables - 🐳.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-</div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+<div class="article-header-buttons">
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dudaspm/JupyterLab-Python/main?urlpath=lab/tree/chapter2/Learning about Variables - 🐳.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter2/Learning about Variables - 🐳.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#type-of-variables">
-   Type of Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#camel-case">
-     Camel Case
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integers-or-int">
-     Integers or int
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#floating-points-or-floats">
-     Floating points or floats
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mixing-integers-and-floats">
-       Mixing integers and floats
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#type-cast">
-       type-cast
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string-or-str">
-     String or str
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-indexing-string-slicing">
-       String Indexing/String Slicing
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#indexing-multiple-letters">
-         Indexing Multiple Letters
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-functions">
-       String functions
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#find">
-         Find
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#formatting">
-         Formatting
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#split">
-         Split
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#chaining-functions">
-         Chaining Functions
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#concatenating-strings">
-       Concatenating Strings
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#method">
-         + Method
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         % Method
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#join-method">
-         join() Method
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#booleans">
-     Booleans
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#boolean-logic">
-       Boolean Logic
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dictionary">
-     Dictionary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#your-turn">
-     Your turn!
-    </a>
-   </li>
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter2/Learning about Variables - 🐳.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
- </li>
-</ul>
+</div>
 
+
+
+<a href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter2/Learning about Variables - 🐳.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button"
+   title="Suggest edit"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter2/Learning about Variables - 🐳.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Learning about Variables - 🐳</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-of-variables">Type of Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camel-case">Camel Case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-or-int">Integers or int</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-points-or-floats">Floating points or floats</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-integers-and-floats">Mixing integers and floats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#type-cast">type-cast</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-or-str">String or str</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-indexing-string-slicing">String Indexing/String Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-multiple-letters">Indexing Multiple Letters</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#find">Find</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining-functions">Chaining Functions</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating-strings">Concatenating Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#method">+ Method</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">% Method</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#join-method">join() Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-logic">Boolean Logic</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn!</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="learning-about-variables">
-<h1>Learning about Variables - 🐳<a class="headerlink" href="#learning-about-variables" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="learning-about-variables">
+<h1>Learning about Variables - 🐳<a class="headerlink" href="#learning-about-variables" title="Link to this heading">#</a></h1>
 <p>When we are developing our idea, we sometimes need to use values multiple times or change the value based on our code. This concept is where variables become very helpful. Let’s look at an example.</p>
 <p>In this example, we are adding a few numbers together. In this instance, if all we care about is getting the result (similar to a calculator). Then variables are not needed.</p>
 <div class="cell docutils container">
@@ -446,7 +533,7 @@ Well, in this example, we might not want to rewrite 3.14159265359 over and over.
 </div>
 </div>
 <p>By the way, if you happen to get an error:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">NameError</span><span class="o">:</span> <span class="nx">name</span> <span class="s1">&#39;pi&#39;</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">NameError</span><span class="o">:</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="s1">&#39;pi&#39;</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">defined</span>
 </pre></div>
 </div>
 <p>Make sure you go to the cell that has</p>
@@ -454,8 +541,8 @@ Well, in this example, we might not want to rewrite 3.14159265359 over and over.
 </pre></div>
 </div>
 <p>and run this cell <em>first</em> then try the other calculations.</p>
-<div class="section" id="type-of-variables">
-<h2>Type of Variables<a class="headerlink" href="#type-of-variables" title="Permalink to this headline">¶</a></h2>
+<section id="type-of-variables">
+<h2>Type of Variables<a class="headerlink" href="#type-of-variables" title="Link to this heading">#</a></h2>
 <p>There are multiple types of variables. The most common (and the ones we will talk about) are:</p>
 <ul class="simple">
 <li><p>Integers (whole numbers)</p></li>
@@ -467,13 +554,13 @@ Well, in this example, we might not want to rewrite 3.14159265359 over and over.
 <p>The nice thing about Python is that we do <strong>not</strong> need to specify (or declare) which type we are using. Python will figure this out for us!</p>
 <p>BUT FIRST, a quick detour…</p>
 <p>We need to talk about Camel Casing.</p>
-<div class="section" id="camel-case">
-<h3>Camel Case<a class="headerlink" href="#camel-case" title="Permalink to this headline">¶</a></h3>
+<section id="camel-case">
+<h3>Camel Case<a class="headerlink" href="#camel-case" title="Link to this heading">#</a></h3>
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CamelCase_new.svg" alt="camel case" width="100" style="float:right"/>
-Variable names must be one continuous string of letters/numbers. So, let's say we wanted to create a variable called "number of kittens." Instead calling this variable <em>number of kittens</em>, I would call it <em>numberOfKittens</em>. Why the capitalization? Because it makes it easier to separate the words in the name. As in, <em>numberofkittens</em> vs. <em>numberOfKittens</em>. We have a fun name for this: camel case. <p><cite>File:CamelCase new.svg. (2020, April 15). Wikimedia Commons, the free media repository. Retrieved 15:25, June 3, 2020 from <a class="reference external" href="https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&amp;oldid=411544943">https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&amp;oldid=411544943</a>.</cite></p>
-</div>
-<div class="section" id="integers-or-int">
-<h3>Integers or int<a class="headerlink" href="#integers-or-int" title="Permalink to this headline">¶</a></h3>
+Variable names must be one continuous string of letters/numbers. So, let's say we wanted to create a variable called "number of kittens." Instead calling this variable <em>number of kittens</em>, I would call it <em>numberOfKittens</em>. Why the capitalization? Because it makes it easier to separate the words in the name. As in, <em>numberofkittens</em> vs. <em>numberOfKittens</em>. We have a fun name for this: camel case. <p><cite>File:CamelCase new.svg. (2020, April 15). Wikimedia Commons, the free media repository. Retrieved 15:25, June 3, 2020 from <a class="reference external" href="https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&amp;amp;oldid=411544943">https://commons.wikimedia.org/w/index.php?title=File:CamelCase_new.svg&amp;oldid=411544943</a>.</cite></p>
+</section>
+<section id="integers-or-int">
+<h3>Integers or int<a class="headerlink" href="#integers-or-int" title="Link to this heading">#</a></h3>
 <p>As mentioned, integers are whole numbers. Let’s create an example. How about we use our numberOfKittens. We will then set this value to 0. As in, we have 0 kittens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,9 +610,9 @@ Variable names must be one continuous string of letters/numbers. So, let's say w
 <div class="cell_output docutils container">
 <div class="output text_html">🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈</div></div>
 </div>
-</div>
-<div class="section" id="floating-points-or-floats">
-<h3>Floating points or floats<a class="headerlink" href="#floating-points-or-floats" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="floating-points-or-floats">
+<h3>Floating points or floats<a class="headerlink" href="#floating-points-or-floats" title="Link to this heading">#</a></h3>
 <p>Floats are similar to integers, but with more precision.
 Float comes from a Floating point or a number with a decimal point.</p>
 <p>This example starts at 0, but note that this is .0
@@ -555,8 +642,8 @@ Adding the decimal tells Python that we should have a float value instead of an 
 <p>aFloatVariable = aFloatVariable + 10
 aFloatVariable</p>
 <p>If you guessed “mixing a float and an integer,” you got it. Let’s see an example.</p>
-<div class="section" id="mixing-integers-and-floats">
-<h4>Mixing integers and floats<a class="headerlink" href="#mixing-integers-and-floats" title="Permalink to this headline">¶</a></h4>
+<section id="mixing-integers-and-floats">
+<h4>Mixing integers and floats<a class="headerlink" href="#mixing-integers-and-floats" title="Link to this heading">#</a></h4>
 <p>In Python (3, more specifically), the variable will always take the form of the most precision. So, by default, a float.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,9 +666,9 @@ aFloatVariable</p>
 <li><p>a float to a string (we have not discussed this yet)</p></li>
 <li><p>etc…</p></li>
 </ul>
-</div>
-<div class="section" id="type-cast">
-<h4>type-cast<a class="headerlink" href="#type-cast" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="type-cast">
+<h4>type-cast<a class="headerlink" href="#type-cast" title="Link to this heading">#</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>type-cast is temporary. If you do not use a type-cast, the variable will revert to its original variable type.</p>
@@ -624,6 +711,11 @@ aFloatVariable</p>
 </div>
 <p>Well let’s see what happens.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">printList</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="n">printList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;for value </span><span class="si">%s</span><span class="s2"> we will get </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">)))</span>
@@ -632,15 +724,16 @@ aFloatVariable</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <p>for value 0.0 we will get 0<br />for value 0.1 we will get 0<br />for value 0.2 we will get 0<br />for value 0.3 we will get 0<br />for value 0.4 we will get 0<br />for value 0.5 we will get 0<br />for value 0.6 we will get 0<br />for value 0.7 we will get 0<br />for value 0.8 we will get 0<br />for value 0.9 we will get 0</p>
 </div>
 </div>
 <p>So, in conclusion. It will always round down.</p>
-</div>
-</div>
-<div class="section" id="string-or-str">
-<h3>String or str<a class="headerlink" href="#string-or-str" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="string-or-str">
+<h3>String or str<a class="headerlink" href="#string-or-str" title="Link to this heading">#</a></h3>
 <p>So, up to this point, we started our conversation working with numbers. Well, what about the other things that are not numbers… like text? Well, for text, we use something called a String or str.</p>
 <p>Strings allow us to capture a single character up to thousands of characters (actually, much more than this). Let’s go through a traditional example of “Hello, World!” but with my slight spin to it.</p>
 <div class="cell docutils container">
@@ -681,8 +774,8 @@ aFloatVariable</p>
 </div>
 </div>
 </div>
-<div class="section" id="string-indexing-string-slicing">
-<h4>String Indexing/String Slicing<a class="headerlink" href="#string-indexing-string-slicing" title="Permalink to this headline">¶</a></h4>
+<section id="string-indexing-string-slicing">
+<h4>String Indexing/String Slicing<a class="headerlink" href="#string-indexing-string-slicing" title="Link to this heading">#</a></h4>
 <p>One of the first ways to interact with our string is to take a look at individual characters by using their <strong>index</strong>.</p>
 <p>The <strong>index</strong> is position (or multiple positions) for each character in the string. So, if we look at our string, we have Hello, everyone! If we wanted to see the first letter <em>H</em>, we could reference this using the index or the position where the letter is in the string.</p>
 <div class="cell docutils container">
@@ -724,8 +817,8 @@ aFloatVariable</p>
 
 </div></div>
 </div>
-<div class="section" id="indexing-multiple-letters">
-<h5>Indexing Multiple Letters<a class="headerlink" href="#indexing-multiple-letters" title="Permalink to this headline">¶</a></h5>
+<section id="indexing-multiple-letters">
+<h5>Indexing Multiple Letters<a class="headerlink" href="#indexing-multiple-letters" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="p">)</span>
@@ -770,12 +863,12 @@ aFloatVariable</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="string-functions">
-<h4>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="find">
-<h5>Find<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h5>
+</section>
+</section>
+<section id="string-functions">
+<h4>String functions<a class="headerlink" href="#string-functions" title="Link to this heading">#</a></h4>
+<section id="find">
+<h5>Find<a class="headerlink" href="#find" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span> <span class="p">)</span>
@@ -798,9 +891,9 @@ aFloatVariable</p>
 <p class="admonition-title">Note</p>
 <p>When using <em>.find()</em>, if the function can NOT find the sequence of the letters given. It will return -1.</p>
 </div>
-</div>
-<div class="section" id="formatting">
-<h5>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="formatting">
+<h5>Formatting<a class="headerlink" href="#formatting" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="p">)</span>
@@ -815,9 +908,9 @@ hello, everyone!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="split">
-<h5>Split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="split">
+<h5>Split<a class="headerlink" href="#split" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="p">)</span>
@@ -835,9 +928,9 @@ hello, everyone!
 <p><em>.split()</em> will eventually become your best friend. <em>.split()</em> is a <strong>great</strong> function to use when using uniquelly spaced data.
 As in comma separated values or CSV.</p>
 </div>
-</div>
-<div class="section" id="chaining-functions">
-<h5>Chaining Functions<a class="headerlink" href="#chaining-functions" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="chaining-functions">
+<h5>Chaining Functions<a class="headerlink" href="#chaining-functions" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">helloStatement</span> <span class="p">)</span>
@@ -856,13 +949,13 @@ Hello
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="concatenating-strings">
-<h4>Concatenating Strings<a class="headerlink" href="#concatenating-strings" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="concatenating-strings">
+<h4>Concatenating Strings<a class="headerlink" href="#concatenating-strings" title="Link to this heading">#</a></h4>
 <p>When you want to put two strings together, we say you <em>concatenate</em> the strings. There are multiple ways of doing this but presented are what I believe to be the three most common ways.</p>
-<div class="section" id="method">
-<h5>+ Method<a class="headerlink" href="#method" title="Permalink to this headline">¶</a></h5>
+<section id="method">
+<h5>+ Method<a class="headerlink" href="#method" title="Link to this heading">#</a></h5>
 <p>This is the most straightforward method of the three, but there can be some issues. You simply add a plus sign <em>+</em> between your strings. Let’s take a look at this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -903,9 +996,9 @@ Hello
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h5>% Method<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="id1">
+<h5>% Method<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
 <p>This is my favorite method out of the three. Let’s see how this works with the same example.</p>
 <p>In this case, we use a %s (s = string) for each string we want to embed in our overall string.</p>
 <div class="cell docutils container">
@@ -958,9 +1051,9 @@ Hello
 </div>
 </div>
 <p>Still works! This reason is why I like this method. You pick the formating and feed in the strings.</p>
-</div>
-<div class="section" id="join-method">
-<h5>join() Method<a class="headerlink" href="#join-method" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="join-method">
+<h5>join() Method<a class="headerlink" href="#join-method" title="Link to this heading">#</a></h5>
 <p>The .join() method uses a function called</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
@@ -1013,11 +1106,11 @@ Hello
 </div>
 </div>
 <p>Notice the spaces? Again, we are saying with <em>the splitter</em> what each string is going to be seperated by, so in this case, everything will be split by spaces.</p>
-</div>
-</div>
-</div>
-<div class="section" id="booleans">
-<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="booleans">
+<h3>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h3>
 <p>Booleans are used to do comparisions (true/false), (1/0), (yes/no)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1032,8 +1125,8 @@ Hello
 </div>
 </div>
 </div>
-<div class="section" id="boolean-logic">
-<h4>Boolean Logic<a class="headerlink" href="#boolean-logic" title="Permalink to this headline">¶</a></h4>
+<section id="boolean-logic">
+<h4>Boolean Logic<a class="headerlink" href="#boolean-logic" title="Link to this heading">#</a></h4>
 <p>We will talk about boolean logic more in the next section (Comparisons)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1090,13 +1183,13 @@ yes for .4!
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
 <p>Lists (or also known as Arrays) are exactly that. A list of data.</p>
 <p>There are two options for creating a <em>List</em>.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Define the list initially</p></li>
 </ol>
 <div class="cell docutils container">
@@ -1112,7 +1205,7 @@ yes for .4!
 </div>
 </div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="2">
 <li><p>Create a list and add to it using</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">append</span><span class="p">()</span>
@@ -1170,9 +1263,9 @@ banana
 <p>Typically, going through an array, one index at a time is not how we want to use lists.
 We will talk about going through lists using a <em>loop</em> in an upcoming notebook.</p>
 </div>
-</div>
-<div class="section" id="dictionary">
-<h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dictionary">
+<h3>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">#</a></h3>
 <p>Dictionaries are used to index based on a specific key. As in:</p>
 <p>dictionary[“street adddress” (key)] = “123 Apple St.” (value)</p>
 <div class="cell docutils container">
@@ -1193,13 +1286,13 @@ We will talk about going through lists using a <em>loop</em> in an upcoming note
 </div>
 <p>Note the order.</p>
 <p>Again, to do this more efficiently, we will be using loops (we will talk about later).</p>
-</div>
-<div class="section" id="your-turn">
-<h3>Your turn!<a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+</section>
+<section id="your-turn">
+<h3>Your turn!<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Create a list</p></li>
 <li><p>append() three items</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>an integer</p></li>
 <li><p>a float</p></li>
 <li><p>a string</p></li>
@@ -1218,9 +1311,9 @@ We will talk about going through lists using a <em>loop</em> in an upcoming note
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1234,7 +1327,7 @@ We will talk about going through lists using a <em>loop</em> in an upcoming note
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapter2"
         },
         predefinedOutput: true
@@ -1242,34 +1335,140 @@ We will talk about going through lists using a <em>loop</em> in an upcoming note
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-        <div class='prev-next-bottom'>
-            
 
-        </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Patrick M. Dudas<br/>
-        
-            &copy; Copyright 2021 - The Pennsylvania State University.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Introduction%20to%20Python%20-%20%F0%9F%90%A7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Python - 🐧</p>
       </div>
-    </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="Comparisons%20-%20%F0%9F%90%AD.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Comparisons - 🐭</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-of-variables">Type of Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camel-case">Camel Case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-or-int">Integers or int</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-points-or-floats">Floating points or floats</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-integers-and-floats">Mixing integers and floats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#type-cast">type-cast</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-or-str">String or str</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-indexing-string-slicing">String Indexing/String Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-multiple-letters">Indexing Multiple Letters</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#find">Find</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining-functions">Chaining Functions</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating-strings">Concatenating Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#method">+ Method</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">% Method</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#join-method">join() Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-logic">Boolean Logic</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn!</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick M. Dudas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021 - The Pennsylvania State University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
