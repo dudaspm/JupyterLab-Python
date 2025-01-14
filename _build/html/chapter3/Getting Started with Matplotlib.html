@@ -1,0 +1,1389 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting Started with Matplotlib &#8212; Jupyter Lab + Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Getting Started with Matplotlib';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tables to Idioms" href="Tables%20to%20Idioms.html" />
+    <link rel="prev" title="Using Pandas to Work with Data" href="Using%20Pandas%20to%20Work%20with%20Data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Lab + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Jupyter Lab + Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Starting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Notebook%20Introduction%20-%20%F0%9F%90%B8.html">Notebook Introduction - 🐸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLab and its Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Introduction%20to%20JupyterLab%20-%20%F0%9F%90%98.html">Introduction to JupyterLab - 🐘</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/All%20About%20Google%20Colab%20-%20%F0%9F%90%A6.html">All About Google Colab - 🐦</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/FAQ%20-%20%F0%9F%90%BB.html">FAQ - 🐻</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Introduction%20to%20Python%20-%20%F0%9F%90%A7.html">Introduction to Python - 🐧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Learning%20about%20Variables%20-%20%F0%9F%90%B3.html">Learning about Variables - 🐳</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Comparisons%20-%20%F0%9F%90%AD.html">Comparisons - 🐭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/If-Else%20Conditions%20-%20%F0%9F%90%B4.html">If-Else Conditions - 🐴</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loops%20-%20%F0%9F%90%A8.html">Loops - 🐨</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Loading%20a%20Library%20-%20%F0%9F%90%A0.html">Loading a Library - 🐠</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tables%20to%20Idioms.html">Tables to Idioms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">Python and Google Colab Workshop Notebook Abridged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dudaspm/JupyterLab-Python/blob/main/chapter3/Getting Started with Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/dudaspm/JupyterLab-Python/edit/main/chapter3/Getting Started with Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button"
+   title="Suggest edit"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter3/Getting Started with Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Getting Started with Matplotlib</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-data">Getting the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-data">Viewing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgement">Acknowledgement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-plots">Making Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-over-time">Change Over Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plots">Basic Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-on-the-same-figure">Multiple plots on the same figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-file-to-use-later">Saving the file to use later</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-quality-plots">Publication Quality Plots</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started-with-matplotlib">
+<h1>Getting Started with Matplotlib<a class="headerlink" href="#getting-started-with-matplotlib" title="Link to this heading">#</a></h1>
+<p>Why are we using Pandas?</p>
+<p>Pandas actually has a few functions that are similar to D3 functions. So, we can learn two things at the same time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="getting-the-data">
+<h2>Getting the data<a class="headerlink" href="#getting-the-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://gist.githubusercontent.com/dudaspm/e518430a731ac11f52de9217311c674d/raw/4c2f2bd6639582a420ef321493188deebc4a575e/StateCollege2000-2020.csv&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># replace all NAs with 0s</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="viewing-the-data">
+<h2>Viewing the data<a class="headerlink" href="#viewing-the-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DATE</th>
+      <th>DAY</th>
+      <th>MONTH</th>
+      <th>YEAR</th>
+      <th>PRCP</th>
+      <th>SNOW</th>
+      <th>TMAX</th>
+      <th>TMIN</th>
+      <th>WT_FOG</th>
+      <th>WT_THUNDER</th>
+      <th>WT_SLEET</th>
+      <th>WT_HAIL</th>
+      <th>WT_GLAZE</th>
+      <th>WT_HIGHWINDS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1/1/2000</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2000</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>44.0</td>
+      <td>23</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1/2/2000</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2000</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>52.0</td>
+      <td>23</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1/3/2000</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2000</td>
+      <td>0.01</td>
+      <td>0.0</td>
+      <td>60.0</td>
+      <td>35</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1/4/2000</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2000</td>
+      <td>0.12</td>
+      <td>0.0</td>
+      <td>62.0</td>
+      <td>54</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1/5/2000</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2000</td>
+      <td>0.04</td>
+      <td>0.0</td>
+      <td>60.0</td>
+      <td>30</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="acknowledgement">
+<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Link to this heading">#</a></h2>
+<p><cite>Cite as: Menne, Matthew J., Imke Durre, Bryant Korzeniewski, Shelley McNeal, Kristy Thomas, Xungang Yin, Steven Anthony, Ron Ray, Russell S. Vose, Byron E.Gleason, and Tamara G. Houston (2012): Global Historical Climatology Network - Daily (GHCN-Daily), Version 3. CITY:US420020. NOAA National Climatic Data Center. doi:10.7289/V5D21VHZ 02/22/2021.</p>
+<p>Publications citing this dataset should also cite the following article: Matthew J. Menne, Imke Durre, Russell S. Vose, Byron E. Gleason, and Tamara G. Houston, 2012: An Overview of the Global Historical Climatology Network-Daily Database. J. Atmos. Oceanic Technol., 29, 897-910. doi:10.1175/JTECH-D-11-00103.1.</p>
+<p>Use liability: NOAA and NCEI cannot provide any warranty as to the accuracy, reliability, or completeness of furnished data. Users assume responsibility to determine the usability of these data. The user is responsible for the results of any application of this data for other than its intended purpose.</cite></p>
+<p>Links:
+<a class="reference external" href="https://data.noaa.gov/onestop/">https://data.noaa.gov/onestop/</a></p>
+<p><a class="reference external" href="https://www.ncdc.noaa.gov/cdo-web/search">https://www.ncdc.noaa.gov/cdo-web/search</a></p>
+</section>
+<section id="correlation">
+<h2>Correlation<a class="headerlink" href="#correlation" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">snowdays</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">SNOW</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">snowdays</span><span class="o">.</span><span class="n">TMIN</span><span class="p">,</span> <span class="n">snowdays</span><span class="o">.</span><span class="n">SNOW</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1d239c8aa6d3e704409fa36b836320133d50a61ed568aa0d2402d6cc7d53b704.png" src="../_images/1d239c8aa6d3e704409fa36b836320133d50a61ed568aa0d2402d6cc7d53b704.png" />
+</div>
+</div>
+</section>
+<section id="making-plots">
+<h2>Making Plots<a class="headerlink" href="#making-plots" title="Link to this heading">#</a></h2>
+<section id="change-over-time">
+<h3>Change Over Time<a class="headerlink" href="#change-over-time" title="Link to this heading">#</a></h3>
+<p>Note: I worked with Adam Lavely on these notebook, so a big thank you to Adam for helping!</p>
+<p>This section covers making plots and doing several basic things:</p>
+<ul class="simple">
+<li><p>Adding gridlines and a legend</p></li>
+<li><p>Changing the way the data is shown (linestyles and marker types)</p></li>
+<li><p>Adding titles and axis labels</p></li>
+<li><p>Creating multiple plots within the same figure</p></li>
+<li><p>Adding text to the plots</p></li>
+<li><p>Saving the plot to be used outside of the Jupyter environment</p></li>
+<li><p>Using the rcParams package to create uniform plots</p></li>
+</ul>
+</section>
+<section id="basic-plots">
+<h3>Basic Plots<a class="headerlink" href="#basic-plots" title="Link to this heading">#</a></h3>
+<p><img alt="Anatomy of a Figure" src="https://matplotlib.org/stable/_images/anatomy.png" /></p>
+<blockquote>
+<div><p>Usage Guide — Matplotlib 3.3.4 documentation. (n.d.). MatPlotLib. Retrieved February 25, 2021, from <a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/usage.html">https://matplotlib.org/stable/tutorials/introductory/usage.html</a></p>
+</div></blockquote>
+<p>Plots are ways of showing data.  We will use pyplot from the matplotlib library as it is simple and common.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1">#independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1">#dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Put the data on the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span> <span class="p">)</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/54ef16df8ebb83b92c6f5d09208c61370b4200f03304ad5192b5c977266e7e0e.png" src="../_images/54ef16df8ebb83b92c6f5d09208c61370b4200f03304ad5192b5c977266e7e0e.png" />
+</div>
+</div>
+<p>This seems very simple and basic, but let’s discuss the objects here to more easily understand how to add new things.</p>
+<ul class="simple">
+<li><p>We’re importing a the matplotlib.pyplot module, which gives us access to functions like subplots.</p></li>
+<li><p>When subplots is called without any arguments, a single plot is made</p></li>
+<li><p>We have an internal name for our figure (fig) and identify the specific set of axes (ax) we are using (this allows us to have multiple subplots on the same figure)</p></li>
+<li><p>We can then add things - think about if we are acting on the whole figure, or the individual subplot</p></li>
+</ul>
+<p>We can add things like labels and a title to help provide context.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1">#independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1">#dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Put the data on the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span> <span class="p">)</span>
+
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2020&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f9bde775bcd0438bb64b22e5b7e4ba92739ce0ba4e991f1ded3a5d0f1ea51f10.png" src="../_images/f9bde775bcd0438bb64b22e5b7e4ba92739ce0ba4e991f1ded3a5d0f1ea51f10.png" />
+</div>
+</div>
+<p>We can change how the data is shown on the plot.  Some common things to change are linestyle, color and marker. Look at <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot">https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot</a> for a complete list of options and <a class="reference external" href="https://matplotlib.org/2.0.2/examples/color/named_colors.html">https://matplotlib.org/2.0.2/examples/color/named_colors.html</a> for the named colors.</p>
+<p>You can either specify these things individually, or with shorthand notation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="s1">&#39;gs-.&#39;</span> <span class="p">)</span>
+
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a7b61c687478cffcde025586eb21deda07eef72e034dc00d2b5ec0c21d6f18ba.png" src="../_images/a7b61c687478cffcde025586eb21deda07eef72e034dc00d2b5ec0c21d6f18ba.png" />
+</div>
+</div>
+<p>We can also add legends and text to our figures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="s1">&#39;gs-.&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2000&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add some text; note the starting point and rotation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span><span class="s1">&#39;Max Min Temp&#39;</span> <span class="p">)</span>
+
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Put in the legend - we put it in location 2 (top left)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">loc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/935637532530eb3f107610c378929c801caa50a7e85f85438358034024783b60.png" src="../_images/935637532530eb3f107610c378929c801caa50a7e85f85438358034024783b60.png" />
+</div>
+</div>
+</section>
+<section id="multiple-plots-on-the-same-figure">
+<h3>Multiple plots on the same figure<a class="headerlink" href="#multiple-plots-on-the-same-figure" title="Link to this heading">#</a></h3>
+<p>Let’s take advantage of adding an additional subplot, and change the y-axes of the different plots separately. We use the sharex to indicate that the x-axes should be the same.  Note that the figure handle refers to the entire figure and the axes are individual sets of axes that occur within the figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Create the figure.  Note that there are two plots here, and that they share the x axes</span>
+<span class="n">figd</span><span class="p">,</span> <span class="p">[</span><span class="n">axA</span><span class="p">,</span> <span class="n">axB</span><span class="p">]</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>  <span class="s2">&quot;Type of figd:,&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">figd</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Type of axA:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">axA</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Add data to the plots.  note that we add to the subplot we desire</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="s1">&#39;gs-.&#39;</span> <span class="p">)</span>
+
+<span class="c1"># Add the axis labels and grid</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;2020&#39;</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;2000&#39;</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days in March&#39;</span> <span class="p">)</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Set some axis limits - note we only have to set X once</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span> <span class="p">[</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">32</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="p">[</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">55</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="p">[</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">55</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="c1"># Show the figure in the Jupyter environment</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">figd</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">figd</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of figd:, &lt;class &#39;matplotlib.figure.Figure&#39;&gt;
+Type of axA: &lt;class &#39;matplotlib.axes._subplots.AxesSubplot&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/da095e98b0c19e122db321701fc411c7d4d253f1f0bdada75645fcb96153fc50.png" src="../_images/da095e98b0c19e122db321701fc411c7d4d253f1f0bdada75645fcb96153fc50.png" />
+</div>
+</div>
+</section>
+<section id="saving-the-file-to-use-later">
+<h3>Saving the file to use later<a class="headerlink" href="#saving-the-file-to-use-later" title="Link to this heading">#</a></h3>
+<p>NOTE: this may require one more step in Google Colab</p>
+<p>Everything so far has just been in the jupyter notebook environment.  We can save the files using the savefig function.  You can then use the Home tab within jupyter to download the file to your local machine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Create the figure.  Note that there are two plots here, and that they share the x axes</span>
+<span class="n">figd</span><span class="p">,</span> <span class="p">[</span><span class="n">axA</span><span class="p">,</span> <span class="n">axB</span><span class="p">]</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>  <span class="s2">&quot;Type of figd:,&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">figd</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Type of axA:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">axA</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Add data to the plots.  note that we add to the subplot we desire</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="s1">&#39;gs-.&#39;</span> <span class="p">)</span>
+
+<span class="c1"># Add the axis labels and grid</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;2020&#39;</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;2000&#39;</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days in March&#39;</span> <span class="p">)</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Set some axis limits - note we only have to set X once</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span> <span class="p">[</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">32</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">axA</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">55</span> <span class="p">]</span> <span class="p">)</span>
+<span class="n">axB</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">55</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="c1"># Save the figure so that we have access to it outside of Jupyter</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span> <span class="s1">&#39;MarchWeather.png&#39;</span> <span class="p">)</span>
+
+<span class="c1"># Save the figure so that we have access to it outside of Jupyter</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span> <span class="s1">&#39;MarchWeather.svg&#39;</span> <span class="p">)</span>
+
+<span class="c1"># Show the figure in the Jupyter environment</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">figd</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">figd</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of figd:, &lt;class &#39;matplotlib.figure.Figure&#39;&gt;
+Type of axA: &lt;class &#39;matplotlib.axes._subplots.AxesSubplot&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/1e5a57adc6affdd86db8b847aec77ea3baca2e8006913f88b9be0c1dab13c000.png" src="../_images/1e5a57adc6affdd86db8b847aec77ea3baca2e8006913f88b9be0c1dab13c000.png" />
+</div>
+</div>
+</section>
+<section id="publication-quality-plots">
+<h3>Publication Quality Plots<a class="headerlink" href="#publication-quality-plots" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="s1">&#39;gs-.&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2000&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+
+<span class="c1">###################################################</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1">###################################################</span>
+
+<span class="c1"># Put in the legend - we put it in location 2 (top left)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">loc</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">)</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b628f40a28098e777ae3a16128ead41a9e7d57cd61d718ca9e3462516aafdf33.png" src="../_images/b628f40a28098e777ae3a16128ead41a9e7d57cd61d718ca9e3462516aafdf33.png" />
+</div>
+</div>
+<p>Next, I want to move the labels to the end of the lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="s1">&#39;gs-.&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2000&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">###################################################</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">yVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">zVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="c1">###################################################</span>
+
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d2eda9773bec406ca26b56ffe5b6711e0316082656f0aefcd565a568c00ad931.png" src="../_images/d2eda9773bec406ca26b56ffe5b6711e0316082656f0aefcd565a568c00ad931.png" />
+</div>
+</div>
+<p>Let’s make the Axis Titles larger</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="s1">&#39;gs-.&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2000&#39;</span><span class="p">)</span>
+
+<span class="c1">###################################################</span>
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+<span class="c1">###################################################</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">yVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">zVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/722127d206633d1b7d5e478c9f1001231646c3cc987c84912365da2c6b3ad05b.png" src="../_images/722127d206633d1b7d5e478c9f1001231646c3cc987c84912365da2c6b3ad05b.png" />
+</div>
+</div>
+<p>Considering we moved the legend titles to the end of each line. This might not be as important, but if wanted to get some “print friendly colors,” we should use colorbrewer.</p>
+<p><a class="reference external" href="https://scitools.org.uk/iris/docs/v1.1/userguide/plotting_a_cube.html#brewer-colour-palettes">https://scitools.org.uk/iris/docs/v1.1/userguide/plotting_a_cube.html#brewer-colour-palettes</a></p>
+<p><a class="reference external" href="http://colorbrewer2.org">http://colorbrewer2.org</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">brewer</span>
+<span class="k">for</span> <span class="n">colors</span> <span class="ow">in</span> <span class="n">brewer</span><span class="o">.</span><span class="n">datad</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">colors</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Blues
+BrBG
+BuGn
+BuPu
+CMRmap
+GnBu
+Greens
+Greys
+OrRd
+Oranges
+PRGn
+PiYG
+PuBu
+PuBuGn
+PuOr
+PuRd
+Purples
+RdBu
+RdGy
+RdPu
+RdYlBu
+RdYlGn
+Reds
+Spectral
+Wistia
+YlGn
+YlGnBu
+YlOrBr
+YlOrRd
+afmhot
+autumn
+binary
+bone
+brg
+bwr
+cool
+coolwarm
+copper
+cubehelix
+flag
+gist_earth
+gist_gray
+gist_heat
+gist_ncar
+gist_rainbow
+gist_stern
+gist_yarg
+gnuplot
+gnuplot2
+gray
+hot
+hsv
+jet
+nipy_spectral
+ocean
+pink
+prism
+rainbow
+seismic
+spring
+summer
+terrain
+winter
+Accent
+Dark2
+Paired
+Pastel1
+Pastel2
+Set1
+Set2
+Set3
+tab10
+tab20
+tab20b
+tab20c
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">brewer</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">yVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">zVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b159649d1df759edd1d76a3801251e2c68acf62a7392936a02bb34c844e940aa.png" src="../_images/b159649d1df759edd1d76a3801251e2c68acf62a7392936a02bb34c844e940aa.png" />
+</div>
+</div>
+<p>Finally, we might want to highlight a certain data points with a line or lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">brewer</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">###################################################</span>
+<span class="n">meanValue</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">yVals</span><span class="p">,</span><span class="n">zVals</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">],[</span><span class="n">meanValue</span><span class="p">,</span> <span class="n">meanValue</span><span class="p">])</span> <span class="c1"># [x1, x2], [y1, y2]</span>
+<span class="c1">###################################################</span>
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">yVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">zVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">meanValue</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/dc19b7ee13809b1f39cf2255cd98ec185bcb48a5341e7eff69abf8c853f73530.png" src="../_images/dc19b7ee13809b1f39cf2255cd98ec185bcb48a5341e7eff69abf8c853f73530.png" />
+</div>
+</div>
+<p>Changing the size of the figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">###################################################</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1">#plt.rcParams[&quot;figure.figsize&quot;] = (8,6)</span>
+<span class="c1">###################################################</span>
+
+<span class="c1"># Some data for us to plot</span>
+<span class="n">xVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">DAY</span> <span class="c1"># independent</span>
+<span class="n">yVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2020</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+<span class="n">zVals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">MONTH</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">YEAR</span><span class="o">==</span><span class="mi">2000</span><span class="p">)]</span><span class="o">.</span><span class="n">TMIN</span> <span class="c1"># dependent</span>
+
+
+
+<span class="c1"># Creat the figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">brewer</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Add our data and change the color, marker type and linestyle</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">yVals</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xVals</span><span class="p">,</span> <span class="n">zVals</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">meanValue</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">yVals</span><span class="p">,</span><span class="n">zVals</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">],[</span><span class="n">meanValue</span><span class="p">,</span> <span class="n">meanValue</span><span class="p">])</span> <span class="c1"># [x1, x2], [y1, y2]</span>
+
+<span class="c1"># Add labels, a title and grid lines to the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span> <span class="s1">&#39;Days&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature&#39;</span> <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s1">&#39;Minimum Temperature per Day in March 2000/2020&#39;</span> <span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">yVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">zVals</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">meanValue</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the figure (here in Jupyter)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span> <span class="n">fig</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3b212322136a17bb62c41321b66a1b21c3879ad2bd03751b31c700a6146fa0f8.png" src="../_images/3b212322136a17bb62c41321b66a1b21c3879ad2bd03751b31c700a6146fa0f8.png" />
+</div>
+</div>
+<p>first = January, February, and March
+second = April, May and June
+third = July, August, and September
+fourth = October, November, and December</p>
+<p>To update the figure size and font, use rcParams:</p>
+<p>plt.rcParams[“figure.figsize”] = (14,12)</p>
+<p>plt.rcParams.update({‘font.size’: 12})</p>
+<p>For the color, I used colorbrewer, set “tab20”</p>
+<p>The y-limits were all [ 20 , 100 ]</p>
+<p><img alt="2020Weather.png" src="chapter3/attachment:2020Weather.png" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "dudaspm/JupyterLab-Python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Using%20Pandas%20to%20Work%20with%20Data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using Pandas to Work with Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Tables%20to%20Idioms.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tables to Idioms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-data">Getting the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-data">Viewing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgement">Acknowledgement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-plots">Making Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-over-time">Change Over Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plots">Basic Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-on-the-same-figure">Multiple plots on the same figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-file-to-use-later">Saving the file to use later</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publication-quality-plots">Publication Quality Plots</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick M. Dudas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021 - The Pennsylvania State University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
