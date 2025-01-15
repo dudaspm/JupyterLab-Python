@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -183,19 +183,18 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Introduction%20to%20Numpy%20-%20%F0%9F%90%8A.html">Introduction to Numpy - 🐊</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data%20-%20%F0%9F%90%BC.html">Using Pandas to Work with Data - 🐼</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter3/Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter3/Tables%20to%20Idioms.html">Tables to Idioms</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">Python and Google Colab Workshop Notebook Abridged</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
     </div>
@@ -450,12 +449,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import all functions using a name</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="c1"># We then use the name to refer to functions from this module</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="p">)</span>
 
 <span class="c1"># We can also import just some of the functions, as well as change their names</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span> <span class="k">as</span> <span class="n">mathCos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span> <span class="k">as</span> <span class="n">mathCos</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">mathCos</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -465,7 +464,7 @@
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import all functions using a name</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># We then use the name to refer to functions from this module</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="p">)</span>
 
@@ -493,18 +492,18 @@
 <section id="homade-modules">
 <h2>Homade Modules<a class="headerlink" href="#homade-modules" title="Link to this heading">#</a></h2>
 <p>You can also build your own modules. To do this, place what you want in a python file (<fileName>.py) in your working directory.  Note that you need an empty file named <strong>init</strong>.py in this directory as well. You can then load your module just like the built-in modules.  For example, if a file called <a class="reference external" href="http://adamsTrigs.py">adamsTrigs.py</a> contained:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">mt</span>
-<span class="k">def</span> <span class="nf">printTrigVals</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mt</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">printTrigVals</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">angle</span><span class="p">,</span><span class="n">mt</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span><span class="n">mt</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span><span class="n">mt</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>then I can load the module and use this function locally by either importing everything in the file, or just the function we are interested in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">adamsTrigs</span> <span class="k">as</span> <span class="nn">aT</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adamsTrigs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">aT</span>
 <span class="n">aT</span><span class="o">.</span><span class="n">printTrigVals</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">3.</span> <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">adamsTrigs</span> <span class="kn">import</span> <span class="n">printTrigVals</span> <span class="k">as</span> <span class="n">trigVals</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">adamsTrigs</span><span class="w"> </span><span class="kn">import</span> <span class="n">printTrigVals</span> <span class="k">as</span> <span class="n">trigVals</span>
 <span class="n">trigVals</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -524,7 +523,7 @@
 <p>Python has a built-in command called dir to show the directory (contents) of a module. This command provides lots of info, including the function names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">adamsTrigs</span> <span class="k">as</span> <span class="nn">aT</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adamsTrigs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">aT</span>
 <span class="nb">dir</span><span class="p">(</span> <span class="n">aT</span> <span class="p">)</span>
 </pre></div>
 </div>

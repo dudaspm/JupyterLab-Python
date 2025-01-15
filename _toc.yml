@@ -23,14 +23,14 @@ parts:
     - file: chapter2/Loops - 🐨
     - file: chapter2/Loading a Library - 🐠
     - file: chapter2/Creating a Function - 🐲
+  - caption: Numpy
+    chapters:
+    - file: chapter3/Introduction to Numpy - 🐊
   - caption: Pandas
     chapters:
-    - file: chapter3/Using Pandas to Work with Data
+    - file: chapter3/Using Pandas to Work with Data - 🐼
+
   - caption: Matplotlib
     chapters:
     - file: chapter3/Getting Started with Matplotlib
     - file: chapter3/Tables to Idioms
-  - caption: Workshops
-    chapters:
-    - file: workshops/Python and Google Colab Workshop Notebook Abridged
-    - file: workshops/JupyterLab and Google Colab Workshop Notebook Abridged

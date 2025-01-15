@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Tables to Idioms';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python and Google Colab Workshop Notebook Abridged" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html" />
     <link rel="prev" title="Getting Started with Matplotlib" href="Getting%20Started%20with%20Matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,19 +182,18 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../chapter2/Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introduction%20to%20Numpy%20-%20%F0%9F%90%8A.html">Introduction to Numpy - 🐊</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using%20Pandas%20to%20Work%20with%20Data%20-%20%F0%9F%90%BC.html">Using Pandas to Work with Data - 🐼</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tables to Idioms</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">Python and Google Colab Workshop Notebook Abridged</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workshops/JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
     </div>
@@ -455,8 +453,8 @@
 <h2>First the Data<a class="headerlink" href="#first-the-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/us_state_vaccinations.csv&quot;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
@@ -470,18 +468,6 @@
 <span class="n">data</span><span class="o">.</span><span class="n">total_vaccinations</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">total_vaccinations</span><span class="o">/</span><span class="mi">100000</span>
 <span class="n">data</span><span class="o">.</span><span class="n">total_distributed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">total_distributed</span><span class="o">/</span><span class="mi">100000</span>
 <span class="n">data</span><span class="o">.</span><span class="n">people_vaccinated</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">people_vaccinated</span><span class="o">/</span><span class="mi">100000</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/us_state_vaccinations.csv&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
 </pre></div>
 </div>
 </div>
@@ -525,93 +511,105 @@
       <th>daily_vaccinations</th>
       <th>daily_vaccinations_per_million</th>
       <th>share_doses_used</th>
+      <th>total_boosters</th>
+      <th>total_boosters_per_hundred</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>2021-01-13</td>
+      <th>263</th>
+      <td>2021-10-02</td>
       <td>Alabama</td>
-      <td>0.84040</td>
-      <td>3.78975</td>
-      <td>0.74792</td>
-      <td>0.19</td>
-      <td>1.71</td>
-      <td>9245.0</td>
-      <td>1.53</td>
-      <td>7.73</td>
-      <td>5906.0</td>
-      <td>5906.0</td>
-      <td>1205.0</td>
-      <td>0.222</td>
+      <td>45.44355</td>
+      <td>67.3828</td>
+      <td>25.86950</td>
+      <td>42.73</td>
+      <td>92.68</td>
+      <td>2094920.0</td>
+      <td>52.76</td>
+      <td>137.43</td>
+      <td>9583.0</td>
+      <td>10431.0</td>
+      <td>2127.0</td>
+      <td>0.674</td>
+      <td>2985.0</td>
+      <td>0.06</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>2021-01-15</td>
+      <th>264</th>
+      <td>2021-10-03</td>
       <td>Alabama</td>
-      <td>1.00567</td>
-      <td>4.44650</td>
-      <td>0.86956</td>
-      <td>0.28</td>
-      <td>2.05</td>
-      <td>13488.0</td>
-      <td>1.77</td>
-      <td>9.07</td>
-      <td>8267.0</td>
-      <td>7478.0</td>
-      <td>1525.0</td>
-      <td>0.226</td>
+      <td>45.65230</td>
+      <td>67.3665</td>
+      <td>25.92096</td>
+      <td>42.89</td>
+      <td>93.11</td>
+      <td>2103203.0</td>
+      <td>52.87</td>
+      <td>137.39</td>
+      <td>20875.0</td>
+      <td>11389.0</td>
+      <td>2323.0</td>
+      <td>0.678</td>
+      <td>10683.0</td>
+      <td>0.22</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>2021-01-19</td>
+      <th>265</th>
+      <td>2021-10-04</td>
       <td>Alabama</td>
-      <td>1.30795</td>
-      <td>4.44650</td>
-      <td>1.14319</td>
-      <td>0.33</td>
-      <td>2.67</td>
-      <td>16346.0</td>
-      <td>2.33</td>
-      <td>9.07</td>
-      <td>7557.0</td>
-      <td>7523.0</td>
-      <td>1534.0</td>
-      <td>0.294</td>
+      <td>45.79477</td>
+      <td>67.3623</td>
+      <td>25.95947</td>
+      <td>43.02</td>
+      <td>93.40</td>
+      <td>2109349.0</td>
+      <td>52.94</td>
+      <td>137.38</td>
+      <td>14247.0</td>
+      <td>12178.0</td>
+      <td>2484.0</td>
+      <td>0.680</td>
+      <td>14974.0</td>
+      <td>0.31</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>2021-01-20</td>
+      <th>266</th>
+      <td>2021-10-05</td>
       <td>Alabama</td>
-      <td>1.39200</td>
-      <td>4.83275</td>
-      <td>1.21113</td>
-      <td>0.37</td>
-      <td>2.84</td>
-      <td>17956.0</td>
-      <td>2.47</td>
-      <td>9.86</td>
-      <td>8405.0</td>
-      <td>7880.0</td>
-      <td>1607.0</td>
-      <td>0.288</td>
+      <td>45.84378</td>
+      <td>67.4281</td>
+      <td>25.97448</td>
+      <td>43.07</td>
+      <td>93.50</td>
+      <td>2111925.0</td>
+      <td>52.97</td>
+      <td>137.52</td>
+      <td>4901.0</td>
+      <td>10470.0</td>
+      <td>2135.0</td>
+      <td>0.680</td>
+      <td>15821.0</td>
+      <td>0.32</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>2021-01-21</td>
+      <th>267</th>
+      <td>2021-10-06</td>
       <td>Alabama</td>
-      <td>1.65919</td>
-      <td>4.93125</td>
-      <td>1.44429</td>
-      <td>0.44</td>
-      <td>3.38</td>
-      <td>21345.0</td>
-      <td>2.95</td>
-      <td>10.06</td>
-      <td>26719.0</td>
-      <td>10517.0</td>
-      <td>2145.0</td>
-      <td>0.336</td>
+      <td>45.94736</td>
+      <td>67.5796</td>
+      <td>26.00070</td>
+      <td>43.15</td>
+      <td>93.71</td>
+      <td>2115732.0</td>
+      <td>53.03</td>
+      <td>137.83</td>
+      <td>10358.0</td>
+      <td>11500.0</td>
+      <td>2345.0</td>
+      <td>0.680</td>
+      <td>19856.0</td>
+      <td>0.40</td>
     </tr>
   </tbody>
 </table>
@@ -629,7 +627,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 <h2>Today’s and Yesterday’s date and data<a class="headerlink" href="#today-s-and-yesterday-s-date-and-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 
 <span class="n">todaysDate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 <span class="n">yesterdaysDate</span> <span class="o">=</span> <span class="n">todaysDate</span>  <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -674,94 +672,11 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
       <th>daily_vaccinations</th>
       <th>daily_vaccinations_per_million</th>
       <th>share_doses_used</th>
+      <th>total_boosters</th>
+      <th>total_boosters_per_hundred</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>58</th>
-      <td>2021-03-11</td>
-      <td>Alabama</td>
-      <td>12.09802</td>
-      <td>18.16230</td>
-      <td>7.90864</td>
-      <td>9.23</td>
-      <td>24.67</td>
-      <td>452746.0</td>
-      <td>16.13</td>
-      <td>37.04</td>
-      <td>35982.0</td>
-      <td>25376.0</td>
-      <td>5175.0</td>
-      <td>0.666</td>
-    </tr>
-    <tr>
-      <th>117</th>
-      <td>2021-03-11</td>
-      <td>Alaska</td>
-      <td>3.13365</td>
-      <td>4.62875</td>
-      <td>1.90712</td>
-      <td>16.70</td>
-      <td>42.84</td>
-      <td>122197.0</td>
-      <td>26.07</td>
-      <td>63.27</td>
-      <td>5596.0</td>
-      <td>5211.0</td>
-      <td>7123.0</td>
-      <td>0.677</td>
-    </tr>
-    <tr>
-      <th>176</th>
-      <td>2021-03-11</td>
-      <td>American Samoa</td>
-      <td>0.23696</td>
-      <td>0.43210</td>
-      <td>0.15085</td>
-      <td>15.63</td>
-      <td>42.55</td>
-      <td>8706.0</td>
-      <td>27.09</td>
-      <td>77.59</td>
-      <td>0.0</td>
-      <td>296.0</td>
-      <td>5315.0</td>
-      <td>0.548</td>
-    </tr>
-    <tr>
-      <th>235</th>
-      <td>2021-03-11</td>
-      <td>Arizona</td>
-      <td>23.50374</td>
-      <td>29.09125</td>
-      <td>14.96266</td>
-      <td>10.88</td>
-      <td>32.29</td>
-      <td>792205.0</td>
-      <td>20.56</td>
-      <td>39.97</td>
-      <td>56815.0</td>
-      <td>52921.0</td>
-      <td>7271.0</td>
-      <td>0.808</td>
-    </tr>
-    <tr>
-      <th>294</th>
-      <td>2021-03-11</td>
-      <td>Arkansas</td>
-      <td>8.00091</td>
-      <td>12.09300</td>
-      <td>5.14556</td>
-      <td>9.47</td>
-      <td>26.51</td>
-      <td>285811.0</td>
-      <td>17.05</td>
-      <td>40.07</td>
-      <td>907.0</td>
-      <td>13675.0</td>
-      <td>4531.0</td>
-      <td>0.662</td>
-    </tr>
   </tbody>
 </table>
 </div></div></div>
@@ -788,7 +703,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e95fcdb24b449cb21d5a81aaec8da155b86455771edaf694d6243623765efeee.png" src="../_images/e95fcdb24b449cb21d5a81aaec8da155b86455771edaf694d6243623765efeee.png" />
+<img alt="../_images/008c0a004ed8728b775964b2d4ae12c9240b93a5c60d9c06131bb7810d9795a6.png" src="../_images/008c0a004ed8728b775964b2d4ae12c9240b93a5c60d9c06131bb7810d9795a6.png" />
 </div>
 </div>
 <p><img alt="Bar Chart Idiom" src="chapter3/barchart.PNG" /></p>
@@ -813,7 +728,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ffd126e10ae65147d31fd4ba121f2558597a35c4a8b0b451751fbfe6897c2a52.png" src="../_images/ffd126e10ae65147d31fd4ba121f2558597a35c4a8b0b451751fbfe6897c2a52.png" />
+<img alt="../_images/5bcb45b4bd2d69c3188bce08642eaac4be060aa27af0e49447ada3facb9f221c.png" src="../_images/5bcb45b4bd2d69c3188bce08642eaac4be060aa27af0e49447ada3facb9f221c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -838,7 +753,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/45f2ec5dd9a2f6536ca986e1a8104ee1f7d8a9510f2e7af929848971989bae6f.png" src="../_images/45f2ec5dd9a2f6536ca986e1a8104ee1f7d8a9510f2e7af929848971989bae6f.png" />
+<img alt="../_images/5bcb45b4bd2d69c3188bce08642eaac4be060aa27af0e49447ada3facb9f221c.png" src="../_images/5bcb45b4bd2d69c3188bce08642eaac4be060aa27af0e49447ada3facb9f221c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -864,7 +779,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6991a5efb3f7ce3b7e538f673e6c276553338b9c126f0721fe7c22444317635b.png" src="../_images/6991a5efb3f7ce3b7e538f673e6c276553338b9c126f0721fe7c22444317635b.png" />
+<img alt="../_images/5bcb45b4bd2d69c3188bce08642eaac4be060aa27af0e49447ada3facb9f221c.png" src="../_images/5bcb45b4bd2d69c3188bce08642eaac4be060aa27af0e49447ada3facb9f221c.png" />
 </div>
 </div>
 </section>
@@ -872,7 +787,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 <h2>Paired Bar Chart<a class="headerlink" href="#paired-bar-chart" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="c1"># creating the bar plot</span>
 <span class="n">top10</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;California&quot;</span><span class="p">,</span><span class="s2">&quot;Texas&quot;</span><span class="p">,</span><span class="s2">&quot;Florida&quot;</span><span class="p">,</span><span class="s2">&quot;New York State&quot;</span><span class="p">,</span><span class="s2">&quot;Illinois&quot;</span><span class="p">,</span><span class="s2">&quot;Pennsylvania&quot;</span><span class="p">,</span><span class="s2">&quot;Ohio&quot;</span><span class="p">,</span><span class="s2">&quot;Georgia&quot;</span><span class="p">,</span><span class="s2">&quot;North Carolina&quot;</span><span class="p">,</span><span class="s2">&quot;Michigan&quot;</span><span class="p">]</span>
 <span class="n">yData</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">date</span><span class="o">==</span><span class="n">yesterdaysDate</span><span class="p">]</span>
@@ -906,12 +821,12 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3c50c896aa6a01b7fe2d9a176cfb9aef223fb668c1f4c4a1406880e46c7a36e5.png" src="../_images/3c50c896aa6a01b7fe2d9a176cfb9aef223fb668c1f4c4a1406880e46c7a36e5.png" />
+<img alt="../_images/c2159d890718655f5c1dd365a543ed47b73c01eec80b5946f4f6c726a28bf6f1.png" src="../_images/c2159d890718655f5c1dd365a543ed47b73c01eec80b5946f4f6c726a28bf6f1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="c1"># creating the bar plot</span>
 <span class="n">top10</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;California&quot;</span><span class="p">,</span><span class="s2">&quot;Texas&quot;</span><span class="p">,</span><span class="s2">&quot;Florida&quot;</span><span class="p">,</span><span class="s2">&quot;New York State&quot;</span><span class="p">,</span><span class="s2">&quot;Illinois&quot;</span><span class="p">,</span><span class="s2">&quot;Pennsylvania&quot;</span><span class="p">,</span><span class="s2">&quot;Ohio&quot;</span><span class="p">,</span><span class="s2">&quot;Georgia&quot;</span><span class="p">,</span><span class="s2">&quot;North Carolina&quot;</span><span class="p">,</span><span class="s2">&quot;Michigan&quot;</span><span class="p">]</span>
 <span class="n">yData</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">date</span><span class="o">==</span><span class="n">yesterdaysDate</span><span class="p">]</span>
@@ -937,7 +852,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">autolabel</span><span class="p">(</span><span class="n">rects</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">autolabel</span><span class="p">(</span><span class="n">rects</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Attach a text label above each bar in *rects*, displaying its height.&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">rect</span> <span class="ow">in</span> <span class="n">rects</span><span class="p">:</span>
         <span class="n">height</span> <span class="o">=</span> <span class="n">rect</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
@@ -960,7 +875,7 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4db910e4937f944c227d193d2c9e546f40f0078f5f81cdfa022ad0e12798dd4e.png" src="../_images/4db910e4937f944c227d193d2c9e546f40f0078f5f81cdfa022ad0e12798dd4e.png" />
+<img alt="../_images/50a0ef677869d53f6eedb255fe07254d281659a460b60914548606b91b9eeded.png" src="../_images/50a0ef677869d53f6eedb255fe07254d281659a460b60914548606b91b9eeded.png" />
 </div>
 </div>
 </section>
@@ -1004,15 +919,6 @@ Source Link: <a class="github reference external" href="https://github.com/owid/
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Getting Started with Matplotlib</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../workshops/Python%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python and Google Colab Workshop Notebook Abridged</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

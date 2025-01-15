@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -65,8 +65,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/Python and Google Colab Workshop Notebook Abridged';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="JupyterLab and Google Colab Workshop Notebook Abridged" href="JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html" />
-    <link rel="prev" title="Tables to Idioms" href="../chapter3/Tables%20to%20Idioms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,6 +115,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -185,19 +185,18 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../chapter2/Creating%20a%20Function%20-%20%F0%9F%90%B2.html">Creating a Function - 🐲</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Introduction%20to%20Numpy%20-%20%F0%9F%90%8A.html">Introduction to Numpy - 🐊</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data.html">Using Pandas to Work with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Using%20Pandas%20to%20Work%20with%20Data%20-%20%F0%9F%90%BC.html">Using Pandas to Work with Data - 🐼</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matplotlib</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter3/Getting%20Started%20with%20Matplotlib.html">Getting Started with Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter3/Tables%20to%20Idioms.html">Tables to Idioms</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python and Google Colab Workshop Notebook Abridged</a></li>
-<li class="toctree-l1"><a class="reference internal" href="JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html">JupyterLab and Google Colab Workshop Notebook Abridged</a></li>
 </ul>
 
     </div>
@@ -2445,12 +2444,12 @@ Create printouts for scenarios where you match 0, 1, 2, 3 values and have a uniq
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import all functions using a name</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="c1"># We then use the name to refer to functions from this module</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="p">)</span>
 
 <span class="c1"># We can also import just some of the functions, as well as change their names</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span> <span class="k">as</span> <span class="n">mathCos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span> <span class="k">as</span> <span class="n">mathCos</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">mathCos</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -2519,7 +2518,7 @@ Create printouts for scenarios where you match 0, 1, 2, 3 values and have a uniq
 <section id="creating-our-own-function">
 <h3>Creating Our Own Function<a class="headerlink" href="#creating-our-own-function" title="Link to this heading">#</a></h3>
 <p>In python, we use def to define a function with the function name and inputs followed by a colon.  The python function is then separated from the rest of the code by a tab. Some languages use braces rather than indentation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">functionName</span><span class="p">(</span> <span class="n">inputs</span> <span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">functionName</span><span class="p">(</span> <span class="n">inputs</span> <span class="p">):</span>
     <span class="c1"># Operate on the inputs</span>
     <span class="n">ouputs</span> <span class="o">=</span> <span class="n">inputs</span> <span class="o">+</span> <span class="mi">5</span>
     <span class="c1"># Return what we want to back</span>
@@ -2529,7 +2528,7 @@ Create printouts for scenarios where you match 0, 1, 2, 3 values and have a uniq
 <p>Let’s look at an example function, which changes degrees Fahrenheit to Celsius.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeFromFToC</span><span class="p">(</span> <span class="n">farVal</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">changeFromFToC</span><span class="p">(</span> <span class="n">farVal</span> <span class="p">):</span>
     <span class="n">cVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">farVal</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span>
     <span class="k">return</span> <span class="n">cVal</span> 
 </pre></div>
@@ -2569,7 +2568,7 @@ Change from 68 deg F to Celsius
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addAnAnimal</span><span class="p">(</span> <span class="n">animal</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">addAnAnimal</span><span class="p">(</span> <span class="n">animal</span> <span class="p">):</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;in the function&quot;</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;I have access to dog:&quot;</span><span class="p">,</span><span class="n">dog</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;I have access to animal:&quot;</span><span class="p">,</span><span class="n">animal</span><span class="p">)</span>
@@ -2601,7 +2600,7 @@ function output: 11
 </pre></div>
 </div>
 <p>to the bottom, we would end up with this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addAnAnimal</span><span class="p">(</span> <span class="n">animal</span> <span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">addAnAnimal</span><span class="p">(</span> <span class="n">animal</span> <span class="p">):</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;in the function&quot;</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;I have access to dog:&quot;</span><span class="p">,</span><span class="n">dog</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;I have access to animal:&quot;</span><span class="p">,</span><span class="n">animal</span><span class="p">)</span>
@@ -2685,24 +2684,6 @@ function output: 11
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../chapter3/Tables%20to%20Idioms.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tables to Idioms</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="JupyterLab%20and%20Google%20Colab%20Workshop%20Notebook%20Abridged.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">JupyterLab and Google Colab Workshop Notebook Abridged</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
